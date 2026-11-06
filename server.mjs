@@ -78,7 +78,7 @@ async function handle(req,env){
   const tokens=q.trim().split(/\s+/).filter(Boolean).slice(0,8).map(normalize);if(!tokens.length)return json({items:[]});
   const progress=await env.DB.prepare('SELECT * FROM progress').all(),messages=await env.DB.prepare('SELECT item_id,author,quantity,location,body,created_at FROM messages ORDER BY created_at DESC').all(),byId=Object.fromEntries((progress.results||[]).map(s=>[s.item_id,s])),byMessage={};
   for(const m of messages.results||[])(byMessage[m.item_id]||=[]).push(m);
-  const items=[];for(const n of DATA.inventoryNodes){const s=byId[n.id]||{},notes=byMessage[n.id]||[],plans=(DATA.schematics||[]).filter(p=>p.materials[n.name]),where=(n.direct||plans.length)?'部隊倉庫第'+(s.reserve_tab||4)+'頁':'',people=n.direct?['哈沁咪',s.owner||'浮光若水'].join(' '):s.owner||'',text=[n.name,n.en,s.note,people,where,...plans.map(p=>p.name),...notes.map(m=>[m.author,m.location,m.body].join(' '))].join(' ');if(!tokens.every(t=>normalize(text).includes(t)))continue;
+  const items=[];for(const n of DATA.inventoryNodes){const s=byId[n.id]||{},notes=byMessage[n.id]||[],plans=(DATA.schematics||[]).filter(p=>p.materials[n.name]),where=(n.direct||plans.length)?'部隊倉庫第'+(s.reserve_tab||4)+'頁':'',people=n.direct?['哈沁咪',s.owner||'浮光若水'].join(' '):s.owner||'',text=[n.name,n.en,s.note,people,where,...plans.map(p=>p.name),...(DATA.acquisition[n.name]?.exchanges||[]).map(e=>[e.kind==='gc'?'軍票':'友好部落',e.tribe,e.vendor,e.method,e.location].join(' ')),...notes.map(m=>[m.author,m.location,m.body].join(' '))].join(' ');if(!tokens.every(t=>normalize(text).includes(t)))continue;
    const matched=notes.filter(m=>tokens.some(t=>normalize([m.author,m.location,m.body].join(' ')).includes(t))).slice(0,3);
    items.push({id:n.id,name:n.name,en:n.en,direct:n.direct,location:where,note:s.note||'',schematics:plans.map(p=>p.name),messages:matched,commentCount:notes.length});
   }return json({items});
@@ -117,6 +117,7 @@ async function handle(req,env){
   const raw=await req.text();if(raw.length>4096)return json({error:'內容過長。'},413);
   let b;try{b=JSON.parse(raw);}catch{return json({error:'格式不正確。'},400);}
   const item=DATA.inventoryNodes.find(i=>i.id===b.id);if(!item)return json({error:'找不到這項材料。'},404);
+  if(b.self_claimed!==undefined&&![0,1].includes(b.self_claimed))return json({error:'請確認是否認領剩餘工作。'},400);
   if(b.partner_target===undefined)b.partner_target=0;if(b.partner_done===undefined)b.partner_done=0;
   if(!Number.isSafeInteger(b.collected)||b.collected<0||b.collected>1000000||!Number.isSafeInteger(b.delivered)||b.delivered<0||b.delivered>item.total||b.delivered>b.collected||!Number.isSafeInteger(b.revision)||b.revision<0||typeof b.owner!=='string'||b.owner.length>40||typeof b.note!=='string'||b.note.length>200)return json({error:'數量須為非負整數；已交付不能超過已備妥及需求。'},400);
   if(!Number.isSafeInteger(b.partner_target)||b.partner_target<0||b.partner_target>item.total||!Number.isSafeInteger(b.partner_done)||b.partner_done<0||b.partner_done>b.collected||(!item.direct&&b.partner_done!==0))return json({error:'請檢查夥伴的認領量與已完成量。'},400);
@@ -131,7 +132,7 @@ async function handle(req,env){
   const guards=[],guardValues=[];
   for(const name of dependencies){const n=DATA.inventoryNodes.find(n=>n.name===name);if(n.id===item.id)continue;guards.push('COALESCE((SELECT revision FROM progress WHERE item_id=?),0)=?');guardValues.push(n.id,stockMap[n.id]?.revision||0);}
   for(const id of planDependencies){guards.push('COALESCE((SELECT revision FROM schematic_progress WHERE schematic_id=?),0)=?');guardValues.push(id,plans[id]?.revision||0);}
-  const row=await env.DB.prepare('UPDATE progress SET collected=?,delivered=?,owner=?,note=?,partner_target=?,partner_done=?,revision=revision+1,updated_at=? WHERE item_id=? AND revision=?'+(guards.length?' AND '+guards.join(' AND '):'')+' RETURNING *').bind(b.collected,b.delivered,b.owner.trim(),b.note.trim(),b.partner_target,b.partner_done,new Date().toISOString(),b.id,b.revision,...guardValues).first();
+  const row=await env.DB.prepare('UPDATE progress SET collected=?,delivered=?,owner=?,note=?,partner_target=?,partner_done=?,self_claimed=COALESCE(?,self_claimed),revision=revision+1,updated_at=? WHERE item_id=? AND revision=?'+(guards.length?' AND '+guards.join(' AND '):'')+' RETURNING *').bind(b.collected,b.delivered,b.owner.trim(),b.note.trim(),b.partner_target,b.partner_done,b.self_claimed??null,new Date().toISOString(),b.id,b.revision,...guardValues).first();
   if(!row)return json({error:'其他人已更新這項材料。請先重新載入該列，再套用你的數量。'},409);
   return json({item:row});
  }

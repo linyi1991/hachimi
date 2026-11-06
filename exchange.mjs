@@ -1,0 +1,2 @@
+export function exchangeOptions(data,name){const out=[],seen=new Set();function visit(item){if(seen.has(item))return;seen.add(item);for(const e of data.acquisition[item]?.exchanges||[])out.push({...e,material:item,indirect:item!==name});for(const n of Object.keys(data.recipes[item]?.items||{}))visit(n);}visit(name);return out;}
+export function exchangeKinds(data,name){return ['gc','tribe'].flatMap(kind=>{const rows=exchangeOptions(data,name).filter(e=>e.kind===kind);return rows.length?[{kind,indirect:rows.every(e=>e.indirect)}]:[];});}

@@ -5539,6 +5539,52 @@
         "https://na.finalfantasyxiv.com/lodestone/playguide/db/shop/82cc59ae4c7/",
         "https://na.finalfantasyxiv.com/lodestone/playguide/db/shop/5bb28b3316b/",
         "https://na.finalfantasyxiv.com/lodestone/playguide/db/shop/6301481339f/"
+      ],
+      "exchanges": [
+        {
+          "kind": "tribe",
+          "vendor": "Ixali Vendor",
+          "tribe": "鳥人族",
+          "method": "部落貨幣",
+          "cost": "Ixali Oaknot × 1（每組，產出數量請看官方商店）",
+          "location": "North Shroud X:24.9 Y:22.7",
+          "condition": "需先解鎖部落商店；額外聲望條件請查商店。",
+          "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/shop/82cc59ae4c7/?item=e7b966f42a9&type=currency",
+          "item": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/e7b966f42a9/"
+        },
+        {
+          "kind": "gc",
+          "vendor": "Storm Quartermaster",
+          "tribe": "",
+          "method": "軍票",
+          "cost": "每個 200 軍票；軍階 Second Storm Lieutenant",
+          "location": "Limsa Lominsa Upper Decks X:13.1 Y:12.7",
+          "condition": "只可使用所屬大國防聯軍的軍票，並達到對應軍階。",
+          "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/shop/5bb28b3316b/?item=e7b966f42a9&type=cs",
+          "item": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/e7b966f42a9/"
+        },
+        {
+          "kind": "gc",
+          "vendor": "Serpent Quartermaster",
+          "tribe": "",
+          "method": "軍票",
+          "cost": "每個 200 軍票；軍階 Second Serpent Lieutenant",
+          "location": "New Gridania X:9.8 Y:11.0",
+          "condition": "只可使用所屬大國防聯軍的軍票，並達到對應軍階。",
+          "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/shop/6301481339f/?item=e7b966f42a9&type=cs",
+          "item": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/e7b966f42a9/"
+        },
+        {
+          "kind": "gc",
+          "vendor": "Flame Quartermaster",
+          "tribe": "",
+          "method": "軍票",
+          "cost": "每個 200 軍票；軍階 Second Flame Lieutenant",
+          "location": "Ul'dah - Steps of Nald X:8.3 Y:9.0",
+          "condition": "只可使用所屬大國防聯軍的軍票，並達到對應軍階。",
+          "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/shop/277def3c97a/?item=e7b966f42a9&type=cs",
+          "item": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/e7b966f42a9/"
+        }
       ]
     },
     "鈷鐵礦": {
@@ -5601,6 +5647,52 @@
         "https://na.finalfantasyxiv.com/lodestone/playguide/db/shop/dc9a531e92d/",
         "https://na.finalfantasyxiv.com/lodestone/playguide/db/shop/82cc59ae4c7/",
         "https://na.finalfantasyxiv.com/lodestone/playguide/db/shop/5bb28b3316b/"
+      ],
+      "exchanges": [
+        {
+          "kind": "tribe",
+          "vendor": "Ixali Vendor",
+          "tribe": "鳥人族",
+          "method": "部落貨幣",
+          "cost": "Ixali Oaknot × 7（每組，產出數量請看官方商店）",
+          "location": "North Shroud X:24.9 Y:22.7",
+          "condition": "需先解鎖部落商店；額外聲望條件請查商店。",
+          "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/shop/82cc59ae4c7/?item=e0d0eb77dc2&type=currency",
+          "item": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/e0d0eb77dc2/"
+        },
+        {
+          "kind": "gc",
+          "vendor": "Storm Quartermaster",
+          "tribe": "",
+          "method": "軍票",
+          "cost": "每個 1,500 軍票；軍階 Second Storm Lieutenant",
+          "location": "Limsa Lominsa Upper Decks X:13.1 Y:12.7",
+          "condition": "只可使用所屬大國防聯軍的軍票，並達到對應軍階。",
+          "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/shop/5bb28b3316b/?item=e0d0eb77dc2&type=cs",
+          "item": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/e0d0eb77dc2/"
+        },
+        {
+          "kind": "gc",
+          "vendor": "Serpent Quartermaster",
+          "tribe": "",
+          "method": "軍票",
+          "cost": "每個 1,500 軍票；軍階 Second Serpent Lieutenant",
+          "location": "New Gridania X:9.8 Y:11.0",
+          "condition": "只可使用所屬大國防聯軍的軍票，並達到對應軍階。",
+          "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/shop/6301481339f/?item=e0d0eb77dc2&type=cs",
+          "item": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/e0d0eb77dc2/"
+        },
+        {
+          "kind": "gc",
+          "vendor": "Flame Quartermaster",
+          "tribe": "",
+          "method": "軍票",
+          "cost": "每個 1,500 軍票；軍階 Second Flame Lieutenant",
+          "location": "Ul'dah - Steps of Nald X:8.3 Y:9.0",
+          "condition": "只可使用所屬大國防聯軍的軍票，並達到對應軍階。",
+          "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/shop/277def3c97a/?item=e0d0eb77dc2&type=cs",
+          "item": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/e0d0eb77dc2/"
+        }
       ]
     },
     "緋紅樹汁": {
@@ -5726,6 +5818,63 @@
         "https://na.finalfantasyxiv.com/lodestone/playguide/db/shop/f82f6515efe/",
         "https://na.finalfantasyxiv.com/lodestone/playguide/db/shop/9b8055ffab0/",
         "https://na.finalfantasyxiv.com/lodestone/playguide/db/shop/79ffac0a51a/"
+      ],
+      "exchanges": [
+        {
+          "kind": "tribe",
+          "vendor": "Kobold Vendor",
+          "tribe": "地靈族",
+          "method": "金幣",
+          "cost": "每個 60 Gil",
+          "location": "Outer La Noscea X:21.6 Y:17.8",
+          "condition": "需先解鎖部落商店；額外聲望條件請查商店。",
+          "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/shop/9b8055ffab0/?item=f0518ea9f0e&type=gil",
+          "item": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/f0518ea9f0e/"
+        },
+        {
+          "kind": "tribe",
+          "vendor": "Sahagin Vendor",
+          "tribe": "魚人族",
+          "method": "金幣",
+          "cost": "每個 60 Gil",
+          "location": "Western La Noscea X:16.9 Y:22.4",
+          "condition": "需先解鎖部落商店；額外聲望條件請查商店。",
+          "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/shop/79ffac0a51a/?item=f0518ea9f0e&type=gil",
+          "item": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/f0518ea9f0e/"
+        },
+        {
+          "kind": "tribe",
+          "vendor": "Sylphic Vendor",
+          "tribe": "妖精族",
+          "method": "金幣",
+          "cost": "每個 60 Gil",
+          "location": "East Shroud X:22.3 Y:26.3",
+          "condition": "需先解鎖部落商店；額外聲望條件請查商店。",
+          "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/shop/bc33445b21a/?item=f0518ea9f0e&type=gil",
+          "item": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/f0518ea9f0e/"
+        },
+        {
+          "kind": "tribe",
+          "vendor": "Ixali Vendor",
+          "tribe": "鳥人族",
+          "method": "金幣",
+          "cost": "每個 60 Gil",
+          "location": "North Shroud X:24.9 Y:22.7",
+          "condition": "需解鎖鳥人族商店，聲望 Rank 5 Respected。",
+          "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/shop/82cc59ae4c7/?item=f0518ea9f0e&type=gil",
+          "item": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/f0518ea9f0e/"
+        },
+        {
+          "kind": "tribe",
+          "vendor": "Amalj'aa Vendor",
+          "tribe": "蜥蜴人族",
+          "method": "金幣",
+          "cost": "每個 60 Gil",
+          "location": "Southern Thanalan X:23.2 Y:14.1",
+          "condition": "需先解鎖部落商店；額外聲望條件請查商店。",
+          "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/shop/9f78134b4ab/?item=f0518ea9f0e&type=gil",
+          "item": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/f0518ea9f0e/"
+        }
       ]
     },
     "玄鋼塊": {
@@ -5842,6 +5991,52 @@
         "https://na.finalfantasyxiv.com/lodestone/playguide/db/shop/82cc59ae4c7/",
         "https://na.finalfantasyxiv.com/lodestone/playguide/db/shop/5bb28b3316b/",
         "https://na.finalfantasyxiv.com/lodestone/playguide/db/shop/6301481339f/"
+      ],
+      "exchanges": [
+        {
+          "kind": "tribe",
+          "vendor": "Ixali Vendor",
+          "tribe": "鳥人族",
+          "method": "部落貨幣",
+          "cost": "Ixali Oaknot × 1（每組，產出數量請看官方商店）",
+          "location": "North Shroud X:24.9 Y:22.7",
+          "condition": "需先解鎖部落商店；額外聲望條件請查商店。",
+          "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/shop/82cc59ae4c7/?item=40555a09fbf&type=currency",
+          "item": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/40555a09fbf/"
+        },
+        {
+          "kind": "gc",
+          "vendor": "Storm Quartermaster",
+          "tribe": "",
+          "method": "軍票",
+          "cost": "每個 200 軍票；軍階 Second Storm Lieutenant",
+          "location": "Limsa Lominsa Upper Decks X:13.1 Y:12.7",
+          "condition": "只可使用所屬大國防聯軍的軍票，並達到對應軍階。",
+          "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/shop/5bb28b3316b/?item=40555a09fbf&type=cs",
+          "item": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/40555a09fbf/"
+        },
+        {
+          "kind": "gc",
+          "vendor": "Serpent Quartermaster",
+          "tribe": "",
+          "method": "軍票",
+          "cost": "每個 200 軍票；軍階 Second Serpent Lieutenant",
+          "location": "New Gridania X:9.8 Y:11.0",
+          "condition": "只可使用所屬大國防聯軍的軍票，並達到對應軍階。",
+          "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/shop/6301481339f/?item=40555a09fbf&type=cs",
+          "item": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/40555a09fbf/"
+        },
+        {
+          "kind": "gc",
+          "vendor": "Flame Quartermaster",
+          "tribe": "",
+          "method": "軍票",
+          "cost": "每個 200 軍票；軍階 Second Flame Lieutenant",
+          "location": "Ul'dah - Steps of Nald X:8.3 Y:9.0",
+          "condition": "只可使用所屬大國防聯軍的軍票，並達到對應軍階。",
+          "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/shop/277def3c97a/?item=40555a09fbf&type=cs",
+          "item": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/40555a09fbf/"
+        }
       ]
     },
     "玻璃板": {
@@ -5951,6 +6146,19 @@
         "https://na.finalfantasyxiv.com/lodestone/playguide/db/shop/d1029996df5/",
         "https://na.finalfantasyxiv.com/lodestone/playguide/db/shop/8fe33e49105/",
         "https://na.finalfantasyxiv.com/lodestone/playguide/db/shop/4f8a9b17a20/"
+      ],
+      "exchanges": [
+        {
+          "kind": "tribe",
+          "vendor": "Mogmul Mogbelly",
+          "tribe": "莫古力族",
+          "method": "金幣",
+          "cost": "每個 843 Gil",
+          "location": "The Churning Mists X:15.9 Y:28.5",
+          "condition": "需先解鎖部落商店；額外聲望條件請查商店。",
+          "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/shop/d1029996df5/?item=b6a6a34397f&type=gil",
+          "item": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/b6a6a34397f/"
+        }
       ]
     },
     "白銀錠": {
@@ -5999,6 +6207,30 @@
       "gathering": [],
       "shops": [
         "https://na.finalfantasyxiv.com/lodestone/playguide/db/shop/9f78134b4ab/"
+      ],
+      "exchanges": [
+        {
+          "kind": "tribe",
+          "vendor": "Amalj'aa Vendor",
+          "tribe": "蜥蜴人族",
+          "method": "金幣",
+          "cost": "每個 258 Gil",
+          "location": "Southern Thanalan X:23.2 Y:14.1",
+          "condition": "需解鎖蜥蜴人族商店；本項於 Rank 1 Neutral 可買。",
+          "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/shop/9f78134b4ab/?item=c75db0a8725&type=gil",
+          "item": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/c75db0a8725/"
+        },
+        {
+          "kind": "tribe",
+          "vendor": "Amalj'aa Vendor",
+          "tribe": "蜥蜴人族",
+          "method": "部落貨幣",
+          "cost": "Steel Amalj'ok × 1（每組，產出數量請看官方商店）",
+          "location": "Southern Thanalan X:23.2 Y:14.1",
+          "condition": "需先解鎖部落商店；額外聲望條件請查商店。",
+          "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/shop/9f78134b4ab/?item=c75db0a8725&type=currency",
+          "item": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/c75db0a8725/"
+        }
       ]
     },
     "冰之碎晶": {
@@ -6020,6 +6252,30 @@
       "gathering": [],
       "shops": [
         "https://na.finalfantasyxiv.com/lodestone/playguide/db/shop/9f78134b4ab/"
+      ],
+      "exchanges": [
+        {
+          "kind": "tribe",
+          "vendor": "Amalj'aa Vendor",
+          "tribe": "蜥蜴人族",
+          "method": "金幣",
+          "cost": "每個 313 Gil",
+          "location": "Southern Thanalan X:23.2 Y:14.1",
+          "condition": "需解鎖蜥蜴人族商店；本項於 Rank 1 Neutral 可買。",
+          "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/shop/9f78134b4ab/?item=06d767af9ca&type=gil",
+          "item": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/06d767af9ca/"
+        },
+        {
+          "kind": "tribe",
+          "vendor": "Amalj'aa Vendor",
+          "tribe": "蜥蜴人族",
+          "method": "部落貨幣",
+          "cost": "Steel Amalj'ok × 1（每組，產出數量請看官方商店）",
+          "location": "Southern Thanalan X:23.2 Y:14.1",
+          "condition": "需先解鎖部落商店；額外聲望條件請查商店。",
+          "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/shop/9f78134b4ab/?item=06d767af9ca&type=currency",
+          "item": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/06d767af9ca/"
+        }
       ]
     },
     "火之碎晶": {
@@ -6043,6 +6299,30 @@
       ],
       "shops": [
         "https://na.finalfantasyxiv.com/lodestone/playguide/db/shop/9b8055ffab0/"
+      ],
+      "exchanges": [
+        {
+          "kind": "tribe",
+          "vendor": "Kobold Vendor",
+          "tribe": "地靈族",
+          "method": "金幣",
+          "cost": "每個 82 Gil",
+          "location": "Outer La Noscea X:21.6 Y:17.8",
+          "condition": "需先解鎖部落商店；額外聲望條件請查商店。",
+          "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/shop/9b8055ffab0/?item=35c96e0c9f7&type=gil",
+          "item": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/35c96e0c9f7/"
+        },
+        {
+          "kind": "tribe",
+          "vendor": "Kobold Vendor",
+          "tribe": "地靈族",
+          "method": "部落貨幣",
+          "cost": "Titan Cobaltpiece × 1（每組，產出數量請看官方商店）",
+          "location": "Outer La Noscea X:21.6 Y:17.8",
+          "condition": "需先解鎖部落商店；額外聲望條件請查商店。",
+          "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/shop/9b8055ffab0/?item=35c96e0c9f7&type=currency",
+          "item": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/35c96e0c9f7/"
+        }
       ]
     },
     "硬化雲杉木材": {
@@ -6068,6 +6348,52 @@
         "https://na.finalfantasyxiv.com/lodestone/playguide/db/shop/82cc59ae4c7/",
         "https://na.finalfantasyxiv.com/lodestone/playguide/db/shop/5bb28b3316b/",
         "https://na.finalfantasyxiv.com/lodestone/playguide/db/shop/6301481339f/"
+      ],
+      "exchanges": [
+        {
+          "kind": "tribe",
+          "vendor": "Ixali Vendor",
+          "tribe": "鳥人族",
+          "method": "部落貨幣",
+          "cost": "Ixali Oaknot × 1（每組，產出數量請看官方商店）",
+          "location": "North Shroud X:24.9 Y:22.7",
+          "condition": "需先解鎖部落商店；額外聲望條件請查商店。",
+          "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/shop/82cc59ae4c7/?item=8c834249a3a&type=currency",
+          "item": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/8c834249a3a/"
+        },
+        {
+          "kind": "gc",
+          "vendor": "Storm Quartermaster",
+          "tribe": "",
+          "method": "軍票",
+          "cost": "每個 200 軍票；軍階 Second Storm Lieutenant",
+          "location": "Limsa Lominsa Upper Decks X:13.1 Y:12.7",
+          "condition": "只可使用所屬大國防聯軍的軍票，並達到對應軍階。",
+          "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/shop/5bb28b3316b/?item=8c834249a3a&type=cs",
+          "item": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/8c834249a3a/"
+        },
+        {
+          "kind": "gc",
+          "vendor": "Serpent Quartermaster",
+          "tribe": "",
+          "method": "軍票",
+          "cost": "每個 200 軍票；軍階 Second Serpent Lieutenant",
+          "location": "New Gridania X:9.8 Y:11.0",
+          "condition": "只可使用所屬大國防聯軍的軍票，並達到對應軍階。",
+          "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/shop/6301481339f/?item=8c834249a3a&type=cs",
+          "item": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/8c834249a3a/"
+        },
+        {
+          "kind": "gc",
+          "vendor": "Flame Quartermaster",
+          "tribe": "",
+          "method": "軍票",
+          "cost": "每個 200 軍票；軍階 Second Flame Lieutenant",
+          "location": "Ul'dah - Steps of Nald X:8.3 Y:9.0",
+          "condition": "只可使用所屬大國防聯軍的軍票，並達到對應軍階。",
+          "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/shop/277def3c97a/?item=8c834249a3a&type=cs",
+          "item": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/8c834249a3a/"
+        }
       ]
     },
     "秘銀板": {
@@ -6084,6 +6410,30 @@
       "gathering": [],
       "shops": [
         "https://na.finalfantasyxiv.com/lodestone/playguide/db/shop/9f78134b4ab/"
+      ],
+      "exchanges": [
+        {
+          "kind": "tribe",
+          "vendor": "Amalj'aa Vendor",
+          "tribe": "蜥蜴人族",
+          "method": "金幣",
+          "cost": "每個 514 Gil",
+          "location": "Southern Thanalan X:23.2 Y:14.1",
+          "condition": "需解鎖蜥蜴人族商店；本項於 Rank 1 Neutral 可買。",
+          "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/shop/9f78134b4ab/?item=5eddc1855a4&type=gil",
+          "item": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/5eddc1855a4/"
+        },
+        {
+          "kind": "tribe",
+          "vendor": "Amalj'aa Vendor",
+          "tribe": "蜥蜴人族",
+          "method": "部落貨幣",
+          "cost": "Steel Amalj'ok × 1（每組，產出數量請看官方商店）",
+          "location": "Southern Thanalan X:23.2 Y:14.1",
+          "condition": "需先解鎖部落商店；額外聲望條件請查商店。",
+          "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/shop/9f78134b4ab/?item=5eddc1855a4&type=currency",
+          "item": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/5eddc1855a4/"
+        }
       ]
     },
     "秘銀鉚釘": {
@@ -6093,6 +6443,30 @@
       "gathering": [],
       "shops": [
         "https://na.finalfantasyxiv.com/lodestone/playguide/db/shop/9f78134b4ab/"
+      ],
+      "exchanges": [
+        {
+          "kind": "tribe",
+          "vendor": "Amalj'aa Vendor",
+          "tribe": "蜥蜴人族",
+          "method": "金幣",
+          "cost": "每個 583 Gil",
+          "location": "Southern Thanalan X:23.2 Y:14.1",
+          "condition": "需解鎖蜥蜴人族商店；本項於 Rank 1 Neutral 可買。",
+          "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/shop/9f78134b4ab/?item=7eda99f554a&type=gil",
+          "item": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/7eda99f554a/"
+        },
+        {
+          "kind": "tribe",
+          "vendor": "Amalj'aa Vendor",
+          "tribe": "蜥蜴人族",
+          "method": "部落貨幣",
+          "cost": "Steel Amalj'ok × 1（每組，產出數量請看官方商店）",
+          "location": "Southern Thanalan X:23.2 Y:14.1",
+          "condition": "需先解鎖部落商店；額外聲望條件請查商店。",
+          "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/shop/9f78134b4ab/?item=7eda99f554a&type=currency",
+          "item": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/7eda99f554a/"
+        }
       ]
     },
     "秘銀礦": {
@@ -6150,6 +6524,19 @@
       "shops": [
         "https://na.finalfantasyxiv.com/lodestone/playguide/db/shop/2469ad82ece/",
         "https://na.finalfantasyxiv.com/lodestone/playguide/db/shop/d1029996df5/"
+      ],
+      "exchanges": [
+        {
+          "kind": "tribe",
+          "vendor": "Mogmul Mogbelly",
+          "tribe": "莫古力族",
+          "method": "金幣",
+          "cost": "每個 1,893 Gil",
+          "location": "The Churning Mists X:15.9 Y:28.5",
+          "condition": "需先解鎖部落商店；額外聲望條件請查商店。",
+          "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/shop/d1029996df5/?item=41e7d3b5a18&type=gil",
+          "item": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/41e7d3b5a18/"
+        }
       ]
     },
     "水之水晶": {
@@ -6191,6 +6578,19 @@
       "gathering": [],
       "shops": [
         "https://na.finalfantasyxiv.com/lodestone/playguide/db/shop/82cc59ae4c7/"
+      ],
+      "exchanges": [
+        {
+          "kind": "tribe",
+          "vendor": "Ixali Vendor",
+          "tribe": "鳥人族",
+          "method": "金幣",
+          "cost": "每個 219 Gil",
+          "location": "North Shroud X:24.9 Y:22.7",
+          "condition": "需解鎖鳥人族商店，聲望 Rank 3 Friendly。",
+          "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/shop/82cc59ae4c7/?item=3f9bd918147&type=gil",
+          "item": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/3f9bd918147/"
+        }
       ]
     },
     "胡桃原木": {
@@ -6234,6 +6634,52 @@
         "https://na.finalfantasyxiv.com/lodestone/playguide/db/shop/82cc59ae4c7/",
         "https://na.finalfantasyxiv.com/lodestone/playguide/db/shop/5bb28b3316b/",
         "https://na.finalfantasyxiv.com/lodestone/playguide/db/shop/6301481339f/"
+      ],
+      "exchanges": [
+        {
+          "kind": "tribe",
+          "vendor": "Ixali Vendor",
+          "tribe": "鳥人族",
+          "method": "部落貨幣",
+          "cost": "Ixali Oaknot × 1（每組，產出數量請看官方商店）",
+          "location": "North Shroud X:24.9 Y:22.7",
+          "condition": "需先解鎖部落商店；額外聲望條件請查商店。",
+          "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/shop/82cc59ae4c7/?item=76ae2d8195d&type=currency",
+          "item": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/76ae2d8195d/"
+        },
+        {
+          "kind": "gc",
+          "vendor": "Storm Quartermaster",
+          "tribe": "",
+          "method": "軍票",
+          "cost": "每個 200 軍票；軍階 Second Storm Lieutenant",
+          "location": "Limsa Lominsa Upper Decks X:13.1 Y:12.7",
+          "condition": "只可使用所屬大國防聯軍的軍票，並達到對應軍階。",
+          "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/shop/5bb28b3316b/?item=76ae2d8195d&type=cs",
+          "item": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/76ae2d8195d/"
+        },
+        {
+          "kind": "gc",
+          "vendor": "Serpent Quartermaster",
+          "tribe": "",
+          "method": "軍票",
+          "cost": "每個 200 軍票；軍階 Second Serpent Lieutenant",
+          "location": "New Gridania X:9.8 Y:11.0",
+          "condition": "只可使用所屬大國防聯軍的軍票，並達到對應軍階。",
+          "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/shop/6301481339f/?item=76ae2d8195d&type=cs",
+          "item": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/76ae2d8195d/"
+        },
+        {
+          "kind": "gc",
+          "vendor": "Flame Quartermaster",
+          "tribe": "",
+          "method": "軍票",
+          "cost": "每個 200 軍票；軍階 Second Flame Lieutenant",
+          "location": "Ul'dah - Steps of Nald X:8.3 Y:9.0",
+          "condition": "只可使用所屬大國防聯軍的軍票，並達到對應軍階。",
+          "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/shop/277def3c97a/?item=76ae2d8195d&type=cs",
+          "item": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/76ae2d8195d/"
+        }
       ]
     },
     "石蜥蜴的蛋": {
@@ -6361,6 +6807,30 @@
       "gathering": [],
       "shops": [
         "https://na.finalfantasyxiv.com/lodestone/playguide/db/shop/9b8055ffab0/"
+      ],
+      "exchanges": [
+        {
+          "kind": "tribe",
+          "vendor": "Kobold Vendor",
+          "tribe": "地靈族",
+          "method": "金幣",
+          "cost": "每個 238 Gil",
+          "location": "Outer La Noscea X:21.6 Y:17.8",
+          "condition": "需先解鎖部落商店；額外聲望條件請查商店。",
+          "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/shop/9b8055ffab0/?item=5aeae8bda7d&type=gil",
+          "item": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/5aeae8bda7d/"
+        },
+        {
+          "kind": "tribe",
+          "vendor": "Kobold Vendor",
+          "tribe": "地靈族",
+          "method": "部落貨幣",
+          "cost": "Titan Cobaltpiece × 1（每組，產出數量請看官方商店）",
+          "location": "Outer La Noscea X:21.6 Y:17.8",
+          "condition": "需先解鎖部落商店；額外聲望條件請查商店。",
+          "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/shop/9b8055ffab0/?item=5aeae8bda7d&type=currency",
+          "item": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/5aeae8bda7d/"
+        }
       ]
     },
     "黃玉": {
@@ -6379,6 +6849,52 @@
         "https://na.finalfantasyxiv.com/lodestone/playguide/db/shop/dc9a531e92d/",
         "https://na.finalfantasyxiv.com/lodestone/playguide/db/shop/82cc59ae4c7/",
         "https://na.finalfantasyxiv.com/lodestone/playguide/db/shop/5bb28b3316b/"
+      ],
+      "exchanges": [
+        {
+          "kind": "tribe",
+          "vendor": "Ixali Vendor",
+          "tribe": "鳥人族",
+          "method": "部落貨幣",
+          "cost": "Ixali Oaknot × 7（每組，產出數量請看官方商店）",
+          "location": "North Shroud X:24.9 Y:22.7",
+          "condition": "需先解鎖部落商店；額外聲望條件請查商店。",
+          "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/shop/82cc59ae4c7/?item=16e683353f8&type=currency",
+          "item": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/16e683353f8/"
+        },
+        {
+          "kind": "gc",
+          "vendor": "Storm Quartermaster",
+          "tribe": "",
+          "method": "軍票",
+          "cost": "每個 1,500 軍票；軍階 Second Storm Lieutenant",
+          "location": "Limsa Lominsa Upper Decks X:13.1 Y:12.7",
+          "condition": "只可使用所屬大國防聯軍的軍票，並達到對應軍階。",
+          "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/shop/5bb28b3316b/?item=16e683353f8&type=cs",
+          "item": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/16e683353f8/"
+        },
+        {
+          "kind": "gc",
+          "vendor": "Serpent Quartermaster",
+          "tribe": "",
+          "method": "軍票",
+          "cost": "每個 1,500 軍票；軍階 Second Serpent Lieutenant",
+          "location": "New Gridania X:9.8 Y:11.0",
+          "condition": "只可使用所屬大國防聯軍的軍票，並達到對應軍階。",
+          "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/shop/6301481339f/?item=16e683353f8&type=cs",
+          "item": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/16e683353f8/"
+        },
+        {
+          "kind": "gc",
+          "vendor": "Flame Quartermaster",
+          "tribe": "",
+          "method": "軍票",
+          "cost": "每個 1,500 軍票；軍階 Second Flame Lieutenant",
+          "location": "Ul'dah - Steps of Nald X:8.3 Y:9.0",
+          "condition": "只可使用所屬大國防聯軍的軍票，並達到對應軍階。",
+          "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/shop/277def3c97a/?item=16e683353f8&type=cs",
+          "item": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/16e683353f8/"
+        }
       ]
     },
     "黃玉原石": {
@@ -6415,6 +6931,41 @@
         "https://na.finalfantasyxiv.com/lodestone/playguide/db/shop/5bb28b3316b/",
         "https://na.finalfantasyxiv.com/lodestone/playguide/db/shop/6301481339f/",
         "https://na.finalfantasyxiv.com/lodestone/playguide/db/shop/277def3c97a/"
+      ],
+      "exchanges": [
+        {
+          "kind": "gc",
+          "vendor": "Storm Quartermaster",
+          "tribe": "",
+          "method": "軍票",
+          "cost": "每個 200 軍票；軍階 Storm Corporal",
+          "location": "Limsa Lominsa Upper Decks X:13.1 Y:12.7",
+          "condition": "只可使用所屬大國防聯軍的軍票，並達到對應軍階。",
+          "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/shop/5bb28b3316b/?item=6d0118d3024&type=cs",
+          "item": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/6d0118d3024/"
+        },
+        {
+          "kind": "gc",
+          "vendor": "Serpent Quartermaster",
+          "tribe": "",
+          "method": "軍票",
+          "cost": "每個 200 軍票；軍階 Serpent Corporal",
+          "location": "New Gridania X:9.8 Y:11.0",
+          "condition": "只可使用所屬大國防聯軍的軍票，並達到對應軍階。",
+          "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/shop/6301481339f/?item=6d0118d3024&type=cs",
+          "item": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/6d0118d3024/"
+        },
+        {
+          "kind": "gc",
+          "vendor": "Flame Quartermaster",
+          "tribe": "",
+          "method": "軍票",
+          "cost": "每個 200 軍票；軍階 Flame Corporal",
+          "location": "Ul'dah - Steps of Nald X:8.3 Y:9.0",
+          "condition": "只可使用所屬大國防聯軍的軍票，並達到對應軍階。",
+          "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/shop/277def3c97a/?item=6d0118d3024&type=cs",
+          "item": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/6d0118d3024/"
+        }
       ]
     },
     "黑鐵釘": {
@@ -6433,6 +6984,30 @@
         "https://na.finalfantasyxiv.com/lodestone/playguide/db/shop/8fe33e49105/",
         "https://na.finalfantasyxiv.com/lodestone/playguide/db/shop/a13c67c78f9/",
         "https://na.finalfantasyxiv.com/lodestone/playguide/db/shop/9f78134b4ab/"
+      ],
+      "exchanges": [
+        {
+          "kind": "tribe",
+          "vendor": "Amalj'aa Vendor",
+          "tribe": "蜥蜴人族",
+          "method": "金幣",
+          "cost": "每個 68 Gil",
+          "location": "Southern Thanalan X:23.2 Y:14.1",
+          "condition": "需解鎖蜥蜴人族商店；本項於 Rank 1 Neutral 可買。",
+          "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/shop/9f78134b4ab/?item=a31d0a708d9&type=gil",
+          "item": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/a31d0a708d9/"
+        },
+        {
+          "kind": "tribe",
+          "vendor": "Amalj'aa Vendor",
+          "tribe": "蜥蜴人族",
+          "method": "部落貨幣",
+          "cost": "Steel Amalj'ok × 1（每組，產出數量請看官方商店）",
+          "location": "Southern Thanalan X:23.2 Y:14.1",
+          "condition": "需先解鎖部落商店；額外聲望條件請查商店。",
+          "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/shop/9f78134b4ab/?item=a31d0a708d9&type=currency",
+          "item": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/a31d0a708d9/"
+        }
       ]
     },
     "黑鐵鉚釘": {
@@ -6444,6 +7019,30 @@
         "https://na.finalfantasyxiv.com/lodestone/playguide/db/shop/8fe33e49105/",
         "https://na.finalfantasyxiv.com/lodestone/playguide/db/shop/33e25b82d00/",
         "https://na.finalfantasyxiv.com/lodestone/playguide/db/shop/a13c67c78f9/"
+      ],
+      "exchanges": [
+        {
+          "kind": "tribe",
+          "vendor": "Amalj'aa Vendor",
+          "tribe": "蜥蜴人族",
+          "method": "金幣",
+          "cost": "每個 73 Gil",
+          "location": "Southern Thanalan X:23.2 Y:14.1",
+          "condition": "需解鎖蜥蜴人族商店；本項於 Rank 1 Neutral 可買。",
+          "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/shop/9f78134b4ab/?item=168c0c69e15&type=gil",
+          "item": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/168c0c69e15/"
+        },
+        {
+          "kind": "tribe",
+          "vendor": "Amalj'aa Vendor",
+          "tribe": "蜥蜴人族",
+          "method": "部落貨幣",
+          "cost": "Steel Amalj'ok × 1（每組，產出數量請看官方商店）",
+          "location": "Southern Thanalan X:23.2 Y:14.1",
+          "condition": "需先解鎖部落商店；額外聲望條件請查商店。",
+          "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/shop/9f78134b4ab/?item=168c0c69e15&type=currency",
+          "item": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/168c0c69e15/"
+        }
       ]
     },
     "紅木木材": {
@@ -6503,5 +7102,14 @@
         }
       ]
     }
+  },
+  "exchangeAudit": {
+    "date": "2026-11-07",
+    "method": "逐項解析官方物品頁 Selling NPC／Required Company Seals and Rank／Required Items；成品與底材來源分別標示。",
+    "items": 19,
+    "reputationSources": [
+      "https://ffxiv.consolegameswiki.com/wiki/Ixali_Vendor",
+      "https://ffxiv.consolegameswiki.com/wiki/Amalj%27aa_Vendor"
+    ]
   }
 }

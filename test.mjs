@@ -9,6 +9,7 @@ import {collaboration,fleetRequired} from './collaboration.mjs';
 const db=new DatabaseSync(':memory:');db.exec(await fs.readFile('drizzle/0000_progress.sql','utf8'));
 db.exec(await fs.readFile('drizzle/0001_collaboration.sql','utf8'));
 db.exec(await fs.readFile('drizzle/0002_schematic_reservations.sql','utf8'));
+db.exec(await fs.readFile('drizzle/0003_explicit_claims.sql','utf8'));
 export function adapter(db){return {async batch(statements){db.exec('BEGIN');try{const results=[];for(const stmt of statements)results.push(await stmt.run());db.exec('COMMIT');return results;}catch(e){db.exec('ROLLBACK');throw e;}},prepare(sql){let args=[];return {bind(...a){args=a;return this;},async run(){return db.prepare(sql).run(...args);},async first(){return db.prepare(sql).get(...args)||null;},async all(){return {results:db.prepare(sql).all(...args)};}};}};}
 const token='local-test-only-not-a-production-key';
 const makeAccount=(username,password)=>{const salt=Buffer.from('test-only-salt-'+username).toString('base64url');return {username,salt,hash:pbkdf2Sync(password,Buffer.from(salt,'base64url'),100000,32,'sha256').toString('base64url')};};
@@ -72,9 +73,9 @@ for(let i=0;i<8;i++)assert.equal((await app.fetch(req('/api/login','POST',{usern
 assert.equal((await app.fetch(req('/api/login','POST',{username:'哈沁咪',password:'test-passphrase'}),env)).status,429);
 console.log('Passed: two independent Chinese accounts/passwords, cross-account password refusal, account revocation, legacy session refusal, read-only refusal, signed session expiry/tampering, rate limits, validation, concurrency conflicts, persistence, routes, Pages links/CORS, download, 38 materials, 32 parts, 45 official recipes.');
 
-const example=collaboration({total:192},{collected:60,partner_target:96,partner_done:20});
+const example=collaboration({total:192},{self_claimed:1,collected:60,partner_target:96,partner_done:20});
 assert.deepEqual(example.people,[{name:'哈沁咪',target:96,done:40,left:56},{name:'浮光若水',target:96,done:20,left:76}]);
-for(const total of [0,40,192,230])for(const target of [0,96,192])for(const done of [0,Math.floor(total/2),total]){const x=collaboration({total:192},{collected:total,partner_target:target,partner_done:done});assert.equal(x.people.reduce((n,p)=>n+p.target,0),192);assert.equal(x.people.reduce((n,p)=>n+p.done,0),total);assert.equal(x.people.reduce((n,p)=>n+p.left,0),Math.max(0,192-total));assert(x.people.every(p=>p.left>=0));}
+for(const total of [0,40,192,230])for(const target of [0,96,192])for(const done of [0,Math.floor(total/2),total]){const x=collaboration({total:192},{self_claimed:1,collected:total,partner_target:target,partner_done:done});assert.equal(x.people.reduce((n,p)=>n+p.target,0),192);assert.equal(x.people.reduce((n,p)=>n+p.done,0),total);assert.equal(x.people.reduce((n,p)=>n+p.left,0),Math.max(0,192-total));assert(x.people.every(p=>p.left>=0));}
 assert.equal(collaboration({total:192},{owner:'哈沁咪',collected:60,partner_target:96,partner_done:20}).people[0].name,'浮光若水');
 assert.equal(collaboration({total:192},{owner:'既有紀錄',collected:60,partner_target:96,partner_done:20}).people[1].name,'既有紀錄');
 console.log('Passed: named allocations, legacy ownership, automatic combined totals, shared surplus offsets, two-person shortage conservation.');
