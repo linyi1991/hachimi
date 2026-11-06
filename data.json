@@ -1,0 +1,3330 @@
+{
+  "items": [
+    {
+      "id": "m001",
+      "name": "胡桃木材",
+      "en": "Walnut Lumber",
+      "start": 72,
+      "upgrade": 96,
+      "total": 168,
+      "group": "木材",
+      "recipe": {
+        "yield": 1,
+        "items": {
+          "胡桃原木": 3,
+          "風之碎晶": 2
+        },
+        "url": "https://ffxiv.consolegameswiki.com/wiki/Walnut_Lumber"
+      },
+      "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/recipe/3fa325ca4ff/",
+      "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/3f9bd918147/",
+      "uses": [
+        {
+          "part": "鯊魚級船體",
+          "qty": 72
+        },
+        {
+          "part": "鬚鯨級船體",
+          "qty": 96
+        }
+      ]
+    },
+    {
+      "id": "m002",
+      "name": "雲杉木材",
+      "en": "Spruce Lumber",
+      "start": 72,
+      "upgrade": 96,
+      "total": 168,
+      "group": "木材",
+      "recipe": {
+        "yield": 1,
+        "items": {
+          "雲杉原木": 3,
+          "風之水晶": 3
+        },
+        "url": "https://ffxiv.consolegameswiki.com/wiki/Spruce_Lumber"
+      },
+      "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/recipe/34cae3266e7/",
+      "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/f9b83cba7a9/",
+      "uses": [
+        {
+          "part": "鯊魚級船體",
+          "qty": 72
+        },
+        {
+          "part": "鬚鯨級船體",
+          "qty": 96
+        }
+      ]
+    },
+    {
+      "id": "m003",
+      "name": "黑鐵釘",
+      "en": "Iron Nails",
+      "start": 156,
+      "upgrade": 96,
+      "total": 252,
+      "group": "金屬",
+      "recipe": {
+        "yield": 1,
+        "items": {
+          "黑鐵錠": 1,
+          "火之碎晶": 1
+        },
+        "url": "https://ffxiv.consolegameswiki.com/wiki/Iron_Nails"
+      },
+      "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/recipe/f921feddde9/",
+      "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/624bee52d8b/",
+      "uses": [
+        {
+          "part": "鯊魚級船體",
+          "qty": 72
+        },
+        {
+          "part": "鯊魚級艦橋",
+          "qty": 84
+        },
+        {
+          "part": "鬚鯨級船體",
+          "qty": 96
+        }
+      ]
+    },
+    {
+      "id": "m004",
+      "name": "鈷鐵錠",
+      "en": "Cobalt Ingot",
+      "start": 600,
+      "upgrade": 0,
+      "total": 600,
+      "group": "金屬",
+      "recipe": {
+        "yield": 1,
+        "items": {
+          "鈷鐵礦": 2,
+          "鐵礦": 1,
+          "火之碎晶": 5
+        },
+        "url": "https://ffxiv.consolegameswiki.com/wiki/Cobalt_Ingot"
+      },
+      "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/recipe/831354d691d/",
+      "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/061c3d4a71a/",
+      "uses": [
+        {
+          "part": "鯊魚級船體",
+          "qty": 144
+        },
+        {
+          "part": "鯊魚級船尾",
+          "qty": 312
+        },
+        {
+          "part": "鯊魚級船首",
+          "qty": 72
+        },
+        {
+          "part": "鯊魚級艦橋",
+          "qty": 72
+        }
+      ]
+    },
+    {
+      "id": "m005",
+      "name": "雪松木材",
+      "en": "Cedar Lumber",
+      "start": 36,
+      "upgrade": 0,
+      "total": 36,
+      "group": "木材",
+      "recipe": {
+        "yield": 1,
+        "items": {
+          "雪松原木": 5,
+          "風之水晶": 3
+        },
+        "url": "https://ffxiv.consolegameswiki.com/wiki/Cedar_Lumber"
+      },
+      "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/recipe/4eda163a80c/",
+      "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/f1a2cdff07f/",
+      "uses": [
+        {
+          "part": "鯊魚級船體",
+          "qty": 36
+        }
+      ]
+    },
+    {
+      "id": "m006",
+      "name": "黑鐵鉚釘",
+      "en": "Iron Rivets",
+      "start": 156,
+      "upgrade": 0,
+      "total": 156,
+      "group": "金屬",
+      "recipe": {
+        "yield": 1,
+        "items": {
+          "黑鐵錠": 1,
+          "火之碎晶": 1
+        },
+        "url": "https://ffxiv.consolegameswiki.com/wiki/Iron_Rivets"
+      },
+      "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/recipe/4d1a989cd74/",
+      "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/168c0c69e15/",
+      "uses": [
+        {
+          "part": "鯊魚級船體",
+          "qty": 72
+        },
+        {
+          "part": "鯊魚級艦橋",
+          "qty": 84
+        }
+      ]
+    },
+    {
+      "id": "m007",
+      "name": "秘銀板",
+      "en": "Mythril Plate",
+      "start": 72,
+      "upgrade": 0,
+      "total": 72,
+      "group": "金屬",
+      "recipe": {
+        "yield": 1,
+        "items": {
+          "秘銀錠": 2,
+          "冰之碎晶": 4
+        },
+        "url": "https://ffxiv.consolegameswiki.com/wiki/Mythril_Plate"
+      },
+      "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/recipe/fc4635e747a/",
+      "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/68cf5c88a93/",
+      "uses": [
+        {
+          "part": "鯊魚級船體",
+          "qty": 72
+        }
+      ]
+    },
+    {
+      "id": "m008",
+      "name": "綠金錠",
+      "en": "Electrum Ingot",
+      "start": 156,
+      "upgrade": 0,
+      "total": 156,
+      "group": "金屬",
+      "recipe": {
+        "yield": 1,
+        "items": {
+          "綠金礦": 4,
+          "風之碎晶": 5
+        },
+        "url": "https://ffxiv.consolegameswiki.com/wiki/Electrum_Ingot"
+      },
+      "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/recipe/e923f92e9e5/",
+      "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/a5be16ac908/",
+      "uses": [
+        {
+          "part": "鯊魚級船體",
+          "qty": 72
+        },
+        {
+          "part": "鯊魚級艦橋",
+          "qty": 84
+        }
+      ]
+    },
+    {
+      "id": "m009",
+      "name": "鬼膠",
+      "en": "Horn Glue",
+      "start": 72,
+      "upgrade": 0,
+      "total": 72,
+      "group": "煉金",
+      "recipe": {
+        "yield": 1,
+        "items": {
+          "山羊角": 2,
+          "水之碎晶": 3
+        },
+        "url": "https://ffxiv.consolegameswiki.com/wiki/Horn_Glue"
+      },
+      "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/recipe/acc0108e582/",
+      "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/dbd4ac8fcca/",
+      "uses": [
+        {
+          "part": "鯊魚級船體",
+          "qty": 72
+        }
+      ]
+    },
+    {
+      "id": "m010",
+      "name": "秘銀鉚釘",
+      "en": "Mythril Rivets",
+      "start": 312,
+      "upgrade": 120,
+      "total": 432,
+      "group": "金屬",
+      "recipe": {
+        "yield": 1,
+        "items": {
+          "秘銀錠": 1,
+          "火之碎晶": 5
+        },
+        "url": "https://ffxiv.consolegameswiki.com/wiki/Mythril_Rivets"
+      },
+      "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/recipe/bb9bf6a238a/",
+      "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/7eda99f554a/",
+      "uses": [
+        {
+          "part": "鯊魚級船體",
+          "qty": 72
+        },
+        {
+          "part": "鯊魚級船尾",
+          "qty": 120
+        },
+        {
+          "part": "鯊魚級船首",
+          "qty": 120
+        },
+        {
+          "part": "甲鱟級船首",
+          "qty": 120
+        }
+      ]
+    },
+    {
+      "id": "m011",
+      "name": "玫瑰金錠",
+      "en": "Rose Gold Ingot",
+      "start": 84,
+      "upgrade": 168,
+      "total": 252,
+      "group": "金屬",
+      "recipe": {
+        "yield": 1,
+        "items": {
+          "玫瑰金塊": 2,
+          "斑銅礦": 9,
+          "風之晶簇": 1
+        },
+        "url": "https://ffxiv.consolegameswiki.com/wiki/Rose_Gold_Ingot"
+      },
+      "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/recipe/96529fc98bf/",
+      "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/0fd5762e1a2/",
+      "uses": [
+        {
+          "part": "鯊魚級船體",
+          "qty": 84
+        },
+        {
+          "part": "鬚鯨級船體",
+          "qty": 96
+        },
+        {
+          "part": "甲鱟級船首",
+          "qty": 72
+        }
+      ]
+    },
+    {
+      "id": "m012",
+      "name": "清漆",
+      "en": "Varnish",
+      "start": 72,
+      "upgrade": 120,
+      "total": 192,
+      "group": "煉金",
+      "recipe": {
+        "yield": 1,
+        "items": {
+          "琥珀原石": 2,
+          "亞麻油": 1,
+          "松節油": 1,
+          "水之碎晶": 5
+        },
+        "url": "https://ffxiv.consolegameswiki.com/wiki/Varnish"
+      },
+      "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/recipe/cc9e646a1ac/",
+      "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/d46b5e64291/",
+      "uses": [
+        {
+          "part": "鯊魚級船體",
+          "qty": 72
+        },
+        {
+          "part": "鬚鯨級船體",
+          "qty": 120
+        }
+      ]
+    },
+    {
+      "id": "m013",
+      "name": "白鋼鉚釘",
+      "en": "Steel Rivets",
+      "start": 504,
+      "upgrade": 120,
+      "total": 624,
+      "group": "金屬",
+      "recipe": {
+        "yield": 1,
+        "items": {
+          "白鋼錠": 1,
+          "火之碎晶": 3
+        },
+        "url": "https://ffxiv.consolegameswiki.com/wiki/Steel_Rivets"
+      },
+      "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/recipe/8167582a8b7/",
+      "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/06d767af9ca/",
+      "uses": [
+        {
+          "part": "鯊魚級船尾",
+          "qty": 96
+        },
+        {
+          "part": "鯊魚級船首",
+          "qty": 240
+        },
+        {
+          "part": "鯊魚級艦橋",
+          "qty": 168
+        },
+        {
+          "part": "甲鱟級船首",
+          "qty": 120
+        }
+      ]
+    },
+    {
+      "id": "m014",
+      "name": "白鋼錠",
+      "en": "Steel Ingot",
+      "start": 420,
+      "upgrade": 120,
+      "total": 540,
+      "group": "金屬",
+      "recipe": {
+        "yield": 1,
+        "items": {
+          "炸彈的灰": 1,
+          "鐵礦": 2,
+          "火之碎晶": 2
+        },
+        "url": "https://ffxiv.consolegameswiki.com/wiki/Steel_Ingot"
+      },
+      "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/recipe/1b8f52a3c5e/",
+      "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/c75db0a8725/",
+      "uses": [
+        {
+          "part": "鯊魚級船尾",
+          "qty": 216
+        },
+        {
+          "part": "鯊魚級船首",
+          "qty": 120
+        },
+        {
+          "part": "鯊魚級艦橋",
+          "qty": 84
+        },
+        {
+          "part": "甲鱟級船首",
+          "qty": 120
+        }
+      ]
+    },
+    {
+      "id": "m015",
+      "name": "鈷鐵連接板",
+      "en": "Cobalt Joint Plate",
+      "start": 216,
+      "upgrade": 240,
+      "total": 456,
+      "group": "金屬",
+      "recipe": {
+        "yield": 1,
+        "items": {
+          "鈷鐵錠": 1,
+          "冰之碎晶": 5
+        },
+        "url": "https://ffxiv.consolegameswiki.com/wiki/Cobalt_Joint_Plate"
+      },
+      "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/recipe/93c9cd2712b/",
+      "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/fb8646a854e/",
+      "uses": [
+        {
+          "part": "鯊魚級船尾",
+          "qty": 96
+        },
+        {
+          "part": "鯊魚級船首",
+          "qty": 120
+        },
+        {
+          "part": "甲鱟級船首",
+          "qty": 120
+        },
+        {
+          "part": "腔棘魚級艦橋",
+          "qty": 120
+        }
+      ]
+    },
+    {
+      "id": "m016",
+      "name": "玄鋼錠",
+      "en": "Darksteel Ingot",
+      "start": 180,
+      "upgrade": 36,
+      "total": 216,
+      "group": "金屬",
+      "recipe": {
+        "yield": 1,
+        "items": {
+          "玄鋼塊": 2,
+          "焦炭": 9,
+          "火之晶簇": 1
+        },
+        "url": "https://ffxiv.consolegameswiki.com/wiki/Darksteel_Ingot"
+      },
+      "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/recipe/1ca69de19eb/",
+      "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/b05cd22dabd/",
+      "uses": [
+        {
+          "part": "鯊魚級船尾",
+          "qty": 36
+        },
+        {
+          "part": "鯊魚級船首",
+          "qty": 48
+        },
+        {
+          "part": "鯊魚級艦橋",
+          "qty": 96
+        },
+        {
+          "part": "甲鱟級船首",
+          "qty": 36
+        }
+      ]
+    },
+    {
+      "id": "m017",
+      "name": "白鋼連接板",
+      "en": "Steel Joint Plate",
+      "start": 240,
+      "upgrade": 120,
+      "total": 360,
+      "group": "金屬",
+      "recipe": {
+        "yield": 1,
+        "items": {
+          "白鋼錠": 1,
+          "冰之碎晶": 3
+        },
+        "url": "https://ffxiv.consolegameswiki.com/wiki/Steel_Joint_Plate"
+      },
+      "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/recipe/a81ff952b60/",
+      "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/cfcc919561a/",
+      "uses": [
+        {
+          "part": "鯊魚級船尾",
+          "qty": 120
+        },
+        {
+          "part": "鯊魚級船首",
+          "qty": 120
+        },
+        {
+          "part": "甲鱟級船首",
+          "qty": 120
+        }
+      ]
+    },
+    {
+      "id": "m018",
+      "name": "古神木材",
+      "en": "Ancient Lumber",
+      "start": 72,
+      "upgrade": 0,
+      "total": 72,
+      "group": "木材",
+      "recipe": {
+        "yield": 1,
+        "items": {
+          "矽化木": 1,
+          "緋紅樹汁": 1,
+          "風之晶簇": 2,
+          "冰之晶簇": 1
+        },
+        "url": "https://ffxiv.consolegameswiki.com/wiki/Ancient_Lumber"
+      },
+      "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/recipe/a49b474522c/",
+      "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/a917bb98f6d/",
+      "uses": [
+        {
+          "part": "鯊魚級船尾",
+          "qty": 36
+        },
+        {
+          "part": "鯊魚級船首",
+          "qty": 36
+        }
+      ]
+    },
+    {
+      "id": "m019",
+      "name": "白銀錠",
+      "en": "Silver Ingot",
+      "start": 240,
+      "upgrade": 0,
+      "total": 240,
+      "group": "金屬",
+      "recipe": {
+        "yield": 1,
+        "items": {
+          "銀礦": 3,
+          "風之碎晶": 2
+        },
+        "url": "https://ffxiv.consolegameswiki.com/wiki/Silver_Ingot"
+      },
+      "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/recipe/00c3b770471/",
+      "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/5f54ee1566c/",
+      "uses": [
+        {
+          "part": "鯊魚級船尾",
+          "qty": 120
+        },
+        {
+          "part": "鯊魚級船首",
+          "qty": 120
+        }
+      ]
+    },
+    {
+      "id": "m020",
+      "name": "硬化雲杉木材",
+      "en": "Treated Spruce Lumber",
+      "start": 48,
+      "upgrade": 0,
+      "total": 48,
+      "group": "木材",
+      "recipe": {
+        "yield": 1,
+        "items": {
+          "雲杉木材": 2,
+          "樹汁塊": 9,
+          "風之晶簇": 1
+        },
+        "url": "https://ffxiv.consolegameswiki.com/wiki/Treated_Spruce_Lumber"
+      },
+      "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/recipe/7932fd9a9dc/",
+      "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/cec3fe85cfa/",
+      "uses": [
+        {
+          "part": "鯊魚級艦橋",
+          "qty": 48
+        }
+      ]
+    },
+    {
+      "id": "m021",
+      "name": "玄鋼塊",
+      "en": "Darksteel Nugget",
+      "start": 84,
+      "upgrade": 0,
+      "total": 84,
+      "group": "金屬",
+      "recipe": {
+        "yield": 1,
+        "items": {
+          "火之水晶": 3,
+          "玄鐵礦": 3
+        },
+        "url": "https://ffxiv.consolegameswiki.com/wiki/Darksteel_Nugget"
+      },
+      "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/recipe/1476e71b859/",
+      "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/f77dec88832/",
+      "uses": [
+        {
+          "part": "鯊魚級艦橋",
+          "qty": 84
+        }
+      ]
+    },
+    {
+      "id": "m022",
+      "name": "鈷鐵鉚釘",
+      "en": "Cobalt Rivets",
+      "start": 84,
+      "upgrade": 456,
+      "total": 540,
+      "group": "金屬",
+      "recipe": {
+        "yield": 1,
+        "items": {
+          "鈷鐵錠": 1,
+          "火之碎晶": 5
+        },
+        "url": "https://ffxiv.consolegameswiki.com/wiki/Cobalt_Rivets"
+      },
+      "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/recipe/6b2ecb81dd5/",
+      "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/99bf30fe06c/",
+      "uses": [
+        {
+          "part": "鯊魚級艦橋",
+          "qty": 84
+        },
+        {
+          "part": "鬚鯨級船體",
+          "qty": 216
+        },
+        {
+          "part": "甲鱟級船首",
+          "qty": 120
+        },
+        {
+          "part": "腔棘魚級艦橋",
+          "qty": 120
+        }
+      ]
+    },
+    {
+      "id": "m023",
+      "name": "加隆德鋼",
+      "en": "Garlond Steel",
+      "start": 0,
+      "upgrade": 72,
+      "total": 72,
+      "group": "金屬",
+      "recipe": {
+        "yield": 1,
+        "items": {
+          "藍鐵礦": 3,
+          "焦炭": 9,
+          "鈷鐵礦": 3,
+          "火之晶簇": 1,
+          "土之晶簇": 1
+        },
+        "url": "https://ffxiv.consolegameswiki.com/wiki/Garlond_Steel"
+      },
+      "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/recipe/7c6bf98b237/",
+      "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/a01b0952853/",
+      "uses": [
+        {
+          "part": "鬚鯨級船體",
+          "qty": 36
+        },
+        {
+          "part": "甲鱟級船首",
+          "qty": 36
+        }
+      ]
+    },
+    {
+      "id": "m024",
+      "name": "聖雪松材",
+      "en": "Holy Cedar Lumber",
+      "start": 0,
+      "upgrade": 48,
+      "total": 48,
+      "group": "木材",
+      "recipe": {
+        "yield": 1,
+        "items": {
+          "雪松木材": 1,
+          "聖水": 2,
+          "風之水晶": 3
+        },
+        "url": "https://ffxiv.consolegameswiki.com/wiki/Holy_Cedar_Lumber"
+      },
+      "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/recipe/2cf64df2661/",
+      "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/4627ab8fad9/",
+      "uses": [
+        {
+          "part": "鬚鯨級船體",
+          "qty": 48
+        }
+      ]
+    },
+    {
+      "id": "m025",
+      "name": "鈷鐵板",
+      "en": "Cobalt Plate",
+      "start": 0,
+      "upgrade": 168,
+      "total": 168,
+      "group": "金屬",
+      "recipe": {
+        "yield": 1,
+        "items": {
+          "鈷鐵錠": 2,
+          "冰之碎晶": 5
+        },
+        "url": "https://ffxiv.consolegameswiki.com/wiki/Cobalt_Plate"
+      },
+      "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/recipe/9d78c34f787/",
+      "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/8505d0645a6/",
+      "uses": [
+        {
+          "part": "鬚鯨級船體",
+          "qty": 96
+        },
+        {
+          "part": "腔棘魚級艦橋",
+          "qty": 72
+        }
+      ]
+    },
+    {
+      "id": "m026",
+      "name": "黑膠",
+      "en": "Void Glue",
+      "start": 0,
+      "upgrade": 48,
+      "total": 48,
+      "group": "煉金",
+      "recipe": {
+        "yield": 1,
+        "items": {
+          "明膠怪的肉": 3,
+          "布丁的肉": 2,
+          "水之水晶": 3
+        },
+        "url": "https://ffxiv.consolegameswiki.com/wiki/Void_Glue"
+      },
+      "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/recipe/8b7a387c6d0/",
+      "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/072cc4898b8/",
+      "uses": [
+        {
+          "part": "鬚鯨級船體",
+          "qty": 48
+        }
+      ]
+    },
+    {
+      "id": "m027",
+      "name": "靈銀錠",
+      "en": "Mythrite Ingot",
+      "start": 0,
+      "upgrade": 336,
+      "total": 336,
+      "group": "金屬",
+      "recipe": {
+        "yield": 1,
+        "items": {
+          "靈銀礦": 4,
+          "靈銀塊": 1,
+          "火之水晶": 3
+        },
+        "url": "https://ffxiv.consolegameswiki.com/wiki/Mythrite_Ingot"
+      },
+      "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/recipe/e22bdafb955/",
+      "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/42cc4c8cad6/",
+      "uses": [
+        {
+          "part": "鬚鯨級船體",
+          "qty": 72
+        },
+        {
+          "part": "甲鱟級船首",
+          "qty": 72
+        },
+        {
+          "part": "腔棘魚級艦橋",
+          "qty": 192
+        }
+      ]
+    },
+    {
+      "id": "m028",
+      "name": "蒼天石",
+      "en": "Celestine",
+      "start": 0,
+      "upgrade": 36,
+      "total": 36,
+      "group": "寶石",
+      "recipe": {
+        "yield": 1,
+        "items": {
+          "蒼天石原石": 3,
+          "沉積岩磨刀石": 9,
+          "風之晶簇": 1,
+          "火之晶簇": 1
+        },
+        "url": "https://ffxiv.consolegameswiki.com/wiki/Celestine"
+      },
+      "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/recipe/eaf6ca8ade6/",
+      "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/19c30b3f4cc/",
+      "uses": [
+        {
+          "part": "鬚鯨級船體",
+          "qty": 36
+        }
+      ]
+    },
+    {
+      "id": "m029",
+      "name": "玄鋼板",
+      "en": "Darksteel Plate",
+      "start": 0,
+      "upgrade": 36,
+      "total": 36,
+      "group": "金屬",
+      "recipe": {
+        "yield": 1,
+        "items": {
+          "玄鋼塊": 2,
+          "冰之水晶": 3
+        },
+        "url": "https://ffxiv.consolegameswiki.com/wiki/Darksteel_Plate"
+      },
+      "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/recipe/0c603ba90c3/",
+      "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/e24f6b76458/",
+      "uses": [
+        {
+          "part": "甲鱟級船首",
+          "qty": 36
+        }
+      ]
+    },
+    {
+      "id": "m030",
+      "name": "秘銀錠",
+      "en": "Mythril Ingot",
+      "start": 0,
+      "upgrade": 120,
+      "total": 120,
+      "group": "金屬",
+      "recipe": {
+        "yield": 1,
+        "items": {
+          "秘銀礦": 3,
+          "火之碎晶": 4
+        },
+        "url": "https://ffxiv.consolegameswiki.com/wiki/Mythril_Ingot"
+      },
+      "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/recipe/fbb8326d3e0/",
+      "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/5eddc1855a4/",
+      "uses": [
+        {
+          "part": "甲鱟級船首",
+          "qty": 120
+        }
+      ]
+    },
+    {
+      "id": "m031",
+      "name": "玻璃板",
+      "en": "Clear Glass Lens",
+      "start": 0,
+      "upgrade": 120,
+      "total": 120,
+      "group": "煉金",
+      "recipe": {
+        "yield": 1,
+        "items": {
+          "矽砂": 1,
+          "泡鹼": 1,
+          "水之碎晶": 3
+        },
+        "url": "https://ffxiv.consolegameswiki.com/wiki/Clear_Glass_Lens"
+      },
+      "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/recipe/ab9508dade3/",
+      "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/9902d9a76aa/",
+      "uses": [
+        {
+          "part": "甲鱟級船首",
+          "qty": 120
+        }
+      ]
+    },
+    {
+      "id": "m032",
+      "name": "白金塊",
+      "en": "Platinum Nugget",
+      "start": 0,
+      "upgrade": 48,
+      "total": 48,
+      "group": "金屬",
+      "recipe": {
+        "yield": 1,
+        "items": {
+          "白金礦": 3,
+          "風之晶簇": 2,
+          "火之晶簇": 1
+        },
+        "url": "https://ffxiv.consolegameswiki.com/wiki/Platinum_Nugget"
+      },
+      "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/recipe/256f6e01787/",
+      "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/de869373c91/",
+      "uses": [
+        {
+          "part": "腔棘魚級艦橋",
+          "qty": 48
+        }
+      ]
+    },
+    {
+      "id": "m033",
+      "name": "玄鋼鉚釘",
+      "en": "Darksteel Rivets",
+      "start": 0,
+      "upgrade": 144,
+      "total": 144,
+      "group": "金屬",
+      "recipe": {
+        "yield": 1,
+        "items": {
+          "玄鋼塊": 1,
+          "火之水晶": 3
+        },
+        "url": "https://ffxiv.consolegameswiki.com/wiki/Darksteel_Rivets"
+      },
+      "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/recipe/349c57266cb/",
+      "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/543f0cc9eb6/",
+      "uses": [
+        {
+          "part": "腔棘魚級艦橋",
+          "qty": 144
+        }
+      ]
+    },
+    {
+      "id": "m034",
+      "name": "鐵刀木木材",
+      "en": "Cassia Lumber",
+      "start": 0,
+      "upgrade": 36,
+      "total": 36,
+      "group": "木材",
+      "recipe": {
+        "yield": 1,
+        "items": {
+          "鐵刀木": 3,
+          "樹汁塊": 9,
+          "風之晶簇": 2,
+          "冰之晶簇": 1
+        },
+        "url": "https://ffxiv.consolegameswiki.com/wiki/Cassia_Lumber"
+      },
+      "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/recipe/d1b894414e6/",
+      "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/c3914d1d368/",
+      "uses": [
+        {
+          "part": "腔棘魚級艦橋",
+          "qty": 36
+        }
+      ]
+    },
+    {
+      "id": "m035",
+      "name": "白鈦錠",
+      "en": "Titanium Ingot",
+      "start": 0,
+      "upgrade": 120,
+      "total": 120,
+      "group": "金屬",
+      "recipe": {
+        "yield": 1,
+        "items": {
+          "白雲母": 4,
+          "白鈦塊": 1,
+          "火之水晶": 5
+        },
+        "url": "https://ffxiv.consolegameswiki.com/wiki/Titanium_Ingot"
+      },
+      "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/recipe/affd1b8fb6a/",
+      "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/71b9a21b0fb/",
+      "uses": [
+        {
+          "part": "腔棘魚級艦橋",
+          "qty": 120
+        }
+      ]
+    },
+    {
+      "id": "m036",
+      "name": "玫瑰金塊",
+      "en": "Rose Gold Nugget",
+      "start": 0,
+      "upgrade": 120,
+      "total": 120,
+      "group": "金屬",
+      "recipe": {
+        "yield": 1,
+        "items": {
+          "金礦": 3,
+          "銅礦": 1,
+          "風之水晶": 3
+        },
+        "url": "https://ffxiv.consolegameswiki.com/wiki/Rose_Gold_Nugget"
+      },
+      "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/recipe/b293664d9f6/",
+      "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/f5a8fa09ad0/",
+      "uses": [
+        {
+          "part": "腔棘魚級艦橋",
+          "qty": 120
+        }
+      ]
+    },
+    {
+      "id": "m037",
+      "name": "水淙石",
+      "en": "Larimar",
+      "start": 0,
+      "upgrade": 48,
+      "total": 48,
+      "group": "寶石",
+      "recipe": {
+        "yield": 1,
+        "items": {
+          "水淙石原石": 3,
+          "蛋殼磨刀石": 1,
+          "風之水晶": 4
+        },
+        "url": "https://ffxiv.consolegameswiki.com/wiki/Larimar"
+      },
+      "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/recipe/f1c6173ed3a/",
+      "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/558e8b93077/",
+      "uses": [
+        {
+          "part": "腔棘魚級艦橋",
+          "qty": 48
+        }
+      ]
+    },
+    {
+      "id": "m038",
+      "name": "黃玉",
+      "en": "Topaz",
+      "start": 0,
+      "upgrade": 24,
+      "total": 24,
+      "group": "寶石",
+      "recipe": {
+        "yield": 1,
+        "items": {
+          "金剛沙": 1,
+          "黃玉原石": 1,
+          "風之晶簇": 2,
+          "火之晶簇": 1
+        },
+        "url": "https://ffxiv.consolegameswiki.com/wiki/Topaz"
+      },
+      "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/recipe/373df9a07b7/",
+      "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/21a8a61693f/",
+      "uses": [
+        {
+          "part": "腔棘魚級艦橋",
+          "qty": 24
+        }
+      ]
+    }
+  ],
+  "parts": [
+    {
+      "name": "鯊魚級船體",
+      "en": "Shark-class Pressure Hull",
+      "qty": 4,
+      "rank": 1,
+      "stage": "start",
+      "ingredients": {
+        "胡桃木材": 18,
+        "雲杉木材": 18,
+        "黑鐵釘": 18,
+        "鈷鐵錠": 36,
+        "雪松木材": 9,
+        "黑鐵鉚釘": 18,
+        "秘銀板": 18,
+        "綠金錠": 18,
+        "鬼膠": 18,
+        "秘銀鉚釘": 18,
+        "玫瑰金錠": 21,
+        "清漆": 18
+      },
+      "url": "https://ffxiv.consolegameswiki.com/wiki/Shark-class_Pressure_Hull",
+      "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/5e533fbb360/"
+    },
+    {
+      "name": "鯊魚級船尾",
+      "en": "Shark-class Stern",
+      "qty": 4,
+      "rank": 1,
+      "stage": "start",
+      "ingredients": {
+        "白鋼鉚釘": 24,
+        "鈷鐵錠": 78,
+        "白鋼錠": 54,
+        "鈷鐵連接板": 24,
+        "玄鋼錠": 9,
+        "白鋼連接板": 30,
+        "古神木材": 9,
+        "秘銀鉚釘": 30,
+        "白銀錠": 30
+      },
+      "url": "https://ffxiv.consolegameswiki.com/wiki/Shark-class_Stern",
+      "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/02e3af49c16/"
+    },
+    {
+      "name": "鯊魚級船首",
+      "en": "Shark-class Bow",
+      "qty": 4,
+      "rank": 1,
+      "stage": "start",
+      "ingredients": {
+        "白鋼錠": 30,
+        "白鋼鉚釘": 60,
+        "鈷鐵連接板": 30,
+        "鈷鐵錠": 18,
+        "白鋼連接板": 30,
+        "玄鋼錠": 12,
+        "古神木材": 9,
+        "秘銀鉚釘": 30,
+        "白銀錠": 30
+      },
+      "url": "https://ffxiv.consolegameswiki.com/wiki/Shark-class_Bow",
+      "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/602399ffffe/"
+    },
+    {
+      "name": "鯊魚級艦橋",
+      "en": "Shark-class Bridge",
+      "qty": 4,
+      "rank": 1,
+      "stage": "start",
+      "ingredients": {
+        "硬化雲杉木材": 12,
+        "玄鋼塊": 21,
+        "黑鐵釘": 21,
+        "黑鐵鉚釘": 21,
+        "白鋼錠": 21,
+        "白鋼鉚釘": 42,
+        "玄鋼錠": 24,
+        "鈷鐵鉚釘": 21,
+        "鈷鐵錠": 18,
+        "綠金錠": 21
+      },
+      "url": "https://ffxiv.consolegameswiki.com/wiki/Shark-class_Bridge",
+      "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/94903100f7a/"
+    },
+    {
+      "name": "鬚鯨級船體",
+      "en": "Whale-class Pressure Hull",
+      "qty": 4,
+      "rank": 25,
+      "stage": "upgrade",
+      "ingredients": {
+        "胡桃木材": 24,
+        "雲杉木材": 24,
+        "黑鐵釘": 24,
+        "加隆德鋼": 9,
+        "聖雪松材": 12,
+        "鈷鐵鉚釘": 54,
+        "鈷鐵板": 24,
+        "玫瑰金錠": 24,
+        "黑膠": 12,
+        "靈銀錠": 18,
+        "蒼天石": 9,
+        "清漆": 30
+      },
+      "url": "https://ffxiv.consolegameswiki.com/wiki/Whale-class_Pressure_Hull",
+      "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/15e326e19d9/"
+    },
+    {
+      "name": "甲鱟級船首",
+      "en": "Unkiu-class Bow",
+      "qty": 4,
+      "rank": 15,
+      "stage": "upgrade",
+      "ingredients": {
+        "白鋼錠": 30,
+        "鈷鐵鉚釘": 30,
+        "鈷鐵連接板": 30,
+        "加隆德鋼": 9,
+        "白鋼鉚釘": 30,
+        "靈銀錠": 18,
+        "白鋼連接板": 30,
+        "玄鋼錠": 9,
+        "秘銀鉚釘": 30,
+        "玄鋼板": 9,
+        "秘銀錠": 30,
+        "玫瑰金錠": 18,
+        "玻璃板": 30
+      },
+      "url": "https://ffxiv.consolegameswiki.com/wiki/Unkiu-class_Bow",
+      "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/0eecaaa244a/"
+    },
+    {
+      "name": "腔棘魚級艦橋",
+      "en": "Coelacanth-class Bridge",
+      "qty": 4,
+      "rank": 35,
+      "stage": "upgrade",
+      "ingredients": {
+        "鈷鐵鉚釘": 30,
+        "靈銀錠": 48,
+        "白金塊": 12,
+        "鈷鐵連接板": 30,
+        "鈷鐵板": 18,
+        "玄鋼鉚釘": 36,
+        "鐵刀木木材": 9,
+        "白鈦錠": 30,
+        "玫瑰金塊": 30,
+        "水淙石": 12,
+        "黃玉": 6
+      },
+      "url": "https://ffxiv.consolegameswiki.com/wiki/Coelacanth-class_Bridge",
+      "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/46c9837df28/"
+    }
+  ],
+  "lookups": [
+    {
+      "name": "亞麻油",
+      "en": "Linseed Oil",
+      "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/a977281e15b/",
+      "recipe": "https://na.finalfantasyxiv.com/lodestone/playguide/db/recipe/b23cb8e90da/",
+      "wiki": "https://ffxiv.consolegameswiki.com/wiki/Linseed_Oil",
+      "type": "可製作素材"
+    },
+    {
+      "name": "亞麻",
+      "en": "Flax",
+      "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/bd6d422c454/",
+      "wiki": "https://ffxiv.consolegameswiki.com/wiki/Flax",
+      "type": "投入原料"
+    },
+    {
+      "name": "水之碎晶",
+      "en": "Water Shard",
+      "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/9f967ad6b5a/",
+      "wiki": "https://ffxiv.consolegameswiki.com/wiki/Water_Shard",
+      "type": "投入原料"
+    },
+    {
+      "name": "加隆德鋼",
+      "en": "Garlond Steel",
+      "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/a01b0952853/",
+      "recipe": "https://na.finalfantasyxiv.com/lodestone/playguide/db/recipe/7c6bf98b237/",
+      "wiki": "https://ffxiv.consolegameswiki.com/wiki/Garlond_Steel",
+      "type": "可製作素材"
+    },
+    {
+      "name": "藍鐵礦",
+      "en": "Vivianite",
+      "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/2b1dcb75d78/",
+      "wiki": "https://ffxiv.consolegameswiki.com/wiki/Vivianite",
+      "type": "投入原料"
+    },
+    {
+      "name": "焦炭",
+      "en": "Coke",
+      "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/e7b966f42a9/",
+      "wiki": "https://ffxiv.consolegameswiki.com/wiki/Coke",
+      "type": "投入原料"
+    },
+    {
+      "name": "鈷鐵礦",
+      "en": "Cobalt Ore",
+      "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/b1e9dd56616/",
+      "wiki": "https://ffxiv.consolegameswiki.com/wiki/Cobalt_Ore",
+      "type": "投入原料"
+    },
+    {
+      "name": "火之晶簇",
+      "en": "Fire Cluster",
+      "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/e8ccb4b1f81/",
+      "wiki": "https://ffxiv.consolegameswiki.com/wiki/Fire_Cluster",
+      "type": "投入原料"
+    },
+    {
+      "name": "土之晶簇",
+      "en": "Earth Cluster",
+      "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/c97c6825890/",
+      "wiki": "https://ffxiv.consolegameswiki.com/wiki/Earth_Cluster",
+      "type": "投入原料"
+    },
+    {
+      "name": "古神木材",
+      "en": "Ancient Lumber",
+      "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/a917bb98f6d/",
+      "recipe": "https://na.finalfantasyxiv.com/lodestone/playguide/db/recipe/a49b474522c/",
+      "wiki": "https://ffxiv.consolegameswiki.com/wiki/Ancient_Lumber",
+      "type": "可製作素材"
+    },
+    {
+      "name": "矽化木",
+      "en": "Petrified Log",
+      "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/e0d0eb77dc2/",
+      "wiki": "https://ffxiv.consolegameswiki.com/wiki/Petrified_Log",
+      "type": "投入原料"
+    },
+    {
+      "name": "緋紅樹汁",
+      "en": "Scarlet Sap",
+      "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/564dccc62a5/",
+      "wiki": "https://ffxiv.consolegameswiki.com/wiki/Scarlet_Sap",
+      "type": "投入原料"
+    },
+    {
+      "name": "風之晶簇",
+      "en": "Wind Cluster",
+      "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/b61cbfd2d6e/",
+      "wiki": "https://ffxiv.consolegameswiki.com/wiki/Wind_Cluster",
+      "type": "投入原料"
+    },
+    {
+      "name": "冰之晶簇",
+      "en": "Ice Cluster",
+      "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/4dbe0ec0a76/",
+      "wiki": "https://ffxiv.consolegameswiki.com/wiki/Ice_Cluster",
+      "type": "投入原料"
+    },
+    {
+      "name": "水淙石",
+      "en": "Larimar",
+      "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/558e8b93077/",
+      "recipe": "https://na.finalfantasyxiv.com/lodestone/playguide/db/recipe/f1c6173ed3a/",
+      "wiki": "https://ffxiv.consolegameswiki.com/wiki/Larimar",
+      "type": "可製作素材"
+    },
+    {
+      "name": "水淙石原石",
+      "en": "Raw Larimar",
+      "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/5b407327943/",
+      "wiki": "https://ffxiv.consolegameswiki.com/wiki/Raw_Larimar",
+      "type": "投入原料"
+    },
+    {
+      "name": "蛋殼磨刀石",
+      "en": "Basilisk Whetstone",
+      "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/25c4ca7304f/",
+      "recipe": "https://na.finalfantasyxiv.com/lodestone/playguide/db/recipe/8ba09b3ae81/",
+      "wiki": "https://ffxiv.consolegameswiki.com/wiki/Basilisk_Whetstone",
+      "type": "可製作素材"
+    },
+    {
+      "name": "風之水晶",
+      "en": "Wind Crystal",
+      "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/5db117cd77b/",
+      "wiki": "https://ffxiv.consolegameswiki.com/wiki/Wind_Crystal",
+      "type": "投入原料"
+    },
+    {
+      "name": "泡鹼",
+      "en": "Natron",
+      "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/74e37eafc16/",
+      "recipe": "https://na.finalfantasyxiv.com/lodestone/playguide/db/recipe/2bb4acd4b04/",
+      "wiki": "https://ffxiv.consolegameswiki.com/wiki/Natron",
+      "type": "可製作素材"
+    },
+    {
+      "name": "發泡水",
+      "en": "Effervescent Water",
+      "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/f725bcbf952/",
+      "wiki": "https://ffxiv.consolegameswiki.com/wiki/Effervescent_Water",
+      "type": "投入原料"
+    },
+    {
+      "name": "岩鹽",
+      "en": "Rock Salt",
+      "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/a7c50cf9297/",
+      "wiki": "https://ffxiv.consolegameswiki.com/wiki/Rock_Salt",
+      "type": "投入原料"
+    },
+    {
+      "name": "清漆",
+      "en": "Varnish",
+      "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/d46b5e64291/",
+      "recipe": "https://na.finalfantasyxiv.com/lodestone/playguide/db/recipe/cc9e646a1ac/",
+      "wiki": "https://ffxiv.consolegameswiki.com/wiki/Varnish",
+      "type": "可製作素材"
+    },
+    {
+      "name": "琥珀原石",
+      "en": "Raw Amber",
+      "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/a8ad7758225/",
+      "wiki": "https://ffxiv.consolegameswiki.com/wiki/Raw_Amber",
+      "type": "投入原料"
+    },
+    {
+      "name": "松節油",
+      "en": "Terebinth",
+      "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/f0518ea9f0e/",
+      "wiki": "https://ffxiv.consolegameswiki.com/wiki/Terebinth",
+      "type": "投入原料"
+    },
+    {
+      "name": "玄鋼塊",
+      "en": "Darksteel Nugget",
+      "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/f77dec88832/",
+      "recipe": "https://na.finalfantasyxiv.com/lodestone/playguide/db/recipe/1476e71b859/",
+      "wiki": "https://ffxiv.consolegameswiki.com/wiki/Darksteel_Nugget",
+      "type": "可製作素材"
+    },
+    {
+      "name": "玄鐵礦",
+      "en": "Darksteel Ore",
+      "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/266013cb547/",
+      "wiki": "https://ffxiv.consolegameswiki.com/wiki/Darksteel_Ore",
+      "type": "投入原料"
+    },
+    {
+      "name": "火之水晶",
+      "en": "Fire Crystal",
+      "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/75403105d7f/",
+      "wiki": "https://ffxiv.consolegameswiki.com/wiki/Fire_Crystal",
+      "type": "投入原料"
+    },
+    {
+      "name": "玄鋼板",
+      "en": "Darksteel Plate",
+      "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/e24f6b76458/",
+      "recipe": "https://na.finalfantasyxiv.com/lodestone/playguide/db/recipe/0c603ba90c3/",
+      "wiki": "https://ffxiv.consolegameswiki.com/wiki/Darksteel_Plate",
+      "type": "可製作素材"
+    },
+    {
+      "name": "冰之水晶",
+      "en": "Ice Crystal",
+      "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/2d800a06851/",
+      "wiki": "https://ffxiv.consolegameswiki.com/wiki/Ice_Crystal",
+      "type": "投入原料"
+    },
+    {
+      "name": "玄鋼鉚釘",
+      "en": "Darksteel Rivets",
+      "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/543f0cc9eb6/",
+      "recipe": "https://na.finalfantasyxiv.com/lodestone/playguide/db/recipe/349c57266cb/",
+      "wiki": "https://ffxiv.consolegameswiki.com/wiki/Darksteel_Rivets",
+      "type": "可製作素材"
+    },
+    {
+      "name": "玄鋼錠",
+      "en": "Darksteel Ingot",
+      "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/b05cd22dabd/",
+      "recipe": "https://na.finalfantasyxiv.com/lodestone/playguide/db/recipe/1ca69de19eb/",
+      "wiki": "https://ffxiv.consolegameswiki.com/wiki/Darksteel_Ingot",
+      "type": "可製作素材"
+    },
+    {
+      "name": "玫瑰金塊",
+      "en": "Rose Gold Nugget",
+      "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/f5a8fa09ad0/",
+      "recipe": "https://na.finalfantasyxiv.com/lodestone/playguide/db/recipe/b293664d9f6/",
+      "wiki": "https://ffxiv.consolegameswiki.com/wiki/Rose_Gold_Nugget",
+      "type": "可製作素材"
+    },
+    {
+      "name": "金礦",
+      "en": "Gold Ore",
+      "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/dd538e4d915/",
+      "wiki": "https://ffxiv.consolegameswiki.com/wiki/Gold_Ore",
+      "type": "投入原料"
+    },
+    {
+      "name": "銅礦",
+      "en": "Copper Ore",
+      "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/82a24de366d/",
+      "wiki": "https://ffxiv.consolegameswiki.com/wiki/Copper_Ore",
+      "type": "投入原料"
+    },
+    {
+      "name": "玫瑰金錠",
+      "en": "Rose Gold Ingot",
+      "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/0fd5762e1a2/",
+      "recipe": "https://na.finalfantasyxiv.com/lodestone/playguide/db/recipe/96529fc98bf/",
+      "wiki": "https://ffxiv.consolegameswiki.com/wiki/Rose_Gold_Ingot",
+      "type": "可製作素材"
+    },
+    {
+      "name": "斑銅礦",
+      "en": "Peacock Ore",
+      "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/40555a09fbf/",
+      "wiki": "https://ffxiv.consolegameswiki.com/wiki/Peacock_Ore",
+      "type": "投入原料"
+    },
+    {
+      "name": "玻璃板",
+      "en": "Clear Glass Lens",
+      "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/9902d9a76aa/",
+      "recipe": "https://na.finalfantasyxiv.com/lodestone/playguide/db/recipe/ab9508dade3/",
+      "wiki": "https://ffxiv.consolegameswiki.com/wiki/Clear_Glass_Lens",
+      "type": "可製作素材"
+    },
+    {
+      "name": "矽砂",
+      "en": "Silex",
+      "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/5a8e9c7fcbb/",
+      "wiki": "https://ffxiv.consolegameswiki.com/wiki/Silex",
+      "type": "投入原料"
+    },
+    {
+      "name": "白金塊",
+      "en": "Platinum Nugget",
+      "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/de869373c91/",
+      "recipe": "https://na.finalfantasyxiv.com/lodestone/playguide/db/recipe/256f6e01787/",
+      "wiki": "https://ffxiv.consolegameswiki.com/wiki/Platinum_Nugget",
+      "type": "可製作素材"
+    },
+    {
+      "name": "白金礦",
+      "en": "Platinum Ore",
+      "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/df71799bdeb/",
+      "wiki": "https://ffxiv.consolegameswiki.com/wiki/Platinum_Ore",
+      "type": "投入原料"
+    },
+    {
+      "name": "白鈦塊",
+      "en": "Titanium Nugget",
+      "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/ea9225b9b39/",
+      "recipe": "https://na.finalfantasyxiv.com/lodestone/playguide/db/recipe/b821acbf465/",
+      "wiki": "https://ffxiv.consolegameswiki.com/wiki/Titanium_Nugget",
+      "type": "可製作素材"
+    },
+    {
+      "name": "白鈦礦",
+      "en": "Titanium Ore",
+      "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/f1f08adeb9d/",
+      "wiki": "https://ffxiv.consolegameswiki.com/wiki/Titanium_Ore",
+      "type": "投入原料"
+    },
+    {
+      "name": "鐵礦",
+      "en": "Iron Ore",
+      "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/ad4b9905828/",
+      "wiki": "https://ffxiv.consolegameswiki.com/wiki/Iron_Ore",
+      "type": "投入原料"
+    },
+    {
+      "name": "榴彈怪的灰",
+      "en": "Grenade Ash",
+      "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/db995256183/",
+      "wiki": "https://ffxiv.consolegameswiki.com/wiki/Grenade_Ash",
+      "type": "投入原料"
+    },
+    {
+      "name": "白鈦錠",
+      "en": "Titanium Ingot",
+      "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/71b9a21b0fb/",
+      "recipe": "https://na.finalfantasyxiv.com/lodestone/playguide/db/recipe/affd1b8fb6a/",
+      "wiki": "https://ffxiv.consolegameswiki.com/wiki/Titanium_Ingot",
+      "type": "可製作素材"
+    },
+    {
+      "name": "白雲母",
+      "en": "Cloud Mica",
+      "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/b6a6a34397f/",
+      "wiki": "https://ffxiv.consolegameswiki.com/wiki/Cloud_Mica",
+      "type": "投入原料"
+    },
+    {
+      "name": "白銀錠",
+      "en": "Silver Ingot",
+      "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/5f54ee1566c/",
+      "recipe": "https://na.finalfantasyxiv.com/lodestone/playguide/db/recipe/00c3b770471/",
+      "wiki": "https://ffxiv.consolegameswiki.com/wiki/Silver_Ingot",
+      "type": "可製作素材"
+    },
+    {
+      "name": "銀礦",
+      "en": "Silver Ore",
+      "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/f73ed904e76/",
+      "wiki": "https://ffxiv.consolegameswiki.com/wiki/Silver_Ore",
+      "type": "投入原料"
+    },
+    {
+      "name": "風之碎晶",
+      "en": "Wind Shard",
+      "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/843899bc8f6/",
+      "wiki": "https://ffxiv.consolegameswiki.com/wiki/Wind_Shard",
+      "type": "投入原料"
+    },
+    {
+      "name": "白鋼連接板",
+      "en": "Steel Joint Plate",
+      "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/cfcc919561a/",
+      "recipe": "https://na.finalfantasyxiv.com/lodestone/playguide/db/recipe/a81ff952b60/",
+      "wiki": "https://ffxiv.consolegameswiki.com/wiki/Steel_Joint_Plate",
+      "type": "可製作素材"
+    },
+    {
+      "name": "白鋼錠",
+      "en": "Steel Ingot",
+      "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/c75db0a8725/",
+      "recipe": "https://na.finalfantasyxiv.com/lodestone/playguide/db/recipe/1b8f52a3c5e/",
+      "wiki": "https://ffxiv.consolegameswiki.com/wiki/Steel_Ingot",
+      "type": "可製作素材"
+    },
+    {
+      "name": "冰之碎晶",
+      "en": "Ice Shard",
+      "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/f2dfd367f1e/",
+      "wiki": "https://ffxiv.consolegameswiki.com/wiki/Ice_Shard",
+      "type": "投入原料"
+    },
+    {
+      "name": "白鋼鉚釘",
+      "en": "Steel Rivets",
+      "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/06d767af9ca/",
+      "recipe": "https://na.finalfantasyxiv.com/lodestone/playguide/db/recipe/8167582a8b7/",
+      "wiki": "https://ffxiv.consolegameswiki.com/wiki/Steel_Rivets",
+      "type": "可製作素材"
+    },
+    {
+      "name": "火之碎晶",
+      "en": "Fire Shard",
+      "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/27623d06a42/",
+      "wiki": "https://ffxiv.consolegameswiki.com/wiki/Fire_Shard",
+      "type": "投入原料"
+    },
+    {
+      "name": "炸彈的灰",
+      "en": "Bomb Ash",
+      "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/35c96e0c9f7/",
+      "wiki": "https://ffxiv.consolegameswiki.com/wiki/Bomb_Ash",
+      "type": "投入原料"
+    },
+    {
+      "name": "硬化雲杉木材",
+      "en": "Treated Spruce Lumber",
+      "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/cec3fe85cfa/",
+      "recipe": "https://na.finalfantasyxiv.com/lodestone/playguide/db/recipe/7932fd9a9dc/",
+      "wiki": "https://ffxiv.consolegameswiki.com/wiki/Treated_Spruce_Lumber",
+      "type": "可製作素材"
+    },
+    {
+      "name": "雲杉木材",
+      "en": "Spruce Lumber",
+      "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/f9b83cba7a9/",
+      "recipe": "https://na.finalfantasyxiv.com/lodestone/playguide/db/recipe/34cae3266e7/",
+      "wiki": "https://ffxiv.consolegameswiki.com/wiki/Spruce_Lumber",
+      "type": "可製作素材"
+    },
+    {
+      "name": "樹汁塊",
+      "en": "Hardened Sap",
+      "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/8c834249a3a/",
+      "wiki": "https://ffxiv.consolegameswiki.com/wiki/Hardened_Sap",
+      "type": "投入原料"
+    },
+    {
+      "name": "秘銀板",
+      "en": "Mythril Plate",
+      "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/68cf5c88a93/",
+      "recipe": "https://na.finalfantasyxiv.com/lodestone/playguide/db/recipe/fc4635e747a/",
+      "wiki": "https://ffxiv.consolegameswiki.com/wiki/Mythril_Plate",
+      "type": "可製作素材"
+    },
+    {
+      "name": "秘銀錠",
+      "en": "Mythril Ingot",
+      "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/5eddc1855a4/",
+      "recipe": "https://na.finalfantasyxiv.com/lodestone/playguide/db/recipe/fbb8326d3e0/",
+      "wiki": "https://ffxiv.consolegameswiki.com/wiki/Mythril_Ingot",
+      "type": "可製作素材"
+    },
+    {
+      "name": "秘銀鉚釘",
+      "en": "Mythril Rivets",
+      "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/7eda99f554a/",
+      "recipe": "https://na.finalfantasyxiv.com/lodestone/playguide/db/recipe/bb9bf6a238a/",
+      "wiki": "https://ffxiv.consolegameswiki.com/wiki/Mythril_Rivets",
+      "type": "可製作素材"
+    },
+    {
+      "name": "秘銀礦",
+      "en": "Mythril Ore",
+      "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/85617d1a9d8/",
+      "wiki": "https://ffxiv.consolegameswiki.com/wiki/Mythril_Ore",
+      "type": "投入原料"
+    },
+    {
+      "name": "綠金錠",
+      "en": "Electrum Ingot",
+      "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/a5be16ac908/",
+      "recipe": "https://na.finalfantasyxiv.com/lodestone/playguide/db/recipe/e923f92e9e5/",
+      "wiki": "https://ffxiv.consolegameswiki.com/wiki/Electrum_Ingot",
+      "type": "可製作素材"
+    },
+    {
+      "name": "綠金礦",
+      "en": "Electrum Ore",
+      "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/7bbeaeed3e6/",
+      "wiki": "https://ffxiv.consolegameswiki.com/wiki/Electrum_Ore",
+      "type": "投入原料"
+    },
+    {
+      "name": "聖水",
+      "en": "Holy Water",
+      "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/c44fa01ac3f/",
+      "recipe": "https://na.finalfantasyxiv.com/lodestone/playguide/db/recipe/f9971c1d3d7/",
+      "wiki": "https://ffxiv.consolegameswiki.com/wiki/Holy_Water",
+      "type": "可製作素材"
+    },
+    {
+      "name": "德拉瓦尼亞天然水",
+      "en": "Dravanian Spring Water",
+      "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/b1b95ea9312/",
+      "wiki": "https://ffxiv.consolegameswiki.com/wiki/Dravanian_Spring_Water",
+      "type": "投入原料"
+    },
+    {
+      "name": "德拉瓦尼亞槲寄生",
+      "en": "Dravanian Mistletoe",
+      "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/41e7d3b5a18/",
+      "wiki": "https://ffxiv.consolegameswiki.com/wiki/Dravanian_Mistletoe",
+      "type": "投入原料"
+    },
+    {
+      "name": "水之水晶",
+      "en": "Water Crystal",
+      "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/44d3f4cb26b/",
+      "wiki": "https://ffxiv.consolegameswiki.com/wiki/Water_Crystal",
+      "type": "投入原料"
+    },
+    {
+      "name": "聖雪松材",
+      "en": "Holy Cedar Lumber",
+      "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/4627ab8fad9/",
+      "recipe": "https://na.finalfantasyxiv.com/lodestone/playguide/db/recipe/2cf64df2661/",
+      "wiki": "https://ffxiv.consolegameswiki.com/wiki/Holy_Cedar_Lumber",
+      "type": "可製作素材"
+    },
+    {
+      "name": "雪松木材",
+      "en": "Cedar Lumber",
+      "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/f1a2cdff07f/",
+      "recipe": "https://na.finalfantasyxiv.com/lodestone/playguide/db/recipe/4eda163a80c/",
+      "wiki": "https://ffxiv.consolegameswiki.com/wiki/Cedar_Lumber",
+      "type": "可製作素材"
+    },
+    {
+      "name": "胡桃木材",
+      "en": "Walnut Lumber",
+      "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/3f9bd918147/",
+      "recipe": "https://na.finalfantasyxiv.com/lodestone/playguide/db/recipe/3fa325ca4ff/",
+      "wiki": "https://ffxiv.consolegameswiki.com/wiki/Walnut_Lumber",
+      "type": "可製作素材"
+    },
+    {
+      "name": "胡桃原木",
+      "en": "Walnut Log",
+      "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/546a74b14ce/",
+      "wiki": "https://ffxiv.consolegameswiki.com/wiki/Walnut_Log",
+      "type": "投入原料"
+    },
+    {
+      "name": "蒼天石",
+      "en": "Celestine",
+      "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/19c30b3f4cc/",
+      "recipe": "https://na.finalfantasyxiv.com/lodestone/playguide/db/recipe/eaf6ca8ade6/",
+      "wiki": "https://ffxiv.consolegameswiki.com/wiki/Celestine",
+      "type": "可製作素材"
+    },
+    {
+      "name": "蒼天石原石",
+      "en": "Raw Celestine",
+      "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/208ad7b8a06/",
+      "wiki": "https://ffxiv.consolegameswiki.com/wiki/Raw_Celestine",
+      "type": "投入原料"
+    },
+    {
+      "name": "沉積岩磨刀石",
+      "en": "Aqueous Whetstone",
+      "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/76ae2d8195d/",
+      "wiki": "https://ffxiv.consolegameswiki.com/wiki/Aqueous_Whetstone",
+      "type": "投入原料"
+    },
+    {
+      "name": "石蜥蜴的蛋",
+      "en": "Basilisk Egg",
+      "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/34a4d0429d7/",
+      "wiki": "https://ffxiv.consolegameswiki.com/wiki/Basilisk_Egg",
+      "type": "投入原料"
+    },
+    {
+      "name": "鈷鐵板",
+      "en": "Cobalt Plate",
+      "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/8505d0645a6/",
+      "recipe": "https://na.finalfantasyxiv.com/lodestone/playguide/db/recipe/9d78c34f787/",
+      "wiki": "https://ffxiv.consolegameswiki.com/wiki/Cobalt_Plate",
+      "type": "可製作素材"
+    },
+    {
+      "name": "鈷鐵錠",
+      "en": "Cobalt Ingot",
+      "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/061c3d4a71a/",
+      "recipe": "https://na.finalfantasyxiv.com/lodestone/playguide/db/recipe/831354d691d/",
+      "wiki": "https://ffxiv.consolegameswiki.com/wiki/Cobalt_Ingot",
+      "type": "可製作素材"
+    },
+    {
+      "name": "鈷鐵連接板",
+      "en": "Cobalt Joint Plate",
+      "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/fb8646a854e/",
+      "recipe": "https://na.finalfantasyxiv.com/lodestone/playguide/db/recipe/93c9cd2712b/",
+      "wiki": "https://ffxiv.consolegameswiki.com/wiki/Cobalt_Joint_Plate",
+      "type": "可製作素材"
+    },
+    {
+      "name": "鈷鐵鉚釘",
+      "en": "Cobalt Rivets",
+      "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/99bf30fe06c/",
+      "recipe": "https://na.finalfantasyxiv.com/lodestone/playguide/db/recipe/6b2ecb81dd5/",
+      "wiki": "https://ffxiv.consolegameswiki.com/wiki/Cobalt_Rivets",
+      "type": "可製作素材"
+    },
+    {
+      "name": "鐵刀木木材",
+      "en": "Cassia Lumber",
+      "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/c3914d1d368/",
+      "recipe": "https://na.finalfantasyxiv.com/lodestone/playguide/db/recipe/d1b894414e6/",
+      "wiki": "https://ffxiv.consolegameswiki.com/wiki/Cassia_Lumber",
+      "type": "可製作素材"
+    },
+    {
+      "name": "鐵刀木",
+      "en": "Cassia Log",
+      "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/338c41f7521/",
+      "wiki": "https://ffxiv.consolegameswiki.com/wiki/Cassia_Log",
+      "type": "投入原料"
+    },
+    {
+      "name": "雪松原木",
+      "en": "Cedar Log",
+      "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/39a1d796a1a/",
+      "wiki": "https://ffxiv.consolegameswiki.com/wiki/Cedar_Log",
+      "type": "投入原料"
+    },
+    {
+      "name": "雲杉原木",
+      "en": "Spruce Log",
+      "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/abd30227264/",
+      "wiki": "https://ffxiv.consolegameswiki.com/wiki/Spruce_Log",
+      "type": "投入原料"
+    },
+    {
+      "name": "靈銀塊",
+      "en": "Mythrite Nugget",
+      "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/cd9a6be87f3/",
+      "recipe": "https://na.finalfantasyxiv.com/lodestone/playguide/db/recipe/f02f8016383/",
+      "wiki": "https://ffxiv.consolegameswiki.com/wiki/Mythrite_Nugget",
+      "type": "可製作素材"
+    },
+    {
+      "name": "靈銀沙",
+      "en": "Mythrite Sand",
+      "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/be73a85f632/",
+      "wiki": "https://ffxiv.consolegameswiki.com/wiki/Mythrite_Sand",
+      "type": "投入原料"
+    },
+    {
+      "name": "靈銀錠",
+      "en": "Mythrite Ingot",
+      "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/42cc4c8cad6/",
+      "recipe": "https://na.finalfantasyxiv.com/lodestone/playguide/db/recipe/e22bdafb955/",
+      "wiki": "https://ffxiv.consolegameswiki.com/wiki/Mythrite_Ingot",
+      "type": "可製作素材"
+    },
+    {
+      "name": "靈銀礦",
+      "en": "Mythrite Ore",
+      "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/8ba054dd6d4/",
+      "wiki": "https://ffxiv.consolegameswiki.com/wiki/Mythrite_Ore",
+      "type": "投入原料"
+    },
+    {
+      "name": "鬼膠",
+      "en": "Horn Glue",
+      "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/dbd4ac8fcca/",
+      "recipe": "https://na.finalfantasyxiv.com/lodestone/playguide/db/recipe/acc0108e582/",
+      "wiki": "https://ffxiv.consolegameswiki.com/wiki/Horn_Glue",
+      "type": "可製作素材"
+    },
+    {
+      "name": "山羊角",
+      "en": "Aldgoat Horn",
+      "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/5aeae8bda7d/",
+      "wiki": "https://ffxiv.consolegameswiki.com/wiki/Aldgoat_Horn",
+      "type": "投入原料"
+    },
+    {
+      "name": "黃玉",
+      "en": "Topaz",
+      "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/21a8a61693f/",
+      "recipe": "https://na.finalfantasyxiv.com/lodestone/playguide/db/recipe/373df9a07b7/",
+      "wiki": "https://ffxiv.consolegameswiki.com/wiki/Topaz",
+      "type": "可製作素材"
+    },
+    {
+      "name": "金剛沙",
+      "en": "Emery",
+      "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/16e683353f8/",
+      "wiki": "https://ffxiv.consolegameswiki.com/wiki/Emery",
+      "type": "投入原料"
+    },
+    {
+      "name": "黃玉原石",
+      "en": "Raw Topaz",
+      "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/39686e1a626/",
+      "wiki": "https://ffxiv.consolegameswiki.com/wiki/Raw_Topaz",
+      "type": "投入原料"
+    },
+    {
+      "name": "黑膠",
+      "en": "Void Glue",
+      "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/072cc4898b8/",
+      "recipe": "https://na.finalfantasyxiv.com/lodestone/playguide/db/recipe/8b7a387c6d0/",
+      "wiki": "https://ffxiv.consolegameswiki.com/wiki/Void_Glue",
+      "type": "可製作素材"
+    },
+    {
+      "name": "明膠怪的肉",
+      "en": "Gelato Flesh",
+      "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/0112aef578c/",
+      "wiki": "https://ffxiv.consolegameswiki.com/wiki/Gelato_Flesh",
+      "type": "投入原料"
+    },
+    {
+      "name": "布丁的肉",
+      "en": "Pudding Flesh",
+      "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/6d0118d3024/",
+      "wiki": "https://ffxiv.consolegameswiki.com/wiki/Pudding_Flesh",
+      "type": "投入原料"
+    },
+    {
+      "name": "黑鐵釘",
+      "en": "Iron Nails",
+      "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/624bee52d8b/",
+      "recipe": "https://na.finalfantasyxiv.com/lodestone/playguide/db/recipe/f921feddde9/",
+      "wiki": "https://ffxiv.consolegameswiki.com/wiki/Iron_Nails",
+      "type": "可製作素材"
+    },
+    {
+      "name": "黑鐵錠",
+      "en": "Iron Ingot",
+      "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/a31d0a708d9/",
+      "recipe": "https://na.finalfantasyxiv.com/lodestone/playguide/db/recipe/7f0f9bc3256/",
+      "wiki": "https://ffxiv.consolegameswiki.com/wiki/Iron_Ingot",
+      "type": "可製作素材"
+    },
+    {
+      "name": "黑鐵鉚釘",
+      "en": "Iron Rivets",
+      "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/168c0c69e15/",
+      "recipe": "https://na.finalfantasyxiv.com/lodestone/playguide/db/recipe/4d1a989cd74/",
+      "wiki": "https://ffxiv.consolegameswiki.com/wiki/Iron_Rivets",
+      "type": "可製作素材"
+    }
+  ],
+  "recipes": {
+    "亞麻油": {
+      "yield": 1,
+      "items": {
+        "亞麻": 2,
+        "水之碎晶": 3
+      },
+      "url": "https://ffxiv.consolegameswiki.com/wiki/Linseed_Oil"
+    },
+    "加隆德鋼": {
+      "yield": 1,
+      "items": {
+        "藍鐵礦": 3,
+        "焦炭": 9,
+        "鈷鐵礦": 3,
+        "火之晶簇": 1,
+        "土之晶簇": 1
+      },
+      "url": "https://ffxiv.consolegameswiki.com/wiki/Garlond_Steel"
+    },
+    "古神木材": {
+      "yield": 1,
+      "items": {
+        "矽化木": 1,
+        "緋紅樹汁": 1,
+        "風之晶簇": 2,
+        "冰之晶簇": 1
+      },
+      "url": "https://ffxiv.consolegameswiki.com/wiki/Ancient_Lumber"
+    },
+    "水淙石": {
+      "yield": 1,
+      "items": {
+        "水淙石原石": 3,
+        "蛋殼磨刀石": 1,
+        "風之水晶": 4
+      },
+      "url": "https://ffxiv.consolegameswiki.com/wiki/Larimar"
+    },
+    "泡鹼": {
+      "yield": 1,
+      "items": {
+        "發泡水": 1,
+        "岩鹽": 1,
+        "水之碎晶": 2
+      },
+      "url": "https://ffxiv.consolegameswiki.com/wiki/Natron"
+    },
+    "清漆": {
+      "yield": 1,
+      "items": {
+        "琥珀原石": 2,
+        "亞麻油": 1,
+        "松節油": 1,
+        "水之碎晶": 5
+      },
+      "url": "https://ffxiv.consolegameswiki.com/wiki/Varnish"
+    },
+    "玄鋼塊": {
+      "yield": 1,
+      "items": {
+        "火之水晶": 3,
+        "玄鐵礦": 3
+      },
+      "url": "https://ffxiv.consolegameswiki.com/wiki/Darksteel_Nugget"
+    },
+    "玄鋼板": {
+      "yield": 1,
+      "items": {
+        "玄鋼塊": 2,
+        "冰之水晶": 3
+      },
+      "url": "https://ffxiv.consolegameswiki.com/wiki/Darksteel_Plate"
+    },
+    "玄鋼鉚釘": {
+      "yield": 1,
+      "items": {
+        "玄鋼塊": 1,
+        "火之水晶": 3
+      },
+      "url": "https://ffxiv.consolegameswiki.com/wiki/Darksteel_Rivets"
+    },
+    "玄鋼錠": {
+      "yield": 1,
+      "items": {
+        "玄鋼塊": 2,
+        "焦炭": 9,
+        "火之晶簇": 1
+      },
+      "url": "https://ffxiv.consolegameswiki.com/wiki/Darksteel_Ingot"
+    },
+    "玫瑰金塊": {
+      "yield": 1,
+      "items": {
+        "金礦": 3,
+        "銅礦": 1,
+        "風之水晶": 3
+      },
+      "url": "https://ffxiv.consolegameswiki.com/wiki/Rose_Gold_Nugget"
+    },
+    "玫瑰金錠": {
+      "yield": 1,
+      "items": {
+        "玫瑰金塊": 2,
+        "斑銅礦": 9,
+        "風之晶簇": 1
+      },
+      "url": "https://ffxiv.consolegameswiki.com/wiki/Rose_Gold_Ingot"
+    },
+    "玻璃板": {
+      "yield": 1,
+      "items": {
+        "矽砂": 1,
+        "泡鹼": 1,
+        "水之碎晶": 3
+      },
+      "url": "https://ffxiv.consolegameswiki.com/wiki/Clear_Glass_Lens"
+    },
+    "白金塊": {
+      "yield": 1,
+      "items": {
+        "白金礦": 3,
+        "風之晶簇": 2,
+        "火之晶簇": 1
+      },
+      "url": "https://ffxiv.consolegameswiki.com/wiki/Platinum_Nugget"
+    },
+    "白鈦塊": {
+      "yield": 1,
+      "items": {
+        "白鈦礦": 5,
+        "鐵礦": 1,
+        "榴彈怪的灰": 1,
+        "火之水晶": 4
+      },
+      "url": "https://ffxiv.consolegameswiki.com/wiki/Titanium_Nugget"
+    },
+    "白鈦錠": {
+      "yield": 1,
+      "items": {
+        "白雲母": 4,
+        "白鈦塊": 1,
+        "火之水晶": 5
+      },
+      "url": "https://ffxiv.consolegameswiki.com/wiki/Titanium_Ingot"
+    },
+    "白銀錠": {
+      "yield": 1,
+      "items": {
+        "銀礦": 3,
+        "風之碎晶": 2
+      },
+      "url": "https://ffxiv.consolegameswiki.com/wiki/Silver_Ingot"
+    },
+    "白鋼連接板": {
+      "yield": 1,
+      "items": {
+        "白鋼錠": 1,
+        "冰之碎晶": 3
+      },
+      "url": "https://ffxiv.consolegameswiki.com/wiki/Steel_Joint_Plate"
+    },
+    "白鋼鉚釘": {
+      "yield": 1,
+      "items": {
+        "白鋼錠": 1,
+        "火之碎晶": 3
+      },
+      "url": "https://ffxiv.consolegameswiki.com/wiki/Steel_Rivets"
+    },
+    "白鋼錠": {
+      "yield": 1,
+      "items": {
+        "炸彈的灰": 1,
+        "鐵礦": 2,
+        "火之碎晶": 2
+      },
+      "url": "https://ffxiv.consolegameswiki.com/wiki/Steel_Ingot"
+    },
+    "硬化雲杉木材": {
+      "yield": 1,
+      "items": {
+        "雲杉木材": 2,
+        "樹汁塊": 9,
+        "風之晶簇": 1
+      },
+      "url": "https://ffxiv.consolegameswiki.com/wiki/Treated_Spruce_Lumber"
+    },
+    "秘銀板": {
+      "yield": 1,
+      "items": {
+        "秘銀錠": 2,
+        "冰之碎晶": 4
+      },
+      "url": "https://ffxiv.consolegameswiki.com/wiki/Mythril_Plate"
+    },
+    "秘銀鉚釘": {
+      "yield": 1,
+      "items": {
+        "秘銀錠": 1,
+        "火之碎晶": 5
+      },
+      "url": "https://ffxiv.consolegameswiki.com/wiki/Mythril_Rivets"
+    },
+    "秘銀錠": {
+      "yield": 1,
+      "items": {
+        "秘銀礦": 3,
+        "火之碎晶": 4
+      },
+      "url": "https://ffxiv.consolegameswiki.com/wiki/Mythril_Ingot"
+    },
+    "綠金錠": {
+      "yield": 1,
+      "items": {
+        "綠金礦": 4,
+        "風之碎晶": 5
+      },
+      "url": "https://ffxiv.consolegameswiki.com/wiki/Electrum_Ingot"
+    },
+    "聖水": {
+      "yield": 3,
+      "items": {
+        "德拉瓦尼亞天然水": 2,
+        "德拉瓦尼亞槲寄生": 2,
+        "水之水晶": 3
+      },
+      "url": "https://ffxiv.consolegameswiki.com/wiki/Holy_Water"
+    },
+    "聖雪松材": {
+      "yield": 1,
+      "items": {
+        "雪松木材": 1,
+        "聖水": 2,
+        "風之水晶": 3
+      },
+      "url": "https://ffxiv.consolegameswiki.com/wiki/Holy_Cedar_Lumber"
+    },
+    "胡桃木材": {
+      "yield": 1,
+      "items": {
+        "胡桃原木": 3,
+        "風之碎晶": 2
+      },
+      "url": "https://ffxiv.consolegameswiki.com/wiki/Walnut_Lumber"
+    },
+    "蒼天石": {
+      "yield": 1,
+      "items": {
+        "蒼天石原石": 3,
+        "沉積岩磨刀石": 9,
+        "風之晶簇": 1,
+        "火之晶簇": 1
+      },
+      "url": "https://ffxiv.consolegameswiki.com/wiki/Celestine"
+    },
+    "蛋殼磨刀石": {
+      "yield": 1,
+      "items": {
+        "石蜥蜴的蛋": 1,
+        "風之碎晶": 5
+      },
+      "url": "https://ffxiv.consolegameswiki.com/wiki/Basilisk_Whetstone"
+    },
+    "鈷鐵板": {
+      "yield": 1,
+      "items": {
+        "鈷鐵錠": 2,
+        "冰之碎晶": 5
+      },
+      "url": "https://ffxiv.consolegameswiki.com/wiki/Cobalt_Plate"
+    },
+    "鈷鐵連接板": {
+      "yield": 1,
+      "items": {
+        "鈷鐵錠": 1,
+        "冰之碎晶": 5
+      },
+      "url": "https://ffxiv.consolegameswiki.com/wiki/Cobalt_Joint_Plate"
+    },
+    "鈷鐵鉚釘": {
+      "yield": 1,
+      "items": {
+        "鈷鐵錠": 1,
+        "火之碎晶": 5
+      },
+      "url": "https://ffxiv.consolegameswiki.com/wiki/Cobalt_Rivets"
+    },
+    "鈷鐵錠": {
+      "yield": 1,
+      "items": {
+        "鈷鐵礦": 2,
+        "鐵礦": 1,
+        "火之碎晶": 5
+      },
+      "url": "https://ffxiv.consolegameswiki.com/wiki/Cobalt_Ingot"
+    },
+    "鐵刀木木材": {
+      "yield": 1,
+      "items": {
+        "鐵刀木": 3,
+        "樹汁塊": 9,
+        "風之晶簇": 2,
+        "冰之晶簇": 1
+      },
+      "url": "https://ffxiv.consolegameswiki.com/wiki/Cassia_Lumber"
+    },
+    "雪松木材": {
+      "yield": 1,
+      "items": {
+        "雪松原木": 5,
+        "風之水晶": 3
+      },
+      "url": "https://ffxiv.consolegameswiki.com/wiki/Cedar_Lumber"
+    },
+    "雲杉木材": {
+      "yield": 1,
+      "items": {
+        "雲杉原木": 3,
+        "風之水晶": 3
+      },
+      "url": "https://ffxiv.consolegameswiki.com/wiki/Spruce_Lumber"
+    },
+    "靈銀塊": {
+      "yield": 1,
+      "items": {
+        "靈銀沙": 5,
+        "秘銀礦": 1,
+        "火之水晶": 3
+      },
+      "url": "https://ffxiv.consolegameswiki.com/wiki/Mythrite_Nugget"
+    },
+    "靈銀錠": {
+      "yield": 1,
+      "items": {
+        "靈銀礦": 4,
+        "靈銀塊": 1,
+        "火之水晶": 3
+      },
+      "url": "https://ffxiv.consolegameswiki.com/wiki/Mythrite_Ingot"
+    },
+    "鬼膠": {
+      "yield": 1,
+      "items": {
+        "山羊角": 2,
+        "水之碎晶": 3
+      },
+      "url": "https://ffxiv.consolegameswiki.com/wiki/Horn_Glue"
+    },
+    "黃玉": {
+      "yield": 1,
+      "items": {
+        "金剛沙": 1,
+        "黃玉原石": 1,
+        "風之晶簇": 2,
+        "火之晶簇": 1
+      },
+      "url": "https://ffxiv.consolegameswiki.com/wiki/Topaz"
+    },
+    "黑膠": {
+      "yield": 1,
+      "items": {
+        "明膠怪的肉": 3,
+        "布丁的肉": 2,
+        "水之水晶": 3
+      },
+      "url": "https://ffxiv.consolegameswiki.com/wiki/Void_Glue"
+    },
+    "黑鐵釘": {
+      "yield": 1,
+      "items": {
+        "黑鐵錠": 1,
+        "火之碎晶": 1
+      },
+      "url": "https://ffxiv.consolegameswiki.com/wiki/Iron_Nails"
+    },
+    "黑鐵鉚釘": {
+      "yield": 1,
+      "items": {
+        "黑鐵錠": 1,
+        "火之碎晶": 1
+      },
+      "url": "https://ffxiv.consolegameswiki.com/wiki/Iron_Rivets"
+    },
+    "黑鐵錠": {
+      "yield": 1,
+      "items": {
+        "鐵礦": 3,
+        "火之碎晶": 1
+      },
+      "url": "https://ffxiv.consolegameswiki.com/wiki/Iron_Ingot"
+    }
+  },
+  "official": {
+    "亞麻油": {
+      "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/a977281e15b/",
+      "recipeUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/recipe/b23cb8e90da/",
+      "yield": 1,
+      "ingredients": {
+        "Flax": 2,
+        "Water Shard": 3
+      },
+      "itemKeys": {
+        "Flax": "bd6d422c454",
+        "Water Shard": "9f967ad6b5a"
+      },
+      "expected": {
+        "Flax": 2,
+        "Water Shard": 3
+      },
+      "match": true
+    },
+    "加隆德鋼": {
+      "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/a01b0952853/",
+      "recipeUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/recipe/7c6bf98b237/",
+      "yield": 1,
+      "ingredients": {
+        "Vivianite": 3,
+        "Coke": 9,
+        "Cobalt Ore": 3,
+        "Fire Cluster": 1,
+        "Earth Cluster": 1
+      },
+      "itemKeys": {
+        "Vivianite": "2b1dcb75d78",
+        "Coke": "e7b966f42a9",
+        "Cobalt Ore": "b1e9dd56616",
+        "Fire Cluster": "e8ccb4b1f81",
+        "Earth Cluster": "c97c6825890"
+      },
+      "expected": {
+        "Vivianite": 3,
+        "Coke": 9,
+        "Cobalt Ore": 3,
+        "Fire Cluster": 1,
+        "Earth Cluster": 1
+      },
+      "match": true
+    },
+    "古神木材": {
+      "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/a917bb98f6d/",
+      "recipeUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/recipe/a49b474522c/",
+      "yield": 1,
+      "ingredients": {
+        "Petrified Log": 1,
+        "Scarlet Sap": 1,
+        "Wind Cluster": 2,
+        "Ice Cluster": 1
+      },
+      "itemKeys": {
+        "Petrified Log": "e0d0eb77dc2",
+        "Scarlet Sap": "564dccc62a5",
+        "Wind Cluster": "b61cbfd2d6e",
+        "Ice Cluster": "4dbe0ec0a76"
+      },
+      "expected": {
+        "Petrified Log": 1,
+        "Scarlet Sap": 1,
+        "Wind Cluster": 2,
+        "Ice Cluster": 1
+      },
+      "match": true
+    },
+    "水淙石": {
+      "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/558e8b93077/",
+      "recipeUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/recipe/f1c6173ed3a/",
+      "yield": 1,
+      "ingredients": {
+        "Raw Larimar": 3,
+        "Basilisk Whetstone": 1,
+        "Wind Crystal": 4
+      },
+      "itemKeys": {
+        "Raw Larimar": "5b407327943",
+        "Basilisk Whetstone": "25c4ca7304f",
+        "Wind Crystal": "5db117cd77b"
+      },
+      "expected": {
+        "Raw Larimar": 3,
+        "Basilisk Whetstone": 1,
+        "Wind Crystal": 4
+      },
+      "match": true
+    },
+    "泡鹼": {
+      "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/74e37eafc16/",
+      "recipeUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/recipe/2bb4acd4b04/",
+      "yield": 1,
+      "ingredients": {
+        "Effervescent Water": 1,
+        "Rock Salt": 1,
+        "Water Shard": 2
+      },
+      "itemKeys": {
+        "Effervescent Water": "f725bcbf952",
+        "Rock Salt": "a7c50cf9297",
+        "Water Shard": "9f967ad6b5a"
+      },
+      "expected": {
+        "Effervescent Water": 1,
+        "Rock Salt": 1,
+        "Water Shard": 2
+      },
+      "match": true
+    },
+    "清漆": {
+      "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/d46b5e64291/",
+      "recipeUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/recipe/cc9e646a1ac/",
+      "yield": 1,
+      "ingredients": {
+        "Raw Amber": 2,
+        "Linseed Oil": 1,
+        "Terebinth": 1,
+        "Water Shard": 5
+      },
+      "itemKeys": {
+        "Raw Amber": "a8ad7758225",
+        "Linseed Oil": "a977281e15b",
+        "Terebinth": "f0518ea9f0e",
+        "Water Shard": "9f967ad6b5a"
+      },
+      "expected": {
+        "Raw Amber": 2,
+        "Linseed Oil": 1,
+        "Terebinth": 1,
+        "Water Shard": 5
+      },
+      "match": true
+    },
+    "玄鋼塊": {
+      "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/f77dec88832/",
+      "recipeUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/recipe/1476e71b859/",
+      "yield": 1,
+      "ingredients": {
+        "Darksteel Ore": 3,
+        "Fire Crystal": 3
+      },
+      "itemKeys": {
+        "Darksteel Ore": "266013cb547",
+        "Fire Crystal": "75403105d7f"
+      },
+      "expected": {
+        "Fire Crystal": 3,
+        "Darksteel Ore": 3
+      },
+      "match": true
+    },
+    "玄鋼板": {
+      "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/e24f6b76458/",
+      "recipeUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/recipe/0c603ba90c3/",
+      "yield": 1,
+      "ingredients": {
+        "Darksteel Nugget": 2,
+        "Ice Crystal": 3
+      },
+      "itemKeys": {
+        "Darksteel Nugget": "f77dec88832",
+        "Ice Crystal": "2d800a06851"
+      },
+      "expected": {
+        "Darksteel Nugget": 2,
+        "Ice Crystal": 3
+      },
+      "match": true
+    },
+    "玄鋼鉚釘": {
+      "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/543f0cc9eb6/",
+      "recipeUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/recipe/349c57266cb/",
+      "yield": 1,
+      "ingredients": {
+        "Darksteel Nugget": 1,
+        "Fire Crystal": 3
+      },
+      "itemKeys": {
+        "Darksteel Nugget": "f77dec88832",
+        "Fire Crystal": "75403105d7f"
+      },
+      "expected": {
+        "Darksteel Nugget": 1,
+        "Fire Crystal": 3
+      },
+      "match": true
+    },
+    "玄鋼錠": {
+      "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/b05cd22dabd/",
+      "recipeUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/recipe/1ca69de19eb/",
+      "yield": 1,
+      "ingredients": {
+        "Darksteel Nugget": 2,
+        "Coke": 9,
+        "Fire Cluster": 1
+      },
+      "itemKeys": {
+        "Darksteel Nugget": "f77dec88832",
+        "Coke": "e7b966f42a9",
+        "Fire Cluster": "e8ccb4b1f81"
+      },
+      "expected": {
+        "Darksteel Nugget": 2,
+        "Coke": 9,
+        "Fire Cluster": 1
+      },
+      "match": true
+    },
+    "玫瑰金塊": {
+      "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/f5a8fa09ad0/",
+      "recipeUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/recipe/b293664d9f6/",
+      "yield": 1,
+      "ingredients": {
+        "Gold Ore": 3,
+        "Copper Ore": 1,
+        "Wind Crystal": 3
+      },
+      "itemKeys": {
+        "Gold Ore": "dd538e4d915",
+        "Copper Ore": "82a24de366d",
+        "Wind Crystal": "5db117cd77b"
+      },
+      "expected": {
+        "Gold Ore": 3,
+        "Copper Ore": 1,
+        "Wind Crystal": 3
+      },
+      "match": true
+    },
+    "玫瑰金錠": {
+      "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/0fd5762e1a2/",
+      "recipeUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/recipe/96529fc98bf/",
+      "yield": 1,
+      "ingredients": {
+        "Rose Gold Nugget": 2,
+        "Peacock Ore": 9,
+        "Wind Cluster": 1
+      },
+      "itemKeys": {
+        "Rose Gold Nugget": "f5a8fa09ad0",
+        "Peacock Ore": "40555a09fbf",
+        "Wind Cluster": "b61cbfd2d6e"
+      },
+      "expected": {
+        "Rose Gold Nugget": 2,
+        "Peacock Ore": 9,
+        "Wind Cluster": 1
+      },
+      "match": true
+    },
+    "玻璃板": {
+      "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/9902d9a76aa/",
+      "recipeUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/recipe/ab9508dade3/",
+      "yield": 1,
+      "ingredients": {
+        "Silex": 1,
+        "Natron": 1,
+        "Water Shard": 3
+      },
+      "itemKeys": {
+        "Silex": "5a8e9c7fcbb",
+        "Natron": "74e37eafc16",
+        "Water Shard": "9f967ad6b5a"
+      },
+      "expected": {
+        "Silex": 1,
+        "Natron": 1,
+        "Water Shard": 3
+      },
+      "match": true
+    },
+    "白金塊": {
+      "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/de869373c91/",
+      "recipeUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/recipe/256f6e01787/",
+      "yield": 1,
+      "ingredients": {
+        "Platinum Ore": 3,
+        "Wind Cluster": 2,
+        "Fire Cluster": 1
+      },
+      "itemKeys": {
+        "Platinum Ore": "df71799bdeb",
+        "Wind Cluster": "b61cbfd2d6e",
+        "Fire Cluster": "e8ccb4b1f81"
+      },
+      "expected": {
+        "Platinum Ore": 3,
+        "Wind Cluster": 2,
+        "Fire Cluster": 1
+      },
+      "match": true
+    },
+    "白鈦塊": {
+      "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/ea9225b9b39/",
+      "recipeUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/recipe/b821acbf465/",
+      "yield": 1,
+      "ingredients": {
+        "Titanium Ore": 5,
+        "Iron Ore": 1,
+        "Grenade Ash": 1,
+        "Fire Crystal": 4
+      },
+      "itemKeys": {
+        "Titanium Ore": "f1f08adeb9d",
+        "Iron Ore": "ad4b9905828",
+        "Grenade Ash": "db995256183",
+        "Fire Crystal": "75403105d7f"
+      },
+      "expected": {
+        "Titanium Ore": 5,
+        "Iron Ore": 1,
+        "Grenade Ash": 1,
+        "Fire Crystal": 4
+      },
+      "match": true
+    },
+    "白鈦錠": {
+      "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/71b9a21b0fb/",
+      "recipeUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/recipe/affd1b8fb6a/",
+      "yield": 1,
+      "ingredients": {
+        "Cloud Mica": 4,
+        "Titanium Nugget": 1,
+        "Fire Crystal": 5
+      },
+      "itemKeys": {
+        "Cloud Mica": "b6a6a34397f",
+        "Titanium Nugget": "ea9225b9b39",
+        "Fire Crystal": "75403105d7f"
+      },
+      "expected": {
+        "Cloud Mica": 4,
+        "Titanium Nugget": 1,
+        "Fire Crystal": 5
+      },
+      "match": true
+    },
+    "白銀錠": {
+      "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/5f54ee1566c/",
+      "recipeUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/recipe/00c3b770471/",
+      "yield": 1,
+      "ingredients": {
+        "Silver Ore": 3,
+        "Wind Shard": 2
+      },
+      "itemKeys": {
+        "Silver Ore": "f73ed904e76",
+        "Wind Shard": "843899bc8f6"
+      },
+      "expected": {
+        "Silver Ore": 3,
+        "Wind Shard": 2
+      },
+      "match": true
+    },
+    "白鋼連接板": {
+      "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/cfcc919561a/",
+      "recipeUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/recipe/a81ff952b60/",
+      "yield": 1,
+      "ingredients": {
+        "Steel Ingot": 1,
+        "Ice Shard": 3
+      },
+      "itemKeys": {
+        "Steel Ingot": "c75db0a8725",
+        "Ice Shard": "f2dfd367f1e"
+      },
+      "expected": {
+        "Steel Ingot": 1,
+        "Ice Shard": 3
+      },
+      "match": true
+    },
+    "白鋼鉚釘": {
+      "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/06d767af9ca/",
+      "recipeUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/recipe/8167582a8b7/",
+      "yield": 1,
+      "ingredients": {
+        "Steel Ingot": 1,
+        "Fire Shard": 3
+      },
+      "itemKeys": {
+        "Steel Ingot": "c75db0a8725",
+        "Fire Shard": "27623d06a42"
+      },
+      "expected": {
+        "Steel Ingot": 1,
+        "Fire Shard": 3
+      },
+      "match": true
+    },
+    "白鋼錠": {
+      "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/c75db0a8725/",
+      "recipeUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/recipe/1b8f52a3c5e/",
+      "yield": 1,
+      "ingredients": {
+        "Bomb Ash": 1,
+        "Iron Ore": 2,
+        "Fire Shard": 2
+      },
+      "itemKeys": {
+        "Bomb Ash": "35c96e0c9f7",
+        "Iron Ore": "ad4b9905828",
+        "Fire Shard": "27623d06a42"
+      },
+      "expected": {
+        "Bomb Ash": 1,
+        "Iron Ore": 2,
+        "Fire Shard": 2
+      },
+      "match": true
+    },
+    "硬化雲杉木材": {
+      "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/cec3fe85cfa/",
+      "recipeUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/recipe/7932fd9a9dc/",
+      "yield": 1,
+      "ingredients": {
+        "Spruce Lumber": 2,
+        "Hardened Sap": 9,
+        "Wind Cluster": 1
+      },
+      "itemKeys": {
+        "Spruce Lumber": "f9b83cba7a9",
+        "Hardened Sap": "8c834249a3a",
+        "Wind Cluster": "b61cbfd2d6e"
+      },
+      "expected": {
+        "Spruce Lumber": 2,
+        "Hardened Sap": 9,
+        "Wind Cluster": 1
+      },
+      "match": true
+    },
+    "秘銀板": {
+      "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/68cf5c88a93/",
+      "recipeUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/recipe/fc4635e747a/",
+      "yield": 1,
+      "ingredients": {
+        "Mythril Ingot": 2,
+        "Ice Shard": 4
+      },
+      "itemKeys": {
+        "Mythril Ingot": "5eddc1855a4",
+        "Ice Shard": "f2dfd367f1e"
+      },
+      "expected": {
+        "Mythril Ingot": 2,
+        "Ice Shard": 4
+      },
+      "match": true
+    },
+    "秘銀鉚釘": {
+      "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/7eda99f554a/",
+      "recipeUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/recipe/bb9bf6a238a/",
+      "yield": 1,
+      "ingredients": {
+        "Mythril Ingot": 1,
+        "Fire Shard": 5
+      },
+      "itemKeys": {
+        "Mythril Ingot": "5eddc1855a4",
+        "Fire Shard": "27623d06a42"
+      },
+      "expected": {
+        "Mythril Ingot": 1,
+        "Fire Shard": 5
+      },
+      "match": true
+    },
+    "秘銀錠": {
+      "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/5eddc1855a4/",
+      "recipeUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/recipe/fbb8326d3e0/",
+      "yield": 1,
+      "ingredients": {
+        "Mythril Ore": 3,
+        "Fire Shard": 4
+      },
+      "itemKeys": {
+        "Mythril Ore": "85617d1a9d8",
+        "Fire Shard": "27623d06a42"
+      },
+      "expected": {
+        "Mythril Ore": 3,
+        "Fire Shard": 4
+      },
+      "match": true
+    },
+    "綠金錠": {
+      "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/a5be16ac908/",
+      "recipeUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/recipe/e923f92e9e5/",
+      "yield": 1,
+      "ingredients": {
+        "Electrum Ore": 4,
+        "Wind Shard": 5
+      },
+      "itemKeys": {
+        "Electrum Ore": "7bbeaeed3e6",
+        "Wind Shard": "843899bc8f6"
+      },
+      "expected": {
+        "Electrum Ore": 4,
+        "Wind Shard": 5
+      },
+      "match": true
+    },
+    "聖水": {
+      "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/c44fa01ac3f/",
+      "recipeUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/recipe/f9971c1d3d7/",
+      "yield": 3,
+      "ingredients": {
+        "Dravanian Spring Water": 2,
+        "Dravanian Mistletoe": 2,
+        "Water Crystal": 3
+      },
+      "itemKeys": {
+        "Dravanian Spring Water": "b1b95ea9312",
+        "Dravanian Mistletoe": "41e7d3b5a18",
+        "Water Crystal": "44d3f4cb26b"
+      },
+      "expected": {
+        "Dravanian Spring Water": 2,
+        "Dravanian Mistletoe": 2,
+        "Water Crystal": 3
+      },
+      "match": true
+    },
+    "聖雪松材": {
+      "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/4627ab8fad9/",
+      "recipeUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/recipe/2cf64df2661/",
+      "yield": 1,
+      "ingredients": {
+        "Cedar Lumber": 1,
+        "Holy Water": 2,
+        "Wind Crystal": 3
+      },
+      "itemKeys": {
+        "Cedar Lumber": "f1a2cdff07f",
+        "Holy Water": "c44fa01ac3f",
+        "Wind Crystal": "5db117cd77b"
+      },
+      "expected": {
+        "Cedar Lumber": 1,
+        "Holy Water": 2,
+        "Wind Crystal": 3
+      },
+      "match": true
+    },
+    "胡桃木材": {
+      "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/3f9bd918147/",
+      "recipeUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/recipe/3fa325ca4ff/",
+      "yield": 1,
+      "ingredients": {
+        "Walnut Log": 3,
+        "Wind Shard": 2
+      },
+      "itemKeys": {
+        "Walnut Log": "546a74b14ce",
+        "Wind Shard": "843899bc8f6"
+      },
+      "expected": {
+        "Walnut Log": 3,
+        "Wind Shard": 2
+      },
+      "match": true
+    },
+    "蒼天石": {
+      "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/19c30b3f4cc/",
+      "recipeUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/recipe/eaf6ca8ade6/",
+      "yield": 1,
+      "ingredients": {
+        "Raw Celestine": 3,
+        "Aqueous Whetstone": 9,
+        "Wind Cluster": 1,
+        "Fire Cluster": 1
+      },
+      "itemKeys": {
+        "Raw Celestine": "208ad7b8a06",
+        "Aqueous Whetstone": "76ae2d8195d",
+        "Wind Cluster": "b61cbfd2d6e",
+        "Fire Cluster": "e8ccb4b1f81"
+      },
+      "expected": {
+        "Raw Celestine": 3,
+        "Aqueous Whetstone": 9,
+        "Wind Cluster": 1,
+        "Fire Cluster": 1
+      },
+      "match": true
+    },
+    "蛋殼磨刀石": {
+      "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/25c4ca7304f/",
+      "recipeUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/recipe/8ba09b3ae81/",
+      "yield": 1,
+      "ingredients": {
+        "Basilisk Egg": 1,
+        "Wind Shard": 5
+      },
+      "itemKeys": {
+        "Basilisk Egg": "34a4d0429d7",
+        "Wind Shard": "843899bc8f6"
+      },
+      "expected": {
+        "Basilisk Egg": 1,
+        "Wind Shard": 5
+      },
+      "match": true
+    },
+    "鈷鐵板": {
+      "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/8505d0645a6/",
+      "recipeUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/recipe/9d78c34f787/",
+      "yield": 1,
+      "ingredients": {
+        "Cobalt Ingot": 2,
+        "Ice Shard": 5
+      },
+      "itemKeys": {
+        "Cobalt Ingot": "061c3d4a71a",
+        "Ice Shard": "f2dfd367f1e"
+      },
+      "expected": {
+        "Cobalt Ingot": 2,
+        "Ice Shard": 5
+      },
+      "match": true
+    },
+    "鈷鐵連接板": {
+      "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/fb8646a854e/",
+      "recipeUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/recipe/93c9cd2712b/",
+      "yield": 1,
+      "ingredients": {
+        "Cobalt Ingot": 1,
+        "Ice Shard": 5
+      },
+      "itemKeys": {
+        "Cobalt Ingot": "061c3d4a71a",
+        "Ice Shard": "f2dfd367f1e"
+      },
+      "expected": {
+        "Cobalt Ingot": 1,
+        "Ice Shard": 5
+      },
+      "match": true
+    },
+    "鈷鐵鉚釘": {
+      "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/99bf30fe06c/",
+      "recipeUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/recipe/6b2ecb81dd5/",
+      "yield": 1,
+      "ingredients": {
+        "Cobalt Ingot": 1,
+        "Fire Shard": 5
+      },
+      "itemKeys": {
+        "Cobalt Ingot": "061c3d4a71a",
+        "Fire Shard": "27623d06a42"
+      },
+      "expected": {
+        "Cobalt Ingot": 1,
+        "Fire Shard": 5
+      },
+      "match": true
+    },
+    "鈷鐵錠": {
+      "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/061c3d4a71a/",
+      "recipeUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/recipe/831354d691d/",
+      "yield": 1,
+      "ingredients": {
+        "Cobalt Ore": 2,
+        "Iron Ore": 1,
+        "Fire Shard": 5
+      },
+      "itemKeys": {
+        "Cobalt Ore": "b1e9dd56616",
+        "Iron Ore": "ad4b9905828",
+        "Fire Shard": "27623d06a42"
+      },
+      "expected": {
+        "Cobalt Ore": 2,
+        "Iron Ore": 1,
+        "Fire Shard": 5
+      },
+      "match": true
+    },
+    "鐵刀木木材": {
+      "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/c3914d1d368/",
+      "recipeUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/recipe/d1b894414e6/",
+      "yield": 1,
+      "ingredients": {
+        "Cassia Log": 3,
+        "Hardened Sap": 9,
+        "Wind Cluster": 2,
+        "Ice Cluster": 1
+      },
+      "itemKeys": {
+        "Cassia Log": "338c41f7521",
+        "Hardened Sap": "8c834249a3a",
+        "Wind Cluster": "b61cbfd2d6e",
+        "Ice Cluster": "4dbe0ec0a76"
+      },
+      "expected": {
+        "Cassia Log": 3,
+        "Hardened Sap": 9,
+        "Wind Cluster": 2,
+        "Ice Cluster": 1
+      },
+      "match": true
+    },
+    "雪松木材": {
+      "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/f1a2cdff07f/",
+      "recipeUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/recipe/4eda163a80c/",
+      "yield": 1,
+      "ingredients": {
+        "Cedar Log": 5,
+        "Wind Crystal": 3
+      },
+      "itemKeys": {
+        "Cedar Log": "39a1d796a1a",
+        "Wind Crystal": "5db117cd77b"
+      },
+      "expected": {
+        "Cedar Log": 5,
+        "Wind Crystal": 3
+      },
+      "match": true
+    },
+    "雲杉木材": {
+      "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/f9b83cba7a9/",
+      "recipeUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/recipe/34cae3266e7/",
+      "yield": 1,
+      "ingredients": {
+        "Spruce Log": 3,
+        "Wind Crystal": 3
+      },
+      "itemKeys": {
+        "Spruce Log": "abd30227264",
+        "Wind Crystal": "5db117cd77b"
+      },
+      "expected": {
+        "Spruce Log": 3,
+        "Wind Crystal": 3
+      },
+      "match": true
+    },
+    "靈銀塊": {
+      "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/cd9a6be87f3/",
+      "recipeUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/recipe/f02f8016383/",
+      "yield": 1,
+      "ingredients": {
+        "Mythrite Sand": 5,
+        "Mythril Ore": 1,
+        "Fire Crystal": 3
+      },
+      "itemKeys": {
+        "Mythrite Sand": "be73a85f632",
+        "Mythril Ore": "85617d1a9d8",
+        "Fire Crystal": "75403105d7f"
+      },
+      "expected": {
+        "Mythrite Sand": 5,
+        "Mythril Ore": 1,
+        "Fire Crystal": 3
+      },
+      "match": true
+    },
+    "靈銀錠": {
+      "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/42cc4c8cad6/",
+      "recipeUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/recipe/e22bdafb955/",
+      "yield": 1,
+      "ingredients": {
+        "Mythrite Ore": 4,
+        "Mythrite Nugget": 1,
+        "Fire Crystal": 3
+      },
+      "itemKeys": {
+        "Mythrite Ore": "8ba054dd6d4",
+        "Mythrite Nugget": "cd9a6be87f3",
+        "Fire Crystal": "75403105d7f"
+      },
+      "expected": {
+        "Mythrite Ore": 4,
+        "Mythrite Nugget": 1,
+        "Fire Crystal": 3
+      },
+      "match": true
+    },
+    "鬼膠": {
+      "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/dbd4ac8fcca/",
+      "recipeUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/recipe/acc0108e582/",
+      "yield": 1,
+      "ingredients": {
+        "Aldgoat Horn": 2,
+        "Water Shard": 3
+      },
+      "itemKeys": {
+        "Aldgoat Horn": "5aeae8bda7d",
+        "Water Shard": "9f967ad6b5a"
+      },
+      "expected": {
+        "Aldgoat Horn": 2,
+        "Water Shard": 3
+      },
+      "match": true
+    },
+    "黃玉": {
+      "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/21a8a61693f/",
+      "recipeUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/recipe/373df9a07b7/",
+      "yield": 1,
+      "ingredients": {
+        "Emery": 1,
+        "Raw Topaz": 1,
+        "Wind Cluster": 2,
+        "Fire Cluster": 1
+      },
+      "itemKeys": {
+        "Emery": "16e683353f8",
+        "Raw Topaz": "39686e1a626",
+        "Wind Cluster": "b61cbfd2d6e",
+        "Fire Cluster": "e8ccb4b1f81"
+      },
+      "expected": {
+        "Emery": 1,
+        "Raw Topaz": 1,
+        "Wind Cluster": 2,
+        "Fire Cluster": 1
+      },
+      "match": true
+    },
+    "黑膠": {
+      "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/072cc4898b8/",
+      "recipeUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/recipe/8b7a387c6d0/",
+      "yield": 1,
+      "ingredients": {
+        "Gelato Flesh": 3,
+        "Pudding Flesh": 2,
+        "Water Crystal": 3
+      },
+      "itemKeys": {
+        "Gelato Flesh": "0112aef578c",
+        "Pudding Flesh": "6d0118d3024",
+        "Water Crystal": "44d3f4cb26b"
+      },
+      "expected": {
+        "Gelato Flesh": 3,
+        "Pudding Flesh": 2,
+        "Water Crystal": 3
+      },
+      "match": true
+    },
+    "黑鐵釘": {
+      "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/624bee52d8b/",
+      "recipeUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/recipe/f921feddde9/",
+      "yield": 1,
+      "ingredients": {
+        "Iron Ingot": 1,
+        "Fire Shard": 1
+      },
+      "itemKeys": {
+        "Iron Ingot": "a31d0a708d9",
+        "Fire Shard": "27623d06a42"
+      },
+      "expected": {
+        "Iron Ingot": 1,
+        "Fire Shard": 1
+      },
+      "match": true
+    },
+    "黑鐵鉚釘": {
+      "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/168c0c69e15/",
+      "recipeUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/recipe/4d1a989cd74/",
+      "yield": 1,
+      "ingredients": {
+        "Iron Ingot": 1,
+        "Fire Shard": 1
+      },
+      "itemKeys": {
+        "Iron Ingot": "a31d0a708d9",
+        "Fire Shard": "27623d06a42"
+      },
+      "expected": {
+        "Iron Ingot": 1,
+        "Fire Shard": 1
+      },
+      "match": true
+    },
+    "黑鐵錠": {
+      "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/a31d0a708d9/",
+      "recipeUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/recipe/7f0f9bc3256/",
+      "yield": 1,
+      "ingredients": {
+        "Iron Ore": 3,
+        "Fire Shard": 1
+      },
+      "itemKeys": {
+        "Iron Ore": "ad4b9905828",
+        "Fire Shard": "27623d06a42"
+      },
+      "expected": {
+        "Iron Ore": 3,
+        "Fire Shard": 1
+      },
+      "match": true
+    }
+  },
+  "verifiedAt": "2026-11-07",
+  "fleet": 4,
+  "scope": "1111 → 3124，普通版",
+  "sourceReference": "https://babelin.netlify.app/submarine",
+  "sourceGist": "https://gist.github.com/marsantony/dc44fd900751d517e2958e188c0a6849"
+}

@@ -1,0 +1,8 @@
+dist/
+pages/
+.sites-local/
+.sites-portable/
+node_modules/
+.env*
+!.env.example
+*.tar.gz
