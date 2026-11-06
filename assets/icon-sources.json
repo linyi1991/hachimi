@@ -1,0 +1,532 @@
+{
+  "亞麻油": {
+    "file": "assets/icons/a977281e15b.png",
+    "source": "https://lds-img.finalfantasyxiv.com/itemicon/48/4848892669087a129fa937289c94576fd8397904.png?n7.57",
+    "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/a977281e15b/"
+  },
+  "亞麻": {
+    "file": "assets/icons/bd6d422c454.png",
+    "source": "https://lds-img.finalfantasyxiv.com/itemicon/61/61afb346d24232195ed26f1e4bba47384d5c91d7.png?n7.57",
+    "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/bd6d422c454/"
+  },
+  "水之碎晶": {
+    "file": "assets/icons/9f967ad6b5a.png",
+    "source": "https://lds-img.finalfantasyxiv.com/itemicon/bc/bc108364569dbc7e513f004d70efa394bc772d4b.png?n7.57",
+    "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/9f967ad6b5a/"
+  },
+  "加隆德鋼": {
+    "file": "assets/icons/a01b0952853.png",
+    "source": "https://lds-img.finalfantasyxiv.com/itemicon/8b/8bb8268f31abaf69f061cbebcbb70f110124715a.png?n7.57",
+    "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/a01b0952853/"
+  },
+  "藍鐵礦": {
+    "file": "assets/icons/2b1dcb75d78.png",
+    "source": "https://lds-img.finalfantasyxiv.com/itemicon/c1/c12c43a97f78571858ff1ab840f41cbacf72094f.png?n7.57",
+    "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/2b1dcb75d78/"
+  },
+  "焦炭": {
+    "file": "assets/icons/e7b966f42a9.png",
+    "source": "https://lds-img.finalfantasyxiv.com/itemicon/b4/b4c5dfe97984bb7065483beabce12ea76ac178eb.png?n7.57",
+    "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/e7b966f42a9/"
+  },
+  "鈷鐵礦": {
+    "file": "assets/icons/b1e9dd56616.png",
+    "source": "https://lds-img.finalfantasyxiv.com/itemicon/32/322517c015343adb9bca987540693894ea35fe7d.png?n7.57",
+    "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/b1e9dd56616/"
+  },
+  "火之晶簇": {
+    "file": "assets/icons/e8ccb4b1f81.png",
+    "source": "https://lds-img.finalfantasyxiv.com/itemicon/a8/a82e91fb98fad37e948d8e08cf75e712c50b60ca.png?n7.57",
+    "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/e8ccb4b1f81/"
+  },
+  "土之晶簇": {
+    "file": "assets/icons/c97c6825890.png",
+    "source": "https://lds-img.finalfantasyxiv.com/itemicon/19/191f6702b4c11ad4e6498044131c826fc0cb7036.png?n7.57",
+    "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/c97c6825890/"
+  },
+  "古神木材": {
+    "file": "assets/icons/a917bb98f6d.png",
+    "source": "https://lds-img.finalfantasyxiv.com/itemicon/92/92edd886475e3887ed61293509c830d180e000f9.png?n7.57",
+    "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/a917bb98f6d/"
+  },
+  "矽化木": {
+    "file": "assets/icons/e0d0eb77dc2.png",
+    "source": "https://lds-img.finalfantasyxiv.com/itemicon/f0/f0f5f58aeb08b58676789fd3d464ec295c3b5f2b.png?n7.57",
+    "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/e0d0eb77dc2/"
+  },
+  "緋紅樹汁": {
+    "file": "assets/icons/564dccc62a5.png",
+    "source": "https://lds-img.finalfantasyxiv.com/itemicon/b4/b421f83142b299bd132603ca25447136d639d5b2.png?n7.57",
+    "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/564dccc62a5/"
+  },
+  "風之晶簇": {
+    "file": "assets/icons/b61cbfd2d6e.png",
+    "source": "https://lds-img.finalfantasyxiv.com/itemicon/50/5042e72182ec0021175ed2df9876348175a925ac.png?n7.57",
+    "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/b61cbfd2d6e/"
+  },
+  "冰之晶簇": {
+    "file": "assets/icons/4dbe0ec0a76.png",
+    "source": "https://lds-img.finalfantasyxiv.com/itemicon/5a/5a3c6093b938de0be66944d76384887404933677.png?n7.57",
+    "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/4dbe0ec0a76/"
+  },
+  "水淙石": {
+    "file": "assets/icons/558e8b93077.png",
+    "source": "https://lds-img.finalfantasyxiv.com/itemicon/fd/fd4c8d77a0b4af3ec33fa57d65b2b47002bb1b05.png?n7.57",
+    "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/558e8b93077/"
+  },
+  "水淙石原石": {
+    "file": "assets/icons/5b407327943.png",
+    "source": "https://lds-img.finalfantasyxiv.com/itemicon/74/7419f9adc9ebafefad0f4e63aae42e7b38c50632.png?n7.57",
+    "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/5b407327943/"
+  },
+  "蛋殼磨刀石": {
+    "file": "assets/icons/25c4ca7304f.png",
+    "source": "https://lds-img.finalfantasyxiv.com/itemicon/6d/6d82f679738805cf73956d55a382788c13d8f7f9.png?n7.57",
+    "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/25c4ca7304f/"
+  },
+  "風之水晶": {
+    "file": "assets/icons/5db117cd77b.png",
+    "source": "https://lds-img.finalfantasyxiv.com/itemicon/87/87c44d062b43243a272bf195fb7047089fdc002a.png?n7.57",
+    "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/5db117cd77b/"
+  },
+  "泡鹼": {
+    "file": "assets/icons/74e37eafc16.png",
+    "source": "https://lds-img.finalfantasyxiv.com/itemicon/1d/1de9889a7ea4bacccdc730719be8d790a6878cad.png?n7.57",
+    "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/74e37eafc16/"
+  },
+  "發泡水": {
+    "file": "assets/icons/f725bcbf952.png",
+    "source": "https://lds-img.finalfantasyxiv.com/itemicon/4c/4c23cf4cf5b6f8d0b52d0b5171ad5df1e8d3e05d.png?n7.57",
+    "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/f725bcbf952/"
+  },
+  "岩鹽": {
+    "file": "assets/icons/a7c50cf9297.png",
+    "source": "https://lds-img.finalfantasyxiv.com/itemicon/d3/d3f8ef43b073cf83ee9a7d7f2ae94f576af2965b.png?n7.57",
+    "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/a7c50cf9297/"
+  },
+  "清漆": {
+    "file": "assets/icons/d46b5e64291.png",
+    "source": "https://lds-img.finalfantasyxiv.com/itemicon/04/041c6d3f91ac035d38f9562dbc24a1645f96fdad.png?n7.57",
+    "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/d46b5e64291/"
+  },
+  "琥珀原石": {
+    "file": "assets/icons/a8ad7758225.png",
+    "source": "https://lds-img.finalfantasyxiv.com/itemicon/ba/baf6ab8e6e7c3a0f7bade5f180f16301a0a10b4c.png?n7.57",
+    "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/a8ad7758225/"
+  },
+  "松節油": {
+    "file": "assets/icons/f0518ea9f0e.png",
+    "source": "https://lds-img.finalfantasyxiv.com/itemicon/19/19866d0c4b3b94d04305e7510de41ac7b0439937.png?n7.57",
+    "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/f0518ea9f0e/"
+  },
+  "玄鋼塊": {
+    "file": "assets/icons/f77dec88832.png",
+    "source": "https://lds-img.finalfantasyxiv.com/itemicon/0f/0f18ddb1b280d5343d9f4f10b6b3ec605fccb289.png?n7.57",
+    "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/f77dec88832/"
+  },
+  "玄鐵礦": {
+    "file": "assets/icons/266013cb547.png",
+    "source": "https://lds-img.finalfantasyxiv.com/itemicon/80/80961f26016f88197b7ecdcbf9c7f656a93f945c.png?n7.57",
+    "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/266013cb547/"
+  },
+  "火之水晶": {
+    "file": "assets/icons/75403105d7f.png",
+    "source": "https://lds-img.finalfantasyxiv.com/itemicon/51/514a54bea04de76b7d577d3f41562acc3d77364a.png?n7.57",
+    "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/75403105d7f/"
+  },
+  "玄鋼板": {
+    "file": "assets/icons/e24f6b76458.png",
+    "source": "https://lds-img.finalfantasyxiv.com/itemicon/af/afb03753e6f96c40af0b4fc2665e34c5ed750224.png?n7.57",
+    "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/e24f6b76458/"
+  },
+  "冰之水晶": {
+    "file": "assets/icons/2d800a06851.png",
+    "source": "https://lds-img.finalfantasyxiv.com/itemicon/d9/d9874198dd23068e3c18a416393b30e97b915797.png?n7.57",
+    "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/2d800a06851/"
+  },
+  "玄鋼鉚釘": {
+    "file": "assets/icons/543f0cc9eb6.png",
+    "source": "https://lds-img.finalfantasyxiv.com/itemicon/e4/e421b38754b490daf102e542a51c8c4f3cf0b84e.png?n7.57",
+    "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/543f0cc9eb6/"
+  },
+  "玄鋼錠": {
+    "file": "assets/icons/b05cd22dabd.png",
+    "source": "https://lds-img.finalfantasyxiv.com/itemicon/c9/c9deb8bda8873bfe1f93e40eeb445f711e0d704f.png?n7.57",
+    "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/b05cd22dabd/"
+  },
+  "玫瑰金塊": {
+    "file": "assets/icons/f5a8fa09ad0.png",
+    "source": "https://lds-img.finalfantasyxiv.com/itemicon/a8/a83b41210c2df19dd61ee6585cabeaaeb4335710.png?n7.57",
+    "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/f5a8fa09ad0/"
+  },
+  "金礦": {
+    "file": "assets/icons/dd538e4d915.png",
+    "source": "https://lds-img.finalfantasyxiv.com/itemicon/18/18aa5b7d64bf4244b19f7170f496789c4af42e27.png?n7.57",
+    "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/dd538e4d915/"
+  },
+  "銅礦": {
+    "file": "assets/icons/82a24de366d.png",
+    "source": "https://lds-img.finalfantasyxiv.com/itemicon/36/367a0cd7b201c598098b57e8e005be07b1dcf23c.png?n7.57",
+    "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/82a24de366d/"
+  },
+  "玫瑰金錠": {
+    "file": "assets/icons/0fd5762e1a2.png",
+    "source": "https://lds-img.finalfantasyxiv.com/itemicon/a2/a2e5665686c283e8db30e1bb31a0add155b30fdd.png?n7.57",
+    "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/0fd5762e1a2/"
+  },
+  "斑銅礦": {
+    "file": "assets/icons/40555a09fbf.png",
+    "source": "https://lds-img.finalfantasyxiv.com/itemicon/18/18aa5b7d64bf4244b19f7170f496789c4af42e27.png?n7.57",
+    "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/40555a09fbf/"
+  },
+  "玻璃板": {
+    "file": "assets/icons/9902d9a76aa.png",
+    "source": "https://lds-img.finalfantasyxiv.com/itemicon/75/7545ef48f4b02aa344596feece0256eb66475f33.png?n7.57",
+    "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/9902d9a76aa/"
+  },
+  "矽砂": {
+    "file": "assets/icons/5a8e9c7fcbb.png",
+    "source": "https://lds-img.finalfantasyxiv.com/itemicon/a7/a76fe5ee7e826ea017eaf00aa6b155f9e465aab3.png?n7.57",
+    "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/5a8e9c7fcbb/"
+  },
+  "白金塊": {
+    "file": "assets/icons/de869373c91.png",
+    "source": "https://lds-img.finalfantasyxiv.com/itemicon/82/82d69ee88ab89b940a40657650fdee6dd7ea0de2.png?n7.57",
+    "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/de869373c91/"
+  },
+  "白金礦": {
+    "file": "assets/icons/df71799bdeb.png",
+    "source": "https://lds-img.finalfantasyxiv.com/itemicon/d7/d75e26553b6738e6531eb9a016fa9eff42041565.png?n7.57",
+    "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/df71799bdeb/"
+  },
+  "白鈦塊": {
+    "file": "assets/icons/ea9225b9b39.png",
+    "source": "https://lds-img.finalfantasyxiv.com/itemicon/9d/9d7e21d5ffd7bc85ce785a3a43373f7a956c8212.png?n7.57",
+    "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/ea9225b9b39/"
+  },
+  "白鈦礦": {
+    "file": "assets/icons/f1f08adeb9d.png",
+    "source": "https://lds-img.finalfantasyxiv.com/itemicon/8a/8af44d52892036ddd26a68f3e2429cd1696d8e45.png?n7.57",
+    "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/f1f08adeb9d/"
+  },
+  "鐵礦": {
+    "file": "assets/icons/ad4b9905828.png",
+    "source": "https://lds-img.finalfantasyxiv.com/itemicon/84/840c68eb1a797394d27302d6fed5345c89a61f15.png?n7.57",
+    "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/ad4b9905828/"
+  },
+  "榴彈怪的灰": {
+    "file": "assets/icons/db995256183.png",
+    "source": "https://lds-img.finalfantasyxiv.com/itemicon/c5/c51a251bb4ef6e1c86680219fc641d3684aa505e.png?n7.57",
+    "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/db995256183/"
+  },
+  "白鈦錠": {
+    "file": "assets/icons/71b9a21b0fb.png",
+    "source": "https://lds-img.finalfantasyxiv.com/itemicon/2d/2dd6771f3bbf424df77d993f4895e88e699e5195.png?n7.57",
+    "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/71b9a21b0fb/"
+  },
+  "白雲母": {
+    "file": "assets/icons/b6a6a34397f.png",
+    "source": "https://lds-img.finalfantasyxiv.com/itemicon/61/61251a05532e6399909c523a5d366e5e76938f07.png?n7.57",
+    "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/b6a6a34397f/"
+  },
+  "白銀錠": {
+    "file": "assets/icons/5f54ee1566c.png",
+    "source": "https://lds-img.finalfantasyxiv.com/itemicon/d1/d1c26ff82c3aa909cba7f158b9dad9e538cfb8cb.png?n7.57",
+    "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/5f54ee1566c/"
+  },
+  "銀礦": {
+    "file": "assets/icons/f73ed904e76.png",
+    "source": "https://lds-img.finalfantasyxiv.com/itemicon/59/5956e22a236afcf8ef0839f81daa1c99e96f7493.png?n7.57",
+    "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/f73ed904e76/"
+  },
+  "風之碎晶": {
+    "file": "assets/icons/843899bc8f6.png",
+    "source": "https://lds-img.finalfantasyxiv.com/itemicon/b9/b9601895bd6fe5273b78c40d9706b09d97736c17.png?n7.57",
+    "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/843899bc8f6/"
+  },
+  "白鋼連接板": {
+    "file": "assets/icons/cfcc919561a.png",
+    "source": "https://lds-img.finalfantasyxiv.com/itemicon/e4/e421b38754b490daf102e542a51c8c4f3cf0b84e.png?n7.57",
+    "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/cfcc919561a/"
+  },
+  "白鋼錠": {
+    "file": "assets/icons/c75db0a8725.png",
+    "source": "https://lds-img.finalfantasyxiv.com/itemicon/62/62c659040bc340d736a6c3283b508e902a643586.png?n7.57",
+    "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/c75db0a8725/"
+  },
+  "冰之碎晶": {
+    "file": "assets/icons/f2dfd367f1e.png",
+    "source": "https://lds-img.finalfantasyxiv.com/itemicon/3a/3a922e5b19ba6178122f2ff72240b00ccebc7f41.png?n7.57",
+    "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/f2dfd367f1e/"
+  },
+  "白鋼鉚釘": {
+    "file": "assets/icons/06d767af9ca.png",
+    "source": "https://lds-img.finalfantasyxiv.com/itemicon/e4/e421b38754b490daf102e542a51c8c4f3cf0b84e.png?n7.57",
+    "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/06d767af9ca/"
+  },
+  "火之碎晶": {
+    "file": "assets/icons/27623d06a42.png",
+    "source": "https://lds-img.finalfantasyxiv.com/itemicon/2b/2b45d7b1cccff1c025dffda6f92c45fca23dbc44.png?n7.57",
+    "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/27623d06a42/"
+  },
+  "炸彈的灰": {
+    "file": "assets/icons/35c96e0c9f7.png",
+    "source": "https://lds-img.finalfantasyxiv.com/itemicon/c5/c51a251bb4ef6e1c86680219fc641d3684aa505e.png?n7.57",
+    "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/35c96e0c9f7/"
+  },
+  "硬化雲杉木材": {
+    "file": "assets/icons/cec3fe85cfa.png",
+    "source": "https://lds-img.finalfantasyxiv.com/itemicon/32/32ddd16a0e03a9f1f6a2efe798d1dfa227a50d92.png?n7.57",
+    "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/cec3fe85cfa/"
+  },
+  "雲杉木材": {
+    "file": "assets/icons/f9b83cba7a9.png",
+    "source": "https://lds-img.finalfantasyxiv.com/itemicon/32/32ddd16a0e03a9f1f6a2efe798d1dfa227a50d92.png?n7.57",
+    "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/f9b83cba7a9/"
+  },
+  "樹汁塊": {
+    "file": "assets/icons/8c834249a3a.png",
+    "source": "https://lds-img.finalfantasyxiv.com/itemicon/64/640c29e6a99a89b3e4434622e4d4b6fd9ed30ea3.png?n7.57",
+    "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/8c834249a3a/"
+  },
+  "秘銀板": {
+    "file": "assets/icons/68cf5c88a93.png",
+    "source": "https://lds-img.finalfantasyxiv.com/itemicon/02/02e115e5f9e5ada086cb638847d76999890daa36.png?n7.57",
+    "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/68cf5c88a93/"
+  },
+  "秘銀錠": {
+    "file": "assets/icons/5eddc1855a4.png",
+    "source": "https://lds-img.finalfantasyxiv.com/itemicon/33/33aef8d4d7e5e13d31d36d7b8d36c324513f9939.png?n7.57",
+    "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/5eddc1855a4/"
+  },
+  "秘銀鉚釘": {
+    "file": "assets/icons/7eda99f554a.png",
+    "source": "https://lds-img.finalfantasyxiv.com/itemicon/e4/e421b38754b490daf102e542a51c8c4f3cf0b84e.png?n7.57",
+    "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/7eda99f554a/"
+  },
+  "秘銀礦": {
+    "file": "assets/icons/85617d1a9d8.png",
+    "source": "https://lds-img.finalfantasyxiv.com/itemicon/3d/3d746da822fe07fedf36dc923a373954111ce6fe.png?n7.57",
+    "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/85617d1a9d8/"
+  },
+  "綠金錠": {
+    "file": "assets/icons/a5be16ac908.png",
+    "source": "https://lds-img.finalfantasyxiv.com/itemicon/ab/ab1d42f6b8a4848c00c6bfbcca109e9f6c22c593.png?n7.57",
+    "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/a5be16ac908/"
+  },
+  "綠金礦": {
+    "file": "assets/icons/7bbeaeed3e6.png",
+    "source": "https://lds-img.finalfantasyxiv.com/itemicon/48/480efe044c21729d63c0dfbe55cb1d77e664571a.png?n7.57",
+    "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/7bbeaeed3e6/"
+  },
+  "聖水": {
+    "file": "assets/icons/c44fa01ac3f.png",
+    "source": "https://lds-img.finalfantasyxiv.com/itemicon/34/34748af1938f03b77793531515e08b81e0e746e7.png?n7.57",
+    "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/c44fa01ac3f/"
+  },
+  "德拉瓦尼亞天然水": {
+    "file": "assets/icons/b1b95ea9312.png",
+    "source": "https://lds-img.finalfantasyxiv.com/itemicon/4c/4c23cf4cf5b6f8d0b52d0b5171ad5df1e8d3e05d.png?n7.57",
+    "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/b1b95ea9312/"
+  },
+  "德拉瓦尼亞槲寄生": {
+    "file": "assets/icons/41e7d3b5a18.png",
+    "source": "https://lds-img.finalfantasyxiv.com/itemicon/05/05e8d620bde33dab643d098e229a390a2abae5ce.png?n7.57",
+    "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/41e7d3b5a18/"
+  },
+  "水之水晶": {
+    "file": "assets/icons/44d3f4cb26b.png",
+    "source": "https://lds-img.finalfantasyxiv.com/itemicon/65/65bd95ecc5ecdc8b71f5d79542d5f2582a2dfa07.png?n7.57",
+    "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/44d3f4cb26b/"
+  },
+  "聖雪松材": {
+    "file": "assets/icons/4627ab8fad9.png",
+    "source": "https://lds-img.finalfantasyxiv.com/itemicon/34/34b7a32257a0a44d6f96db0d35355f05cda32979.png?n7.57",
+    "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/4627ab8fad9/"
+  },
+  "雪松木材": {
+    "file": "assets/icons/f1a2cdff07f.png",
+    "source": "https://lds-img.finalfantasyxiv.com/itemicon/3e/3ed32286b781a281c147586fe87c7ac80b501576.png?n7.57",
+    "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/f1a2cdff07f/"
+  },
+  "胡桃木材": {
+    "file": "assets/icons/3f9bd918147.png",
+    "source": "https://lds-img.finalfantasyxiv.com/itemicon/8f/8f9be2489c5da1b3e16b1c4ac0ddd57609ae9f13.png?n7.57",
+    "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/3f9bd918147/"
+  },
+  "胡桃原木": {
+    "file": "assets/icons/546a74b14ce.png",
+    "source": "https://lds-img.finalfantasyxiv.com/itemicon/62/627a37234134734ffb9d70d49a59da26b3db5744.png?n7.57",
+    "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/546a74b14ce/"
+  },
+  "蒼天石": {
+    "file": "assets/icons/19c30b3f4cc.png",
+    "source": "https://lds-img.finalfantasyxiv.com/itemicon/41/41137258c7aa7db153eefa93971f65995c8a7b99.png?n7.57",
+    "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/19c30b3f4cc/"
+  },
+  "蒼天石原石": {
+    "file": "assets/icons/208ad7b8a06.png",
+    "source": "https://lds-img.finalfantasyxiv.com/itemicon/74/7419f9adc9ebafefad0f4e63aae42e7b38c50632.png?n7.57",
+    "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/208ad7b8a06/"
+  },
+  "沉積岩磨刀石": {
+    "file": "assets/icons/76ae2d8195d.png",
+    "source": "https://lds-img.finalfantasyxiv.com/itemicon/6d/6d82f679738805cf73956d55a382788c13d8f7f9.png?n7.57",
+    "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/76ae2d8195d/"
+  },
+  "石蜥蜴的蛋": {
+    "file": "assets/icons/34a4d0429d7.png",
+    "source": "https://lds-img.finalfantasyxiv.com/itemicon/ce/ce5cabc053845b36f02fbcb915132e32f34279a8.png?n7.57",
+    "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/34a4d0429d7/"
+  },
+  "鈷鐵板": {
+    "file": "assets/icons/8505d0645a6.png",
+    "source": "https://lds-img.finalfantasyxiv.com/itemicon/dd/dd7cff38c4ebbbe5be1eb0ffdae58761980de7cb.png?n7.57",
+    "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/8505d0645a6/"
+  },
+  "鈷鐵錠": {
+    "file": "assets/icons/061c3d4a71a.png",
+    "source": "https://lds-img.finalfantasyxiv.com/itemicon/62/62c659040bc340d736a6c3283b508e902a643586.png?n7.57",
+    "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/061c3d4a71a/"
+  },
+  "鈷鐵連接板": {
+    "file": "assets/icons/fb8646a854e.png",
+    "source": "https://lds-img.finalfantasyxiv.com/itemicon/e4/e421b38754b490daf102e542a51c8c4f3cf0b84e.png?n7.57",
+    "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/fb8646a854e/"
+  },
+  "鈷鐵鉚釘": {
+    "file": "assets/icons/99bf30fe06c.png",
+    "source": "https://lds-img.finalfantasyxiv.com/itemicon/e4/e421b38754b490daf102e542a51c8c4f3cf0b84e.png?n7.57",
+    "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/99bf30fe06c/"
+  },
+  "鐵刀木木材": {
+    "file": "assets/icons/c3914d1d368.png",
+    "source": "https://lds-img.finalfantasyxiv.com/itemicon/0a/0a0b248fa72435b83d13b391b5e22f145cd5583c.png?n7.57",
+    "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/c3914d1d368/"
+  },
+  "鐵刀木": {
+    "file": "assets/icons/338c41f7521.png",
+    "source": "https://lds-img.finalfantasyxiv.com/itemicon/be/be05ae56bd563901aabf36bb429e6451835a4d2a.png?n7.57",
+    "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/338c41f7521/"
+  },
+  "雪松原木": {
+    "file": "assets/icons/39a1d796a1a.png",
+    "source": "https://lds-img.finalfantasyxiv.com/itemicon/74/749fd415966f060ef88a3b2e43d05f055c23e246.png?n7.57",
+    "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/39a1d796a1a/"
+  },
+  "雲杉原木": {
+    "file": "assets/icons/abd30227264.png",
+    "source": "https://lds-img.finalfantasyxiv.com/itemicon/e3/e35696fb4ec20287b857c1734e35a9c21d886b47.png?n7.57",
+    "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/abd30227264/"
+  },
+  "靈銀塊": {
+    "file": "assets/icons/cd9a6be87f3.png",
+    "source": "https://lds-img.finalfantasyxiv.com/itemicon/82/824fbc8e59cfd5bf5ac8624284fb9593737e0f87.png?n7.57",
+    "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/cd9a6be87f3/"
+  },
+  "靈銀沙": {
+    "file": "assets/icons/be73a85f632.png",
+    "source": "https://lds-img.finalfantasyxiv.com/itemicon/3f/3f52a4d5cc91a065d133376bcfd499d00373bd80.png?n7.57",
+    "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/be73a85f632/"
+  },
+  "靈銀錠": {
+    "file": "assets/icons/42cc4c8cad6.png",
+    "source": "https://lds-img.finalfantasyxiv.com/itemicon/e6/e67883571ddefa88e054f25e49676b579292c552.png?n7.57",
+    "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/42cc4c8cad6/"
+  },
+  "靈銀礦": {
+    "file": "assets/icons/8ba054dd6d4.png",
+    "source": "https://lds-img.finalfantasyxiv.com/itemicon/9b/9b6decbe5ad93d45fbcc9a53995e7c7856d61133.png?n7.57",
+    "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/8ba054dd6d4/"
+  },
+  "鬼膠": {
+    "file": "assets/icons/dbd4ac8fcca.png",
+    "source": "https://lds-img.finalfantasyxiv.com/itemicon/20/200b68c4b3ef0ea70bedffa3539a98430e56af68.png?n7.57",
+    "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/dbd4ac8fcca/"
+  },
+  "山羊角": {
+    "file": "assets/icons/5aeae8bda7d.png",
+    "source": "https://lds-img.finalfantasyxiv.com/itemicon/33/3370a842b9af44714fed9da368c1abe801e76729.png?n7.57",
+    "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/5aeae8bda7d/"
+  },
+  "黃玉": {
+    "file": "assets/icons/21a8a61693f.png",
+    "source": "https://lds-img.finalfantasyxiv.com/itemicon/89/893b5e7c7d07c05798bf90cdbaaadcb2ae0fd3c9.png?n7.57",
+    "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/21a8a61693f/"
+  },
+  "金剛沙": {
+    "file": "assets/icons/16e683353f8.png",
+    "source": "https://lds-img.finalfantasyxiv.com/itemicon/5d/5d083bfddc526ad6493721f3c45293e0d3ddfca5.png?n7.57",
+    "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/16e683353f8/"
+  },
+  "黃玉原石": {
+    "file": "assets/icons/39686e1a626.png",
+    "source": "https://lds-img.finalfantasyxiv.com/itemicon/ba/baf6ab8e6e7c3a0f7bade5f180f16301a0a10b4c.png?n7.57",
+    "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/39686e1a626/"
+  },
+  "黑膠": {
+    "file": "assets/icons/072cc4898b8.png",
+    "source": "https://lds-img.finalfantasyxiv.com/itemicon/20/200b68c4b3ef0ea70bedffa3539a98430e56af68.png?n7.57",
+    "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/072cc4898b8/"
+  },
+  "明膠怪的肉": {
+    "file": "assets/icons/0112aef578c.png",
+    "source": "https://lds-img.finalfantasyxiv.com/itemicon/21/215b60be6a1beaf9bc2c1addad54edf0ed4e8b8c.png?n7.57",
+    "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/0112aef578c/"
+  },
+  "布丁的肉": {
+    "file": "assets/icons/6d0118d3024.png",
+    "source": "https://lds-img.finalfantasyxiv.com/itemicon/21/215b60be6a1beaf9bc2c1addad54edf0ed4e8b8c.png?n7.57",
+    "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/6d0118d3024/"
+  },
+  "黑鐵釘": {
+    "file": "assets/icons/624bee52d8b.png",
+    "source": "https://lds-img.finalfantasyxiv.com/itemicon/4b/4b9e1690f35aba0a82915446f6fdfc53af85af69.png?n7.57",
+    "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/624bee52d8b/"
+  },
+  "黑鐵錠": {
+    "file": "assets/icons/a31d0a708d9.png",
+    "source": "https://lds-img.finalfantasyxiv.com/itemicon/d9/d9ea63eda4b3112dc71638b19e73db8cf5bf881d.png?n7.57",
+    "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/a31d0a708d9/"
+  },
+  "黑鐵鉚釘": {
+    "file": "assets/icons/168c0c69e15.png",
+    "source": "https://lds-img.finalfantasyxiv.com/itemicon/e4/e421b38754b490daf102e542a51c8c4f3cf0b84e.png?n7.57",
+    "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/168c0c69e15/"
+  },
+  "鯊魚級船體": {
+    "file": "assets/icons/5e533fbb360.png",
+    "source": "https://lds-img.finalfantasyxiv.com/itemicon/a1/a1ee3290022d79896e64fbfc0ca2d89bf6bec31f.png?n7.57",
+    "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/5e533fbb360/"
+  },
+  "鯊魚級船尾": {
+    "file": "assets/icons/02e3af49c16.png",
+    "source": "https://lds-img.finalfantasyxiv.com/itemicon/83/831c424a3f0c82dd543865338f8ec270e8251f02.png?n7.57",
+    "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/02e3af49c16/"
+  },
+  "鯊魚級船首": {
+    "file": "assets/icons/602399ffffe.png",
+    "source": "https://lds-img.finalfantasyxiv.com/itemicon/91/919a57eb5970e0119076f629d7cb93513e3d8e79.png?n7.57",
+    "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/602399ffffe/"
+  },
+  "鯊魚級艦橋": {
+    "file": "assets/icons/94903100f7a.png",
+    "source": "https://lds-img.finalfantasyxiv.com/itemicon/9e/9ece0b38348831ea282f98f5c14dbc7e5f813c1b.png?n7.57",
+    "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/94903100f7a/"
+  },
+  "鬚鯨級船體": {
+    "file": "assets/icons/15e326e19d9.png",
+    "source": "https://lds-img.finalfantasyxiv.com/itemicon/fb/fb54276f98b8d778c4dab9a64cb1c648cfdb82f1.png?n7.57",
+    "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/15e326e19d9/"
+  },
+  "甲鱟級船首": {
+    "file": "assets/icons/0eecaaa244a.png",
+    "source": "https://lds-img.finalfantasyxiv.com/itemicon/7b/7b09ce64db1246740556ec49b9cf669d0655ddcd.png?n7.57",
+    "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/0eecaaa244a/"
+  },
+  "腔棘魚級艦橋": {
+    "file": "assets/icons/46c9837df28.png",
+    "source": "https://lds-img.finalfantasyxiv.com/itemicon/c5/c518e2bee38d9e7b76fbe58a4ed4e12086a2064c.png?n7.57",
+    "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/46c9837df28/"
+  }
+}
