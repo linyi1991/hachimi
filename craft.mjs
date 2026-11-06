@@ -21,9 +21,9 @@ export function craftCapacity(data,pool,name){
  while(low<high){const mid=Math.ceil((low+high)/2);if(simulateCraft(data,pool,{[name]:mid*r.yield}).ok)low=mid;else high=mid-1;}
  return {direct,chain:low*r.yield};
 }
-export function craftBatch(data,state,priority){let pool=craftPool(data,state);const ordered=[...data.items];if(priority){const idx=ordered.findIndex(n=>n.name===priority);if(idx>0)ordered.unshift(ordered.splice(idx,1)[0]);}const rows=[];
+export function craftBatch(data,state,priority){let pool=craftPool(data,state);const ordered=[...data.items];if(priority){const idx=ordered.findIndex(n=>n.name===priority);if(idx>0)ordered.unshift(ordered.splice(idx,1)[0]);}const rows=[],production={};
  for(const i of ordered){const need=Math.max(0,i.total-(state[i.id]?.collected||0));if(!need){rows.push({name:i.name,quantity:0,batches:0,need:0,left:0});continue;}const capacity=craftCapacity(data,pool,i.name).chain,qty=Math.min(need,capacity);if(!qty){rows.push({name:i.name,quantity:0,batches:0,need,left:need});continue;}
- const trial=simulateCraft(data,pool,{[i.name]:qty});if(!trial.ok)throw Error('批次分配失敗');pool=trial.pool;const step=trial.steps.find(s=>s.name===i.name);rows.push({name:i.name,quantity:step.made,batches:step.batches,need,left:Math.max(0,need-step.made)});
+ const trial=simulateCraft(data,pool,{[i.name]:qty});if(!trial.ok)throw Error('批次分配失敗');pool=trial.pool;for(const step of trial.steps){production[step.name]||={quantity:0,batches:0};production[step.name].quantity+=step.made;production[step.name].batches+=step.batches;}const step=trial.steps.find(s=>s.name===i.name);rows.push({name:i.name,quantity:step.made,batches:step.batches,need,left:Math.max(0,need-step.made)});
  }
- return {rows,pool};
+ return {rows:rows.map(r=>({...r,handIn:Math.min(r.need,r.quantity),quantity:production[r.name]?.quantity||0,batches:production[r.name]?.batches||0})),pool,production};
 }
