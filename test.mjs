@@ -5,7 +5,7 @@ import app from './dist/server/index.js';
 import {createHash,createHmac,pbkdf2Sync} from 'node:crypto';
 import {Script} from 'node:vm';
 import {calculatePlan} from './plan.mjs';
-import {collaboration} from './collaboration.mjs';
+import {collaboration,fleetRequired} from './collaboration.mjs';
 const db=new DatabaseSync(':memory:');db.exec(await fs.readFile('drizzle/0000_progress.sql','utf8'));
 db.exec(await fs.readFile('drizzle/0001_collaboration.sql','utf8'));
 export function adapter(db){return {prepare(sql){let args=[];return {bind(...a){args=a;return this;},async run(){return db.prepare(sql).run(...args);},async first(){return db.prepare(sql).get(...args)||null;},async all(){return {results:db.prepare(sql).all(...args)};}};}};}
@@ -77,3 +77,5 @@ for(const total of [0,40,192,230])for(const target of [0,96,192])for(const done 
 assert.equal(collaboration({total:192},{owner:'哈沁咪',collected:60,partner_target:96,partner_done:20}).people[0].name,'浮光若水');
 assert.equal(collaboration({total:192},{owner:'既有紀錄',collected:60,partner_target:96,partner_done:20}).people[1].name,'既有紀錄');
 console.log('Passed: named allocations, legacy ownership, automatic combined totals, shared surplus offsets, two-person shortage conservation.');
+
+for(const i of data.items)for(const fleet of [1,2,3,4]){assert.equal(fleetRequired(i,fleet,'all'),i.total*fleet/4);assert.equal(fleetRequired(i,fleet,'start')+fleetRequired(i,fleet,'upgrade'),fleetRequired(i,fleet,'all'));}assert.throws(()=>fleetRequired(data.items[0],5));console.log('Passed: 1-4 fleet quantities and start/upgrade conservation.');

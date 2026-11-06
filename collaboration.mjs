@@ -5,3 +5,8 @@ export function collaboration(i,s){
  const remaining=Math.max(0,i.total-total),partner=Math.min(remaining,Math.max(0,secondTarget-secondDone));
  return {remaining,partner,mine:remaining-partner,total,people:[{name:primary,target:i.total-secondTarget,done:total-secondDone,left:remaining-partner},{name:secondary,target:secondTarget,done:secondDone,left:partner}]};
 }
+
+export function fleetRequired(i,fleet=4,stage='all'){
+ if(!Number.isInteger(fleet)||fleet<1||fleet>4)throw Error('艘數必須為 1 至 4');
+ return (stage==='start'?i.start:stage==='upgrade'?i.upgrade:i.total)*fleet/4;
+}
