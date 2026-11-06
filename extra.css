@@ -28,3 +28,5 @@ body{background:#0d141f;background-image:none}body::before{opacity:.12}.sidebar{
 @media(max-width:760px){.allocation-table,.allocation-table tbody,.allocation-table thead{display:table!important}.allocation-table tr{display:table-row!important}.allocation-table th,.allocation-table td{display:table-cell!important;padding:10px 4px!important;font-size:11px!important;border-bottom:1px solid #41516a!important}.allocation-table td::before{content:none!important}.allocation-table input{font-size:12px;padding:9px 3px}.allocation-table tr{border:0!important;background:transparent!important}.allocation-table th:first-child{width:31%}.allocation-table input#simple-partner-name{font-size:11px}.source-tag{font-size:10px!important}.claim-remainder{font-size:12px}}
 
 .allocation-table tr[hidden]{display:none!important}
+
+.simple-materials.is-estimate th:nth-child(5),.simple-materials.is-estimate td:nth-child(5){display:none!important}

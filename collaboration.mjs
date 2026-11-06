@@ -16,3 +16,9 @@ export function fleetRequired(i,fleet=4,stage='all'){
 }
 
 export function stepOffset(i,stage){if(stage==='all'||stage==='start')return 0;if(stage==='upgrade')return i.start;let total=0;for(const[id,q]of Object.entries(i.stepNeeds||{})){if(id===stage)return total;total+=q;}return 0;}
+
+// Quantities, rather than material-type counts, are the fleet summary headline.
+export function fleetSummary(data,state,fleet=4,stage='all'){
+ const rows=data.items.filter(i=>fleetRequired(i,fleet,stage)>0).map(i=>{const need=fleetRequired(i,fleet,stage),ready=Math.min(need,Math.max(0,(state[i.id]?.collected||0)-stepOffset(i,stage)*fleet/4));return {need,ready,lack:need-ready};});
+ return {types:rows.length,need:rows.reduce((n,r)=>n+r.need,0),ready:rows.reduce((n,r)=>n+r.ready,0),lack:rows.reduce((n,r)=>n+r.lack,0),complete:rows.filter(r=>r.lack===0).length};
+}

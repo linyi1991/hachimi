@@ -5,7 +5,7 @@ import app from './dist/server/index.js';
 import {createHash,createHmac,pbkdf2Sync} from 'node:crypto';
 import {Script} from 'node:vm';
 import {calculatePlan} from './plan.mjs';
-import {collaboration,fleetRequired} from './collaboration.mjs';
+import {fleetSummary,collaboration,fleetRequired} from './collaboration.mjs';
 const db=new DatabaseSync(':memory:');db.exec(await fs.readFile('drizzle/0000_progress.sql','utf8'));
 db.exec(await fs.readFile('drizzle/0001_collaboration.sql','utf8'));
 db.exec(await fs.readFile('drizzle/0002_schematic_reservations.sql','utf8'));
@@ -81,3 +81,6 @@ assert.equal(collaboration({total:192},{owner:'既有紀錄',collected:60,partne
 console.log('Passed: named allocations, legacy ownership, automatic combined totals, shared surplus offsets, two-person shortage conservation.');
 
 for(const i of data.items)for(const fleet of [1,2,3,4]){assert.equal(fleetRequired(i,fleet,'all'),i.total*fleet/4);assert.equal(fleetRequired(i,fleet,'start')+fleetRequired(i,fleet,'upgrade'),fleetRequired(i,fleet,'all'));}assert.throws(()=>fleetRequired(data.items[0],5));console.log('Passed: 1-4 fleet quantities and start/upgrade conservation.');
+
+for(const fleet of [1,2,3,4]){const x=fleetSummary(data,{},fleet,'all');assert.equal(x.types,38);assert.equal(x.need,2073*fleet);assert.equal(x.lack,x.need);assert.equal(x.ready,0);const stock=Object.fromEntries(data.items.map(i=>[i.id,{collected:100000}]));const ready=fleetSummary(data,stock,fleet);assert.equal(ready.ready,ready.need);assert.equal(ready.lack,0);}
+console.log('Passed: fleet summary shows quantities 2073/4146/6219/8292 while material types remain 38; stock credits capped at selected demand.');
