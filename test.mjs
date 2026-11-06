@@ -84,3 +84,6 @@ for(const i of data.items)for(const fleet of [1,2,3,4]){assert.equal(fleetRequir
 
 for(const fleet of [1,2,3,4]){const x=fleetSummary(data,{},fleet,'all');assert.equal(x.types,38);assert.equal(x.need,2073*fleet);assert.equal(x.lack,x.need);assert.equal(x.ready,0);const stock=Object.fromEntries(data.items.map(i=>[i.id,{collected:100000}]));const ready=fleetSummary(data,stock,fleet);assert.equal(ready.ready,ready.need);assert.equal(ready.lack,0);}
 console.log('Passed: fleet summary shows quantities 2073/4146/6219/8292 while material types remain 38; stock credits capped at selected demand.');
+
+const priorFleetStock=Object.fromEntries(data.items.map(i=>[i.id,{collected:i.start}]));
+for(const fleet of [1,2,3,4]){const next=fleetSummary(data,priorFleetStock,fleet,'to1121');assert.equal(next.ready,0,'previous four-ship materials cannot be credited to a new upgrade');assert.equal(next.lack,next.need);}
