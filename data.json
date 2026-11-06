@@ -1129,6 +1129,899 @@
       ]
     }
   ],
+  "inventoryNodes": [
+    {
+      "id": "m037",
+      "name": "水淙石",
+      "en": "Larimar",
+      "total": 48,
+      "direct": true,
+      "craftable": true,
+      "shared": false
+    },
+    {
+      "id": "m023",
+      "name": "加隆德鋼",
+      "en": "Garlond Steel",
+      "total": 72,
+      "direct": true,
+      "craftable": true,
+      "shared": false
+    },
+    {
+      "id": "m018",
+      "name": "古神木材",
+      "en": "Ancient Lumber",
+      "total": 72,
+      "direct": true,
+      "craftable": true,
+      "shared": false
+    },
+    {
+      "id": "m029",
+      "name": "玄鋼板",
+      "en": "Darksteel Plate",
+      "total": 36,
+      "direct": true,
+      "craftable": true,
+      "shared": false
+    },
+    {
+      "id": "m033",
+      "name": "玄鋼鉚釘",
+      "en": "Darksteel Rivets",
+      "total": 144,
+      "direct": true,
+      "craftable": true,
+      "shared": false
+    },
+    {
+      "id": "m016",
+      "name": "玄鋼錠",
+      "en": "Darksteel Ingot",
+      "total": 216,
+      "direct": true,
+      "craftable": true,
+      "shared": false
+    },
+    {
+      "id": "m032",
+      "name": "白金塊",
+      "en": "Platinum Nugget",
+      "total": 48,
+      "direct": true,
+      "craftable": true,
+      "shared": false
+    },
+    {
+      "id": "m035",
+      "name": "白鈦錠",
+      "en": "Titanium Ingot",
+      "total": 120,
+      "direct": true,
+      "craftable": true,
+      "shared": false
+    },
+    {
+      "id": "m019",
+      "name": "白銀錠",
+      "en": "Silver Ingot",
+      "total": 240,
+      "direct": true,
+      "craftable": true,
+      "shared": false
+    },
+    {
+      "id": "m017",
+      "name": "白鋼連接板",
+      "en": "Steel Joint Plate",
+      "total": 360,
+      "direct": true,
+      "craftable": true,
+      "shared": false
+    },
+    {
+      "id": "m013",
+      "name": "白鋼鉚釘",
+      "en": "Steel Rivets",
+      "total": 624,
+      "direct": true,
+      "craftable": true,
+      "shared": false
+    },
+    {
+      "id": "m011",
+      "name": "玫瑰金錠",
+      "en": "Rose Gold Ingot",
+      "total": 252,
+      "direct": true,
+      "craftable": true,
+      "shared": false
+    },
+    {
+      "id": "m031",
+      "name": "玻璃板",
+      "en": "Clear Glass Lens",
+      "total": 120,
+      "direct": true,
+      "craftable": true,
+      "shared": false
+    },
+    {
+      "id": "m001",
+      "name": "胡桃木材",
+      "en": "Walnut Lumber",
+      "total": 168,
+      "direct": true,
+      "craftable": true,
+      "shared": false
+    },
+    {
+      "id": "m007",
+      "name": "秘銀板",
+      "en": "Mythril Plate",
+      "total": 72,
+      "direct": true,
+      "craftable": true,
+      "shared": false
+    },
+    {
+      "id": "m010",
+      "name": "秘銀鉚釘",
+      "en": "Mythril Rivets",
+      "total": 432,
+      "direct": true,
+      "craftable": true,
+      "shared": false
+    },
+    {
+      "id": "m009",
+      "name": "鬼膠",
+      "en": "Horn Glue",
+      "total": 72,
+      "direct": true,
+      "craftable": true,
+      "shared": false
+    },
+    {
+      "id": "m012",
+      "name": "清漆",
+      "en": "Varnish",
+      "total": 192,
+      "direct": true,
+      "craftable": true,
+      "shared": false
+    },
+    {
+      "id": "m020",
+      "name": "硬化雲杉木材",
+      "en": "Treated Spruce Lumber",
+      "total": 48,
+      "direct": true,
+      "craftable": true,
+      "shared": false
+    },
+    {
+      "id": "m038",
+      "name": "黃玉",
+      "en": "Topaz",
+      "total": 24,
+      "direct": true,
+      "craftable": true,
+      "shared": false
+    },
+    {
+      "id": "m026",
+      "name": "黑膠",
+      "en": "Void Glue",
+      "total": 48,
+      "direct": true,
+      "craftable": true,
+      "shared": false
+    },
+    {
+      "id": "m003",
+      "name": "黑鐵釘",
+      "en": "Iron Nails",
+      "total": 252,
+      "direct": true,
+      "craftable": true,
+      "shared": false
+    },
+    {
+      "id": "m006",
+      "name": "黑鐵鉚釘",
+      "en": "Iron Rivets",
+      "total": 156,
+      "direct": true,
+      "craftable": true,
+      "shared": false
+    },
+    {
+      "id": "m024",
+      "name": "聖雪松材",
+      "en": "Holy Cedar Lumber",
+      "total": 48,
+      "direct": true,
+      "craftable": true,
+      "shared": false
+    },
+    {
+      "id": "m025",
+      "name": "鈷鐵板",
+      "en": "Cobalt Plate",
+      "total": 168,
+      "direct": true,
+      "craftable": true,
+      "shared": false
+    },
+    {
+      "id": "m015",
+      "name": "鈷鐵連接板",
+      "en": "Cobalt Joint Plate",
+      "total": 456,
+      "direct": true,
+      "craftable": true,
+      "shared": false
+    },
+    {
+      "id": "m022",
+      "name": "鈷鐵鉚釘",
+      "en": "Cobalt Rivets",
+      "total": 540,
+      "direct": true,
+      "craftable": true,
+      "shared": false
+    },
+    {
+      "id": "m008",
+      "name": "綠金錠",
+      "en": "Electrum Ingot",
+      "total": 156,
+      "direct": true,
+      "craftable": true,
+      "shared": false
+    },
+    {
+      "id": "m028",
+      "name": "蒼天石",
+      "en": "Celestine",
+      "total": 36,
+      "direct": true,
+      "craftable": true,
+      "shared": false
+    },
+    {
+      "id": "m034",
+      "name": "鐵刀木木材",
+      "en": "Cassia Lumber",
+      "total": 36,
+      "direct": true,
+      "craftable": true,
+      "shared": false
+    },
+    {
+      "id": "m027",
+      "name": "靈銀錠",
+      "en": "Mythrite Ingot",
+      "total": 336,
+      "direct": true,
+      "craftable": true,
+      "shared": false
+    },
+    {
+      "id": "r032",
+      "name": "水淙石原石",
+      "en": "Raw Larimar",
+      "total": 0,
+      "direct": false,
+      "craftable": false,
+      "shared": false
+    },
+    {
+      "id": "r033",
+      "name": "蛋殼磨刀石",
+      "en": "Basilisk Whetstone",
+      "total": 0,
+      "direct": false,
+      "craftable": true,
+      "shared": false
+    },
+    {
+      "id": "r034",
+      "name": "藍鐵礦",
+      "en": "Vivianite",
+      "total": 0,
+      "direct": false,
+      "craftable": false,
+      "shared": false
+    },
+    {
+      "id": "r035",
+      "name": "土之晶簇",
+      "en": "Earth Cluster",
+      "total": 0,
+      "direct": false,
+      "craftable": false,
+      "shared": false
+    },
+    {
+      "id": "r036",
+      "name": "矽化木",
+      "en": "Petrified Log",
+      "total": 0,
+      "direct": false,
+      "craftable": false,
+      "shared": false
+    },
+    {
+      "id": "r037",
+      "name": "緋紅樹汁",
+      "en": "Scarlet Sap",
+      "total": 0,
+      "direct": false,
+      "craftable": false,
+      "shared": false
+    },
+    {
+      "id": "r038",
+      "name": "冰之水晶",
+      "en": "Ice Crystal",
+      "total": 0,
+      "direct": false,
+      "craftable": false,
+      "shared": false
+    },
+    {
+      "id": "m021",
+      "name": "玄鋼塊",
+      "en": "Darksteel Nugget",
+      "total": 84,
+      "direct": true,
+      "craftable": true,
+      "shared": true
+    },
+    {
+      "id": "r040",
+      "name": "焦炭",
+      "en": "Coke",
+      "total": 0,
+      "direct": false,
+      "craftable": false,
+      "shared": false
+    },
+    {
+      "id": "r041",
+      "name": "白金礦",
+      "en": "Platinum Ore",
+      "total": 0,
+      "direct": false,
+      "craftable": false,
+      "shared": false
+    },
+    {
+      "id": "r042",
+      "name": "白雲母",
+      "en": "Cloud Mica",
+      "total": 0,
+      "direct": false,
+      "craftable": false,
+      "shared": false
+    },
+    {
+      "id": "r043",
+      "name": "白鈦塊",
+      "en": "Titanium Nugget",
+      "total": 0,
+      "direct": false,
+      "craftable": true,
+      "shared": false
+    },
+    {
+      "id": "r044",
+      "name": "銀礦",
+      "en": "Silver Ore",
+      "total": 0,
+      "direct": false,
+      "craftable": false,
+      "shared": false
+    },
+    {
+      "id": "m014",
+      "name": "白鋼錠",
+      "en": "Steel Ingot",
+      "total": 540,
+      "direct": true,
+      "craftable": true,
+      "shared": true
+    },
+    {
+      "id": "m036",
+      "name": "玫瑰金塊",
+      "en": "Rose Gold Nugget",
+      "total": 120,
+      "direct": true,
+      "craftable": true,
+      "shared": true
+    },
+    {
+      "id": "r047",
+      "name": "斑銅礦",
+      "en": "Peacock Ore",
+      "total": 0,
+      "direct": false,
+      "craftable": false,
+      "shared": false
+    },
+    {
+      "id": "r048",
+      "name": "矽砂",
+      "en": "Silex",
+      "total": 0,
+      "direct": false,
+      "craftable": false,
+      "shared": false
+    },
+    {
+      "id": "r049",
+      "name": "泡鹼",
+      "en": "Natron",
+      "total": 0,
+      "direct": false,
+      "craftable": true,
+      "shared": false
+    },
+    {
+      "id": "r050",
+      "name": "胡桃原木",
+      "en": "Walnut Log",
+      "total": 0,
+      "direct": false,
+      "craftable": false,
+      "shared": false
+    },
+    {
+      "id": "m030",
+      "name": "秘銀錠",
+      "en": "Mythril Ingot",
+      "total": 120,
+      "direct": true,
+      "craftable": true,
+      "shared": true
+    },
+    {
+      "id": "r052",
+      "name": "山羊角",
+      "en": "Aldgoat Horn",
+      "total": 0,
+      "direct": false,
+      "craftable": false,
+      "shared": false
+    },
+    {
+      "id": "r053",
+      "name": "琥珀原石",
+      "en": "Raw Amber",
+      "total": 0,
+      "direct": false,
+      "craftable": false,
+      "shared": false
+    },
+    {
+      "id": "r054",
+      "name": "亞麻油",
+      "en": "Linseed Oil",
+      "total": 0,
+      "direct": false,
+      "craftable": true,
+      "shared": false
+    },
+    {
+      "id": "r055",
+      "name": "松節油",
+      "en": "Terebinth",
+      "total": 0,
+      "direct": false,
+      "craftable": false,
+      "shared": false
+    },
+    {
+      "id": "m002",
+      "name": "雲杉木材",
+      "en": "Spruce Lumber",
+      "total": 168,
+      "direct": true,
+      "craftable": true,
+      "shared": true
+    },
+    {
+      "id": "r057",
+      "name": "金剛沙",
+      "en": "Emery",
+      "total": 0,
+      "direct": false,
+      "craftable": false,
+      "shared": false
+    },
+    {
+      "id": "r058",
+      "name": "黃玉原石",
+      "en": "Raw Topaz",
+      "total": 0,
+      "direct": false,
+      "craftable": false,
+      "shared": false
+    },
+    {
+      "id": "r059",
+      "name": "明膠怪的肉",
+      "en": "Gelato Flesh",
+      "total": 0,
+      "direct": false,
+      "craftable": false,
+      "shared": false
+    },
+    {
+      "id": "r060",
+      "name": "布丁的肉",
+      "en": "Pudding Flesh",
+      "total": 0,
+      "direct": false,
+      "craftable": false,
+      "shared": false
+    },
+    {
+      "id": "r061",
+      "name": "黑鐵錠",
+      "en": "Iron Ingot",
+      "total": 0,
+      "direct": false,
+      "craftable": true,
+      "shared": false
+    },
+    {
+      "id": "m005",
+      "name": "雪松木材",
+      "en": "Cedar Lumber",
+      "total": 36,
+      "direct": true,
+      "craftable": true,
+      "shared": true
+    },
+    {
+      "id": "r063",
+      "name": "聖水",
+      "en": "Holy Water",
+      "total": 0,
+      "direct": false,
+      "craftable": true,
+      "shared": false
+    },
+    {
+      "id": "r064",
+      "name": "冰之碎晶",
+      "en": "Ice Shard",
+      "total": 0,
+      "direct": false,
+      "craftable": false,
+      "shared": false
+    },
+    {
+      "id": "m004",
+      "name": "鈷鐵錠",
+      "en": "Cobalt Ingot",
+      "total": 600,
+      "direct": true,
+      "craftable": true,
+      "shared": true
+    },
+    {
+      "id": "r066",
+      "name": "綠金礦",
+      "en": "Electrum Ore",
+      "total": 0,
+      "direct": false,
+      "craftable": false,
+      "shared": false
+    },
+    {
+      "id": "r067",
+      "name": "蒼天石原石",
+      "en": "Raw Celestine",
+      "total": 0,
+      "direct": false,
+      "craftable": false,
+      "shared": false
+    },
+    {
+      "id": "r068",
+      "name": "沉積岩磨刀石",
+      "en": "Aqueous Whetstone",
+      "total": 0,
+      "direct": false,
+      "craftable": false,
+      "shared": false
+    },
+    {
+      "id": "r069",
+      "name": "火之晶簇",
+      "en": "Fire Cluster",
+      "total": 0,
+      "direct": false,
+      "craftable": false,
+      "shared": false
+    },
+    {
+      "id": "r070",
+      "name": "鐵刀木",
+      "en": "Cassia Log",
+      "total": 0,
+      "direct": false,
+      "craftable": false,
+      "shared": false
+    },
+    {
+      "id": "r071",
+      "name": "樹汁塊",
+      "en": "Hardened Sap",
+      "total": 0,
+      "direct": false,
+      "craftable": false,
+      "shared": false
+    },
+    {
+      "id": "r072",
+      "name": "風之晶簇",
+      "en": "Wind Cluster",
+      "total": 0,
+      "direct": false,
+      "craftable": false,
+      "shared": false
+    },
+    {
+      "id": "r073",
+      "name": "冰之晶簇",
+      "en": "Ice Cluster",
+      "total": 0,
+      "direct": false,
+      "craftable": false,
+      "shared": false
+    },
+    {
+      "id": "r074",
+      "name": "靈銀礦",
+      "en": "Mythrite Ore",
+      "total": 0,
+      "direct": false,
+      "craftable": false,
+      "shared": false
+    },
+    {
+      "id": "r075",
+      "name": "靈銀塊",
+      "en": "Mythrite Nugget",
+      "total": 0,
+      "direct": false,
+      "craftable": true,
+      "shared": false
+    },
+    {
+      "id": "r076",
+      "name": "石蜥蜴的蛋",
+      "en": "Basilisk Egg",
+      "total": 0,
+      "direct": false,
+      "craftable": false,
+      "shared": false
+    },
+    {
+      "id": "r077",
+      "name": "風之碎晶",
+      "en": "Wind Shard",
+      "total": 0,
+      "direct": false,
+      "craftable": false,
+      "shared": false
+    },
+    {
+      "id": "r078",
+      "name": "玄鐵礦",
+      "en": "Darksteel Ore",
+      "total": 0,
+      "direct": false,
+      "craftable": false,
+      "shared": false
+    },
+    {
+      "id": "r079",
+      "name": "白鈦礦",
+      "en": "Titanium Ore",
+      "total": 0,
+      "direct": false,
+      "craftable": false,
+      "shared": false
+    },
+    {
+      "id": "r080",
+      "name": "榴彈怪的灰",
+      "en": "Grenade Ash",
+      "total": 0,
+      "direct": false,
+      "craftable": false,
+      "shared": false
+    },
+    {
+      "id": "r081",
+      "name": "炸彈的灰",
+      "en": "Bomb Ash",
+      "total": 0,
+      "direct": false,
+      "craftable": false,
+      "shared": false
+    },
+    {
+      "id": "r082",
+      "name": "金礦",
+      "en": "Gold Ore",
+      "total": 0,
+      "direct": false,
+      "craftable": false,
+      "shared": false
+    },
+    {
+      "id": "r083",
+      "name": "銅礦",
+      "en": "Copper Ore",
+      "total": 0,
+      "direct": false,
+      "craftable": false,
+      "shared": false
+    },
+    {
+      "id": "r084",
+      "name": "發泡水",
+      "en": "Effervescent Water",
+      "total": 0,
+      "direct": false,
+      "craftable": false,
+      "shared": false
+    },
+    {
+      "id": "r085",
+      "name": "岩鹽",
+      "en": "Rock Salt",
+      "total": 0,
+      "direct": false,
+      "craftable": false,
+      "shared": false
+    },
+    {
+      "id": "r086",
+      "name": "亞麻",
+      "en": "Flax",
+      "total": 0,
+      "direct": false,
+      "craftable": false,
+      "shared": false
+    },
+    {
+      "id": "r087",
+      "name": "水之碎晶",
+      "en": "Water Shard",
+      "total": 0,
+      "direct": false,
+      "craftable": false,
+      "shared": false
+    },
+    {
+      "id": "r088",
+      "name": "雲杉原木",
+      "en": "Spruce Log",
+      "total": 0,
+      "direct": false,
+      "craftable": false,
+      "shared": false
+    },
+    {
+      "id": "r089",
+      "name": "雪松原木",
+      "en": "Cedar Log",
+      "total": 0,
+      "direct": false,
+      "craftable": false,
+      "shared": false
+    },
+    {
+      "id": "r090",
+      "name": "風之水晶",
+      "en": "Wind Crystal",
+      "total": 0,
+      "direct": false,
+      "craftable": false,
+      "shared": false
+    },
+    {
+      "id": "r091",
+      "name": "德拉瓦尼亞天然水",
+      "en": "Dravanian Spring Water",
+      "total": 0,
+      "direct": false,
+      "craftable": false,
+      "shared": false
+    },
+    {
+      "id": "r092",
+      "name": "德拉瓦尼亞槲寄生",
+      "en": "Dravanian Mistletoe",
+      "total": 0,
+      "direct": false,
+      "craftable": false,
+      "shared": false
+    },
+    {
+      "id": "r093",
+      "name": "水之水晶",
+      "en": "Water Crystal",
+      "total": 0,
+      "direct": false,
+      "craftable": false,
+      "shared": false
+    },
+    {
+      "id": "r094",
+      "name": "鈷鐵礦",
+      "en": "Cobalt Ore",
+      "total": 0,
+      "direct": false,
+      "craftable": false,
+      "shared": false
+    },
+    {
+      "id": "r095",
+      "name": "鐵礦",
+      "en": "Iron Ore",
+      "total": 0,
+      "direct": false,
+      "craftable": false,
+      "shared": false
+    },
+    {
+      "id": "r096",
+      "name": "火之碎晶",
+      "en": "Fire Shard",
+      "total": 0,
+      "direct": false,
+      "craftable": false,
+      "shared": false
+    },
+    {
+      "id": "r097",
+      "name": "靈銀沙",
+      "en": "Mythrite Sand",
+      "total": 0,
+      "direct": false,
+      "craftable": false,
+      "shared": false
+    },
+    {
+      "id": "r098",
+      "name": "秘銀礦",
+      "en": "Mythril Ore",
+      "total": 0,
+      "direct": false,
+      "craftable": false,
+      "shared": false
+    },
+    {
+      "id": "r099",
+      "name": "火之水晶",
+      "en": "Fire Crystal",
+      "total": 0,
+      "direct": false,
+      "craftable": false,
+      "shared": false
+    }
+  ],
   "parts": [
     {
       "name": "鯊魚級船體",

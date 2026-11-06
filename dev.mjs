@@ -4,6 +4,7 @@ import fs from 'node:fs/promises';
 import {createHash} from 'node:crypto';
 import app from './dist/server/index.js';
 const db=new DatabaseSync(':memory:');db.exec(await fs.readFile('drizzle/0000_progress.sql','utf8'));
+db.exec(await fs.readFile('drizzle/0001_collaboration.sql','utf8'));
 const DB={prepare(sql){let args=[];return {bind(...a){args=a;return this;},async run(){return db.prepare(sql).run(...args);},async first(){return db.prepare(sql).get(...args)||null;},async all(){return {results:db.prepare(sql).all(...args)};}};}};
 const env={DB,EDIT_KEY_HASH:createHash('sha256').update('local-test-only-not-a-production-key').digest('hex'),EDIT_PASSPHRASE_HASH:createHash('sha256').update('local-test-passphrase').digest('hex'),SESSION_SECRET:'local-test-signing-secret-not-production'};
 http.createServer(async(req,res)=>{const chunks=[];for await(const c of req)chunks.push(c);const b=Buffer.concat(chunks);const r=await app.fetch(new Request('http://127.0.0.1:4318'+req.url,{method:req.method,headers:req.headers,...(b.length?{body:b}:{})}),env);res.writeHead(r.status,Object.fromEntries(r.headers));res.end(Buffer.from(await r.arrayBuffer()));}).listen(4318,'127.0.0.1',()=>console.log('Local: http://127.0.0.1:4318'));

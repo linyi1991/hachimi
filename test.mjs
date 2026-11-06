@@ -3,7 +3,10 @@ import fs from 'node:fs/promises';
 import {DatabaseSync} from 'node:sqlite';
 import app from './dist/server/index.js';
 import {createHash,createHmac} from 'node:crypto';
+import {Script} from 'node:vm';
+import {calculatePlan} from './plan.mjs';
 const db=new DatabaseSync(':memory:');db.exec(await fs.readFile('drizzle/0000_progress.sql','utf8'));
+db.exec(await fs.readFile('drizzle/0001_collaboration.sql','utf8'));
 export function adapter(db){return {prepare(sql){let args=[];return {bind(...a){args=a;return this;},async run(){return db.prepare(sql).run(...args);},async first(){return db.prepare(sql).get(...args)||null;},async all(){return {results:db.prepare(sql).all(...args)};}};}};}
 const token='local-test-only-not-a-production-key';
 const env={DB:adapter(db),EDIT_KEY_HASH:createHash('sha256').update(token).digest('hex'),EDIT_PASSPHRASE_HASH:createHash('sha256').update('test-passphrase').digest('hex'),SESSION_SECRET:'local-test-signing-secret-not-production'};
@@ -25,13 +28,25 @@ assert.equal((await app.fetch(req('/api/item','PATCH',{...patch,collected:1.5,de
 assert.equal((await app.fetch(req('/api/item','PATCH',{...patch,id:'unknown'},session),env)).status,404);
 assert.equal((await app.fetch(new Request('http://localhost/api/item',{method:'PATCH',headers:{Authorization:'Bearer '+session},body:'{' }),env)).status,400);
 r=await app.fetch(req('/api/item','PATCH',{...patch,collected:120,revision:1},session),env);assert.equal(r.status,200);assert.equal((await r.json()).item.revision,2);
-for(const path of ['/','/guide','/parts','/voyages','/sources']){r=await app.fetch(req(path),env);assert.equal(r.status,200);const h=await r.text();assert(h.includes('HACHIMI'));assert(!h.includes(token));assert(!h.includes(env.EDIT_KEY_HASH));}
+for(const path of ['/','/guide','/parts','/voyages','/sources','/planner','/lookup']){r=await app.fetch(req(path),env);assert.equal(r.status,200);const h=await r.text();assert(h.includes('HACHIMI'));assert(!h.includes(token));assert(!h.includes(env.EDIT_KEY_HASH));new Script(h.match(/<script>([\s\S]*)<\/script>/)[1]);}
 r=await app.fetch(req('/download.xlsx'),env);assert.equal(r.status,200);assert.equal(new Uint8Array(await r.arrayBuffer())[0],80);
 const data=JSON.parse(await fs.readFile('data.json','utf8'));const computed={};for(const p of data.parts)for(const[n,q]of Object.entries(p.ingredients))computed[n]=(computed[n]||0)+q*4;for(const i of data.items)assert.equal(i.total,computed[i.name]);assert.equal(data.items.length,38);assert.equal(data.parts.reduce((a,b)=>a+b.qty,0),28);
 const official=Object.values(data.official);assert.equal(official.length,45);assert(official.every(i=>i.match));
 const preflight=await app.fetch(new Request('https://api.example/api/item',{method:'OPTIONS',headers:{Origin:'https://linyi1991.github.io','Access-Control-Request-Method':'PATCH','Access-Control-Request-Headers':'authorization, content-type'}}),env);assert.equal(preflight.status,204);assert.equal(preflight.headers.get('Access-Control-Allow-Origin'),'https://linyi1991.github.io');
 assert.equal((await app.fetch(new Request('https://api.example/api/item',{method:'OPTIONS',headers:{Origin:'https://untrusted.example'}}),env)).status,403);
 const pages=await fs.readFile('pages/guide/index.html','utf8');assert(pages.includes("const BASE_PATH='/hachimi'"));assert(pages.includes('href="/hachimi/guide"'));assert(pages.includes("fetch(api('/api/state')"));
+const baseline=calculatePlan(data,{},4);const cobalt=baseline.find(n=>n.name==='鈷鐵錠');assert.equal(cobalt.directNeed,600);assert.equal(cobalt.upstream,1332);assert.equal(cobalt.short,1932);assert.equal(cobalt.available,0);
+const keep=calculatePlan(data,{[cobalt.id]:{collected:600,delivered:0}},4).find(n=>n.name==='鈷鐵錠');assert.equal(keep.reserve,600);assert.equal(keep.forCraft,0);assert.equal(keep.short,1332);
+const spare=calculatePlan(data,{[cobalt.id]:{collected:700,delivered:0}},4).find(n=>n.name==='鈷鐵錠');assert.equal(spare.reserve,600);assert.equal(spare.forCraft,100);assert.equal(spare.short,1232);
+const alreadyDelivered=calculatePlan(data,{[cobalt.id]:{collected:700,delivered:100}},4).find(n=>n.name==='鈷鐵錠');assert.equal(alreadyDelivered.directNeed,500);assert.equal(alreadyDelivered.reserve,500);assert.equal(alreadyDelivered.short,1232);
+assert.equal(calculatePlan(data,{},1).find(n=>n.name==='鈷鐵錠').short,483);assert.throws(()=>calculatePlan(data,{},5));assert.throws(()=>calculatePlan(data,{},0));
+assert.equal((await app.fetch(req('/api/comments','POST',{item:'m001',author:'test',quantity:10,location:'第4頁',body:'test'}),env)).status,403);
+let comment=await app.fetch(req('/api/comments','POST',{item:'m001',author:'test',quantity:10,location:'第4頁 第3格',body:'留言不改庫存'},session),env);assert.equal(comment.status,200);
+let comments=await (await app.fetch(req('/api/comments?item=m001'),env)).json();assert.equal(comments.messages.length,1);assert.equal(comments.messages[0].quantity,10);assert.equal(db.prepare('SELECT collected FROM progress WHERE item_id=?').get('m001').collected,120);
+assert.equal((await app.fetch(req('/api/reserve','POST',{id:'m001',tab:3,locked:true,passphrase:'wrong',revision:2},session),env)).status,403);
+let reserve=await app.fetch(req('/api/reserve','POST',{id:'m001',tab:3,locked:true,passphrase:'test-passphrase',revision:2},session),env);assert.equal(reserve.status,200);assert.equal((await reserve.json()).item.reserve_tab,3);
+let assign=await app.fetch(req('/api/item','PATCH',{...patch,collected:120,partner_target:100,partner_done:50,revision:3,reserve_tab:1,reserve_locked:0},session),env);assert.equal(assign.status,200);let assigned=(await assign.json()).item;assert.equal(assigned.partner_target,100);assert.equal(assigned.partner_done,50);assert.equal(assigned.reserve_tab,3);assert.equal(assigned.reserve_locked,1);
+const rawNode=data.inventoryNodes.find(n=>!n.direct);let rawSaved=await app.fetch(req('/api/item','PATCH',{id:rawNode.id,collected:10,delivered:0,owner:'',note:'',revision:0},session),env);assert.equal(rawSaved.status,200);
 const expiredPayload=Buffer.from(JSON.stringify({role:'edit',exp:Date.now()-1000})).toString('base64url');const expired='s.'+expiredPayload+'.'+createHmac('sha256',env.SESSION_SECRET).update(expiredPayload).digest('base64url');
 assert.equal((await app.fetch(req('/api/item','PATCH',{...patch,revision:2},expired),env)).status,403);
 assert.equal((await app.fetch(req('/api/item','PATCH',{...patch,revision:2},session+'x'),env)).status,403);
