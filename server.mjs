@@ -33,10 +33,61 @@ async function handle(req,env){
   await env.DB.prepare('DELETE FROM unlock_attempts WHERE ip_hash=?').bind(attempt.ip).run();
   return json({session:await issueSession(env,account),username:account.username,expiresIn:28800});
  }
+ if(u.pathname==='/api/schematic'&&req.method==='POST'){
+  const account=await sessionAccount(req,env);if(!account)return json({error:'請先登入才能記錄解鎖。'},403);
+  const raw=await req.text();if(raw.length>4096)return json({error:'內容過長。'},413);let b;try{b=JSON.parse(raw);}catch{return json({error:'格式不正確。'},400);}
+  const schematic=(DATA.schematics||[]).find(s=>s.id===b.id);if(!schematic||!['existing','pay','reset'].includes(b.action)||!Number.isSafeInteger(b.revision)||b.revision<0)return json({error:'請選擇有效設計圖及操作。'},400);
+  const materials=Object.entries(schematic.materials).map(([name,quantity])=>({...DATA.inventoryNodes.find(n=>n.name===name),quantity}));
+  if(materials.some(n=>!n.id))return json({error:'設計圖資料尚未完成。'},503);
+  const conditions=["COALESCE((SELECT revision FROM schematic_progress WHERE schematic_id=?),0)=?", b.action==='reset'?"COALESCE((SELECT status FROM schematic_progress WHERE schematic_id=?),'pending') IN ('known','paid')":"COALESCE((SELECT status FROM schematic_progress WHERE schematic_id=?),'pending')='pending'"];
+  const guardValues=[b.id,b.revision,b.id];
+  if(b.action==='pay')for(const n of materials){const revision=b.stockRevisions?.[n.id];if(!Number.isSafeInteger(revision)||revision<0)return json({error:'請重新讀取材料庫存後再確認繳交。'},400);
+   conditions.push('EXISTS(SELECT 1 FROM progress WHERE item_id=? AND revision=? AND collected>=?+MAX(?,delivered) AND collected-?>=partner_done)');guardValues.push(n.id,revision,n.quantity,n.direct?n.total:0,n.quantity);
+  }
+  const eventId=crypto.randomUUID(),now=new Date().toISOString(),receipt=b.action==='pay'?materials.map(n=>({id:n.id,name:n.name,quantity:n.quantity})):[];
+  const statements=[env.DB.prepare('INSERT INTO schematic_events(id,schematic_id,action,actor,materials_json,created_at) SELECT ?,?,?,?,?,? WHERE '+conditions.join(' AND ')).bind(eventId,b.id,b.action,account.username,JSON.stringify(receipt),now,...guardValues)];
+  if(b.action==='pay')for(const n of materials)statements.push(env.DB.prepare('UPDATE progress SET collected=collected-?,revision=revision+1,updated_at=? WHERE item_id=? AND EXISTS(SELECT 1 FROM schematic_events WHERE id=?)').bind(n.quantity,now,n.id,eventId));
+  const status=b.action==='existing'?'known':b.action==='pay'?'paid':'pending';
+  statements.push(env.DB.prepare('INSERT INTO schematic_progress(schematic_id,status,revision,updated_by,updated_at) SELECT ?,?,?,?,? WHERE EXISTS(SELECT 1 FROM schematic_events WHERE id=?) ON CONFLICT(schematic_id) DO UPDATE SET status=excluded.status,revision=schematic_progress.revision+1,updated_by=excluded.updated_by,updated_at=excluded.updated_at').bind(b.id,status,b.revision+1,account.username,now,eventId));
+  const result=await env.DB.batch(statements);if(!(result[0]?.meta?.changes??result[0]?.changes))return json({error:'材料不足、已經解鎖，或其他人剛更新了紀錄。請重新整理；本次未扣任何材料。'},409);
+  return json({ok:true,action:b.action,receipt});
+ }
+ if(u.pathname==='/api/history'&&req.method==='POST'){
+  const account=await sessionAccount(req,env);if(!account)return json({error:'請先登入才能補記已完成階段。'},403);
+  const raw=await req.text();if(raw.length>8192)return json({error:'內容過長。'},413);let b;try{b=JSON.parse(raw);}catch{return json({error:'格式不正確。'},400);}
+  const delivery=b.action==='deliver',index=DATA.route.steps.findIndex(s=>s.id===b.before);if(index<(delivery?0:1)||!Number.isInteger(b.fleet)||b.fleet<1||b.fleet>4)return json({error:'請選有效的已完成階段與船數。'},400);
+  const prior=DATA.route.steps.slice(0,index+(delivery?1:0)).map(s=>s.id),rows=DATA.items.map(i=>({...i,target:prior.reduce((n,id)=>n+(i.stepNeeds[id]||0),0)*b.fleet/4})).filter(i=>i.target>0),conditions=[],values=[];
+  for(const i of rows){const rev=b.revisions?.[i.id];if(!Number.isSafeInteger(rev)||rev<0)return json({error:'請重新讀取材料紀錄。'},400);conditions.push('COALESCE((SELECT revision FROM progress WHERE item_id=?),0)=?');values.push(i.id,rev);conditions.push('COALESCE((SELECT collected FROM progress WHERE item_id=?),0)+MAX(0,?-COALESCE((SELECT delivered FROM progress WHERE item_id=?),0))<=1000000');values.push(i.id,i.target,i.id);}
+  if(delivery)for(const i of rows){conditions.push('COALESCE((SELECT collected FROM progress WHERE item_id=?),0)>=?');values.push(i.id,i.target);}
+  const event=crypto.randomUUID(),now=new Date().toISOString();const statements=[env.DB.prepare('INSERT INTO history_events(id,actor,fleet,before_step,materials_json,created_at) SELECT ?,?,?,?,?,? WHERE '+conditions.join(' AND ')).bind(event,account.username,b.fleet,b.before,JSON.stringify(rows.map(i=>({id:i.id,target:i.target}))),now,...values)];
+  for(const i of rows)if(delivery)statements.push(env.DB.prepare('UPDATE progress SET delivered=MAX(delivered,?),revision=revision+1,updated_at=? WHERE item_id=? AND EXISTS(SELECT 1 FROM history_events WHERE id=?)').bind(i.target,now,i.id,event));else statements.push(env.DB.prepare('INSERT INTO progress(item_id,collected,delivered,history_delivered,revision,updated_at) SELECT ?,?,?,?,1,? WHERE EXISTS(SELECT 1 FROM history_events WHERE id=?) ON CONFLICT(item_id) DO UPDATE SET collected=progress.collected+MAX(0,?-progress.delivered),history_delivered=progress.history_delivered+MAX(0,?-progress.delivered),partner_target=MIN(progress.partner_target,MAX(0,?-(progress.history_delivered+MAX(0,?-progress.delivered)))),delivered=MAX(progress.delivered,?),revision=progress.revision+1,updated_at=excluded.updated_at').bind(i.id,i.target,i.target,i.target,now,event,i.target,i.target,i.total,i.target,i.target));
+  const result=await env.DB.batch(statements);if(!(result[0]?.meta?.changes??result[0]?.changes))return json({error:'成品不足或紀錄剛更新，請重新整理確認；沒有更動任何材料。'},409);
+  return json({ok:true});
+ }
+ if(u.pathname==='/api/calculation'&&req.method==='POST'){
+  const account=await sessionAccount(req,env);if(!account)return json({error:'請先登入，才能保存在帳號。'},403);
+  const raw=await req.text();if(raw.length>1024)return json({error:'內容過長。'},413);let b;try{b=JSON.parse(raw);}catch{return json({error:'格式不正確。'},400);}
+  if(!Number.isInteger(b.fleet)||b.fleet<1||b.fleet>4||!['all','start','upgrade','to1121','to3113','to1123','to3124'].includes(b.stage)||!Number.isSafeInteger(b.revision)||b.revision<0)return json({error:'請選擇 1～4 艘及有效階段。'},400);
+  const row=await env.DB.prepare('INSERT INTO calculation_views(account_name,fleet,stage,revision,updated_at) SELECT ?,?,?,1,? WHERE COALESCE((SELECT revision FROM calculation_views WHERE account_name=?),0)=? ON CONFLICT(account_name) DO UPDATE SET fleet=excluded.fleet,stage=excluded.stage,revision=calculation_views.revision+1,updated_at=excluded.updated_at RETURNING *').bind(account.username,b.fleet,b.stage,new Date().toISOString(),account.username,b.revision).first();
+  if(!row)return json({error:'另一個分頁已儲存過計算，請重新整理再儲存。'},409);return json({view:row});
+ }
+ if(u.pathname==='/api/search'&&req.method==='GET'){
+  const q=u.searchParams.get('q')||'';if(q.length>200)return json({error:'關鍵字太長。'},400);
+  const normalize=s=>String(s||'').normalize('NFKC').toLowerCase().replace(/第四/g,'第4').replace(/第三/g,'第3').replace(/第二/g,'第2').replace(/第一/g,'第1').replace(/第五/g,'第5').replace(/仓/g,'倉').replace(/页/g,'頁').replace(/\s/g,'');
+  const tokens=q.trim().split(/\s+/).filter(Boolean).slice(0,8).map(normalize);if(!tokens.length)return json({items:[]});
+  const progress=await env.DB.prepare('SELECT * FROM progress').all(),messages=await env.DB.prepare('SELECT item_id,author,quantity,location,body,created_at FROM messages ORDER BY created_at DESC').all(),byId=Object.fromEntries((progress.results||[]).map(s=>[s.item_id,s])),byMessage={};
+  for(const m of messages.results||[])(byMessage[m.item_id]||=[]).push(m);
+  const items=[];for(const n of DATA.inventoryNodes){const s=byId[n.id]||{},notes=byMessage[n.id]||[],plans=(DATA.schematics||[]).filter(p=>p.materials[n.name]),where=(n.direct||plans.length)?'部隊倉庫第'+(s.reserve_tab||4)+'頁':'',people=n.direct?['哈沁咪',s.owner||'浮光若水'].join(' '):s.owner||'',text=[n.name,n.en,s.note,people,where,...plans.map(p=>p.name),...notes.map(m=>[m.author,m.location,m.body].join(' '))].join(' ');if(!tokens.every(t=>normalize(text).includes(t)))continue;
+   const matched=notes.filter(m=>tokens.some(t=>normalize([m.author,m.location,m.body].join(' ')).includes(t))).slice(0,3);
+   items.push({id:n.id,name:n.name,en:n.en,direct:n.direct,location:where,note:s.note||'',schematics:plans.map(p=>p.name),messages:matched,commentCount:notes.length});
+  }return json({items});
+ }
  if(u.pathname==='/api/state'&&req.method==='GET'){
   const r=await env.DB.prepare('SELECT * FROM progress').all();
   const counts=await env.DB.prepare('SELECT item_id,COUNT(*) AS count FROM messages GROUP BY item_id').all();
-  return json({items:r.results||[],messageCounts:counts.results||[],canEdit:await authorized(req,env),username:(await sessionAccount(req,env))?.username||null,time:new Date().toISOString()});
+  const schematics=await env.DB.prepare('SELECT * FROM schematic_progress').all();
+  const account=await sessionAccount(req,env),calculation=account?await env.DB.prepare('SELECT * FROM calculation_views WHERE account_name=?').bind(account.username).first():null;
+  return json({items:r.results||[],schematics:schematics.results||[],calculation,messageCounts:counts.results||[],canEdit:!!account,username:account?.username||null,time:new Date().toISOString()});
  }
  if(u.pathname==='/api/comments'&&req.method==='GET'){
   const id=u.searchParams.get('item');if(!DATA.inventoryNodes.some(i=>i.id===id))return json({error:'找不到材料。'},404);
@@ -68,8 +119,18 @@ async function handle(req,env){
   if(b.partner_target===undefined)b.partner_target=0;if(b.partner_done===undefined)b.partner_done=0;
   if(!Number.isSafeInteger(b.collected)||b.collected<0||b.collected>1000000||!Number.isSafeInteger(b.delivered)||b.delivered<0||b.delivered>item.total||b.delivered>b.collected||!Number.isSafeInteger(b.revision)||b.revision<0||typeof b.owner!=='string'||b.owner.length>40||typeof b.note!=='string'||b.note.length>200)return json({error:'數量須為非負整數；已交付不能超過已備妥及需求。'},400);
   if(!Number.isSafeInteger(b.partner_target)||b.partner_target<0||b.partner_target>item.total||!Number.isSafeInteger(b.partner_done)||b.partner_done<0||b.partner_done>b.collected||(!item.direct&&b.partner_done!==0))return json({error:'請檢查夥伴的認領量與已完成量。'},400);
+  const allStock=await env.DB.prepare('SELECT * FROM progress').all(),allPlans=await env.DB.prepare('SELECT * FROM schematic_progress').all(),stockMap=Object.fromEntries((allStock.results||[]).map(x=>[x.item_id,x])),plans=Object.fromEntries((allPlans.results||[]).map(x=>[x.schematic_id,x])),current=stockMap[b.id]||{collected:0,delivered:0};
+  const reserved=unlockReservation(DATA,stockMap,plans).held[item.name]||0,partHeld=item.direct?Math.min(Math.max(0,current.collected-current.delivered),Math.max(0,item.total-current.delivered)):0,handed=Math.max(0,b.delivered-current.delivered),minimum=reserved+Math.max(0,partHeld-handed);
+  if(b.collected-b.delivered<minimum)return json({error:'此材料已有 '+minimum+' 個列為必留，禁止挪用或當作其他製作耗用扣除。實際繳交請使用對應繳交紀錄。'},422);
   await env.DB.prepare('INSERT OR IGNORE INTO progress(item_id) VALUES (?)').bind(b.id).run();
-  const row=await env.DB.prepare('UPDATE progress SET collected=?,delivered=?,owner=?,note=?,partner_target=?,partner_done=?,revision=revision+1,updated_at=? WHERE item_id=? AND revision=? RETURNING *').bind(b.collected,b.delivered,b.owner.trim(),b.note.trim(),b.partner_target,b.partner_done,new Date().toISOString(),b.id,b.revision).first();
+  // Snapshot only reservation dependencies, so an unlock/parent-stock change cannot race this write.
+  const dependencies=new Set(),planDependencies=[];
+  function protects(name,seen=new Set()){if(name===item.name)return true;if(seen.has(name))return false;seen.add(name);const children=Object.keys(DATA.recipes[name]?.items||{});const matched=children.filter(n=>protects(n,new Set(seen)));if(matched.length)dependencies.add(name);return matched.length>0;}
+  for(const p of DATA.schematics||[])if(Object.keys(p.materials).some(name=>protects(name)))planDependencies.push(p.id);
+  const guards=[],guardValues=[];
+  for(const name of dependencies){const n=DATA.inventoryNodes.find(n=>n.name===name);if(n.id===item.id)continue;guards.push('COALESCE((SELECT revision FROM progress WHERE item_id=?),0)=?');guardValues.push(n.id,stockMap[n.id]?.revision||0);}
+  for(const id of planDependencies){guards.push('COALESCE((SELECT revision FROM schematic_progress WHERE schematic_id=?),0)=?');guardValues.push(id,plans[id]?.revision||0);}
+  const row=await env.DB.prepare('UPDATE progress SET collected=?,delivered=?,owner=?,note=?,partner_target=?,partner_done=?,revision=revision+1,updated_at=? WHERE item_id=? AND revision=?'+(guards.length?' AND '+guards.join(' AND '):'')+' RETURNING *').bind(b.collected,b.delivered,b.owner.trim(),b.note.trim(),b.partner_target,b.partner_done,new Date().toISOString(),b.id,b.revision,...guardValues).first();
   if(!row)return json({error:'其他人已更新這項材料。請先重新載入該列，再套用你的數量。'},409);
   return json({item:row});
  }

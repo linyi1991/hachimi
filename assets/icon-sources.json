@@ -528,5 +528,40 @@
     "file": "assets/icons/46c9837df28.png",
     "source": "https://lds-img.finalfantasyxiv.com/itemicon/c5/c518e2bee38d9e7b76fbe58a4ed4e12086a2064c.png?n7.57",
     "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/46c9837df28/"
+  },
+  "紅木木材": {
+    "file": "assets/icons/7ed157640d2.png",
+    "source": "https://lds-img.finalfantasyxiv.com/itemicon/0a/0a0b248fa72435b83d13b391b5e22f145cd5583c.png?n7.57",
+    "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/7ed157640d2/"
+  },
+  "輕木廢材": {
+    "file": "assets/icons/08fc4594f90.png",
+    "source": "https://lds-img.finalfantasyxiv.com/itemicon/ac/ac5b2f94756f0cd66ec4316586c86de35414906a.png?n7.57",
+    "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/08fc4594f90/"
+  },
+  "竹片": {
+    "file": "assets/icons/3367bc7014c.png",
+    "source": "https://lds-img.finalfantasyxiv.com/itemicon/ea/ea10508fae5a3daabc576657a569ce63a93eb8dc.png?n7.57",
+    "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/3367bc7014c/"
+  },
+  "輕木木材": {
+    "file": "assets/icons/3f35fd5a556.png",
+    "source": "https://lds-img.finalfantasyxiv.com/itemicon/32/32ddd16a0e03a9f1f6a2efe798d1dfa227a50d92.png?n7.57",
+    "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/3f35fd5a556/"
+  },
+  "合成纖維": {
+    "file": "assets/icons/763bc37c558.png",
+    "source": "https://lds-img.finalfantasyxiv.com/itemicon/d7/d745069639ba4e85a82eebfdd7400eddb6357db9.png?n7.57",
+    "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/763bc37c558/"
+  },
+  "紅木原木": {
+    "file": "assets/icons/399af1d8f8f.png",
+    "source": "https://lds-img.finalfantasyxiv.com/itemicon/be/be05ae56bd563901aabf36bb429e6451835a4d2a.png?n7.57",
+    "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/399af1d8f8f/"
+  },
+  "鬚鯨級艦橋": {
+    "file": "assets/icons/4893ed14de8.png",
+    "source": "https://lds-img.finalfantasyxiv.com/itemicon/3c/3c3dcc414b74c7b1a031bc54025618aa2033d2cc.png?n7.57",
+    "itemUrl": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/4893ed14de8/"
   }
 }

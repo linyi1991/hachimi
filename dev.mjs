@@ -1,11 +1,13 @@
 import http from 'node:http';
 import {DatabaseSync} from 'node:sqlite';
 import fs from 'node:fs/promises';
+import path from 'node:path';
 import {pbkdf2Sync} from 'node:crypto';
 import app from './dist/server/index.js';
 const db=new DatabaseSync(':memory:');db.exec(await fs.readFile('drizzle/0000_progress.sql','utf8'));
 db.exec(await fs.readFile('drizzle/0001_collaboration.sql','utf8'));
-const DB={prepare(sql){let args=[];return {bind(...a){args=a;return this;},async run(){return db.prepare(sql).run(...args);},async first(){return db.prepare(sql).get(...args)||null;},async all(){return {results:db.prepare(sql).all(...args)};}};}};
+db.exec(await fs.readFile('drizzle/0002_schematic_reservations.sql','utf8'));
+const DB={async batch(statements){db.exec('BEGIN');try{const results=[];for(const stmt of statements)results.push(await stmt.run());db.exec('COMMIT');return results;}catch(e){db.exec('ROLLBACK');throw e;}},prepare(sql){let args=[];return {bind(...a){args=a;return this;},async run(){return db.prepare(sql).run(...args);},async first(){return db.prepare(sql).get(...args)||null;},async all(){return {results:db.prepare(sql).all(...args)};}};}};
 const salt=Buffer.from('test-only-local-salt').toString('base64url');
 const env={DB,EDIT_ACCOUNTS:JSON.stringify(['哈沁咪','浮光若水'].map(username=>({username,salt,hash:pbkdf2Sync('local-test-passphrase',Buffer.from(salt,'base64url'),100000,32,'sha256').toString('base64url')}))),SESSION_SECRET:'local-test-signing-secret-not-production'};
-http.createServer(async(req,res)=>{const chunks=[];for await(const c of req)chunks.push(c);const b=Buffer.concat(chunks);const r=await app.fetch(new Request('http://127.0.0.1:4318'+req.url,{method:req.method,headers:req.headers,...(b.length?{body:b}:{})}),env);res.writeHead(r.status,Object.fromEntries(r.headers));res.end(Buffer.from(await r.arrayBuffer()));}).listen(4318,'127.0.0.1',()=>console.log('Local: http://127.0.0.1:4318'));
+http.createServer(async(req,res)=>{const pathname=new URL(req.url,'http://127.0.0.1:4318').pathname;if(req.method==='GET'&&pathname.startsWith('/assets/')){const file=path.resolve('.'+pathname);if(file.startsWith(path.resolve('assets')+path.sep)){try{const bytes=await fs.readFile(file);res.writeHead(200,{'Content-Type':file.endsWith('.png')?'image/png':file.endsWith('.json')?'application/json':'application/octet-stream'});res.end(bytes);return;}catch{res.writeHead(404);res.end();return;}}}const chunks=[];for await(const c of req)chunks.push(c);const b=Buffer.concat(chunks);const r=await app.fetch(new Request('http://127.0.0.1:4318'+req.url,{method:req.method,headers:req.headers,...(b.length?{body:b}:{})}),env);res.writeHead(r.status,Object.fromEntries(r.headers));res.end(r.headers.get('Content-Type')?.includes('text/html')?(await r.text()).replaceAll('https://linyi1991.github.io/hachimi/','/'):Buffer.from(await r.arrayBuffer()));}).listen(4318,'127.0.0.1',()=>console.log('Local: http://127.0.0.1:4318'));
