@@ -1,8 +1,9 @@
 import fs from 'node:fs/promises';
 const data=JSON.parse(await fs.readFile('data.json','utf8'));
 data.icons=JSON.parse(await fs.readFile('assets/icon-sources.json','utf8'));
+const collaborationCode=(await fs.readFile('collaboration.mjs','utf8')).replace('export function','function');
 const planner=(await fs.readFile('plan.mjs','utf8')).replace('export function','function');
-const html=(await fs.readFile('index.html','utf8')).replace('/* DATA_PLACEHOLDER */',`const DATA=${JSON.stringify(data)};\n${planner}`).replace('/* EXTRA_CLIENT */',(await fs.readFile('features.js','utf8'))+'\n'+(await fs.readFile('login.js','utf8'))).replace('</style>',(await fs.readFile('extra.css','utf8'))+'</style>');
+const html=(await fs.readFile('index.html','utf8')).replace('/* DATA_PLACEHOLDER */',`const DATA=${JSON.stringify(data)};\n${planner}\n${collaborationCode}`).replace('/* EXTRA_CLIENT */',(await fs.readFile('features.js','utf8'))+'\n'+(await fs.readFile('login.js','utf8'))).replace('</style>',(await fs.readFile('extra.css','utf8'))+'</style>');
 const workerHtml=html.replaceAll('${BASE_PATH}/assets/moogle.png','https://linyi1991.github.io/hachimi/assets/moogle.png').replaceAll('${BASE_PATH}/${i.file}','https://linyi1991.github.io/hachimi/${i.file}');
 const server=await fs.readFile('server.mjs','utf8');
 await fs.mkdir('dist/server',{recursive:true});await fs.mkdir('dist/.openai',{recursive:true});
