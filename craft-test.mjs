@@ -50,3 +50,15 @@ assert.equal(comparison.rows.reduce((s,i)=>s+i.fullLack,0),comparison.full.lack)
 assert.equal(comparison.rows.reduce((s,i)=>s+i.startLack,0),comparison.start.lack);
 assert.equal(routeComparison(data,Object.fromEntries(data.items.map(i=>[i.id,{collected:i.total,delivered:i.total}])),4).full.lack,0);
 console.log('Passed: readonly 1111/3124 comparison uses cumulative totals, delivered once, consistent row deficits and fleet scaling.');
+
+const darkEmpty=preparationPlan(data,{},4,'all',known),darkPlate=preparationPlan(data,{[idOf('玄鋼板')]:{collected:36}},4,'all',known);
+const row=(rows,name)=>rows.find(n=>n.name===name);
+assert.equal(row(darkEmpty,'玄鋼塊').need-row(darkPlate,'玄鋼塊').need,72);
+assert.equal(row(darkEmpty,'玄鐵礦').need-row(darkPlate,'玄鐵礦').need,216);
+const darkStock={[idOf('玄鋼板')]:{collected:36},[idOf('玄鋼塊')]:{collected:637},[idOf('玄鐵礦')]:{collected:317}},beforeConversion=preparationPlan(data,darkStock,4,'all',known);
+const converted=structuredClone(darkStock);converted[idOf('玄鋼塊')].collected-=144;converted[idOf('玄鋼鉚釘')]={collected:144};
+const afterConversion=preparationPlan(data,converted,4,'all',known);
+assert.equal(row(beforeConversion,'玄鐵礦').short,472);
+assert.equal(row(afterConversion,'玄鐵礦').short,472,'moving existing stock up the recipe chain does not manufacture another raw shortage');
+assert.equal(row(afterConversion,'玄鋼塊').forIngredients,row(beforeConversion,'玄鋼塊').forIngredients-144);
+console.log('Passed: 36 finished plates remove 72 nuggets/216 ore demand; converting existing nuggets to rivets does not recreate raw shortages.');
