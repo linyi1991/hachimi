@@ -1,3 +1,4 @@
+import {preparationPlan} from './preparation.mjs';
 import assert from 'node:assert/strict';
 import fs from 'node:fs/promises';
 import {craftPool,simulateCraft,craftCapacity,craftBatch,craftTree} from './craft.mjs';
@@ -26,3 +27,5 @@ const beforeTree=structuredClone(stock),tree=craftTree(fixture,stock,'A',1);asse
 const idOf=name=>data.inventoryNodes.find(n=>n.name===name).id,ironStock={[idOf('黑鐵錠')]:{collected:10},[idOf('火之碎晶')]:{collected:10}},ironTree=craftTree(data,ironStock,'黑鐵釘',12,known);
 assert.equal(ironTree.capacity.chain,10);assert.equal(ironTree.nodes['黑鐵錠'].used,10);assert.equal(ironTree.nodes['黑鐵錠'].made,2);assert.equal(ironTree.nodes['火之碎晶'].need,14);assert.equal(ironTree.nodes['火之碎晶'].missing,4);assert.equal(ironTree.nodes['鐵礦'].missing,6);
 console.log('Passed: material tree aggregates shared intermediates/crystals once, shows partial-stock deficits and preserves inventory.');
+
+const prep=preparationPlan(fixture,stock,4);assert.equal(prep.find(n=>n.name==='Ore').need,4);assert.equal(prep.find(n=>n.name==='Ore').short,2);const finished={...stock,a:{collected:1},b:{collected:1}};assert.equal(preparationPlan(fixture,finished,4).find(n=>n.name==='Ore').short,0);console.log('Passed: full self-craft preparation aggregates shared raw demand and deducts finished inventory once.');
