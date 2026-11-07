@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import fs from 'node:fs/promises';
-import {craftPool,simulateCraft,craftCapacity,craftBatch} from './craft.mjs';
+import {craftPool,simulateCraft,craftCapacity,craftBatch,craftTree} from './craft.mjs';
 const data=JSON.parse(await fs.readFile('data.json','utf8'));
 const order=Object.fromEntries(data.inventoryNodes.map((n,i)=>[n.name,i]));for(const[name,r]of Object.entries(data.recipes))for(const ingredient of Object.keys(r.items)){assert(ingredient in order);assert(order[name]<order[ingredient],`${name} must precede ${ingredient}`);}
 const known=Object.fromEntries(data.schematics.map(s=>[s.id,{status:'known'}]));
@@ -21,3 +21,8 @@ assert.throws(()=>simulateCraft(fixture,pool,{A:-1}));
 console.log('Passed: crystal bottlenecks, protected hand-in stock, delivered-stock accounting, shared DAG demand aggregation, recipe yields, independent capacities, batch no-double-use, priority, no inventory mutation.');
 
 const directIntermediate={...fixture,inventoryNodes:fixture.inventoryNodes.map(n=>n.name==='X'?{...n,direct:true,total:1}:n),items:[fixture.items[0],{id:'x',name:'X',total:1,direct:true}]};const xBatch=craftBatch(directIntermediate,{ore:{collected:4},fire:{collected:2},water:{collected:1}});assert.equal(xBatch.production.X.quantity,4);assert.equal(xBatch.rows.find(r=>r.name==='X').handIn,1);assert.equal(xBatch.rows.find(r=>r.name==='X').quantity,4);console.log('Passed: batch includes intermediate production separately from hand-in output.');
+
+const beforeTree=structuredClone(stock),tree=craftTree(fixture,stock,'A',1);assert.equal(tree.capacity.chain,1);assert.equal(tree.nodes.X.need,2);assert.equal(tree.nodes.X.batches,1);assert.equal(tree.nodes.Ore.need,2);assert.deepEqual(tree.missing,[]);assert.deepEqual(stock,beforeTree);
+const idOf=name=>data.inventoryNodes.find(n=>n.name===name).id,ironStock={[idOf('黑鐵錠')]:{collected:10},[idOf('火之碎晶')]:{collected:10}},ironTree=craftTree(data,ironStock,'黑鐵釘',12,known);
+assert.equal(ironTree.capacity.chain,10);assert.equal(ironTree.nodes['黑鐵錠'].used,10);assert.equal(ironTree.nodes['黑鐵錠'].made,2);assert.equal(ironTree.nodes['火之碎晶'].need,14);assert.equal(ironTree.nodes['火之碎晶'].missing,4);assert.equal(ironTree.nodes['鐵礦'].missing,6);
+console.log('Passed: material tree aggregates shared intermediates/crystals once, shows partial-stock deficits and preserves inventory.');
