@@ -137,7 +137,7 @@ async function handle(req,env){
   return json({item:row});
  }
  if(u.pathname==='/download.xlsx'&&req.method==='GET')return new Response(Uint8Array.from(atob(XLSX),c=>c.charCodeAt(0)),{headers:{...common,'Content-Type':'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet','Content-Disposition':'attachment; filename="Hachimi-4subs-1111-3124.xlsx"'}});
- if(['/','/index.html','/guide','/parts','/voyages','/sources','/lookup','/planner'].includes(u.pathname)&&req.method==='GET')return new Response(HTML,{headers:{...common,'Content-Type':'text/html; charset=utf-8','Content-Security-Policy':"default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://linyi1991.github.io; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'none'"}});
+ if(['/','/index.html','/guide','/parts','/voyages','/sources','/lookup','/planner','/compare'].includes(u.pathname)&&req.method==='GET')return new Response(HTML,{headers:{...common,'Content-Type':'text/html; charset=utf-8','Content-Security-Policy':"default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://linyi1991.github.io; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'none'"}});
  return json({error:'找不到頁面。'},404);
  }catch{return json({error:'暫時無法儲存或讀取，請稍後重試。'},503);}
 }

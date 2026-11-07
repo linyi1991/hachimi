@@ -1,3 +1,4 @@
+import {routeComparison} from './comparison.mjs';
 import {materialUses} from './uses.mjs';
 import {preparationPlan,preparationNeeded} from './preparation.mjs';
 import assert from 'node:assert/strict';
@@ -40,3 +41,12 @@ assert(preparationNeeded(preparationPlan(fixture,{a:{collected:1}},4).find(n=>n.
 assert(preparationNeeded({name:'Ore',need:0},{required:{Ore:3}}),'mandatory stock must stay visible');
 assert(preparationNeeded({name:'Ore',need:4,short:0}),'stocked but still used is not obsolete');
 console.log('Passed: hide obsolete upstream materials only after all shared uses are covered; keep unlock reserves and stocked requirements visible.');
+
+const startStock=Object.fromEntries(data.items.map(i=>[i.id,{collected:i.start,delivered:i.start}]));
+const comparison=routeComparison(data,startStock,4);assert.equal(comparison.start.lack,0);assert.equal(comparison.full.lack,data.items.reduce((s,i)=>s+i.upgrade,0));
+assert.equal(comparison.full.ready,comparison.start.need,'delivered is part of collected, never added twice');
+assert.equal(routeComparison(data,{},1).full.need*4,routeComparison(data,{},4).full.need);
+assert.equal(comparison.rows.reduce((s,i)=>s+i.fullLack,0),comparison.full.lack);
+assert.equal(comparison.rows.reduce((s,i)=>s+i.startLack,0),comparison.start.lack);
+assert.equal(routeComparison(data,Object.fromEntries(data.items.map(i=>[i.id,{collected:i.total,delivered:i.total}])),4).full.lack,0);
+console.log('Passed: readonly 1111/3124 comparison uses cumulative totals, delivered once, consistent row deficits and fleet scaling.');
