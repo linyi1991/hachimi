@@ -72,3 +72,17 @@ const yieldRecipe=data.inventoryNodes.find(n=>data.recipes[n.name]?.yield>1);if(
 console.log('Passed: completion auth, actual immediate consumption, output credit/attribution, crystal self-funding, mandatory reserves, atomic rollback, CAS races, duplicate concurrent/replayed requests and whole recipe yields.');
 
 }
+{
+ const f=await fixture(),item=find('泡鹼');
+ const claim=(session,revision,action='claim')=>f.call('/api/material-claim','POST',{id:item,revision,action},session);
+ assert.equal((await claim(undefined,0)).status,403);
+ const results=await Promise.all([claim(f.session,0),claim(f.second,0)]);assert.deepEqual(results.map(r=>r.status).sort(),[200,409]);
+ const winner=results[0].status===200?f.session:f.second,loser=winner===f.session?f.second:f.session;
+ const stock=f.stock('泡鹼');assert.equal(stock.collected,0);assert.equal(stock.delivered,0);assert.equal(stock.revision,1);
+ assert.equal((await claim(loser,1,'release')).status,409);assert.equal((await claim(loser,1)).status,409);
+ assert.equal((await claim(winner,1,'release')).status,200);assert.equal(f.stock('泡鹼').owner,'');
+ f.seed('泡鹼',12);assert.equal((await claim(loser,2)).status,200);assert.equal(f.stock('泡鹼').collected,12);
+ assert.equal((await f.call('/api/material-claim','POST',{id:find('胡桃木材'),revision:0,action:'claim'},winner)).status,400);
+ const snapshot=await f.state();assert.equal(snapshot.items.find(n=>n.item_id===item).owner,f.stock('泡鹼').owner);
+ console.log('Passed: material claims use signed-in identity, allow one winner, protect others claims, self-release, preserve quantities and expose shared responsibility.');
+}

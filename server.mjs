@@ -52,6 +52,15 @@ async function handle(req,env){
   const result=await env.DB.batch(statements);if(!(result[0]?.meta?.changes??result[0]?.changes))return json({error:'材料不足、已經解鎖，或其他人剛更新了紀錄。請重新整理；本次未扣任何材料。'},409);
   return json({ok:true,action:b.action,receipt});
  }
+ if(u.pathname==='/api/material-claim'&&req.method==='POST'){
+  const account=await sessionAccount(req,env);if(!account)return json({error:'請先登入才能認領材料。'},403);
+  const raw=await req.text();if(raw.length>1024)return json({error:'內容過長。'},413);let b;try{b=JSON.parse(raw);}catch{return json({error:'格式不正確。'},400);}
+  const item=DATA.inventoryNodes.find(n=>n.id===b.id);if(!item||item.direct||!['claim','release'].includes(b.action)||!Number.isSafeInteger(b.revision)||b.revision<0)return json({error:'請選底材或半成品；工房成品請到分工表認領。'},400);
+  const owner=b.action==='claim'?account.username:'',condition=b.action==='claim'?"COALESCE((SELECT owner FROM progress WHERE item_id=?),'') IN ('',?)":"EXISTS(SELECT 1 FROM progress WHERE item_id=? AND owner=?)";
+  const row=await env.DB.prepare('INSERT INTO progress(item_id,owner,revision,updated_at) SELECT ?,?,1,? WHERE COALESCE((SELECT revision FROM progress WHERE item_id=?),0)=? AND '+condition+' ON CONFLICT(item_id) DO UPDATE SET owner=excluded.owner,revision=progress.revision+1,updated_at=excluded.updated_at RETURNING *').bind(b.id,owner,new Date().toISOString(),b.id,b.revision,b.id,account.username).first();
+  if(!row)return json({error:'紀錄剛更新或已有其他人負責；請重新讀取。只有本人能取消認領。'},409);
+  return json({item:row});
+ }
  if(u.pathname==='/api/craft-complete'&&req.method==='POST'){
   const account=await sessionAccount(req,env);if(!account)return json({error:'請先登入才能記錄製作。'},403);
   const raw=await req.text();if(raw.length>20000)return json({error:'內容過長。'},413);let b;try{b=JSON.parse(raw);}catch{return json({error:'格式不正確。'},400);}
