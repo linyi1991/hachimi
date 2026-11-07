@@ -1,3 +1,4 @@
+import {materialUses} from './uses.mjs';
 import {preparationPlan} from './preparation.mjs';
 import assert from 'node:assert/strict';
 import fs from 'node:fs/promises';
@@ -31,3 +32,5 @@ console.log('Passed: material tree aggregates shared intermediates/crystals once
 const prep=preparationPlan(fixture,stock,4);assert.equal(prep.find(n=>n.name==='Ore').need,4);assert.equal(prep.find(n=>n.name==='Ore').short,2);const finished={...stock,a:{collected:1},b:{collected:1}};assert.equal(preparationPlan(fixture,finished,4).find(n=>n.name==='Ore').short,0);console.log('Passed: full self-craft preparation aggregates shared raw demand and deducts finished inventory once.');
 
 const crystalState={[idOf('黑鐵錠')]:{collected:10}};assert.equal(craftCapacity(data,craftPool(data,crystalState),'黑鐵釘').chain,0);assert.equal(craftCapacity(data,craftPool(data,crystalState,{}, {ignoreCrystals:true}),'黑鐵釘').chain,10);assert.equal(craftPool(data,crystalState,{}, {ignoreCrystals:true})['鐵礦'],0);assert.equal(crystalState[idOf('黑鐵錠')].collected,10);console.log('Passed: self-funded crystals remove only crystal bottlenecks and never alter stock or other shortages.');
+
+const cokeUses=materialUses(data,'焦炭');assert.deepEqual(cokeUses.direct.map(p=>p.name).sort(),['加隆德鋼','玄鋼錠'].sort());assert(!cokeUses.reachable.includes('玄鋼板'),'plate uses Darksteel Nugget, not the Coke-based ingot');assert(cokeUses.parts.some(p=>p.name==='甲鱟級船首'));assert(!cokeUses.parts.some(p=>p.name==='鯊魚級船體'));assert.equal(materialUses(data,'紅木原木').schematics.length,1);console.log('Passed: Coke direct recipes and submarine part links without confusing ingots/nuggets; unlock-only raw material use.');
