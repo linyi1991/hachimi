@@ -52,6 +52,26 @@ async function handle(req,env){
   const result=await env.DB.batch(statements);if(!(result[0]?.meta?.changes??result[0]?.changes))return json({error:'材料不足、已經解鎖，或其他人剛更新了紀錄。請重新整理；本次未扣任何材料。'},409);
   return json({ok:true,action:b.action,receipt});
  }
+ if(u.pathname==='/api/craft-complete'&&req.method==='POST'){
+  const account=await sessionAccount(req,env);if(!account)return json({error:'請先登入才能記錄製作。'},403);
+  const raw=await req.text();if(raw.length>20000)return json({error:'內容過長。'},413);let b;try{b=JSON.parse(raw);}catch{return json({error:'格式不正確。'},400);}
+  if(typeof b.requestId!=='string'||!/^craft-[0-9a-f-]{36}$/.test(b.requestId)||typeof b.personalCrystals!=='boolean')return json({error:'請重新開啟製作視窗。'},400);
+  const request={id:b.id,quantity:b.quantity,personalCrystals:b.personalCrystals},sameRequest=event=>event.actor===account.username&&event.before_step==='craft'&&JSON.stringify(JSON.parse(event.materials_json).request)===JSON.stringify(request);
+  const old=await env.DB.prepare('SELECT * FROM history_events WHERE id=?').bind(b.requestId).first();if(old)return sameRequest(old)?json({ok:true,replayed:true,receipt:JSON.parse(old.materials_json).receipt}):json({error:'這筆製作編號已使用，請重新開啟視窗。'},409);
+  const items=await env.DB.prepare('SELECT * FROM progress').all(),plans=await env.DB.prepare('SELECT * FROM schematic_progress').all(),stock=Object.fromEntries(items.results.map(n=>[n.item_id,n])),schematics=Object.fromEntries(plans.results.map(n=>[n.schematic_id,n]));
+  let receipt;try{receipt=completionPlan(DATA,stock,schematics,b.id,b.quantity,b.personalCrystals);}catch(e){return json({error:e.message},400);}
+  if(!receipt.ok)return json({error:'可用材料不足；必留量不能扣。本次沒有增加成品或扣材料。',missing:receipt.inputs.filter(n=>n.short)},422);
+  const snapshots=DATA.inventoryNodes.map(n=>({id:n.id,revision:stock[n.id]?.revision||0})),planSnapshots=DATA.schematics.map(n=>({id:n.id,revision:schematics[n.id]?.revision||0}));
+  if(snapshots.some(n=>!Number.isSafeInteger(b.revisions?.[n.id])||b.revisions[n.id]!==n.revision)||planSnapshots.some(n=>!Number.isSafeInteger(b.schematicRevisions?.[n.id])||b.schematicRevisions[n.id]!==n.revision))return json({error:'庫存或必留設定剛更新，請重新計算後再記錄；本次沒有扣料。'},409);
+  const now=new Date().toISOString(),payload=JSON.stringify({request,receipt,attempt:crypto.randomUUID()}),guard='EXISTS(SELECT 1 FROM history_events WHERE id=? AND materials_json=?)';
+  const stale="NOT EXISTS(SELECT 1 FROM json_each(?) e LEFT JOIN progress p ON p.item_id=json_extract(e.value,'$.id') WHERE COALESCE(p.revision,0)!=json_extract(e.value,'$.revision')) AND NOT EXISTS(SELECT 1 FROM json_each(?) e LEFT JOIN schematic_progress p ON p.schematic_id=json_extract(e.value,'$.id') WHERE COALESCE(p.revision,0)!=json_extract(e.value,'$.revision'))";
+  const statements=[env.DB.prepare('INSERT OR IGNORE INTO history_events(id,actor,fleet,before_step,materials_json,created_at) SELECT ?,?,1,?,?,? WHERE '+stale).bind(b.requestId,account.username,'craft',payload,now,JSON.stringify(snapshots),JSON.stringify(planSnapshots))];
+  for(const n of receipt.inputs.filter(n=>!n.personal))statements.push(env.DB.prepare('UPDATE progress SET collected=collected-?,partner_done=MIN(partner_done,MAX(0,collected-?-history_delivered)),revision=revision+1,updated_at=? WHERE item_id=? AND '+guard).bind(n.amount,n.amount,now,n.id,b.requestId,payload));
+  const output=DATA.inventoryNodes.find(n=>n.id===b.id),secondary=stock[b.id]?.owner||'浮光若水',partnerAdded=output.direct&&account.username===secondary?b.quantity:0;
+  statements.push(env.DB.prepare('INSERT INTO progress(item_id,collected,partner_done,revision,updated_at) SELECT ?,?,?,1,? WHERE '+guard+' ON CONFLICT(item_id) DO UPDATE SET collected=progress.collected+excluded.collected,partner_done=progress.partner_done+excluded.partner_done,revision=progress.revision+1,updated_at=excluded.updated_at').bind(b.id,b.quantity,partnerAdded,now,b.requestId,payload));
+  const result=await env.DB.batch(statements);if(!(result[0]?.meta?.changes??result[0]?.changes)){const prior=await env.DB.prepare('SELECT * FROM history_events WHERE id=?').bind(b.requestId).first();if(prior&&sameRequest(prior))return json({ok:true,replayed:true,receipt:JSON.parse(prior.materials_json).receipt});return json({error:'有人同時更新庫存，請重新計算；沒有扣任何材料。'},409);}
+  return json({ok:true,receipt});
+ }
  if(u.pathname==='/api/history'&&req.method==='POST'){
   const account=await sessionAccount(req,env);if(!account)return json({error:'請先登入才能補記已完成階段。'},403);
   const raw=await req.text();if(raw.length>8192)return json({error:'內容過長。'},413);let b;try{b=JSON.parse(raw);}catch{return json({error:'格式不正確。'},400);}
