@@ -6,3 +6,6 @@ export function preparationPlan(data,state,fleet=4,stage='all',schematics={}){
  rows.push({...n,need,available,short,batches});if(recipe)for(const[name,q]of Object.entries(recipe.items))demand[name]=(demand[name]||0)+batches*q;
  }return rows;
 }
+
+// Keep shared production demand and mandatory unlock stock visible, even when already stocked.
+export function preparationNeeded(row,locked={}){return row.need>0||(locked.required?.[row.name]||0)>0;}

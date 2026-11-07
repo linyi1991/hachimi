@@ -1,5 +1,5 @@
 import {materialUses} from './uses.mjs';
-import {preparationPlan} from './preparation.mjs';
+import {preparationPlan,preparationNeeded} from './preparation.mjs';
 import assert from 'node:assert/strict';
 import fs from 'node:fs/promises';
 import {craftPool,simulateCraft,craftCapacity,craftBatch,craftTree} from './craft.mjs';
@@ -34,3 +34,9 @@ const prep=preparationPlan(fixture,stock,4);assert.equal(prep.find(n=>n.name==='
 const crystalState={[idOf('黑鐵錠')]:{collected:10}};assert.equal(craftCapacity(data,craftPool(data,crystalState),'黑鐵釘').chain,0);assert.equal(craftCapacity(data,craftPool(data,crystalState,{}, {ignoreCrystals:true}),'黑鐵釘').chain,10);assert.equal(craftPool(data,crystalState,{}, {ignoreCrystals:true})['鐵礦'],0);assert.equal(crystalState[idOf('黑鐵錠')].collected,10);console.log('Passed: self-funded crystals remove only crystal bottlenecks and never alter stock or other shortages.');
 
 const cokeUses=materialUses(data,'焦炭');assert.deepEqual(cokeUses.direct.map(p=>p.name).sort(),['加隆德鋼','玄鋼錠'].sort());assert(!cokeUses.reachable.includes('玄鋼板'),'plate uses Darksteel Nugget, not the Coke-based ingot');assert(cokeUses.parts.some(p=>p.name==='甲鱟級船首'));assert(!cokeUses.parts.some(p=>p.name==='鯊魚級船體'));assert.equal(materialUses(data,'紅木原木').schematics.length,1);console.log('Passed: Coke direct recipes and submarine part links without confusing ingots/nuggets; unlock-only raw material use.');
+
+assert(!preparationNeeded(preparationPlan(fixture,finished,4).find(n=>n.name==='Ore')));
+assert(preparationNeeded(preparationPlan(fixture,{a:{collected:1}},4).find(n=>n.name==='Ore')),'shared raw still needed for B');
+assert(preparationNeeded({name:'Ore',need:0},{required:{Ore:3}}),'mandatory stock must stay visible');
+assert(preparationNeeded({name:'Ore',need:4,short:0}),'stocked but still used is not obsolete');
+console.log('Passed: hide obsolete upstream materials only after all shared uses are covered; keep unlock reserves and stocked requirements visible.');
