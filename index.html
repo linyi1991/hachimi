@@ -14,9 +14,10 @@ let schematicState={},savedCalculation=null;
 try{const p=JSON.parse(localStorage.getItem('hachimi-calculation')||'null');if(p&&[1,2,3,4].includes(p.fleet)&&['all','start','upgrade','to1121','to3113','to1123','to3124'].includes(p.stage)){fleetCount=p.fleet;stage=p.stage;}}catch{}
 let auth=sessionStorage.getItem('hachimi-session')||'';let currentUser='';
 sessionStorage.removeItem('hachimi-edit');if(new URLSearchParams(location.hash.slice(1)).has('edit'))history.replaceState(null,'',location.pathname+location.search);
-const titles={workshop:'總需求與備料',guide:'新手航行指南',parts:'零件與配方',voyages:'海域與解鎖',sources:'資料核對與來源',lookup:'資料查詢',planner:'材料庫存與用途',compare:'1111／3124 進度對照'};
+const titles={workshop:'需求總覽',guide:'新手航行指南',parts:'零件與配方',voyages:'海域與解鎖',sources:'資料核對與來源',lookup:'資料查詢',planner:'材料管理',compare:'1111／3124 進度對照'};
 document.title='Hachimi｜'+titles[page];$('#crumb').textContent=titles[page];document.querySelector(`[data-page="${page}"]`)?.classList.add('active');
 const defaultState=i=>({item_id:i.id,collected:0,delivered:0,owner:'',note:'',revision:0,updated_at:'',history_delivered:0,self_claimed:0,partner_target:0,partner_done:0,reserve_tab:4,reserve_locked:1});
+function canManage(){return page==='planner'&&canEdit;}
 function toast(s,error=false){clearTimeout(toastTimer);$('#toast').textContent=s;$('#toast').className='toast'+(error?' error':'');$('#toast').hidden=false;toastTimer=setTimeout(()=>$('#toast').hidden=true,6500);}
 async function copy(s){try{await navigator.clipboard.writeText(s);toast('連結已複製。');}catch{openModal('複製連結','SHARE',`<div class="field"><input readonly value="${esc(s)}" onclick="this.select()"></div>`);}}
 $('#share').onclick=()=>copy(location.origin+BASE_PATH+'/');$('#close').onclick=()=>$('#modal').close();$('#modal').addEventListener('click',e=>{if(e.target===$('#modal'))$('#modal').close();});
