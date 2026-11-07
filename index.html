@@ -8,7 +8,7 @@
 <script>
 /* DATA_PLACEHOLDER */
 const BASE_PATH='';const API_ORIGIN='';const api=p=>API_ORIGIN+p;
-const $=s=>document.querySelector(s),esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])),num=n=>Number(n).toLocaleString('zh-TW');
+const $=s=>document.querySelector(s),esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])),num=n=>n===Infinity?'自行負擔':Number(n).toLocaleString('zh-TW');
 let page=({'/guide':'guide','/parts':'parts','/voyages':'voyages','/sources':'sources','/lookup':'lookup','/planner':'planner'})[location.pathname.slice(BASE_PATH.length).replace(/\/$/,'')||'/']||'workshop',state={},canEdit=false,stage='all',query='',group='all',onlyMissing=false,drafts={},loading=true,online=false,toastTimer,fleetCount=[1,2,3,4].includes(Number(sessionStorage.getItem('hachimi-fleet')))?Number(sessionStorage.getItem('hachimi-fleet')):4;
 let schematicState={},savedCalculation=null;
 try{const p=JSON.parse(localStorage.getItem('hachimi-calculation')||'null');if(p&&[1,2,3,4].includes(p.fleet)&&['all','start','upgrade','to1121','to3113','to1123','to3124'].includes(p.stage)){fleetCount=p.fleet;stage=p.stage;}}catch{}

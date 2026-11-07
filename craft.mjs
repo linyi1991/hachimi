@@ -1,6 +1,6 @@
 import {unlockReservation} from './unlock.mjs';
 // Stock is always current unused stock. Direct hand-in items are protected for four subs.
-export function craftPool(data,state,schematics={}){const lock=unlockReservation(data,state,schematics).held;return Object.fromEntries(data.inventoryNodes.map(n=>{const s=state[n.id]||{},available=Math.max(0,(s.collected||0)-(s.delivered||0)),reserved=n.direct?Math.max(0,n.total-(s.delivered||0)):0;return [n.name,Math.max(0,available-reserved-(lock[n.name]||0))];}));}
+export function craftPool(data,state,schematics={},options={}){const lock=unlockReservation(data,state,schematics).held;return Object.fromEntries(data.inventoryNodes.map(n=>{const s=state[n.id]||{},available=Math.max(0,(s.collected||0)-(s.delivered||0)),reserved=n.direct?Math.max(0,n.total-(s.delivered||0)):0;return [n.name,options.ignoreCrystals&&/碎晶|水晶|晶簇/.test(n.name)?Infinity:Math.max(0,available-reserved-(lock[n.name]||0))];}));}
 // Aggregate every upstream demand before consuming any shared ingredient.
 export function simulateCraft(data,pool,goals){
  const next={...pool},demand={},steps=[],missing=[];

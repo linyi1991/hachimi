@@ -1,0 +1,7 @@
+let ignoreCrystals=localStorage.getItem('hachimi-ignore-crystals')==='1';
+const normalCraftPool=craftPool;craftPool=function(data,state,schematics={},options={}){return normalCraftPool(data,state,schematics,{...options,ignoreCrystals});};
+const normalCalculatePlan=calculatePlan;calculatePlan=function(...args){return normalCalculatePlan(...args).map(n=>ignoreCrystals&&/碎晶|水晶|晶簇/.test(n.name)?{...n,short:0}:n);};
+function crystalChoice(){const box=document.createElement('div');box.className='crystal-choice';box.innerHTML=`<label><input type="checkbox" id="ignore-crystals" ${ignoreCrystals?'checked':''}>水晶自行負擔（忽略水晶、碎晶、晶簇數量）</label><p id="crystal-choice-note"></p>`;box.querySelector('input').onchange=e=>{ignoreCrystals=e.target.checked;localStorage.setItem('hachimi-ignore-crystals',ignoreCrystals?'1':'0');if(page==='workshop'){renderRows();renderStats();}else renderPlan();renderCrystalChoice();toast(ignoreCrystals?'水晶改由製作者自備，不列共同缺料，也不限制可做量。':'已恢復檢查水晶庫存與缺額。');};return box;}
+function renderCrystalChoice(){const n=$('#crystal-choice-note');if(n)n.textContent=ignoreCrystals?'已啟用：水晶仍須個人準備，可做量僅檢查其他素材。只記住此裝置設定，不會增加或扣除共同庫存；解鎖必留保護維持。':'未勾選：水晶不足會列入缺料並限制可製作量。';}
+const crystalWorkshop=workshop;workshop=function(){crystalWorkshop();$('.simple-setup').append(crystalChoice());renderCrystalChoice();};
+const crystalPlanner=plannerPage;plannerPage=function(){crystalPlanner();$('.simple-step-tabs').before(crystalChoice());renderCrystalChoice();renderPlan();};

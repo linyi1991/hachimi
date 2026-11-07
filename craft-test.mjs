@@ -29,3 +29,5 @@ assert.equal(ironTree.capacity.chain,10);assert.equal(ironTree.nodes['黑鐵錠'
 console.log('Passed: material tree aggregates shared intermediates/crystals once, shows partial-stock deficits and preserves inventory.');
 
 const prep=preparationPlan(fixture,stock,4);assert.equal(prep.find(n=>n.name==='Ore').need,4);assert.equal(prep.find(n=>n.name==='Ore').short,2);const finished={...stock,a:{collected:1},b:{collected:1}};assert.equal(preparationPlan(fixture,finished,4).find(n=>n.name==='Ore').short,0);console.log('Passed: full self-craft preparation aggregates shared raw demand and deducts finished inventory once.');
+
+const crystalState={[idOf('黑鐵錠')]:{collected:10}};assert.equal(craftCapacity(data,craftPool(data,crystalState),'黑鐵釘').chain,0);assert.equal(craftCapacity(data,craftPool(data,crystalState,{}, {ignoreCrystals:true}),'黑鐵釘').chain,10);assert.equal(craftPool(data,crystalState,{}, {ignoreCrystals:true})['鐵礦'],0);assert.equal(crystalState[idOf('黑鐵錠')].collected,10);console.log('Passed: self-funded crystals remove only crystal bottlenecks and never alter stock or other shortages.');
