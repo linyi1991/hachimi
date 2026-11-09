@@ -52,6 +52,15 @@ async function handle(req,env){
   const result=await env.DB.batch(statements);if(!(result[0]?.meta?.changes??result[0]?.changes))return json({error:'材料不足、已經解鎖，或其他人剛更新了紀錄。請重新整理；本次未扣任何材料。'},409);
   return json({ok:true,action:b.action,receipt});
  }
+ if(u.pathname==='/api/inventory-correction'&&req.method==='POST'){
+  const account=await sessionAccount(req,env);if(!account)return json({error:'請先登入。'},403);
+  const raw=await req.text();if(raw.length>1024)return json({error:'內容過長。'},413);let b;try{b=JSON.parse(raw);}catch{return json({error:'格式錯誤。'},400);}
+  if(!DATA.inventoryNodes.some(n=>n.id===b.id)||!Number.isSafeInteger(b.physical)||b.physical<0||b.physical>1000000||!Number.isSafeInteger(b.revision)||b.revision<0)return json({error:'請填實際現有數量。'},400);
+  const old=await env.DB.prepare('SELECT * FROM progress WHERE item_id=?').bind(b.id).first()||{collected:0,delivered:0,revision:0};if(old.revision!==b.revision||old.delivered+b.physical>1000000)return json({error:'紀錄已更新，請重新讀取。'},409);
+  const id=crypto.randomUUID(),now=new Date().toISOString(),receipt=JSON.stringify({action:'inventory-correction',item:b.id,before:old.collected-old.delivered,after:b.physical});
+  const result=await env.DB.batch([env.DB.prepare('INSERT INTO history_events(id,actor,fleet,before_step,materials_json,created_at) SELECT ?,?,1,?,?,? WHERE COALESCE((SELECT revision FROM progress WHERE item_id=?),0)=?').bind(id,account.username,'inventory-correction',receipt,now,b.id,b.revision),env.DB.prepare('INSERT INTO progress(item_id,collected,revision,updated_at) SELECT ?,?,1,? WHERE EXISTS(SELECT 1 FROM history_events WHERE id=?) ON CONFLICT(item_id) DO UPDATE SET collected=progress.delivered+?,partner_done=MIN(progress.partner_done,?),revision=progress.revision+1,updated_at=excluded.updated_at').bind(b.id,b.physical,now,id,b.physical,b.physical)]);
+  if(!(result[0]?.meta?.changes??result[0]?.changes))return json({error:'其他人剛更新；沒有更正任何數量。'},409);return json({ok:true});
+ }
  if(u.pathname==='/api/material-claim'&&req.method==='POST'){
   const account=await sessionAccount(req,env);if(!account)return json({error:'請先登入才能認領材料。'},403);
   const raw=await req.text();if(raw.length>1024)return json({error:'內容過長。'},413);let b;try{b=JSON.parse(raw);}catch{return json({error:'格式不正確。'},400);}

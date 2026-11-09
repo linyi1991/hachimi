@@ -86,3 +86,11 @@ console.log('Passed: completion auth, actual immediate consumption, output credi
  const snapshot=await f.state();assert.equal(snapshot.items.find(n=>n.item_id===item).owner,f.stock('泡鹼').owner);
  console.log('Passed: material claims use signed-in identity, allow one winner, protect others claims, self-release, preserve quantities and expose shared responsibility.');
 }
+{
+ const f=await fixture();f.seed('鈷鐵錠',527);const id=find('鈷鐵錠');
+ assert.equal((await f.call('/api/inventory-correction','POST',{id,physical:74,revision:0})).status,403);
+ assert.equal((await f.call('/api/inventory-correction','POST',{id,physical:74,revision:0},f.session)).status,200);assert.equal(f.stock('鈷鐵錠').collected,74);
+ assert.equal((await f.call('/api/inventory-correction','POST',{id,physical:10,revision:0},f.second)).status,409);assert.equal(f.stock('鈷鐵錠').collected,74);
+ assert.equal(f.db.prepare("SELECT COUNT(*) n FROM history_events WHERE before_step='inventory-correction'").get().n,1);
+ console.log('Passed: audited physical inventory correction can lower reserved stock, rejects stale/anonymous writes and leaves production protection intact.');
+}
