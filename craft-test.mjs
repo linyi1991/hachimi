@@ -62,3 +62,9 @@ assert.equal(row(beforeConversion,'玄鐵礦').short,472);
 assert.equal(row(afterConversion,'玄鐵礦').short,472,'moving existing stock up the recipe chain does not manufacture another raw shortage');
 assert.equal(row(afterConversion,'玄鋼塊').forIngredients,row(beforeConversion,'玄鋼塊').forIngredients-144);
 console.log('Passed: 36 finished plates remove 72 nuggets/216 ore demand; converting existing nuggets to rivets does not recreate raw shortages.');
+{
+const rows=preparationPlan(data,{},4,'all',known),steel=rows.find(n=>n.name==='白鋼錠');assert.equal(steel.processingUses.reduce((s,n)=>s+n.quantity,0),steel.forIngredients);assert(steel.processingUses.some(n=>n.name==='白鋼鉚釘'));assert(steel.processingUses.some(n=>n.name==='白鋼連接板'));
+for(const row of rows)assert.equal(row.processingUses.reduce((s,n)=>s+n.quantity,0),row.forIngredients);
+const updated=preparationPlan(data,{[idOf('白鋼鉚釘')]:{collected:864}},4,'all',known).find(n=>n.name==='白鋼錠');assert(!updated.processingUses.some(n=>n.name==='白鋼鉚釘'));
+console.log('Passed: all ingredient allocations reconcile to processing totals and completed outputs remove their upstream allocation.');
+}
