@@ -1,0 +1,1178 @@
+{
+  "水淙石原石": [
+    {
+      "job": "礦工",
+      "method": "Mining",
+      "level": 53,
+      "areas": [
+        "Coerthas Western Highlands"
+      ],
+      "source": "https://na.finalfantasyxiv.com/lodestone/playguide/db/gathering/290c492db78/",
+      "regions": [
+        "庫爾札斯西部高地"
+      ],
+      "verifiedAt": "2026-11-10"
+    }
+  ],
+  "土之晶簇": [
+    {
+      "job": "礦工",
+      "method": "Quarrying",
+      "level": 50,
+      "areas": [
+        "Mor Dhona",
+        "???"
+      ],
+      "source": "https://na.finalfantasyxiv.com/lodestone/playguide/db/gathering/f60074faa32/",
+      "regions": [
+        "摩杜納"
+      ],
+      "verifiedAt": "2026-11-10"
+    },
+    {
+      "job": "園藝師",
+      "method": "Logging",
+      "level": 50,
+      "areas": [
+        "Mor Dhona"
+      ],
+      "source": "https://na.finalfantasyxiv.com/lodestone/playguide/db/gathering/ae2d8d0d4ee/",
+      "regions": [
+        "摩杜納"
+      ],
+      "verifiedAt": "2026-11-10"
+    },
+    {
+      "job": "園藝師",
+      "method": "Harvesting",
+      "level": 50,
+      "areas": [
+        "The Dravanian Forelands",
+        "The Dravanian Hinterlands",
+        "The Churning Mists",
+        "The Azim Steppe",
+        "Lakeland"
+      ],
+      "source": "https://na.finalfantasyxiv.com/lodestone/playguide/db/gathering/0e8e52c1ad9/",
+      "regions": [
+        "龍堡參天高地",
+        "龍堡內陸低地",
+        "翻雲霧海"
+      ],
+      "verifiedAt": "2026-11-10"
+    }
+  ],
+  "緋紅樹汁": [
+    {
+      "job": "園藝師",
+      "method": "Logging",
+      "level": 50,
+      "areas": [
+        "North Shroud"
+      ],
+      "source": "https://na.finalfantasyxiv.com/lodestone/playguide/db/gathering/dde2350e7a3/",
+      "regions": [
+        "黑衣森林北部林區"
+      ],
+      "verifiedAt": "2026-11-10"
+    }
+  ],
+  "冰之水晶": [
+    {
+      "job": "礦工",
+      "method": "Mining",
+      "level": 26,
+      "areas": [
+        "Coerthas Western Highlands",
+        "The Lochs",
+        "Thavnair",
+        "Yak T'el"
+      ],
+      "source": "https://na.finalfantasyxiv.com/lodestone/playguide/db/gathering/153397462d8/",
+      "regions": [
+        "庫爾札斯西部高地"
+      ],
+      "verifiedAt": "2026-11-10"
+    },
+    {
+      "job": "礦工",
+      "method": "Quarrying",
+      "level": 26,
+      "areas": [
+        "Western La Noscea",
+        "Coerthas Western Highlands",
+        "Thavnair"
+      ],
+      "source": "https://na.finalfantasyxiv.com/lodestone/playguide/db/gathering/35ebb990e67/",
+      "regions": [
+        "西拉諾西亞",
+        "庫爾札斯西部高地"
+      ],
+      "verifiedAt": "2026-11-10"
+    },
+    {
+      "job": "園藝師",
+      "method": "Logging",
+      "level": 26,
+      "areas": [
+        "South Shroud",
+        "Coerthas Western Highlands",
+        "The Lochs",
+        "Kholusia",
+        "???"
+      ],
+      "source": "https://na.finalfantasyxiv.com/lodestone/playguide/db/gathering/920e4f95ba6/",
+      "regions": [
+        "黑衣森林南部林區",
+        "庫爾札斯西部高地"
+      ],
+      "verifiedAt": "2026-11-10"
+    },
+    {
+      "job": "園藝師",
+      "method": "Harvesting",
+      "level": 26,
+      "areas": [
+        "Coerthas Western Highlands",
+        "Kholusia",
+        "???"
+      ],
+      "source": "https://na.finalfantasyxiv.com/lodestone/playguide/db/gathering/2a916b7ef6b/",
+      "regions": [
+        "庫爾札斯西部高地"
+      ],
+      "verifiedAt": "2026-11-10"
+    }
+  ],
+  "白金礦": [
+    {
+      "job": "礦工",
+      "method": "Mining",
+      "level": 50,
+      "areas": [
+        "Southern Thanalan"
+      ],
+      "source": "https://na.finalfantasyxiv.com/lodestone/playguide/db/gathering/c96ddec5144/",
+      "regions": [
+        "南薩納蘭"
+      ],
+      "verifiedAt": "2026-11-10"
+    }
+  ],
+  "白雲母": [
+    {
+      "job": "礦工",
+      "method": "Quarrying",
+      "level": 58,
+      "areas": [
+        "The Churning Mists"
+      ],
+      "source": "https://na.finalfantasyxiv.com/lodestone/playguide/db/gathering/dfc0756c276/",
+      "regions": [
+        "翻雲霧海"
+      ],
+      "verifiedAt": "2026-11-10"
+    }
+  ],
+  "銀礦": [
+    {
+      "job": "礦工",
+      "method": "Mining",
+      "level": 25,
+      "areas": [
+        "South Shroud"
+      ],
+      "source": "https://na.finalfantasyxiv.com/lodestone/playguide/db/gathering/a30f62a8535/",
+      "regions": [
+        "黑衣森林南部林區"
+      ],
+      "verifiedAt": "2026-11-10"
+    }
+  ],
+  "矽砂": [
+    {
+      "job": "礦工",
+      "method": "Quarrying",
+      "level": 27,
+      "areas": [
+        "Southern Thanalan"
+      ],
+      "source": "https://na.finalfantasyxiv.com/lodestone/playguide/db/gathering/a628827bf7f/",
+      "regions": [
+        "南薩納蘭"
+      ],
+      "verifiedAt": "2026-11-10"
+    }
+  ],
+  "胡桃原木": [
+    {
+      "job": "園藝師",
+      "method": "Logging",
+      "level": 24,
+      "areas": [
+        "South Shroud"
+      ],
+      "source": "https://na.finalfantasyxiv.com/lodestone/playguide/db/gathering/5128d359d7a/",
+      "regions": [
+        "黑衣森林南部林區"
+      ],
+      "verifiedAt": "2026-11-10"
+    }
+  ],
+  "琥珀原石": [
+    {
+      "job": "礦工",
+      "method": "Mining",
+      "level": 44,
+      "areas": [
+        "Eastern Thanalan"
+      ],
+      "source": "https://na.finalfantasyxiv.com/lodestone/playguide/db/gathering/f69a9dfae26/",
+      "regions": [
+        "東薩納蘭"
+      ],
+      "verifiedAt": "2026-11-10"
+    }
+  ],
+  "黃玉原石": [
+    {
+      "job": "礦工",
+      "method": "Mining",
+      "level": 50,
+      "areas": [
+        "Northern Thanalan"
+      ],
+      "source": "https://na.finalfantasyxiv.com/lodestone/playguide/db/gathering/b70a3658f97/",
+      "regions": [
+        "北薩納蘭"
+      ],
+      "verifiedAt": "2026-11-10"
+    }
+  ],
+  "冰之碎晶": [
+    {
+      "job": "礦工",
+      "method": "Mining",
+      "level": 1,
+      "areas": [
+        "Western La Noscea",
+        "South Shroud",
+        "Coerthas Central Highlands"
+      ],
+      "source": "https://na.finalfantasyxiv.com/lodestone/playguide/db/gathering/9b13d94e6e3/",
+      "regions": [
+        "西拉諾西亞",
+        "黑衣森林南部林區",
+        "庫爾札斯中央高地"
+      ],
+      "verifiedAt": "2026-11-10"
+    },
+    {
+      "job": "礦工",
+      "method": "Quarrying",
+      "level": 1,
+      "areas": [
+        "Western La Noscea",
+        "South Shroud"
+      ],
+      "source": "https://na.finalfantasyxiv.com/lodestone/playguide/db/gathering/654b29e3512/",
+      "regions": [
+        "西拉諾西亞",
+        "黑衣森林南部林區"
+      ],
+      "verifiedAt": "2026-11-10"
+    },
+    {
+      "job": "園藝師",
+      "method": "Logging",
+      "level": 1,
+      "areas": [
+        "Western La Noscea",
+        "Central Shroud",
+        "South Shroud",
+        "Coerthas Central Highlands"
+      ],
+      "source": "https://na.finalfantasyxiv.com/lodestone/playguide/db/gathering/b5c05ae206e/",
+      "regions": [
+        "西拉諾西亞",
+        "黑衣森林中央林區",
+        "黑衣森林南部林區",
+        "庫爾札斯中央高地"
+      ],
+      "verifiedAt": "2026-11-10"
+    },
+    {
+      "job": "園藝師",
+      "method": "Harvesting",
+      "level": 1,
+      "areas": [
+        "Western La Noscea",
+        "South Shroud"
+      ],
+      "source": "https://na.finalfantasyxiv.com/lodestone/playguide/db/gathering/9962bd81ee1/",
+      "regions": [
+        "西拉諾西亞",
+        "黑衣森林南部林區"
+      ],
+      "verifiedAt": "2026-11-10"
+    }
+  ],
+  "綠金礦": [
+    {
+      "job": "礦工",
+      "method": "Mining",
+      "level": 43,
+      "areas": [
+        "Upper La Noscea"
+      ],
+      "source": "https://na.finalfantasyxiv.com/lodestone/playguide/db/gathering/7deac006ca9/",
+      "regions": [
+        "拉諾西亞高地"
+      ],
+      "verifiedAt": "2026-11-10"
+    }
+  ],
+  "火之晶簇": [
+    {
+      "job": "礦工",
+      "method": "Quarrying",
+      "level": 50,
+      "areas": [
+        "Middle La Noscea",
+        "Mor Dhona",
+        "The Dravanian Forelands",
+        "The Dravanian Hinterlands",
+        "The Churning Mists",
+        "Yanxia",
+        "Kholusia"
+      ],
+      "source": "https://na.finalfantasyxiv.com/lodestone/playguide/db/gathering/91496ddba66/",
+      "regions": [
+        "中拉諾西亞",
+        "摩杜納",
+        "龍堡參天高地",
+        "龍堡內陸低地",
+        "翻雲霧海"
+      ],
+      "verifiedAt": "2026-11-10"
+    },
+    {
+      "job": "園藝師",
+      "method": "Logging",
+      "level": 50,
+      "areas": [
+        "Mor Dhona",
+        "Thavnair"
+      ],
+      "source": "https://na.finalfantasyxiv.com/lodestone/playguide/db/gathering/3f5de31eab1/",
+      "regions": [
+        "摩杜納"
+      ],
+      "verifiedAt": "2026-11-10"
+    },
+    {
+      "job": "園藝師",
+      "method": "Harvesting",
+      "level": 50,
+      "areas": [],
+      "source": "https://na.finalfantasyxiv.com/lodestone/playguide/db/gathering/e2ea5d726a5/",
+      "regions": [],
+      "verifiedAt": "2026-11-10"
+    }
+  ],
+  "風之晶簇": [
+    {
+      "job": "礦工",
+      "method": "Quarrying",
+      "level": 50,
+      "areas": [
+        "Mor Dhona"
+      ],
+      "source": "https://na.finalfantasyxiv.com/lodestone/playguide/db/gathering/1370f69acca/",
+      "regions": [
+        "摩杜納"
+      ],
+      "verifiedAt": "2026-11-10"
+    },
+    {
+      "job": "園藝師",
+      "method": "Logging",
+      "level": 50,
+      "areas": [
+        "Mor Dhona"
+      ],
+      "source": "https://na.finalfantasyxiv.com/lodestone/playguide/db/gathering/e8eac0a40c2/",
+      "regions": [
+        "摩杜納"
+      ],
+      "verifiedAt": "2026-11-10"
+    },
+    {
+      "job": "園藝師",
+      "method": "Harvesting",
+      "level": 50,
+      "areas": [
+        "Coerthas Western Highlands",
+        "The Sea of Clouds",
+        "Yanxia",
+        "The Rak'tika Greatwood",
+        "Labyrinthos",
+        "Shaaloani"
+      ],
+      "source": "https://na.finalfantasyxiv.com/lodestone/playguide/db/gathering/b15705dff74/",
+      "regions": [
+        "庫爾札斯西部高地",
+        "阿巴拉提亞雲海"
+      ],
+      "verifiedAt": "2026-11-10"
+    }
+  ],
+  "冰之晶簇": [
+    {
+      "job": "礦工",
+      "method": "Mining",
+      "level": 50,
+      "areas": [
+        "The Lochs"
+      ],
+      "source": "https://na.finalfantasyxiv.com/lodestone/playguide/db/gathering/e99ef32468e/",
+      "regions": [],
+      "verifiedAt": "2026-11-10"
+    },
+    {
+      "job": "礦工",
+      "method": "Quarrying",
+      "level": 50,
+      "areas": [
+        "Mor Dhona"
+      ],
+      "source": "https://na.finalfantasyxiv.com/lodestone/playguide/db/gathering/ccb64038041/",
+      "regions": [
+        "摩杜納"
+      ],
+      "verifiedAt": "2026-11-10"
+    },
+    {
+      "job": "園藝師",
+      "method": "Logging",
+      "level": 50,
+      "areas": [
+        "Mor Dhona",
+        "The Lochs"
+      ],
+      "source": "https://na.finalfantasyxiv.com/lodestone/playguide/db/gathering/1137ad11607/",
+      "regions": [
+        "摩杜納"
+      ],
+      "verifiedAt": "2026-11-10"
+    },
+    {
+      "job": "園藝師",
+      "method": "Harvesting",
+      "level": 50,
+      "areas": [
+        "Kholusia"
+      ],
+      "source": "https://na.finalfantasyxiv.com/lodestone/playguide/db/gathering/e94b05f396a/",
+      "regions": [],
+      "verifiedAt": "2026-11-10"
+    }
+  ],
+  "靈銀礦": [
+    {
+      "job": "礦工",
+      "method": "Mining",
+      "level": 53,
+      "areas": [
+        "Coerthas Western Highlands"
+      ],
+      "source": "https://na.finalfantasyxiv.com/lodestone/playguide/db/gathering/6b5e8ab893d/",
+      "regions": [
+        "庫爾札斯西部高地"
+      ],
+      "verifiedAt": "2026-11-10"
+    }
+  ],
+  "石蜥蜴的蛋": [
+    {
+      "job": "礦工",
+      "method": "Mining",
+      "level": 46,
+      "areas": [
+        "Northern Thanalan"
+      ],
+      "source": "https://na.finalfantasyxiv.com/lodestone/playguide/db/gathering/2ec6343016c/",
+      "regions": [
+        "北薩納蘭"
+      ],
+      "verifiedAt": "2026-11-10"
+    }
+  ],
+  "風之碎晶": [
+    {
+      "job": "礦工",
+      "method": "Mining",
+      "level": 1,
+      "areas": [
+        "Central Shroud",
+        "Central Thanalan",
+        "Northern Thanalan"
+      ],
+      "source": "https://na.finalfantasyxiv.com/lodestone/playguide/db/gathering/b778db2b445/",
+      "regions": [
+        "黑衣森林中央林區",
+        "中薩納蘭",
+        "北薩納蘭"
+      ],
+      "verifiedAt": "2026-11-10"
+    },
+    {
+      "job": "礦工",
+      "method": "Quarrying",
+      "level": 1,
+      "areas": [
+        "East Shroud",
+        "Northern Thanalan"
+      ],
+      "source": "https://na.finalfantasyxiv.com/lodestone/playguide/db/gathering/87c288f6fb5/",
+      "regions": [
+        "黑衣森林東部林區",
+        "北薩納蘭"
+      ],
+      "verifiedAt": "2026-11-10"
+    },
+    {
+      "job": "園藝師",
+      "method": "Logging",
+      "level": 1,
+      "areas": [
+        "Central Shroud",
+        "East Shroud"
+      ],
+      "source": "https://na.finalfantasyxiv.com/lodestone/playguide/db/gathering/695bb46609a/",
+      "regions": [
+        "黑衣森林中央林區",
+        "黑衣森林東部林區"
+      ],
+      "verifiedAt": "2026-11-10"
+    },
+    {
+      "job": "園藝師",
+      "method": "Harvesting",
+      "level": 1,
+      "areas": [
+        "Central Shroud",
+        "East Shroud"
+      ],
+      "source": "https://na.finalfantasyxiv.com/lodestone/playguide/db/gathering/22ef5085be3/",
+      "regions": [
+        "黑衣森林中央林區",
+        "黑衣森林東部林區"
+      ],
+      "verifiedAt": "2026-11-10"
+    }
+  ],
+  "玄鐵礦": [
+    {
+      "job": "礦工",
+      "method": "Mining",
+      "level": 50,
+      "areas": [
+        "Coerthas Central Highlands"
+      ],
+      "source": "https://na.finalfantasyxiv.com/lodestone/playguide/db/gathering/bed7840122f/",
+      "regions": [
+        "庫爾札斯中央高地"
+      ],
+      "verifiedAt": "2026-11-10"
+    }
+  ],
+  "白鈦礦": [
+    {
+      "job": "礦工",
+      "method": "Mining",
+      "level": 55,
+      "areas": [
+        "The Dravanian Forelands"
+      ],
+      "source": "https://na.finalfantasyxiv.com/lodestone/playguide/db/gathering/2b6d42e0694/",
+      "regions": [
+        "龍堡參天高地"
+      ],
+      "verifiedAt": "2026-11-10"
+    }
+  ],
+  "榴彈怪的灰": [
+    {
+      "job": "礦工",
+      "method": "Quarrying",
+      "level": 40,
+      "areas": [
+        "Northern Thanalan"
+      ],
+      "source": "https://na.finalfantasyxiv.com/lodestone/playguide/db/gathering/ae1b5caf246/",
+      "regions": [
+        "北薩納蘭"
+      ],
+      "verifiedAt": "2026-11-10"
+    }
+  ],
+  "炸彈的灰": [
+    {
+      "job": "礦工",
+      "method": "Quarrying",
+      "level": 26,
+      "areas": [
+        "Southern Thanalan"
+      ],
+      "source": "https://na.finalfantasyxiv.com/lodestone/playguide/db/gathering/5d319715f82/",
+      "regions": [
+        "南薩納蘭"
+      ],
+      "verifiedAt": "2026-11-10"
+    }
+  ],
+  "金礦": [
+    {
+      "job": "礦工",
+      "method": "Mining",
+      "level": 50,
+      "areas": [
+        "Eastern Thanalan"
+      ],
+      "source": "https://na.finalfantasyxiv.com/lodestone/playguide/db/gathering/47e3f5cdef1/",
+      "regions": [
+        "東薩納蘭"
+      ],
+      "verifiedAt": "2026-11-10"
+    }
+  ],
+  "銅礦": [
+    {
+      "job": "礦工",
+      "method": "Mining",
+      "level": 1,
+      "areas": [
+        "Western Thanalan",
+        "Central Thanalan"
+      ],
+      "source": "https://na.finalfantasyxiv.com/lodestone/playguide/db/gathering/15ce02cc550/",
+      "regions": [
+        "西薩納蘭",
+        "中薩納蘭"
+      ],
+      "verifiedAt": "2026-11-10"
+    }
+  ],
+  "發泡水": [
+    {
+      "job": "礦工",
+      "method": "Mining",
+      "level": 24,
+      "areas": [
+        "South Shroud"
+      ],
+      "source": "https://na.finalfantasyxiv.com/lodestone/playguide/db/gathering/21542f6c188/",
+      "regions": [
+        "黑衣森林南部林區"
+      ],
+      "verifiedAt": "2026-11-10"
+    }
+  ],
+  "岩鹽": [
+    {
+      "job": "礦工",
+      "method": "Quarrying",
+      "level": 12,
+      "areas": [
+        "Central Thanalan"
+      ],
+      "source": "https://na.finalfantasyxiv.com/lodestone/playguide/db/gathering/1e82da69277/",
+      "regions": [
+        "中薩納蘭"
+      ],
+      "verifiedAt": "2026-11-10"
+    }
+  ],
+  "亞麻": [
+    {
+      "job": "園藝師",
+      "method": "Harvesting",
+      "level": 31,
+      "areas": [
+        "South Shroud"
+      ],
+      "source": "https://na.finalfantasyxiv.com/lodestone/playguide/db/gathering/362fd9c024c/",
+      "regions": [
+        "黑衣森林南部林區"
+      ],
+      "verifiedAt": "2026-11-10"
+    }
+  ],
+  "水之碎晶": [
+    {
+      "job": "礦工",
+      "method": "Mining",
+      "level": 1,
+      "areas": [
+        "Eastern La Noscea",
+        "Western Thanalan"
+      ],
+      "source": "https://na.finalfantasyxiv.com/lodestone/playguide/db/gathering/a6f92d9c43a/",
+      "regions": [
+        "東拉諾西亞",
+        "西薩納蘭"
+      ],
+      "verifiedAt": "2026-11-10"
+    },
+    {
+      "job": "礦工",
+      "method": "Quarrying",
+      "level": 1,
+      "areas": [
+        "Western Thanalan"
+      ],
+      "source": "https://na.finalfantasyxiv.com/lodestone/playguide/db/gathering/51cd3517f50/",
+      "regions": [
+        "西薩納蘭"
+      ],
+      "verifiedAt": "2026-11-10"
+    },
+    {
+      "job": "園藝師",
+      "method": "Logging",
+      "level": 1,
+      "areas": [
+        "Eastern La Noscea"
+      ],
+      "source": "https://na.finalfantasyxiv.com/lodestone/playguide/db/gathering/be0464eb571/",
+      "regions": [
+        "東拉諾西亞"
+      ],
+      "verifiedAt": "2026-11-10"
+    },
+    {
+      "job": "園藝師",
+      "method": "Harvesting",
+      "level": 1,
+      "areas": [
+        "Eastern La Noscea",
+        "Western Thanalan"
+      ],
+      "source": "https://na.finalfantasyxiv.com/lodestone/playguide/db/gathering/c6ece8b09d3/",
+      "regions": [
+        "東拉諾西亞",
+        "西薩納蘭"
+      ],
+      "verifiedAt": "2026-11-10"
+    }
+  ],
+  "雲杉原木": [
+    {
+      "job": "園藝師",
+      "method": "Logging",
+      "level": 50,
+      "areas": [
+        "Coerthas Central Highlands"
+      ],
+      "source": "https://na.finalfantasyxiv.com/lodestone/playguide/db/gathering/87989fa7103/",
+      "regions": [
+        "庫爾札斯中央高地"
+      ],
+      "verifiedAt": "2026-11-10"
+    }
+  ],
+  "雪松原木": [
+    {
+      "job": "園藝師",
+      "method": "Logging",
+      "level": 50,
+      "areas": [
+        "Coerthas Western Highlands"
+      ],
+      "source": "https://na.finalfantasyxiv.com/lodestone/playguide/db/gathering/f5c003517e0/",
+      "regions": [
+        "庫爾札斯西部高地"
+      ],
+      "verifiedAt": "2026-11-10"
+    }
+  ],
+  "風之水晶": [
+    {
+      "job": "礦工",
+      "method": "Mining",
+      "level": 26,
+      "areas": [
+        "The Dravanian Hinterlands",
+        "The Fringes",
+        "Urqopacha"
+      ],
+      "source": "https://na.finalfantasyxiv.com/lodestone/playguide/db/gathering/175e01cf833/",
+      "regions": [
+        "龍堡內陸低地"
+      ],
+      "verifiedAt": "2026-11-10"
+    },
+    {
+      "job": "礦工",
+      "method": "Quarrying",
+      "level": 26,
+      "areas": [
+        "East Shroud",
+        "Amh Araeng",
+        "Urqopacha"
+      ],
+      "source": "https://na.finalfantasyxiv.com/lodestone/playguide/db/gathering/2c27585bea5/",
+      "regions": [
+        "黑衣森林東部林區"
+      ],
+      "verifiedAt": "2026-11-10"
+    },
+    {
+      "job": "園藝師",
+      "method": "Logging",
+      "level": 26,
+      "areas": [
+        "Central Shroud",
+        "The Dravanian Hinterlands",
+        "Yanxia",
+        "The Rak'tika Greatwood",
+        "Labyrinthos",
+        "Shaaloani"
+      ],
+      "source": "https://na.finalfantasyxiv.com/lodestone/playguide/db/gathering/240701943a2/",
+      "regions": [
+        "黑衣森林中央林區",
+        "龍堡內陸低地"
+      ],
+      "verifiedAt": "2026-11-10"
+    },
+    {
+      "job": "園藝師",
+      "method": "Harvesting",
+      "level": 26,
+      "areas": [
+        "Coerthas Western Highlands",
+        "The Sea of Clouds",
+        "The Dravanian Hinterlands",
+        "Yanxia",
+        "The Rak'tika Greatwood",
+        "Labyrinthos",
+        "Shaaloani"
+      ],
+      "source": "https://na.finalfantasyxiv.com/lodestone/playguide/db/gathering/bb7b2c4ce9a/",
+      "regions": [
+        "庫爾札斯西部高地",
+        "阿巴拉提亞雲海",
+        "龍堡內陸低地"
+      ],
+      "verifiedAt": "2026-11-10"
+    }
+  ],
+  "德拉瓦尼亞天然水": [
+    {
+      "job": "礦工",
+      "method": "Mining",
+      "level": 54,
+      "areas": [
+        "The Dravanian Forelands"
+      ],
+      "source": "https://na.finalfantasyxiv.com/lodestone/playguide/db/gathering/917a69ca84d/",
+      "regions": [
+        "龍堡參天高地"
+      ],
+      "verifiedAt": "2026-11-10"
+    }
+  ],
+  "德拉瓦尼亞槲寄生": [
+    {
+      "job": "園藝師",
+      "method": "Logging",
+      "level": 54,
+      "areas": [
+        "The Churning Mists"
+      ],
+      "source": "https://na.finalfantasyxiv.com/lodestone/playguide/db/gathering/5187d27087b/",
+      "regions": [
+        "翻雲霧海"
+      ],
+      "verifiedAt": "2026-11-10"
+    }
+  ],
+  "水之水晶": [
+    {
+      "job": "礦工",
+      "method": "Mining",
+      "level": 26,
+      "areas": [
+        "The Sea of Clouds",
+        "The Ruby Sea",
+        "Il Mheg",
+        "The Rak'tika Greatwood",
+        "Labyrinthos",
+        "Kozama'uka"
+      ],
+      "source": "https://na.finalfantasyxiv.com/lodestone/playguide/db/gathering/2077c333444/",
+      "regions": [
+        "阿巴拉提亞雲海"
+      ],
+      "verifiedAt": "2026-11-10"
+    },
+    {
+      "job": "礦工",
+      "method": "Quarrying",
+      "level": 26,
+      "areas": [
+        "Western Thanalan",
+        "The Ruby Sea",
+        "Il Mheg",
+        "The Rak'tika Greatwood",
+        "Labyrinthos"
+      ],
+      "source": "https://na.finalfantasyxiv.com/lodestone/playguide/db/gathering/3b5d3713141/",
+      "regions": [
+        "西薩納蘭"
+      ],
+      "verifiedAt": "2026-11-10"
+    },
+    {
+      "job": "園藝師",
+      "method": "Logging",
+      "level": 26,
+      "areas": [
+        "Eastern La Noscea",
+        "The Sea of Clouds",
+        "The Ruby Sea",
+        "Il Mheg",
+        "Yak T'el"
+      ],
+      "source": "https://na.finalfantasyxiv.com/lodestone/playguide/db/gathering/5fcff2515ab/",
+      "regions": [
+        "東拉諾西亞",
+        "阿巴拉提亞雲海"
+      ],
+      "verifiedAt": "2026-11-10"
+    },
+    {
+      "job": "園藝師",
+      "method": "Harvesting",
+      "level": 26,
+      "areas": [
+        "The Ruby Sea",
+        "Il Mheg",
+        "Yak T'el"
+      ],
+      "source": "https://na.finalfantasyxiv.com/lodestone/playguide/db/gathering/ee5d3599c0f/",
+      "regions": [],
+      "verifiedAt": "2026-11-10"
+    }
+  ],
+  "鈷鐵礦": [
+    {
+      "job": "礦工",
+      "method": "Mining",
+      "level": 47,
+      "areas": [
+        "Northern Thanalan"
+      ],
+      "source": "https://na.finalfantasyxiv.com/lodestone/playguide/db/gathering/e6afa2adcc6/",
+      "regions": [
+        "北薩納蘭"
+      ],
+      "verifiedAt": "2026-11-10"
+    }
+  ],
+  "鐵礦": [
+    {
+      "job": "礦工",
+      "method": "Mining",
+      "level": 14,
+      "areas": [
+        "Western Thanalan"
+      ],
+      "source": "https://na.finalfantasyxiv.com/lodestone/playguide/db/gathering/7524107759a/",
+      "regions": [
+        "西薩納蘭"
+      ],
+      "verifiedAt": "2026-11-10"
+    }
+  ],
+  "火之碎晶": [
+    {
+      "job": "礦工",
+      "method": "Mining",
+      "level": 1,
+      "areas": [
+        "Western Thanalan",
+        "Eastern Thanalan"
+      ],
+      "source": "https://na.finalfantasyxiv.com/lodestone/playguide/db/gathering/d7b84518d1d/",
+      "regions": [
+        "西薩納蘭",
+        "東薩納蘭"
+      ],
+      "verifiedAt": "2026-11-10"
+    },
+    {
+      "job": "礦工",
+      "method": "Quarrying",
+      "level": 1,
+      "areas": [
+        "Middle La Noscea",
+        "Eastern Thanalan"
+      ],
+      "source": "https://na.finalfantasyxiv.com/lodestone/playguide/db/gathering/bb5a3177b49/",
+      "regions": [
+        "中拉諾西亞",
+        "東薩納蘭"
+      ],
+      "verifiedAt": "2026-11-10"
+    },
+    {
+      "job": "園藝師",
+      "method": "Logging",
+      "level": 1,
+      "areas": [
+        "Middle La Noscea"
+      ],
+      "source": "https://na.finalfantasyxiv.com/lodestone/playguide/db/gathering/6c6289d7754/",
+      "regions": [
+        "中拉諾西亞"
+      ],
+      "verifiedAt": "2026-11-10"
+    },
+    {
+      "job": "園藝師",
+      "method": "Harvesting",
+      "level": 1,
+      "areas": [
+        "Middle La Noscea",
+        "Eastern Thanalan"
+      ],
+      "source": "https://na.finalfantasyxiv.com/lodestone/playguide/db/gathering/e1fc679ba91/",
+      "regions": [
+        "中拉諾西亞",
+        "東薩納蘭"
+      ],
+      "verifiedAt": "2026-11-10"
+    }
+  ],
+  "靈銀沙": [
+    {
+      "job": "礦工",
+      "method": "Quarrying",
+      "level": 51,
+      "areas": [
+        "Coerthas Western Highlands"
+      ],
+      "source": "https://na.finalfantasyxiv.com/lodestone/playguide/db/gathering/af87a3464ad/",
+      "regions": [
+        "庫爾札斯西部高地"
+      ],
+      "verifiedAt": "2026-11-10"
+    }
+  ],
+  "秘銀礦": [
+    {
+      "job": "礦工",
+      "method": "Mining",
+      "level": 34,
+      "areas": [
+        "Southern Thanalan"
+      ],
+      "source": "https://na.finalfantasyxiv.com/lodestone/playguide/db/gathering/10868aa6652/",
+      "regions": [
+        "南薩納蘭"
+      ],
+      "verifiedAt": "2026-11-10"
+    }
+  ],
+  "火之水晶": [
+    {
+      "job": "礦工",
+      "method": "Mining",
+      "level": 26,
+      "areas": [
+        "The Dravanian Forelands",
+        "Yanxia",
+        "Shaaloani"
+      ],
+      "source": "https://na.finalfantasyxiv.com/lodestone/playguide/db/gathering/5b0ccf2dbaf/",
+      "regions": [
+        "龍堡參天高地"
+      ],
+      "verifiedAt": "2026-11-10"
+    },
+    {
+      "job": "礦工",
+      "method": "Quarrying",
+      "level": 26,
+      "areas": [
+        "Eastern Thanalan",
+        "The Dravanian Forelands",
+        "The Dravanian Hinterlands",
+        "The Churning Mists",
+        "Yanxia",
+        "Kholusia",
+        "Shaaloani"
+      ],
+      "source": "https://na.finalfantasyxiv.com/lodestone/playguide/db/gathering/b575a80c078/",
+      "regions": [
+        "東薩納蘭",
+        "龍堡參天高地",
+        "龍堡內陸低地",
+        "翻雲霧海"
+      ],
+      "verifiedAt": "2026-11-10"
+    },
+    {
+      "job": "園藝師",
+      "method": "Logging",
+      "level": 26,
+      "areas": [
+        "Middle La Noscea",
+        "The Dravanian Forelands",
+        "The Fringes",
+        "Amh Araeng",
+        "Thavnair"
+      ],
+      "source": "https://na.finalfantasyxiv.com/lodestone/playguide/db/gathering/0f3e7b4f28c/",
+      "regions": [
+        "中拉諾西亞",
+        "龍堡參天高地"
+      ],
+      "verifiedAt": "2026-11-10"
+    },
+    {
+      "job": "園藝師",
+      "method": "Harvesting",
+      "level": 26,
+      "areas": [
+        "The Dravanian Forelands",
+        "The Fringes",
+        "Amh Araeng",
+        "Thavnair"
+      ],
+      "source": "https://na.finalfantasyxiv.com/lodestone/playguide/db/gathering/8aadee1efdf/",
+      "regions": [
+        "龍堡參天高地"
+      ],
+      "verifiedAt": "2026-11-10"
+    }
+  ],
+  "紅木原木": [
+    {
+      "job": "園藝師",
+      "method": "Logging",
+      "level": 37,
+      "areas": [
+        "Eastern La Noscea"
+      ],
+      "source": "https://na.finalfantasyxiv.com/lodestone/playguide/db/gathering/8c79d36a5d8/",
+      "regions": [
+        "東拉諾西亞"
+      ],
+      "verifiedAt": "2026-11-10"
+    }
+  ]
+}

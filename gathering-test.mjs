@@ -1,0 +1,12 @@
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import {gatheringPlan} from './gathering.mjs';
+import {preparationPlan} from './preparation.mjs';
+const d=JSON.parse(fs.readFileSync('data.json'));d.gathering=JSON.parse(fs.readFileSync('gathering-sources.json'));const known=Object.fromEntries(d.schematics.map(s=>[s.id,{status:'known'}]));
+const empty=gatheringPlan(d,{},4,'all',known);assert(empty.length>20);assert(!empty.some(n=>n.name==='焦炭'));assert(empty.some(n=>n.name==='鈷鐵礦'));assert(empty.some(n=>n.sources.some(s=>s.job==='園藝師')));assert(empty.every(n=>n.sources.every(s=>['園藝師','礦工'].includes(s.job)&&s.level>0&&s.source.includes('/gathering/'))));
+const walnut=empty.find(n=>n.name==='胡桃原木');assert.equal(walnut.quantity,504);assert.equal(walnut.priority.rank,1);const lumber=d.items.find(n=>n.name==='胡桃木材');const finished={[lumber.id]:{collected:168}};assert(!gatheringPlan(d,finished,4,'all',known).some(n=>n.name==='胡桃原木'));
+const covered=Object.fromEntries(d.items.map(n=>[n.id,{collected:n.total}]));assert.equal(gatheringPlan(d,covered,4,'all',known).length,0);
+const raw=d.inventoryNodes.find(n=>n.name==='胡桃原木'),partial={[raw.id]:{collected:100}};assert.equal(gatheringPlan(d,partial,4,'all',known).find(n=>n.name===raw.name).quantity,404);assert.equal(gatheringPlan(d,{},1,'all',known).find(n=>n.name===raw.name).quantity,126);
+const pending=gatheringPlan(d,covered,4,'all',{});assert(pending.some(n=>n.name==='紅木原木'&&n.reserved===18&&n.priority.rank===0));assert(!gatheringPlan(d,{},4,'all',{},true).some(n=>/碎晶|水晶|晶簇/.test(n.name)));
+const before=JSON.stringify(partial);gatheringPlan(d,partial);assert.equal(JSON.stringify(partial),before);for(const n of empty)assert.equal(n.quantity,preparationPlan(d,{},4,'all',known).find(x=>x.id===n.id).short);
+console.log('Passed: official gathering classification, route priorities, fleet scaling, finished/intermediate stock credit, unlock reserves, personal crystals, no shared-demand double count or stock mutation.');
