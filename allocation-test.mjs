@@ -1,0 +1,11 @@
+import assert from 'node:assert/strict';import fs from 'node:fs';import {recommendAllocation,allocationRows,allocationFingerprint,validateAllocation} from './allocation.mjs';
+const d=JSON.parse(fs.readFileSync('data.json'));d.gathering=JSON.parse(fs.readFileSync('gathering-sources.json'));const known=Object.fromEntries(d.schematics.map(n=>[n.id,{status:'known'}])),id=n=>d.inventoryNodes.find(x=>x.name===n).id;
+let p=recommendAllocation(d,{},known,4,'all');validateAllocation(d,{},known,p);let rows=allocationRows(d,{},known,p);assert(rows.some(n=>n.self>0));assert(rows.some(n=>n.retainer>0));assert(rows.every(n=>n.self+n.retainer===n.quantity));assert(!p.lines.some(n=>/碎晶|水晶|晶簇/.test(d.inventoryNodes.find(i=>i.id===n.id).name)));assert(!p.lines.some(n=>n.id===id('焦炭')));
+const walnut=rows.find(n=>n.name==='胡桃原木');assert.equal(walnut.quantity,504);assert.equal(walnut.self,216);assert.equal(walnut.retainer,288);assert(p.nextStep.includes('1111'));
+const f={[id('胡桃木材')]:{collected:168}};assert(!allocationRows(d,f,known,recommendAllocation(d,f,known,4,'all')).some(n=>n.name==='胡桃原木'));
+const pending=recommendAllocation(d,{}, {},4,'all');assert.equal(allocationRows(d,{}, {},pending).find(n=>n.name==='紅木原木').self,18);
+for(const fleet of [1,2,3,4]){const q=recommendAllocation(d,{},known,fleet,'all');assert.equal(allocationRows(d,{},known,q).find(n=>n.name==='胡桃原木').quantity,126*fleet);validateAllocation(d,{},known,q);}
+const all=Object.fromEntries(d.items.map(n=>[n.id,{collected:n.total}]));assert.equal(allocationRows(d,all,known,recommendAllocation(d,all,known)).length,0);
+const start=recommendAllocation(d,{},known,4,'start');assert.equal(start.lines.length,0);assert.throws(()=>validateAllocation(d,{},known,{...p,lines:[{id:id('胡桃原木'),quantity:505}]}));assert.throws(()=>validateAllocation(d,{},known,{...p,lines:[{id:id('胡桃木材'),quantity:1}]}));
+assert.notEqual(allocationFingerprint(d,{},known),allocationFingerprint(d,{[id('胡桃原木')]:{collected:1}},known));const before=JSON.stringify(f);recommendAllocation(d,f,known);assert.equal(JSON.stringify(f),before);
+console.log('Passed: current-phase self collection, future retainer stock, shared raw conservation, finished-stock credit, fleet scaling, mandatory reserves, invalid order rejection and inventory fingerprinting.');

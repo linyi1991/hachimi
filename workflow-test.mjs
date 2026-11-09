@@ -1,3 +1,4 @@
+import {allocationFingerprint} from './allocation.mjs';
 import {exchangeOptions,exchangeKinds} from './exchange.mjs';
 import assert from 'node:assert/strict';import fs from 'node:fs/promises';import {DatabaseSync} from 'node:sqlite';import {pbkdf2Sync} from 'node:crypto';
 import app from './dist/server/index.js';import {unlockReservation} from './unlock.mjs';import {craftPool,craftCapacity} from './craft.mjs';import {calculatePlan} from './plan.mjs';import {collaboration,fleetRequired,stepOffset} from './collaboration.mjs';
@@ -114,4 +115,19 @@ assert.equal((await r.call('/api/retainer-plan','POST',{revision:0,lines},r.sess
 assert.equal((await r.call('/api/retainer-plan','POST',{revision:0,lines:[]},r.second)).status,200);assert.deepEqual((await r.call('/api/retainer-plan','GET',null,r.session)).body.plan.lines,lines);
 assert.equal((await r.call('/api/retainer-plan','POST',{revision:1,lines:[]},r.session)).status,200);assert.equal(JSON.stringify((await r.state()).items),before);
 console.log('Passed: personal retainer orders persist across sessions, reject anonymous/invalid/stale writes, isolate accounts and never change physical inventory.');
+}
+// One shared gathering allocation across both accounts; no stock mutation.
+{
+const a=await fixture(),before=JSON.stringify((await a.state()).items);
+assert.equal((await a.call('/api/gather-allocation','POST',{action:'analyze',revision:0,fleet:4,stage:'all'})).status,403);
+const first=await a.call('/api/gather-allocation','POST',{action:'analyze',revision:0,fleet:4,stage:'all'},a.session);assert.equal(first.status,200);assert(first.body.plan.lines.length);assert.equal(first.body.plan.revision,1);
+const other=(await a.call('/api/state','GET',null,a.second)).body.dispatch;assert.deepEqual(other,first.body.plan);assert.deepEqual((await a.call('/api/state')).body.dispatch,other);
+assert.equal((await a.call('/api/gather-allocation','POST',{action:'analyze',revision:0,fleet:4,stage:'all'},a.second)).status,409);
+const plan=first.body.plan;assert.equal((await a.call('/api/gather-allocation','POST',{action:'adjust',revision:1,fleet:4,stage:'all',fingerprint:plan.fingerprint,lines:[{id:a.node('胡桃木材').id,quantity:1}]},a.second)).status,400);
+const canceled=await a.call('/api/gather-allocation','POST',{action:'cancel',revision:1,fleet:4,stage:'all',fingerprint:plan.fingerprint},a.second);assert.equal(canceled.status,200);assert.deepEqual(canceled.body.plan.lines,[]);assert.equal(JSON.stringify((await a.state()).items),before);
+a.seed('胡桃原木',10);assert.notEqual((await a.state()).dispatch.fingerprint,allocationFingerprint(data,Object.fromEntries((await a.state()).items.map(n=>[n.item_id,n])),{}));
+assert.equal((await a.call('/api/gather-allocation','POST',{action:'cancel',revision:2,fleet:4,stage:'all',fingerprint:plan.fingerprint},a.second)).status,409);
+assert.equal((await a.call('/api/gather-allocation','POST',{action:'analyze',revision:2,fleet:4,stage:'all'},a.second)).status,200);
+assert.equal(a.stock('胡桃原木').collected,10);
+console.log('Passed: authenticated one-click analysis, shared visibility, stale/conflicting refusal, non-gatherable exclusion, cancellation, CSV-style stock invalidation and no inventory changes.');
 }

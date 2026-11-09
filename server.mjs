@@ -116,7 +116,19 @@ async function handle(req,env){
   const result=await env.DB.batch(statements);if(!(result[0]?.meta?.changes??result[0]?.changes))return json({error:'成品不足或紀錄剛更新，請重新整理確認；沒有更動任何材料。'},409);
   return json({ok:true});
  }
- // Personal plugin order; deliberately isolated from physical inventory.
+ // Personal material order; deliberately isolated from physical inventory.
+ if(u.pathname==='/api/gather-allocation'&&req.method==='POST'){
+  const account=await sessionAccount(req,env);if(!account)return json({error:'請先登入，才能安排共同採集分工。'},403);
+  const raw=await req.text();if(raw.length>24000)return json({error:'清單過長。'},413);let b;try{b=JSON.parse(raw);}catch{return json({error:'格式不正確。'},400);}
+  if(!Number.isSafeInteger(b.revision)||b.revision<0||!['analyze','adjust','cancel'].includes(b.action))return json({error:'請選有效的分工操作。'},400);
+  const all=await env.DB.prepare('SELECT * FROM progress').all(),plans=await env.DB.prepare('SELECT * FROM schematic_progress').all(),stock=Object.fromEntries(all.results.map(n=>[n.item_id,n])),schematics=Object.fromEntries(plans.results.map(n=>[n.schematic_id,n]));
+  let plan;try{if(b.action==='analyze'){if(!Number.isInteger(b.fleet)||b.fleet<1||b.fleet>4||!['all','start','upgrade','to1121','to3113','to1123','to3124'].includes(b.stage))throw Error('請選有效船數與階段');plan=recommendAllocation(DATA,stock,schematics,b.fleet,b.stage);}else {if(b.fingerprint!==allocationFingerprint(DATA,stock,schematics))return json({error:'庫存已更新，請重新分析分工。'},409);plan={fleet:b.fleet,stage:b.stage,lines:b.action==='cancel'?[]:b.lines,fingerprint:b.fingerprint};validateAllocation(DATA,stock,schematics,plan);}}catch(e){return json({error:e.message},400);}
+  plan={...plan,revision:b.revision+1,updatedBy:account.username,updatedAt:new Date().toISOString()};
+  const versions=DATA.inventoryNodes.map(n=>({id:n.id,revision:stock[n.id]?.revision||0})),unlockVersions=DATA.schematics.map(n=>({id:n.id,revision:schematics[n.id]?.revision||0}));
+  const guard="NOT EXISTS(SELECT 1 FROM json_each(?) e LEFT JOIN progress p ON p.item_id=json_extract(e.value,'$.id') WHERE COALESCE(p.revision,0)!=json_extract(e.value,'$.revision')) AND NOT EXISTS(SELECT 1 FROM json_each(?) e LEFT JOIN schematic_progress p ON p.schematic_id=json_extract(e.value,'$.id') WHERE COALESCE(p.revision,0)!=json_extract(e.value,'$.revision'))";
+  const row=await env.DB.prepare("INSERT INTO history_events(id,actor,fleet,before_step,materials_json,created_at) SELECT 'shared-gather-allocation',?,?,'gather-allocation',?,? WHERE ( ?=0 OR EXISTS(SELECT 1 FROM history_events WHERE id='shared-gather-allocation')) AND "+guard+" ON CONFLICT(id) DO UPDATE SET actor=excluded.actor,fleet=excluded.fleet,materials_json=excluded.materials_json,created_at=excluded.created_at WHERE json_extract(history_events.materials_json,'$.revision')=? RETURNING materials_json").bind(account.username,plan.fleet,JSON.stringify(plan),plan.updatedAt,b.revision,JSON.stringify(versions),JSON.stringify(unlockVersions),b.revision).first();
+  if(!row)return json({error:'庫存或另一位夥伴的分工已更新，請重新讀取後再分析。'},409);return json({plan:JSON.parse(row.materials_json)});
+ }
  if(u.pathname==='/api/retainer-plan'){
   const account=await sessionAccount(req,env);if(!account)return json({error:'請先登入，才能儲存或讀取僱員清單。'},403);
   const key='retainer-plan:'+account.username;
@@ -152,7 +164,8 @@ async function handle(req,env){
   const counts=await env.DB.prepare('SELECT item_id,COUNT(*) AS count FROM messages GROUP BY item_id').all();
   const schematics=await env.DB.prepare('SELECT * FROM schematic_progress').all();
   const account=await sessionAccount(req,env),calculation=account?await env.DB.prepare('SELECT * FROM calculation_views WHERE account_name=?').bind(account.username).first():null;
-  return json({items:r.results||[],schematics:schematics.results||[],calculation,messageCounts:counts.results||[],canEdit:!!account,username:account?.username||null,time:new Date().toISOString()});
+  const dispatchRow=await env.DB.prepare("SELECT materials_json FROM history_events WHERE id='shared-gather-allocation'").first();
+  return json({dispatch:dispatchRow?JSON.parse(dispatchRow.materials_json):{revision:0,lines:[]},items:r.results||[],schematics:schematics.results||[],calculation,messageCounts:counts.results||[],canEdit:!!account,username:account?.username||null,time:new Date().toISOString()});
  }
  if(u.pathname==='/api/comments'&&req.method==='GET'){
   const id=u.searchParams.get('item');if(!DATA.inventoryNodes.some(i=>i.id===id))return json({error:'找不到材料。'},404);
