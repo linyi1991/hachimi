@@ -116,6 +116,19 @@ async function handle(req,env){
   const result=await env.DB.batch(statements);if(!(result[0]?.meta?.changes??result[0]?.changes))return json({error:'成品不足或紀錄剛更新，請重新整理確認；沒有更動任何材料。'},409);
   return json({ok:true});
  }
+ // Personal plugin order; deliberately isolated from physical inventory.
+ if(u.pathname==='/api/retainer-plan'){
+  const account=await sessionAccount(req,env);if(!account)return json({error:'請先登入，才能儲存或讀取僱員清單。'},403);
+  const key='retainer-plan:'+account.username;
+  if(req.method==='GET'){const row=await env.DB.prepare('SELECT materials_json FROM history_events WHERE id=? AND actor=?').bind(key,account.username).first();return json({plan:row?JSON.parse(row.materials_json):{revision:0,lines:[]}});}
+  if(req.method!=='POST')return json({error:'不支援此操作。'},405);
+  const raw=await req.text();if(raw.length>16000)return json({error:'清單過長。'},413);let b;try{b=JSON.parse(raw);}catch{return json({error:'清單格式不正確。'},400);}
+  if(!Number.isSafeInteger(b.revision)||b.revision<0||b.revision>1000000)return json({error:'版本不正確。'},400);
+  let lines;try{lines=retainerOrder(DATA,b.lines).map(({id,quantity})=>({id,quantity}));}catch(e){return json({error:e.message},400);}
+  const plan={revision:b.revision+1,lines,updatedAt:new Date().toISOString()};
+  const row=await env.DB.prepare("INSERT INTO history_events(id,actor,fleet,before_step,materials_json,created_at) SELECT ?,?,1,'retainer-plan',?,? WHERE ?=0 OR EXISTS(SELECT 1 FROM history_events WHERE id=?) ON CONFLICT(id) DO UPDATE SET materials_json=excluded.materials_json,created_at=excluded.created_at WHERE history_events.actor=? AND json_extract(history_events.materials_json,'$.revision')=? RETURNING materials_json").bind(key,account.username,JSON.stringify(plan),plan.updatedAt,b.revision,key,account.username,b.revision).first();
+  if(!row)return json({error:'另一個分頁已更新僱員清單。請先複製目前清單，再重新讀取。'},409);return json({plan:JSON.parse(row.materials_json)});
+ }
  if(u.pathname==='/api/calculation'&&req.method==='POST'){
   const account=await sessionAccount(req,env);if(!account)return json({error:'請先登入，才能保存在帳號。'},403);
   const raw=await req.text();if(raw.length>1024)return json({error:'內容過長。'},413);let b;try{b=JSON.parse(raw);}catch{return json({error:'格式不正確。'},400);}

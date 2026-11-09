@@ -103,3 +103,15 @@ console.log('Passed: completion auth, actual immediate consumption, output credi
  const snapshot=await f.state(),full={requestId:'warehouse-'+crypto.randomUUID(),complete:true,items:data.inventoryNodes.map(n=>({id:n.id,physical:0,revision:snapshot.items.find(x=>x.item_id===n.id)?.revision||0})),misc:[]};assert.equal((await f.call('/api/warehouse-import','POST',full,f.session)).status,200);assert.equal(f.stock('胡桃木材').collected,10);assert.equal(f.stock('胡桃木材').delivered,10);
  console.log('Passed: warehouse overwrite, all-material zeroing, preserved delivered/owner, authenticated misc history, backup, stale refusal and safe replay.');
 }
+// Plugin orders stay personal and cannot mutate stock or bypass stale writes.
+{
+const r=await fixture(),lines=[{id:r.node('鈷鐵錠').id,quantity:100}];r.seed('鈷鐵錠',74);const before=JSON.stringify((await r.state()).items);
+assert.equal((await r.call('/api/retainer-plan')).status,403);assert.equal((await r.call('/api/retainer-plan','POST',{revision:0,lines})).status,403);
+assert.equal((await r.call('/api/retainer-plan','POST',{revision:1,lines},r.session)).status,409);
+const saved=await r.call('/api/retainer-plan','POST',{revision:0,lines},r.session);assert.equal(saved.status,200);assert.equal(saved.body.plan.revision,1);
+assert.deepEqual((await r.call('/api/retainer-plan','GET',null,r.session)).body.plan.lines,lines);assert.deepEqual((await r.call('/api/retainer-plan','GET',null,r.second)).body.plan.lines,[]);
+assert.equal((await r.call('/api/retainer-plan','POST',{revision:0,lines},r.session)).status,409);assert.equal((await r.call('/api/retainer-plan','POST',{revision:1,lines:[{id:lines[0].id,quantity:-1}]},r.session)).status,400);
+assert.equal((await r.call('/api/retainer-plan','POST',{revision:0,lines:[]},r.second)).status,200);assert.deepEqual((await r.call('/api/retainer-plan','GET',null,r.session)).body.plan.lines,lines);
+assert.equal((await r.call('/api/retainer-plan','POST',{revision:1,lines:[]},r.session)).status,200);assert.equal(JSON.stringify((await r.state()).items),before);
+console.log('Passed: personal retainer orders persist across sessions, reject anonymous/invalid/stale writes, isolate accounts and never change physical inventory.');
+}
