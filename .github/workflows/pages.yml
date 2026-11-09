@@ -21,6 +21,7 @@ jobs:
       - run: node build.mjs
       - run: node test.mjs
       - run: node ime-test.mjs
+      - run: node warehouse-test.mjs
       - run: node craft-test.mjs
       - run: node workflow-test.mjs
       - uses: actions/configure-pages@v5

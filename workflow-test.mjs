@@ -94,3 +94,12 @@ console.log('Passed: completion auth, actual immediate consumption, output credi
  assert.equal(f.db.prepare("SELECT COUNT(*) n FROM history_events WHERE before_step='inventory-correction'").get().n,1);
  console.log('Passed: audited physical inventory correction can lower reserved stock, rejects stale/anonymous writes and leaves production protection intact.');
 }
+{
+ const f=await fixture();f.seed('鈷鐵錠',527);f.seed('胡桃木材',20);f.db.prepare('UPDATE progress SET delivered=10,owner=? WHERE item_id=?').run('浮光若水',find('胡桃木材'));
+ const body={requestId:'warehouse-'+crypto.randomUUID(),complete:false,items:[{id:find('鈷鐵錠'),physical:74,revision:0},{id:find('胡桃木材'),physical:7,revision:0}],misc:[{name:'雜項測試',physical:3}]};
+ assert.equal((await f.call('/api/warehouse-import','POST',body)).status,403);assert.equal((await f.call('/api/warehouse-import','POST',body,f.session)).status,200);assert.equal(f.stock('鈷鐵錠').collected,74);assert.equal(f.stock('胡桃木材').collected,17);assert.equal(f.stock('胡桃木材').delivered,10);assert.equal(f.stock('胡桃木材').owner,'浮光若水');
+ assert.equal((await f.call('/api/warehouse-import','POST',body,f.session)).body.replayed,true);assert.equal(f.stock('胡桃木材').collected,17);assert.equal((await f.call('/api/warehouse-import','GET',null,f.session)).body.receipt.misc[0].physical,3);
+ const stale={...body,requestId:'warehouse-'+crypto.randomUUID()};assert.equal((await f.call('/api/warehouse-import','POST',stale,f.session)).status,409);assert.equal(f.stock('鈷鐵錠').collected,74);
+ const snapshot=await f.state(),full={requestId:'warehouse-'+crypto.randomUUID(),complete:true,items:data.inventoryNodes.map(n=>({id:n.id,physical:0,revision:snapshot.items.find(x=>x.item_id===n.id)?.revision||0})),misc:[]};assert.equal((await f.call('/api/warehouse-import','POST',full,f.session)).status,200);assert.equal(f.stock('胡桃木材').collected,10);assert.equal(f.stock('胡桃木材').delivered,10);
+ console.log('Passed: warehouse overwrite, all-material zeroing, preserved delivered/owner, authenticated misc history, backup, stale refusal and safe replay.');
+}
