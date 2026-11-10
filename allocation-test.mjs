@@ -6,6 +6,10 @@ const f={[id('胡桃木材')]:{collected:168}};assert(!allocationRows(d,f,known,
 const pending=recommendAllocation(d,{}, {},4,'all');assert.equal(allocationRows(d,{}, {},pending).find(n=>n.name==='紅木原木').self,18);
 for(const fleet of [1,2,3,4]){const q=recommendAllocation(d,{},known,fleet,'all');assert.equal(allocationRows(d,{},known,q).find(n=>n.name==='胡桃原木').quantity,126*fleet);validateAllocation(d,{},known,q);}
 const all=Object.fromEntries(d.items.map(n=>[n.id,{collected:n.total}]));assert.equal(allocationRows(d,all,known,recommendAllocation(d,all,known)).length,0);
-const start=recommendAllocation(d,{},known,4,'start');assert.equal(start.lines.length,0);assert.throws(()=>validateAllocation(d,{},known,{...p,lines:[{id:id('胡桃原木'),quantity:505}]}));assert.throws(()=>validateAllocation(d,{},known,{...p,lines:[{id:id('胡桃木材'),quantity:1}]}));
+const start=recommendAllocation(d,{},known,4,'start');assert(start.lines.length>0);assert(allocationRows(d,{},known,start).filter(n=>n.timed).every(n=>n.self===0&&n.retainer===n.quantity));assert.throws(()=>validateAllocation(d,{},known,{...p,lines:[{id:id('胡桃原木'),quantity:505}]}));assert.throws(()=>validateAllocation(d,{},known,{...p,lines:[{id:id('胡桃木材'),quantity:1}]}));
 assert.notEqual(allocationFingerprint(d,{},known),allocationFingerprint(d,{[id('胡桃原木')]:{collected:1}},known));const before=JSON.stringify(f);recommendAllocation(d,f,known);assert.equal(JSON.stringify(f),before);
 console.log('Passed: current-phase self collection, future retainer stock, shared raw conservation, finished-stock credit, fleet scaling, mandatory reserves, invalid order rejection and inventory fingerprinting.');
+
+for(const plan of [p,start])for(const n of allocationRows(d,{},known,plan).filter(n=>n.timed))assert.equal(n.self,0);
+assert.throws(()=>validateAllocation(d,{},known,{...p,lines:p.lines.filter(n=>n.id!==id('金礦'))}));
+assert.equal(allocationRows(d,{},known,p).find(n=>n.name==='金礦').retainer,allocationRows(d,{},known,p).find(n=>n.name==='金礦').quantity);

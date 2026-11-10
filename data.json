@@ -2233,7 +2233,7 @@
     },
     {
       "id": "r084",
-      "name": "發泡水",
+      "name": "氣泡水",
       "en": "Effervescent Water",
       "total": 0,
       "direct": false,
@@ -2743,7 +2743,7 @@
       "type": "可製作素材"
     },
     {
-      "name": "發泡水",
+      "name": "氣泡水",
       "en": "Effervescent Water",
       "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/f725bcbf952/",
       "wiki": "https://ffxiv.consolegameswiki.com/wiki/Effervescent_Water",
@@ -3432,7 +3432,7 @@
     "泡鹼": {
       "yield": 1,
       "items": {
-        "發泡水": 1,
+        "氣泡水": 1,
         "岩鹽": 1,
         "水之碎晶": 2
       },
@@ -5771,7 +5771,7 @@
       "gathering": [],
       "shops": []
     },
-    "發泡水": {
+    "氣泡水": {
       "item": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/f725bcbf952/",
       "recipe": null,
       "wiki": "https://ffxiv.consolegameswiki.com/wiki/Effervescent_Water",
@@ -7111,5 +7111,305 @@
       "https://ffxiv.consolegameswiki.com/wiki/Ixali_Vendor",
       "https://ffxiv.consolegameswiki.com/wiki/Amalj%27aa_Vendor"
     ]
-  }
+  },
+  "timedGathering": {
+    "雲杉原木": {
+      "itemId": 5395,
+      "pointIds": [
+        30999
+      ],
+      "tableIds": [
+        1
+      ],
+      "timeTables": [
+        {
+          "#": "1",
+          "StartTime[0]": "900",
+          "StartTime[1]": "65535",
+          "StartTime[2]": "65535",
+          "Duration[0]": "300",
+          "Duration[1]": "0",
+          "Duration[2]": "0"
+        }
+      ],
+      "verifiedAt": "2026-11-10",
+      "source": "https://github.com/xivapi/ffxiv-datamining/tree/master/csv/en"
+    },
+    "火之晶簇": {
+      "itemId": 14,
+      "pointIds": [
+        31003,
+        31015,
+        31033
+      ],
+      "tableIds": [
+        5,
+        17,
+        27
+      ],
+      "timeTables": [
+        {
+          "#": "5",
+          "StartTime[0]": "100",
+          "StartTime[1]": "500",
+          "StartTime[2]": "900",
+          "Duration[0]": "300",
+          "Duration[1]": "300",
+          "Duration[2]": "300"
+        },
+        {
+          "#": "17",
+          "StartTime[0]": "1300",
+          "StartTime[1]": "1700",
+          "StartTime[2]": "2100",
+          "Duration[0]": "300",
+          "Duration[1]": "300",
+          "Duration[2]": "300"
+        },
+        {
+          "#": "27",
+          "StartTime[0]": "1900",
+          "StartTime[1]": "65535",
+          "StartTime[2]": "65535",
+          "Duration[0]": "300",
+          "Duration[1]": "0",
+          "Duration[2]": "0"
+        }
+      ],
+      "verifiedAt": "2026-11-10",
+      "source": "https://github.com/xivapi/ffxiv-datamining/tree/master/csv/en"
+    },
+    "冰之晶簇": {
+      "itemId": 15,
+      "pointIds": [
+        31003,
+        31015
+      ],
+      "tableIds": [
+        5,
+        17
+      ],
+      "timeTables": [
+        {
+          "#": "5",
+          "StartTime[0]": "100",
+          "StartTime[1]": "500",
+          "StartTime[2]": "900",
+          "Duration[0]": "300",
+          "Duration[1]": "300",
+          "Duration[2]": "300"
+        },
+        {
+          "#": "17",
+          "StartTime[0]": "1300",
+          "StartTime[1]": "1700",
+          "StartTime[2]": "2100",
+          "Duration[0]": "300",
+          "Duration[1]": "300",
+          "Duration[2]": "300"
+        }
+      ],
+      "verifiedAt": "2026-11-10",
+      "source": "https://github.com/xivapi/ffxiv-datamining/tree/master/csv/en"
+    },
+    "風之晶簇": {
+      "itemId": 16,
+      "pointIds": [
+        31003,
+        31015
+      ],
+      "tableIds": [
+        5,
+        17
+      ],
+      "timeTables": [
+        {
+          "#": "5",
+          "StartTime[0]": "100",
+          "StartTime[1]": "500",
+          "StartTime[2]": "900",
+          "Duration[0]": "300",
+          "Duration[1]": "300",
+          "Duration[2]": "300"
+        },
+        {
+          "#": "17",
+          "StartTime[0]": "1300",
+          "StartTime[1]": "1700",
+          "StartTime[2]": "2100",
+          "Duration[0]": "300",
+          "Duration[1]": "300",
+          "Duration[2]": "300"
+        }
+      ],
+      "verifiedAt": "2026-11-10",
+      "source": "https://github.com/xivapi/ffxiv-datamining/tree/master/csv/en"
+    },
+    "土之晶簇": {
+      "itemId": 17,
+      "pointIds": [
+        31003,
+        31015
+      ],
+      "tableIds": [
+        5,
+        17
+      ],
+      "timeTables": [
+        {
+          "#": "5",
+          "StartTime[0]": "100",
+          "StartTime[1]": "500",
+          "StartTime[2]": "900",
+          "Duration[0]": "300",
+          "Duration[1]": "300",
+          "Duration[2]": "300"
+        },
+        {
+          "#": "17",
+          "StartTime[0]": "1300",
+          "StartTime[1]": "1700",
+          "StartTime[2]": "2100",
+          "Duration[0]": "300",
+          "Duration[1]": "300",
+          "Duration[2]": "300"
+        }
+      ],
+      "verifiedAt": "2026-11-10",
+      "source": "https://github.com/xivapi/ffxiv-datamining/tree/master/csv/en"
+    },
+    "玄鐵礦": {
+      "itemId": 5121,
+      "pointIds": [
+        31010
+      ],
+      "tableIds": [
+        12
+      ],
+      "timeTables": [
+        {
+          "#": "12",
+          "StartTime[0]": "100",
+          "StartTime[1]": "65535",
+          "StartTime[2]": "65535",
+          "Duration[0]": "300",
+          "Duration[1]": "0",
+          "Duration[2]": "0"
+        }
+      ],
+      "verifiedAt": "2026-11-10",
+      "source": "https://github.com/xivapi/ffxiv-datamining/tree/master/csv/en"
+    },
+    "金礦": {
+      "itemId": 5118,
+      "pointIds": [
+        31011
+      ],
+      "tableIds": [
+        13
+      ],
+      "timeTables": [
+        {
+          "#": "13",
+          "StartTime[0]": "900",
+          "StartTime[1]": "65535",
+          "StartTime[2]": "65535",
+          "Duration[0]": "300",
+          "Duration[1]": "0",
+          "Duration[2]": "0"
+        }
+      ],
+      "verifiedAt": "2026-11-10",
+      "source": "https://github.com/xivapi/ffxiv-datamining/tree/master/csv/en"
+    },
+    "緋紅樹汁": {
+      "itemId": 7590,
+      "pointIds": [
+        31024
+      ],
+      "tableIds": [
+        18
+      ],
+      "timeTables": [
+        {
+          "#": "18",
+          "StartTime[0]": "300",
+          "StartTime[1]": "65535",
+          "StartTime[2]": "65535",
+          "Duration[0]": "300",
+          "Duration[1]": "0",
+          "Duration[2]": "0"
+        }
+      ],
+      "verifiedAt": "2026-11-10",
+      "source": "https://github.com/xivapi/ffxiv-datamining/tree/master/csv/en"
+    },
+    "黃玉原石": {
+      "itemId": 5149,
+      "pointIds": [
+        31030
+      ],
+      "tableIds": [
+        24
+      ],
+      "timeTables": [
+        {
+          "#": "24",
+          "StartTime[0]": "300",
+          "StartTime[1]": "65535",
+          "StartTime[2]": "65535",
+          "Duration[0]": "300",
+          "Duration[1]": "0",
+          "Duration[2]": "0"
+        }
+      ],
+      "verifiedAt": "2026-11-10",
+      "source": "https://github.com/xivapi/ffxiv-datamining/tree/master/csv/en"
+    },
+    "白金礦": {
+      "itemId": 5120,
+      "pointIds": [
+        31055
+      ],
+      "tableIds": [
+        33
+      ],
+      "timeTables": [
+        {
+          "#": "33",
+          "StartTime[0]": "400",
+          "StartTime[1]": "65535",
+          "StartTime[2]": "65535",
+          "Duration[0]": "300",
+          "Duration[1]": "0",
+          "Duration[2]": "0"
+        }
+      ],
+      "verifiedAt": "2026-11-10",
+      "source": "https://github.com/xivapi/ffxiv-datamining/tree/master/csv/en"
+    },
+    "德拉瓦尼亞槲寄生": {
+      "itemId": 12943,
+      "pointIds": [
+        31494
+      ],
+      "tableIds": [
+        47
+      ],
+      "timeTables": [
+        {
+          "#": "47",
+          "StartTime[0]": "0",
+          "StartTime[1]": "1200",
+          "StartTime[2]": "65535",
+          "Duration[0]": "160",
+          "Duration[1]": "160",
+          "Duration[2]": "0"
+        }
+      ],
+      "verifiedAt": "2026-11-10",
+      "source": "https://github.com/xivapi/ffxiv-datamining/tree/master/csv/en"
+    }
+  },
+  "allocationPolicyRevision": 2
 }

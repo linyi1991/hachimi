@@ -124,10 +124,12 @@ const first=await a.call('/api/gather-allocation','POST',{action:'analyze',revis
 const other=(await a.call('/api/state','GET',null,a.second)).body.dispatch;assert.deepEqual(other,first.body.plan);assert.deepEqual((await a.call('/api/state')).body.dispatch,other);
 assert.equal((await a.call('/api/gather-allocation','POST',{action:'analyze',revision:0,fleet:4,stage:'all'},a.second)).status,409);
 const plan=first.body.plan;assert.equal((await a.call('/api/gather-allocation','POST',{action:'adjust',revision:1,fleet:4,stage:'all',fingerprint:plan.fingerprint,lines:[{id:a.node('胡桃木材').id,quantity:1}]},a.second)).status,400);
-const canceled=await a.call('/api/gather-allocation','POST',{action:'cancel',revision:1,fleet:4,stage:'all',fingerprint:plan.fingerprint},a.second);assert.equal(canceled.status,200);assert.deepEqual(canceled.body.plan.lines,[]);assert.equal(JSON.stringify((await a.state()).items),before);
+const canceled=await a.call('/api/gather-allocation','POST',{action:'cancel',revision:1,fleet:4,stage:'all',fingerprint:plan.fingerprint},a.second);assert.equal(canceled.status,200);assert(canceled.body.plan.lines.length>0);assert(canceled.body.plan.lines.every(l=>data.timedGathering[data.inventoryNodes.find(n=>n.id===l.id).name]));assert.equal(JSON.stringify((await a.state()).items),before);
 a.seed('胡桃原木',10);assert.notEqual((await a.state()).dispatch.fingerprint,allocationFingerprint(data,Object.fromEntries((await a.state()).items.map(n=>[n.item_id,n])),{}));
 assert.equal((await a.call('/api/gather-allocation','POST',{action:'cancel',revision:2,fleet:4,stage:'all',fingerprint:plan.fingerprint},a.second)).status,409);
 assert.equal((await a.call('/api/gather-allocation','POST',{action:'analyze',revision:2,fleet:4,stage:'all'},a.second)).status,200);
 assert.equal(a.stock('胡桃原木').collected,10);
 console.log('Passed: authenticated one-click analysis, shared visibility, stale/conflicting refusal, non-gatherable exclusion, cancellation, CSV-style stock invalidation and no inventory changes.');
 }
+
+{const a=await fixture();const found=await a.call('/api/search?q='+encodeURIComponent('發泡水'));assert.equal(found.status,200);assert(found.body.items.some(n=>n.name==='氣泡水'));assert(!found.body.items.some(n=>n.name==='發泡水'));}
