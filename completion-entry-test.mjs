@@ -1,0 +1,9 @@
+import assert from 'node:assert/strict';import fs from 'node:fs';import {completionEntry} from './completion.mjs';
+const d=JSON.parse(fs.readFileSync('data.json')),id=name=>d.inventoryNodes.find(n=>n.name===name).id,known=Object.fromEntries(d.schematics.map(n=>[n.id,{status:'known'}]));
+const state={[id('玫瑰金塊')]:{collected:153},[id('金礦')]:{collected:1389},[id('銅礦')]:{collected:573}};
+let p=completionEntry(d,state,known,id('玫瑰金塊'),528,'total',true);assert.equal(p.quantity,375);assert.equal(p.afterPhysical,528);assert.equal(p.inputs.find(n=>n.name==='金礦').amount,1125);assert.equal(p.inputs.find(n=>n.name==='銅礦').amount,375);assert.equal(p.ok,true);assert.equal(p.inputs.find(n=>n.name==='金礦').physical-p.inputs.find(n=>n.name==='金礦').amount,264);
+p=completionEntry(d,state,known,id('玫瑰金塊'),528,'added',true);assert.equal(p.afterPhysical,681);assert.equal(p.quantity,528);assert.equal(p.ok,false);
+const delivered={...state,[id('玫瑰金塊')]:{collected:273,delivered:120}};p=completionEntry(d,delivered,known,id('玫瑰金塊'),528,'total',true);assert.equal(p.quantity,375);assert.equal(p.after,648);assert.equal(p.delivered,120);assert.equal(p.afterPhysical,528);
+assert.throws(()=>completionEntry(d,state,known,id('玫瑰金塊'),153,'total',true),/不用再/);assert.throws(()=>completionEntry(d,state,known,id('玫瑰金塊'),120,'total',true),/盤點更正/);assert.throws(()=>completionEntry(d,state,known,id('玫瑰金塊'),528.5,'total',true));assert.equal(state[id('玫瑰金塊')].collected,153);
+const multi=Object.keys(d.recipes).find(n=>d.recipes[n].yield>1);if(multi){const q=d.recipes[multi].yield;assert.throws(()=>completionEntry(d,{},known,id(multi),q+1,'total',true));}
+console.log('Passed: 153 to total 528 means +375, exact ore use, additional-mode separation, delivered-stock preservation, no-op/lower-total rejection and whole recipe yields.');

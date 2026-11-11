@@ -22,6 +22,7 @@ jobs:
       - run: node test.mjs
       - run: node ime-test.mjs
       - run: node warehouse-test.mjs
+      - run: node completion-entry-test.mjs
       - run: node allocation-test.mjs
       - run: node retainer-test.mjs
       - run: node gathering-test.mjs

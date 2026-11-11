@@ -1,3 +1,4 @@
+import {completionEntry} from './completion.mjs';
 import {allocationFingerprint} from './allocation.mjs';
 import {exchangeOptions,exchangeKinds} from './exchange.mjs';
 import assert from 'node:assert/strict';import fs from 'node:fs/promises';import {DatabaseSync} from 'node:sqlite';import {pbkdf2Sync} from 'node:crypto';
@@ -133,3 +134,9 @@ console.log('Passed: authenticated one-click analysis, shared visibility, stale/
 }
 
 {const a=await fixture();const found=await a.call('/api/search?q='+encodeURIComponent('發泡水'));assert.equal(found.status,200);assert(found.body.items.some(n=>n.name==='氣泡水'));assert(!found.body.items.some(n=>n.name==='發泡水'));}
+// Screenshot regression: physical total 528 is only +375, never +528.
+{
+const a=await fixture();a.seed('玫瑰金塊',153);a.seed('金礦',1389);a.seed('銅礦',573);const s=await a.state(),stock=Object.fromEntries(s.items.map(n=>[n.item_id,n])),plan=completionEntry(data,stock,{},a.node('玫瑰金塊').id,528,'total',true),body={id:plan.id,quantity:plan.quantity,personalCrystals:true,requestId:'craft-'+crypto.randomUUID(),revisions:Object.fromEntries(data.inventoryNodes.map(n=>[n.id,stock[n.id]?.revision||0])),schematicRevisions:Object.fromEntries(data.schematics.map(n=>[n.id,0]))};
+assert.equal(plan.quantity,375);const result=await a.call('/api/craft-complete','POST',body,a.session);assert.equal(result.status,200);assert.equal(a.stock('玫瑰金塊').collected,528);assert.equal(a.stock('金礦').collected,264);assert.equal(a.stock('銅礦').collected,198);assert.equal((await a.call('/api/craft-complete','POST',body,a.session)).status,200);assert.equal(a.stock('玫瑰金塊').collected,528);
+console.log('Passed: total-mode quantity records exactly 528, consumes only the +375 batch, and retries never duplicate the completion.');
+}
