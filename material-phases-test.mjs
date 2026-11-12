@@ -1,0 +1,13 @@
+import assert from 'node:assert/strict';
+import fs from 'node:fs/promises';
+import {materialPhaseUses,materialShortageVisible} from './material-phases.mjs';
+import {preparationPlan} from './preparation.mjs';
+const d={items:[{id:'a',name:'成品',total:8,start:4,upgrade:4,stepNeeds:{start:4,to1121:4}}],inventoryNodes:[{id:'a',name:'成品',total:8,direct:true},{id:'s',name:'半成品'},{id:'r',name:'原礦'}],recipes:{成品:{yield:1,items:{半成品:2}},半成品:{yield:1,items:{原礦:3}}},schematics:[],route:{steps:[{id:'start',to:'1111'},{id:'to1121',to:'1121'},{id:'to1123',to:'1123'}]}};
+const empty=materialPhaseUses(d,{});assert.deepEqual(empty.原礦.map(x=>x.id),['start','to1121']);
+const stocked={a:{collected:4}},before=structuredClone(stocked),partial=materialPhaseUses(d,stocked);assert.deepEqual(partial.原礦.map(x=>x.id),['to1121']);assert.deepEqual(stocked,before);
+const semi={a:{collected:4},s:{collected:8}},held=materialPhaseUses(d,semi);assert(!held.原礦,'owned semi-products stop upstream expansion');
+const complete={a:{collected:8}};assert.deepEqual(materialPhaseUses(d,complete),{});assert(!preparationPlan(d,complete).some(n=>materialShortageVisible(n)));
+assert(!materialShortageVisible({name:'原礦',short:0}));assert(materialShortageVisible({name:'原礦',short:0},{short:{原礦:2}}));assert(!materialShortageVisible({name:'火之碎晶',short:10},{},true));
+const real=JSON.parse(await fs.readFile('data.json','utf8')),known=Object.fromEntries(real.schematics.map(s=>[s.id,{status:'known'}])),all=Object.fromEntries(real.items.map(n=>[n.id,{collected:n.total}]));
+assert.deepEqual(materialPhaseUses(real,all,4,'all',known),{});assert(preparationPlan(real,all,4,'all',known).every(n=>!materialShortageVisible(n)));
+console.log('Passed: unfinished phase labels, shared credit once, owned products/semis stop raw labels and shortages, completed materials hidden, unlock shortages retained, ignored crystals excluded, no stock mutation.');

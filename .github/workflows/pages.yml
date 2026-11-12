@@ -29,6 +29,8 @@ jobs:
       - run: node gathering-test.mjs
       - run: node action-plan-test.mjs
       - run: node priority-plan-test.mjs
+      - run: node leveling-guide-test.mjs
+      - run: node material-phases-test.mjs
       - run: node guest-test.mjs
       - run: node special-source-test.mjs
       - run: node execution-test.mjs

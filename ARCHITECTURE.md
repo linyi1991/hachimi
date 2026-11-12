@@ -21,3 +21,11 @@ Default mandatory-stock location is FC chest page 4. Per-material location chang
 Run `npm ci`, `node build.mjs`, then the tests listed in `.github/workflows/pages.yml`. Guest tests cover reload persistence, isolated stores, completion replay, quota failure, custom chest pages and blocked anonymous cloud reads. Browser QA also covers guest → account → guest switching without merging stock.
 
 `special-sources.json` keeps dated acquisition evidence, including items that cannot be listed on the market. New acquisition labels must be positively verified rather than inferred from a missing gathering record.
+
+## Leveling guide and material-stage labels
+
+`leveling-guide.json` is an editorial route table covering every Rank 1–85 with the existing ordinary eight-part progression. `scripts/build-leveling-guide.mjs` reproduces the checked table from pinned public game-sheet data in `data/voyage-reference.json`. `voyage-reference.mjs` verifies part eligibility, capacity, five-stop limits, voyage range and the community time model; formula attribution is in `licenses/SubmarineTracker-MIT.txt`. The route table is a practical recommendation, not a claim to optimize unknown unlock states or random bonus EXP.
+
+`route-advice.mjs` selects the next ordinary build and main-story exploration target from explicitly entered Rank, four-digit build, completed main sector and discovery status. Four personal boat profiles and one FC map-progress entry are saved only in that browser under `hachimi-personal-voyages-v1`; they are not cloud-shared or merged with inventory. The UI names this boundary.
+
+`material-phases.mjs` labels unfinished target stages after finished-stock credit, consumes available crafting stock through phases once, and does not add a second demand total. Default stock visibility uses net shortage plus unlock shortage; an explicit show-all choice and a deliberately opened material link allow corrections. Mandatory-stock protections are unchanged.

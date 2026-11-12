@@ -1,0 +1,717 @@
+{
+  "verifiedAt": "2026-11-13",
+  "tableCommit": "1cf1f9fb735bad0748848dbd3f4de05721fe619a",
+  "formulaCommit": "04c54d770f815cd416bbade1ac5b178b551a32b5",
+  "model": "ordinary parts; exact rank/range/capacity checks for every covered rank; community time model including 12 hours; no 24/48 hour cap; no guaranteed drop or bonus",
+  "stages": [
+    {
+      "from": 1,
+      "to": 3,
+      "build": "1111",
+      "map": 1,
+      "points": [
+        "A",
+        "B"
+      ],
+      "names": [
+        "潔白淺灘",
+        "溺沒海1"
+      ],
+      "distance": 34,
+      "range": 70,
+      "fuel": 2,
+      "minSeconds": 66532,
+      "maxSeconds": 66532,
+      "unlockChains": [
+        [
+          "A"
+        ],
+        [
+          "B"
+        ]
+      ]
+    },
+    {
+      "from": 4,
+      "to": 6,
+      "build": "1111",
+      "map": 1,
+      "points": [
+        "C",
+        "B",
+        "D"
+      ],
+      "names": [
+        "溺沒海2",
+        "溺沒海1",
+        "無光海盆"
+      ],
+      "distance": 60,
+      "range": 70,
+      "fuel": 4,
+      "minSeconds": 88282,
+      "maxSeconds": 88282,
+      "unlockChains": [
+        [
+          "A",
+          "C"
+        ],
+        [
+          "B",
+          "D"
+        ]
+      ]
+    },
+    {
+      "from": 7,
+      "to": 9,
+      "build": "1111",
+      "map": 1,
+      "points": [
+        "E",
+        "C",
+        "F"
+      ],
+      "names": [
+        "溺沒海3",
+        "溺沒海2",
+        "利米拉拉海溝南端"
+      ],
+      "distance": 63,
+      "range": 70,
+      "fuel": 6,
+      "minSeconds": 95405,
+      "maxSeconds": 95405,
+      "unlockChains": [
+        [
+          "B",
+          "E"
+        ],
+        [
+          "A",
+          "C",
+          "F"
+        ]
+      ]
+    },
+    {
+      "from": 10,
+      "to": 13,
+      "build": "1111",
+      "map": 1,
+      "points": [
+        "G",
+        "E",
+        "C"
+      ],
+      "names": [
+        "傘峽",
+        "溺沒海3",
+        "溺沒海2"
+      ],
+      "distance": 62,
+      "range": 70,
+      "fuel": 4,
+      "minSeconds": 96876,
+      "maxSeconds": 96876,
+      "unlockChains": [
+        [
+          "B",
+          "D",
+          "G"
+        ],
+        [
+          "B",
+          "E"
+        ],
+        [
+          "A",
+          "C"
+        ]
+      ]
+    },
+    {
+      "from": 14,
+      "to": 16,
+      "build": "1111",
+      "map": 1,
+      "points": [
+        "G",
+        "H"
+      ],
+      "names": [
+        "傘峽",
+        "俘虜島"
+      ],
+      "distance": 38,
+      "range": 70,
+      "fuel": 2,
+      "minSeconds": 82932,
+      "maxSeconds": 82932,
+      "unlockChains": [
+        [
+          "B",
+          "D",
+          "G",
+          "H"
+        ]
+      ]
+    },
+    {
+      "from": 17,
+      "to": 19,
+      "build": "1111",
+      "map": 1,
+      "points": [
+        "I",
+        "G",
+        "H"
+      ],
+      "names": [
+        "石人島",
+        "傘峽",
+        "俘虜島"
+      ],
+      "distance": 55,
+      "range": 70,
+      "fuel": 3,
+      "minSeconds": 102522,
+      "maxSeconds": 102522,
+      "unlockChains": [
+        [
+          "B",
+          "E",
+          "I"
+        ],
+        [
+          "B",
+          "D",
+          "G",
+          "H"
+        ]
+      ]
+    },
+    {
+      "from": 20,
+      "to": 23,
+      "build": "1121",
+      "map": 1,
+      "points": [
+        "I",
+        "K",
+        "J"
+      ],
+      "names": [
+        "石人島",
+        "湛藍淺灘",
+        "無名沉船"
+      ],
+      "distance": 72,
+      "range": 75,
+      "fuel": 10,
+      "minSeconds": 112598,
+      "maxSeconds": 112598,
+      "unlockChains": [
+        [
+          "B",
+          "E",
+          "I",
+          "K"
+        ],
+        [
+          "B",
+          "E",
+          "J"
+        ]
+      ]
+    },
+    {
+      "from": 24,
+      "to": 24,
+      "build": "1121",
+      "map": 1,
+      "points": [
+        "I",
+        "K",
+        "L"
+      ],
+      "names": [
+        "石人島",
+        "湛藍淺灘",
+        "神秘海盆"
+      ],
+      "distance": 69,
+      "range": 75,
+      "fuel": 13,
+      "minSeconds": 112917,
+      "maxSeconds": 112917,
+      "unlockChains": [
+        [
+          "B",
+          "E",
+          "I",
+          "K"
+        ],
+        [
+          "B",
+          "D",
+          "G",
+          "H",
+          "L"
+        ]
+      ]
+    },
+    {
+      "from": 25,
+      "to": 26,
+      "build": "3113",
+      "map": 1,
+      "points": [
+        "I",
+        "K",
+        "L"
+      ],
+      "names": [
+        "石人島",
+        "湛藍淺灘",
+        "神秘海盆"
+      ],
+      "distance": 69,
+      "range": 70,
+      "fuel": 13,
+      "minSeconds": 110129,
+      "maxSeconds": 110129,
+      "unlockChains": [
+        [
+          "B",
+          "E",
+          "I",
+          "K"
+        ],
+        [
+          "B",
+          "D",
+          "G",
+          "H",
+          "L"
+        ]
+      ]
+    },
+    {
+      "from": 27,
+      "to": 29,
+      "build": "3113",
+      "map": 1,
+      "points": [
+        "I",
+        "K",
+        "N"
+      ],
+      "names": [
+        "石人島",
+        "湛藍淺灘",
+        "利米拉拉海溝中部"
+      ],
+      "distance": 66,
+      "range": 70,
+      "fuel": 13,
+      "minSeconds": 110227,
+      "maxSeconds": 110227,
+      "unlockChains": [
+        [
+          "B",
+          "E",
+          "I",
+          "K"
+        ],
+        [
+          "B",
+          "E",
+          "J",
+          "N"
+        ]
+      ]
+    },
+    {
+      "from": 30,
+      "to": 33,
+      "build": "3113",
+      "map": 1,
+      "points": [
+        "I",
+        "M",
+        "P"
+      ],
+      "names": [
+        "石人島",
+        "溺沒海4",
+        "樹叢島"
+      ],
+      "distance": 70,
+      "range": 70,
+      "fuel": 13,
+      "minSeconds": 117394,
+      "maxSeconds": 117394,
+      "unlockChains": [
+        [
+          "B",
+          "D",
+          "G",
+          "H",
+          "M"
+        ],
+        [
+          "B",
+          "E",
+          "I",
+          "K",
+          "P"
+        ]
+      ]
+    },
+    {
+      "from": 34,
+      "to": 49,
+      "build": "3113",
+      "map": 1,
+      "points": [
+        "I",
+        "P",
+        "Q"
+      ],
+      "names": [
+        "石人島",
+        "樹叢島",
+        "金山島"
+      ],
+      "distance": 67,
+      "range": 70,
+      "fuel": 13,
+      "minSeconds": 119261,
+      "maxSeconds": 119261,
+      "unlockChains": [
+        [
+          "B",
+          "E",
+          "I",
+          "K",
+          "P",
+          "Q"
+        ]
+      ]
+    },
+    {
+      "from": 50,
+      "to": 53,
+      "build": "1123",
+      "map": 2,
+      "points": [
+        "A",
+        "B"
+      ],
+      "names": [
+        "佐佐納恩島南端",
+        "風行者的殘骸"
+      ],
+      "distance": 38,
+      "range": 100,
+      "fuel": 12,
+      "minSeconds": 85360,
+      "maxSeconds": 85712,
+      "unlockChains": [
+        [
+          "A",
+          "B"
+        ]
+      ]
+    },
+    {
+      "from": 54,
+      "to": 56,
+      "build": "1123",
+      "map": 2,
+      "points": [
+        "B",
+        "A",
+        "C",
+        "D"
+      ],
+      "names": [
+        "風行者的殘骸",
+        "佐佐納恩島南端",
+        "佐佐納恩島北端",
+        "灰海1"
+      ],
+      "distance": 82,
+      "range": 103,
+      "fuel": 24,
+      "minSeconds": 131751,
+      "maxSeconds": 133214,
+      "unlockChains": [
+        [
+          "A",
+          "B",
+          "C",
+          "D"
+        ]
+      ]
+    },
+    {
+      "from": 57,
+      "to": 59,
+      "build": "1123",
+      "map": 2,
+      "points": [
+        "B",
+        "A",
+        "C",
+        "F",
+        "D"
+      ],
+      "names": [
+        "風行者的殘骸",
+        "佐佐納恩島南端",
+        "佐佐納恩島北端",
+        "灰海2",
+        "灰海1"
+      ],
+      "distance": 107,
+      "range": 107,
+      "fuel": 30,
+      "minSeconds": 157652,
+      "maxSeconds": 158582,
+      "unlockChains": [
+        [
+          "A",
+          "B",
+          "C",
+          "F"
+        ],
+        [
+          "A",
+          "B",
+          "C",
+          "D"
+        ]
+      ]
+    },
+    {
+      "from": 60,
+      "to": 69,
+      "build": "1123",
+      "map": 2,
+      "points": [
+        "A",
+        "C",
+        "G",
+        "F",
+        "K"
+      ],
+      "names": [
+        "佐佐納恩島南端",
+        "佐佐納恩島北端",
+        "灰海3",
+        "灰海2",
+        "灰海4"
+      ],
+      "distance": 102,
+      "range": 110,
+      "fuel": 30,
+      "minSeconds": 152420,
+      "maxSeconds": 161161,
+      "unlockChains": [
+        [
+          "A",
+          "B",
+          "C",
+          "F",
+          "G",
+          "H",
+          "K"
+        ]
+      ]
+    },
+    {
+      "from": 70,
+      "to": 81,
+      "build": "1123",
+      "map": 2,
+      "points": [
+        "A",
+        "C",
+        "F",
+        "K",
+        "T"
+      ],
+      "names": [
+        "佐佐納恩島南端",
+        "佐佐納恩島北端",
+        "灰海2",
+        "灰海4",
+        "藍洞"
+      ],
+      "distance": 116,
+      "range": 120,
+      "fuel": 30,
+      "minSeconds": 150849,
+      "maxSeconds": 162806,
+      "unlockChains": [
+        [
+          "A",
+          "B",
+          "C",
+          "F",
+          "G",
+          "H",
+          "K",
+          "T"
+        ]
+      ]
+    },
+    {
+      "from": 82,
+      "to": 84,
+      "build": "1123",
+      "map": 2,
+      "points": [
+        "D",
+        "G",
+        "F",
+        "K",
+        "T"
+      ],
+      "names": [
+        "灰海1",
+        "灰海3",
+        "灰海2",
+        "灰海4",
+        "藍洞"
+      ],
+      "distance": 121,
+      "range": 140,
+      "fuel": 30,
+      "minSeconds": 155308,
+      "maxSeconds": 155308,
+      "unlockChains": [
+        [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        [
+          "A",
+          "B",
+          "C",
+          "F",
+          "G",
+          "H",
+          "K",
+          "T"
+        ]
+      ]
+    },
+    {
+      "from": 85,
+      "to": 85,
+      "build": "3124",
+      "map": 1,
+      "points": [
+        "O",
+        "J"
+      ],
+      "names": [
+        "探索號殘骸",
+        "無名沉船"
+      ],
+      "distance": 59,
+      "range": 64,
+      "fuel": 9,
+      "minSeconds": 82292,
+      "maxSeconds": 82292,
+      "unlockChains": [
+        [
+          "B",
+          "E",
+          "J",
+          "N",
+          "O"
+        ]
+      ]
+    }
+  ],
+  "opening": [
+    {
+      "code": "B",
+      "rank": 1,
+      "goal": "發現 E",
+      "map": 1
+    },
+    {
+      "code": "E",
+      "rank": 7,
+      "goal": "發現 J；J 到 20 級就去探索",
+      "map": 1
+    },
+    {
+      "code": "J",
+      "rank": 20,
+      "goal": "完成探索開第 2 艘，並發現 N",
+      "map": 1
+    },
+    {
+      "code": "N",
+      "rank": 27,
+      "goal": "發現 O",
+      "map": 1
+    },
+    {
+      "code": "O",
+      "rank": 30,
+      "goal": "完成探索開第 3 艘，並發現 S",
+      "map": 1
+    },
+    {
+      "code": "S",
+      "rank": 37,
+      "goal": "發現 T",
+      "map": 1
+    },
+    {
+      "code": "T",
+      "rank": 40,
+      "goal": "完成探索開第 4 艘，並發現 Y",
+      "map": 1
+    },
+    {
+      "code": "Y",
+      "rank": 47,
+      "goal": "發現 Z",
+      "map": 1
+    },
+    {
+      "code": "Z",
+      "rank": 50,
+      "goal": "發現 AA",
+      "map": 1
+    },
+    {
+      "code": "AA",
+      "rank": 50,
+      "goal": "發現 AB",
+      "map": 1
+    },
+    {
+      "code": "AB",
+      "rank": 50,
+      "goal": "發現 AD",
+      "map": 1
+    },
+    {
+      "code": "AD",
+      "rank": 50,
+      "goal": "進入灰海 A",
+      "map": 1
+    }
+  ]
+}

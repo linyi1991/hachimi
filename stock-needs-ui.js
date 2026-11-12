@@ -1,8 +1,8 @@
-let showUnusedStock=false;
+let showUnusedStock=!!new URLSearchParams(location.search).get('find');
 function stockRequirementContext(){const fleet=savedCalculation?.fleet||fleetCount,scope=savedCalculation?.stage||stage;return {plan:Object.fromEntries(preparationPlan(DATA,state,fleet,scope,schematicState).map(n=>[n.id,n])),locked:unlockReservation(DATA,state,schematicState)};}
-function stockMaterialVisible(n,context){return showUnusedStock||n.direct||preparationNeeded(context.plan[n.id],context.locked)||!!drafts[n.id];}
+function stockMaterialVisible(n,context){return showUnusedStock||materialShortageVisible(context.plan[n.id],context.locked,ignoreCrystals)||!!drafts[n.id];}
 // Put the preparation requirement next to the physical stock, using saved project scope.
-const stockNeedsPage=plannerPage;plannerPage=function(){stockNeedsPage();const note=document.createElement('div');note.id='stock-needs-scope';note.className='stock-needs-scope';$('#simple-stock .boardhead').after(note);const choice=document.createElement('label');choice.className='stock-visibility';choice.innerHTML=`<input type="checkbox" id="show-unused-stock" ${showUnusedStock?'checked':''}>顯示不需再備的材料（查庫存用）`;note.after(choice);$('#show-unused-stock').onchange=e=>{showUnusedStock=e.target.checked;showAllInventory=false;renderPlan();};renderStockNeeds();};
+const stockNeedsPage=plannerPage;plannerPage=function(){stockNeedsPage();const note=document.createElement('div');note.id='stock-needs-scope';note.className='stock-needs-scope';$('#simple-stock .boardhead').after(note);const choice=document.createElement('label');choice.className='stock-visibility';choice.innerHTML=`<input type="checkbox" id="show-unused-stock" ${showUnusedStock?'checked':''}>顯示全部（含已備齊・盤點更正用）`;note.after(choice);$('#show-unused-stock').onchange=e=>{showUnusedStock=e.target.checked;showAllInventory=false;renderPlan();};renderStockNeeds();};
 const stockNeedsPlan=renderPlan;renderPlan=function(){stockNeedsPlan();renderStockNeeds();};
 function renderStockNeeds(){
  const root=$('#simple-stock-rows'),note=$('#stock-needs-scope');if(page!=='planner'||!root)return;
