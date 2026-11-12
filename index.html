@@ -22,7 +22,7 @@ function toast(s,error=false){clearTimeout(toastTimer);$('#toast').textContent=s
 async function copy(s){try{await navigator.clipboard.writeText(s);toast('連結已複製。');}catch{openModal('複製連結','SHARE',`<div class="field"><input readonly value="${esc(s)}" onclick="this.select()"></div>`);}}
 $('#share').onclick=()=>copy(location.origin+BASE_PATH+'/');$('#close').onclick=()=>$('#modal').close();$('#modal').addEventListener('click',e=>{if(e.target===$('#modal'))$('#modal').close();});
 function openModal(title,sub,body){$('#modal').classList.remove('tree-dialog');$('#modal-title').textContent=title;$('#modal-sub').textContent=sub;$('#modal-body').innerHTML=body;$('#modal').showModal();}
-$('#lock').onclick=()=>{if(Object.keys(drafts).length){toast('還有未儲存修改，請先儲存再登出。',true);return;}auth='';sessionStorage.removeItem('hachimi-session');refresh();toast('已登出，本分頁恢復唯讀。');};
+$('#lock').onclick=()=>{if(modeWrites){toast('正在儲存，等一下再登出。',true);return;}if(Object.keys(drafts).length){toast('還有未儲存修改，請先儲存再登出。',true);return;}auth='';sessionStorage.removeItem('hachimi-session');clearModeView();refresh();toast('已登出，回到這台裝置的遊客試算。');};
 function itemIcon(name){const i=DATA.icons?.[name];return i?`<img class="material-icon" src="${BASE_PATH}/${i.file}" alt="" width="36" height="36" loading="lazy">`:'';}
 const art=`<img class="moogle-art" src="${BASE_PATH}/assets/moogle.png" width="180" height="180" alt="莫古力與寶箱，官方活動插圖">`;
 function hero(eye,title,desc,pills=''){return `<section class="hero"><div><div class="eyebrow">${eye}</div><h1>${title}</h1><p>${desc}</p>${pills?`<div class="hero-meta">${pills}</div>`:''}</div>${art}</section>`;}

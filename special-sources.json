@@ -1,0 +1,10 @@
+{
+  "藍鐵礦":{"kind":"exploration","label":"潛水艇探索帶回","market":true,"alsoAirship":true,"note":"不能自己採集或製作。潛水艇可從溺沒海 B、D、F 等區帶回；也可飛空艇探索。不是每趟都會取得。","source":"https://ffxiv.consolegameswiki.com/wiki/Vivianite","verifiedAt":"2026-11-13"},
+  "蒼天石原石":{"kind":"exploration","label":"潛水艇探索帶回","market":true,"alsoAirship":true,"note":"不能自己採集或製作。潛水艇可從溺沒海 K、L、M 等區帶回；也可飛空艇探索。不是每趟都會取得。","source":"https://ffxiv.consolegameswiki.com/wiki/Raw_Celestine","verifiedAt":"2026-11-13"},
+  "鐵刀木":{"kind":"exploration","label":"潛水艇探索帶回","market":true,"alsoAirship":true,"note":"不能自己採集或製作。潛水艇可從溺沒海 P、U、W 等區帶回；也可飛空艇探索。不是每趟都會取得。","source":"https://ffxiv.consolegameswiki.com/wiki/Cassia_Log","verifiedAt":"2026-11-13"},
+  "輕木廢材":{"kind":"exploration","label":"潛水艇探索帶回","market":false,"alsoAirship":true,"note":"不能採集、不能製作，也不能上市場。潛水艇可從溺沒海 G、H、I 等區帶回；也可飛空艇探索。不是每趟都會取得。","source":"https://ffxiv.consolegameswiki.com/wiki/Balsa_Wood_Scrap","verifiedAt":"2026-11-13"},
+  "竹片":{"kind":"exploration","label":"潛水艇探索帶回","market":false,"alsoAirship":true,"note":"不能採集、不能製作，也不能上市場。潛水艇可從溺沒海 A、B、C 等區帶回；也可飛空艇探索。不是每趟都會取得。","source":"https://ffxiv.consolegameswiki.com/wiki/Bamboo_Weave","verifiedAt":"2026-11-13"},
+  "輕木木材":{"kind":"exploration","label":"潛水艇探索帶回","market":false,"alsoAirship":true,"note":"不能採集、不能製作，也不能上市場。潛水艇可從溺沒海 K、L、M 等區帶回；也可飛空艇探索。不是每趟都會取得。","source":"https://ffxiv.consolegameswiki.com/wiki/Balsa_Wood_Lumber","verifiedAt":"2026-11-13"},
+  "合成纖維":{"kind":"exploration","label":"潛水艇探索帶回","market":false,"alsoAirship":true,"note":"不能採集、不能製作，也不能上市場。潛水艇可從溺沒海 P、Q、S 等區帶回；也可飛空艇探索。不是每趟都會取得。","source":"https://ffxiv.consolegameswiki.com/wiki/Synthetic_Fiber","verifiedAt":"2026-11-13"},
+  "明膠怪的肉":{"kind":"drop","label":"打怪掉落","market":true,"note":"不是園藝師或礦工素材。可打庫爾札斯西部高地的明膠類怪物取得，或安排 Lv.51 戰鬥僱員狩獵；也能上市場購買。","source":"https://ffxiv.consolegameswiki.com/wiki/Gelato_Flesh","verifiedAt":"2026-11-13"}
+}

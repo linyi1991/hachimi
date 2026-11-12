@@ -17,7 +17,8 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: 24
+          node-version: 26
+      - run: npm ci
       - run: node build.mjs
       - run: node test.mjs
       - run: node ime-test.mjs
@@ -28,6 +29,8 @@ jobs:
       - run: node gathering-test.mjs
       - run: node action-plan-test.mjs
       - run: node priority-plan-test.mjs
+      - run: node guest-test.mjs
+      - run: node special-source-test.mjs
       - run: node execution-test.mjs
       - run: node craft-test.mjs
       - run: node workflow-test.mjs

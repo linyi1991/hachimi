@@ -30,7 +30,8 @@ export function priorityPreparationPlan(data,state,schematics={},fleet=4,stage='
   const gc=n.exchanges.find(e=>e.kind==='gc'),tribe=n.exchanges.find(e=>e.kind==='tribe');
   const retainer=n.method==='gather'||n.method==='retainer'?Math.min(n.short,model.assigned?n.retainer:(retainers.get(n.id)||0)):0;
   const self=n.method==='gather'||n.method==='retainer'?n.short-retainer:0;
-  const kind=n.method==='retainer'?'retainer':n.sources.length?'gather':gc?'gc':tribe?'tribe':n.crystal?'crystal':'lookup';
+  const special=data.specialSources?.[n.name];
+  const kind=special?special.kind:n.method==='retainer'?'retainer':n.sources.length?'gather':gc?'gc':tribe?'tribe':n.crystal?'crystal':'lookup';
   const cost=gc?.cost?.match(/每個\s*([\d,]+)\s*軍票/),unitCost=cost?Number(cost[1].replaceAll(',','')):null;
   return {...n,first,later:n.short-first,rank,phaseIndex,futureUnlock,phaseLabel:unlockNow?'下一段設計圖・必留':futureUnlock?((data.route.steps.find(s=>s.id===unlockPhase.id)?.label||'後續')+'・設計圖必留'):phase?.label||'後續解鎖／備料',kind,self,retainer,gc,tribe,unitCost,sealCost:unitCost===null?null:unitCost*n.short,recommended:!model.assigned,root,blockers:root?.trial.missing.length||99,unlockNow};
  }).sort((a,b)=>a.rank-b.rank||a.phaseIndex-b.phaseIndex||Number(b.futureUnlock)-Number(a.futureUnlock)||a.blockers-b.blockers||a.name.localeCompare(b.name,'zh-Hant')).map((n,i)=>({...n,order:i+1}));

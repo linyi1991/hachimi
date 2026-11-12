@@ -16,8 +16,8 @@ const makeAccount=(username,password)=>{const salt=Buffer.from('test-only-salt-'
 const testAccounts=[makeAccount('哈沁咪','test-passphrase'),makeAccount('浮光若水','second-test-password')];
 const env={DB:adapter(db),EDIT_ACCOUNTS:JSON.stringify(testAccounts),SESSION_SECRET:'local-test-signing-secret-not-production'};
 const req=(path,method='GET',body,key)=>new Request('http://localhost'+path,{method,headers:{...(body?{'Content-Type':'application/json'}:{}),...(key?{Authorization:'Bearer '+key}:{})},...(body?{body:JSON.stringify(body)}:{})});
-let r=await app.fetch(req('/api/state'),env);let body=await r.json();assert.equal(body.canEdit,false);assert.deepEqual(body.items,[]);
-assert.equal((await (await app.fetch(req('/api/state','GET',null,token),env)).json()).canEdit,false);
+let r=await app.fetch(req('/api/state'),env);let body=await r.json();assert.equal(r.status,403);assert(!body.items);
+assert.equal((await app.fetch(req('/api/state','GET',null,token),env)).status,403);
 assert.equal((await app.fetch(req('/api/unlock','POST',{passphrase:'test-passphrase'},token),env)).status,410);
 assert.equal((await app.fetch(req('/api/login','POST',{password:'test-passphrase'}),env)).status,403);
 assert.equal((await app.fetch(req('/api/login','POST',{username:'unknown',password:'test-passphrase'}),env)).status,403);
@@ -28,11 +28,11 @@ const secondLogin=await app.fetch(req('/api/login','POST',{username:'浮光若�
 assert.equal((await (await app.fetch(req('/api/state','GET',null,secondSession),env)).json()).username,'浮光若水');
 assert.equal((await app.fetch(req('/api/login','POST',{username:'浮光若水',password:'test-passphrase'}),env)).status,403);
 const revokedEnv={...env,EDIT_ACCOUNTS:JSON.stringify([testAccounts[0]])};
-assert.equal((await (await app.fetch(req('/api/state','GET',null,secondSession),revokedEnv)).json()).canEdit,false);
+assert.equal((await app.fetch(req('/api/state','GET',null,secondSession),revokedEnv)).status,403);
 const changedEnv={...env,EDIT_ACCOUNTS:JSON.stringify([makeAccount('哈沁咪','changed-password'),testAccounts[1]])};
-assert.equal((await (await app.fetch(req('/api/state','GET',null,session),changedEnv)).json()).canEdit,false);
+assert.equal((await app.fetch(req('/api/state','GET',null,session),changedEnv)).status,403);
 const legacyPayload=Buffer.from(JSON.stringify({role:'edit',exp:Date.now()+100000})).toString('base64url');const legacy='s.'+legacyPayload+'.'+createHmac('sha256',env.SESSION_SECRET).update(legacyPayload).digest('base64url');
-assert.equal((await (await app.fetch(req('/api/state','GET',null,legacy),env)).json()).canEdit,false);
+assert.equal((await app.fetch(req('/api/state','GET',null,legacy),env)).status,403);
 const patch={id:'m001',collected:100,delivered:30,owner:'甲',note:'部隊箱',revision:0};
 assert.equal((await app.fetch(req('/api/item','PATCH',patch,token),env)).status,403);
 assert.equal((await app.fetch(req('/api/item','PATCH',patch),env)).status,403);
@@ -44,13 +44,13 @@ assert.equal((await app.fetch(req('/api/item','PATCH',{...patch,collected:1.5,de
 assert.equal((await app.fetch(req('/api/item','PATCH',{...patch,id:'unknown'},session),env)).status,404);
 assert.equal((await app.fetch(new Request('http://localhost/api/item',{method:'PATCH',headers:{Authorization:'Bearer '+session},body:'{' }),env)).status,400);
 r=await app.fetch(req('/api/item','PATCH',{...patch,collected:120,revision:1},session),env);assert.equal(r.status,200);assert.equal((await r.json()).item.revision,2);
-for(const path of ['/','/guide','/parts','/voyages','/sources','/planner','/lookup','/compare']){r=await app.fetch(req(path),env);assert.equal(r.status,200);const h=await r.text();assert(h.includes('網站製作：哈沁咪@泰坦'));assert(h.includes('哈沁咪@泰坦｜')); assert(!h.includes(token));assert(!h.includes(testAccounts[0].hash));assert(!h.includes('login-link'));assert(!h.includes('edit-share'));new Script(h.match(/<script>([\s\S]*)<\/script>/)[1]);}
+for(const path of ['/','/guide','/parts','/voyages','/sources','/planner','/lookup','/compare']){r=await app.fetch(req(path),env);assert.equal(r.status,200);const h=await r.text();assert(h.includes('網站製作：哈沁咪@泰坦'));assert(h.includes('哈沁咪@泰坦｜')); assert(!h.includes(token));assert(!h.includes(testAccounts[0].hash));assert(!h.includes('login-link'));assert(!h.includes('edit-share'));assert(h.includes('<script type="module"')); }
 r=await app.fetch(req('/download.xlsx'),env);assert.equal(r.status,200);assert.equal(new Uint8Array(await r.arrayBuffer())[0],80);
 const data=JSON.parse(await fs.readFile('data.json','utf8'));const computed={};for(const p of data.parts)for(const[n,q]of Object.entries(p.ingredients))computed[n]=(computed[n]||0)+q*4;for(const i of data.items)assert.equal(i.total,computed[i.name]);assert.equal(data.items.length,38);assert.equal(data.parts.reduce((a,b)=>a+b.qty,0),32);
 const official=Object.values(data.official);assert.equal(official.length,45);assert(official.every(i=>i.match));
 const preflight=await app.fetch(new Request('https://api.example/api/item',{method:'OPTIONS',headers:{Origin:'https://linyi1991.github.io','Access-Control-Request-Method':'PATCH','Access-Control-Request-Headers':'authorization, content-type'}}),env);assert.equal(preflight.status,204);assert.equal(preflight.headers.get('Access-Control-Allow-Origin'),'https://linyi1991.github.io');
 assert.equal((await app.fetch(new Request('https://api.example/api/item',{method:'OPTIONS',headers:{Origin:'https://untrusted.example'}}),env)).status,403);
-const pages=await fs.readFile('pages/guide/index.html','utf8');assert(pages.includes("const BASE_PATH='/hachimi'"));assert(pages.includes('href="/hachimi/guide"'));assert(pages.includes("fetch(api('/api/state')"));
+const pages=await fs.readFile('pages/guide/index.html','utf8');assert(pages.includes('src="/hachimi/assets/app.js'));const client=await fs.readFile('pages/assets/app.js','utf8');new Script(client);assert(pages.includes('href="/hachimi/guide"'));assert(client.includes('https://hachimi.quirky-clove-0350.chatgpt.site'));assert(client.includes('/api/state'));
 const baseline=calculatePlan(data,{},4);const cobalt=baseline.find(n=>n.name==='鈷鐵錠');assert.equal(cobalt.directNeed,600);assert.equal(cobalt.upstream,1644);assert.equal(cobalt.short,2244);assert.equal(cobalt.available,0);
 const keep=calculatePlan(data,{[cobalt.id]:{collected:600,delivered:0}},4).find(n=>n.name==='鈷鐵錠');assert.equal(keep.reserve,600);assert.equal(keep.forCraft,0);assert.equal(keep.short,1644);
 const spare=calculatePlan(data,{[cobalt.id]:{collected:700,delivered:0}},4).find(n=>n.name==='鈷鐵錠');assert.equal(spare.reserve,600);assert.equal(spare.forCraft,100);assert.equal(spare.short,1544);
@@ -58,7 +58,7 @@ const alreadyDelivered=calculatePlan(data,{[cobalt.id]:{collected:700,delivered:
 assert.equal(calculatePlan(data,{},1).find(n=>n.name==='鈷鐵錠').short,561);assert.throws(()=>calculatePlan(data,{},5));assert.throws(()=>calculatePlan(data,{},0));
 assert.equal((await app.fetch(req('/api/comments','POST',{item:'m001',author:'test',quantity:10,location:'第4頁',body:'test'}),env)).status,403);
 let comment=await app.fetch(req('/api/comments','POST',{item:'m001',author:'test',quantity:10,location:'第4頁 第3格',body:'留言不改庫存'},session),env);assert.equal(comment.status,200);
-let comments=await (await app.fetch(req('/api/comments?item=m001'),env)).json();assert.equal(comments.messages.length,1);assert.equal(comments.messages[0].quantity,10);assert.equal(db.prepare('SELECT collected FROM progress WHERE item_id=?').get('m001').collected,120);
+let comments=await (await app.fetch(req('/api/comments?item=m001','GET',null,session),env)).json();assert.equal(comments.messages.length,1);assert.equal(comments.messages[0].quantity,10);assert.equal(db.prepare('SELECT collected FROM progress WHERE item_id=?').get('m001').collected,120);
 assert.equal((await app.fetch(req('/api/reserve','POST',{id:'m001',tab:3,locked:true,password:'wrong',revision:2},session),env)).status,403);
 let reserve=await app.fetch(req('/api/reserve','POST',{id:'m001',tab:3,locked:true,password:'test-passphrase',revision:2},session),env);assert.equal(reserve.status,200);assert.equal((await reserve.json()).item.reserve_tab,3);
 assert.equal((await app.fetch(req('/api/reserve','POST',{id:'m001',tab:2,locked:true,password:'test-passphrase',revision:3},secondSession),env)).status,403);

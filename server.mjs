@@ -19,6 +19,10 @@ async function passAttempt(req,env){const ip=await digest(req.headers.get('CF-Co
 async function handle(req,env){
  try{
  const u=new URL(req.url);
+ if(['/api/state','/api/search','/api/comments'].includes(u.pathname)&&!await sessionAccount(req,env))return json({error:'共同進度只供登入者使用；遊客請使用瀏覽器本機試算。'},403);
+ if(u.pathname==='/assets/app.js'&&req.method==='GET')return new Response(NATIVE_APP,{headers:{'Content-Type':'application/javascript; charset=utf-8','Cache-Control':'public, max-age=3600'}});
+ if(u.pathname==='/assets/site.css'&&req.method==='GET')return new Response(SITE_CSS,{headers:{'Content-Type':'text/css; charset=utf-8','Cache-Control':'public, max-age=3600'}});
+ if(u.pathname==='/assets/guest-sql.js'&&req.method==='GET')return new Response(GUEST_SQL,{headers:{'Content-Type':'application/javascript; charset=utf-8','Cache-Control':'public, max-age=3600'}});
  if(u.pathname==='/api/unlock')return json({error:'已改用帳號密碼，請重新整理並按登入。'},410);
  if(u.pathname==='/api/login'&&req.method==='POST'){
   const configured=accounts(env);
@@ -181,7 +185,7 @@ async function handle(req,env){
  if(u.pathname==='/api/reserve'&&req.method==='POST'){
   if(!await authorized(req,env))return json({error:'請先登入才能編輯。'},403);
   const raw=await req.text();if(raw.length>2048)return json({error:'格式不正確。'},413);let b;try{b=JSON.parse(raw);}catch{return json({error:'格式不正確。'},400);}
-  if(!DATA.items.some(i=>i.id===b.id)||!Number.isInteger(b.tab)||b.tab<1||b.tab>5||typeof b.locked!=='boolean'||!Number.isSafeInteger(b.revision)||b.revision<0)return json({error:'請選擇第 1 至第 5 頁。'},400);
+  if(!DATA.inventoryNodes.some(i=>i.id===b.id)||!Number.isInteger(b.tab)||b.tab<1||b.tab>5||typeof b.locked!=='boolean'||!Number.isSafeInteger(b.revision)||b.revision<0)return json({error:'請選擇第 1 至第 5 頁。'},400);
   const attempt=await passAttempt(req,env);if(!attempt.allowed)return json({error:'嘗試次數過多，請於 15 分鐘後再試。'},429);
   if(!await passwordMatches(b.password,await sessionAccount(req,env)))return json({error:'變更保留位置需重新輸入目前帳號的正確密碼。'},403);
   await env.DB.prepare('DELETE FROM unlock_attempts WHERE ip_hash=?').bind(attempt.ip).run();
@@ -214,7 +218,7 @@ async function handle(req,env){
   return json({item:row});
  }
  if(u.pathname==='/download.xlsx'&&req.method==='GET')return new Response(Uint8Array.from(atob(XLSX),c=>c.charCodeAt(0)),{headers:{...common,'Content-Type':'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet','Content-Disposition':'attachment; filename="Hachimi-4subs-1111-3124.xlsx"'}});
- if(['/','/index.html','/guide','/parts','/voyages','/sources','/lookup','/planner','/compare'].includes(u.pathname)&&req.method==='GET')return new Response(HTML,{headers:{...common,'Content-Type':'text/html; charset=utf-8','Content-Security-Policy':"default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://linyi1991.github.io; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'none'"}});
+ if(['/','/index.html','/guide','/parts','/voyages','/sources','/lookup','/planner','/compare'].includes(u.pathname)&&req.method==='GET')return new Response(HTML,{headers:{...common,'Content-Type':'text/html; charset=utf-8','Content-Security-Policy':"default-src 'self'; script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://linyi1991.github.io; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'none'"}});
  return json({error:'找不到頁面。'},404);
  }catch{return json({error:'暫時無法儲存或讀取，請稍後重試。'},503);}
 }
