@@ -1,3 +1,4 @@
+function sourceSearchText(name){const s=DATA.specialSources?.[name];return s?[s.label,s.note,s.market?'市場購買':'不能上市場'].join(' '):'';}
 function specialSourceTag(name){const source=DATA.specialSources?.[name];if(!source)return '';return `<div class="special-source"><strong>${esc(source.label)}</strong><span>${source.market?'也可市場購買':'不能上市場・不能採集或製作'}</span><small>${esc(source.note)}</small></div>`;}
 const taggedActionNext=actionNext;actionNext=function(n){return DATA.specialSources?.[n.name]?specialSourceTag(n.name)+(n.usage.length?`<div class="action-uses"><span>用來做</span>${actionUses(n)}</div>`:''):taggedActionNext(n);};
 const taggedPriorityMethod=priorityMethod;priorityMethod=function(n){return DATA.specialSources?.[n.name]?specialSourceTag(n.name):taggedPriorityMethod(n);};
