@@ -26,6 +26,7 @@ jobs:
       - run: node allocation-test.mjs
       - run: node retainer-test.mjs
       - run: node gathering-test.mjs
+      - run: node action-plan-test.mjs
       - run: node execution-test.mjs
       - run: node craft-test.mjs
       - run: node workflow-test.mjs

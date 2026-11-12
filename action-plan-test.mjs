@@ -1,0 +1,14 @@
+import assert from 'node:assert/strict';
+import {materialActionPlan,nextActionPlan} from './action-plan.mjs';
+import {allocationFingerprint} from './allocation.mjs';
+const d={items:[{id:'a',name:'成品',total:8,stepNeeds:{start:8}}],inventoryNodes:[{id:'a',name:'成品',total:8,direct:true},{id:'b',name:'半成品'},{id:'c',name:'原礦'}],recipes:{成品:{yield:1,items:{半成品:2}},半成品:{yield:1,items:{原礦:3}}},schematics:[],route:{steps:[{id:'start',label:'1111 起步'}]},gathering:{原礦:[{job:'礦工',level:1,regions:['測試區域']}]},acquisition:{}};
+const stock={a:{collected:2,delivered:1},b:{collected:3},c:{collected:12}},snapshot=structuredClone(stock),p=nextActionPlan(d,stock);
+assert.deepEqual(p.goal,{need:8,ready:2,lack:6});assert.equal(p.rows.find(n=>n.id==='a').physical,1);assert.equal(p.rows.find(n=>n.id==='a').short,6);
+assert.equal(p.rows.find(n=>n.id==='b').short,9);assert.equal(p.rows.find(n=>n.id==='c').short,15);assert.equal(p.rows.find(n=>n.id==='c').usage[0].name,'半成品');assert.equal(p.rest[0].short,15);assert(p.steps.length>0);assert.deepEqual(stock,snapshot,'forecast cannot write physical stock');
+const finished=materialActionPlan(d,{a:{collected:8}});assert(finished.rows.filter(n=>n.id!=='a').every(n=>n.need===0&&n.short===0),'finished stock eliminates its upstream demand');
+const assigned={revision:1,fleet:4,stage:'all',lines:[{id:'c',quantity:10}],fingerprint:allocationFingerprint(d,stock)};let row=materialActionPlan(d,stock,{},4,'all',false,assigned).rows.find(n=>n.id==='c');assert.equal(row.retainer,10);assert.equal(row.self,5);assert.equal(row.short,row.self+row.retainer);
+row=materialActionPlan(d,{...stock,c:{collected:13}},{},4,'all',false,assigned).rows.find(n=>n.id==='c');assert.equal(row.assigned,false);assert.equal(row.retainer,0);assert.equal(row.self,null,'stale allocation must not pretend to be active');
+row=materialActionPlan(d,stock,{},1,'all',false,assigned).rows.find(n=>n.id==='c');assert.equal(row.assigned,false,'another fleet scope is not the current assignment');
+const locked={...d,schematics:[{id:'s',materials:{原礦:4}}]};row=materialActionPlan(locked,stock).rows.find(n=>n.id==='c');assert.equal(row.held,4);assert.equal(row.short,19);assert.equal(row.need-row.physical,row.short);
+const timed={...d,timedGathering:{原礦:{}}};row=materialActionPlan(timed,stock).rows.find(n=>n.id==='c');assert.equal(row.method,'retainer');assert.equal(row.retainer,row.short);assert.equal(row.assigned,false,'timed recommendation is not a saved assignment');
+console.log('Passed: goal/physical separation, finished stock suppresses upstream demand, exact residual after safe crafting, no mutations, reservations, timed recommendations, fresh and stale/scope-mismatched gathering assignments.');
