@@ -24,6 +24,23 @@ async function handle(req,env){
  if(u.pathname==='/assets/site.css'&&req.method==='GET')return new Response(SITE_CSS,{headers:{'Content-Type':'text/css; charset=utf-8','Cache-Control':'public, max-age=3600'}});
  if(u.pathname==='/assets/guest-sql.js'&&req.method==='GET')return new Response(GUEST_SQL,{headers:{'Content-Type':'application/javascript; charset=utf-8','Cache-Control':'public, max-age=3600'}});
  if(u.pathname==='/api/unlock')return json({error:'已改用帳號密碼，請重新整理並按登入。'},410);
+ if(u.pathname==='/api/voyage-profiles'){
+  const account=await sessionAccount(req,env);if(!account)return json({error:'請登入後讀取兩人共用的航行配置；遊客只使用自己的瀏覽器。'},403);
+  const key='shared-voyage-profiles';
+  if(req.method==='GET'){
+   const row=await env.DB.prepare('SELECT materials_json FROM history_events WHERE id=?').bind(key).first();
+   return json(row?JSON.parse(row.materials_json):{profiles:defaultVoyageProfiles(),revision:0,updatedBy:'',updatedAt:''});
+  }
+  if(req.method!=='POST')return json({error:'不支援此操作。'},405);
+  const raw=await req.text();if(raw.length>4096)return json({error:'航行設定內容過長。'},413);
+  let b;try{b=JSON.parse(raw);}catch{return json({error:'航行設定格式不正確。'},400);}
+  if(!Number.isSafeInteger(b.revision)||b.revision<0||b.revision>1000000)return json({error:'配置版本無效，請重新讀取。'},400);
+  let profiles;try{profiles=validateVoyageProfiles(b.profiles);}catch(e){return json({error:e.message},400);}
+  const plan={profiles,revision:b.revision+1,updatedBy:account.username,updatedAt:new Date().toISOString()};
+  const row=await env.DB.prepare("INSERT INTO history_events(id,actor,fleet,before_step,materials_json,created_at) SELECT ?,?,4,'voyage-profiles',?,? WHERE ?=0 OR EXISTS(SELECT 1 FROM history_events WHERE id=?) ON CONFLICT(id) DO UPDATE SET actor=excluded.actor,materials_json=excluded.materials_json,created_at=excluded.created_at WHERE json_extract(history_events.materials_json,'$.revision')=? RETURNING materials_json").bind(key,account.username,JSON.stringify(plan),plan.updatedAt,b.revision,key,b.revision).first();
+  if(!row)return json({error:'另一位夥伴或其他裝置剛更新配置；你的修改還在畫面上。請先讀取最新共同設定，再重新填寫與儲存。'},409);
+  return json(JSON.parse(row.materials_json));
+ }
  if(u.pathname==='/api/login'&&req.method==='POST'){
   const configured=accounts(env);
   if(!configured.length||!env.SESSION_SECRET)return json({error:'登入尚未設定。'},503);
