@@ -35,7 +35,10 @@ async function handle(req,env){
   const raw=await req.text();if(raw.length>4096)return json({error:'航行設定內容過長。'},413);
   let b;try{b=JSON.parse(raw);}catch{return json({error:'航行設定格式不正確。'},400);}
   if(!Number.isSafeInteger(b.revision)||b.revision<0||b.revision>1000000)return json({error:'配置版本無效，請重新讀取。'},400);
-  let profiles;try{profiles=validateVoyageProfiles(b.profiles);}catch(e){return json({error:e.message},400);}
+  if(b.correctParts!==undefined&&typeof b.correctParts!=='boolean')return json({error:'零件操作無效。'},400);
+  const prior=await env.DB.prepare('SELECT materials_json FROM history_events WHERE id=?').bind(key).first(),previous=prior?JSON.parse(prior.materials_json):{profiles:defaultVoyageProfiles(),revision:0};
+  if(previous.revision!==b.revision)return json({error:'共同配置或零件剛更新，請重新讀取再儲存。'},409);
+  let profiles;try{profiles=retainVoyageParts(b.profiles,previous.profiles,b.correctParts===true);}catch(e){return json({error:e.message},400);}
   const plan={profiles,revision:b.revision+1,updatedBy:account.username,updatedAt:new Date().toISOString()};
   const row=await env.DB.prepare("INSERT INTO history_events(id,actor,fleet,before_step,materials_json,created_at) SELECT ?,?,4,'voyage-profiles',?,? WHERE ?=0 OR EXISTS(SELECT 1 FROM history_events WHERE id=?) ON CONFLICT(id) DO UPDATE SET actor=excluded.actor,materials_json=excluded.materials_json,created_at=excluded.created_at WHERE json_extract(history_events.materials_json,'$.revision')=? RETURNING materials_json").bind(key,account.username,JSON.stringify(plan),plan.updatedAt,b.revision,key,b.revision).first();
   if(!row)return json({error:'另一位夥伴或其他裝置剛更新配置；你的修改還在畫面上。請先讀取最新共同設定，再重新填寫與儲存。'},409);

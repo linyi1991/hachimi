@@ -6,7 +6,16 @@ export function validateVoyageProfiles(value){
   if(!b||typeof b.registered!=='boolean'||!Number.isInteger(b.rank)||b.rank<1||b.rank>85||typeof b.code!=='string'||!/^[1-5]{4}$/.test(b.code))throw Error('每艘請填 1～85 的 Rank 與四位普通配置代號（1～5）。');
   return {registered:b.registered,rank:b.rank,code:b.code};
  });
- return {version:1,progress:value.progress,nextKnown:value.nextKnown,boats};
+ let completedParts;if(value.completedParts!==undefined){if(!value.completedParts||typeof value.completedParts!=='object'||Array.isArray(value.completedParts)||Object.keys(value.completedParts).length>20)throw Error('已做好零件格式不正確。');completedParts={};for(const [id,q]of Object.entries(value.completedParts)){if(!/^(?:[1-9]|1[0-9]|20)$/.test(id)||!Number.isSafeInteger(q)||q<0||q>40)throw Error('零件數量請填 0～40 的整數。');completedParts[id]=q;}}
+ return {version:1,progress:value.progress,nextKnown:value.nextKnown,boats,...(completedParts?{completedParts}:{})};
+}
+// Track the total number of completed parts, including equipped and stored old parts.
+export function voyageEquippedParts(profiles){const counts={};for(const b of profiles.boats)if(b.registered)for(const [slot,f]of [...b.code].entries()){const id=4*(Number(f)-1)+[3,4,1,2][slot];counts[id]=(counts[id]||0)+1;}return counts;}
+export function retainVoyageParts(value,previous=defaultVoyageProfiles(),correct=false){
+ const next=validateVoyageProfiles(value),old=validateVoyageProfiles(previous),equipped=voyageEquippedParts(next),parts=correct?{...(next.completedParts||{})}:{...(old.completedParts||{})};
+ if(!correct)for(const source of [voyageEquippedParts(old),next.completedParts||{},equipped])for(const [id,q]of Object.entries(source))parts[id]=Math.max(parts[id]||0,q);
+ if(correct&&Object.entries(equipped).some(([id,q])=>(parts[id]||0)<q))throw Error('零件總數不能少於目前裝在四艘船上的數量。');
+ next.completedParts=parts;return next;
 }
 // Source selection and stale-response guards are independent of the DOM and inventory.
 export function createVoyageProfileSync({loadGuest,saveGuest,readShared,writeShared}){
@@ -34,13 +43,13 @@ export function createVoyageProfileSync({loadGuest,saveGuest,readShared,writeSha
   const applied=!ready||data.revision!==revision;if(applied)install(data);
   return {applied,switched,...snapshot()};
  }
- async function save(nextKey,value){
+ async function save(nextKey,value,correctParts=false){
   if(nextKey!==key||!ready)throw Error('請先讀取目前的共同配置，再儲存。');
   if(saving)throw Error('正在儲存，請稍候。');
-  const next=validateVoyageProfiles(value),at=epoch;readSequence++;saving=true;
+  const next=retainVoyageParts(value,profiles,correctParts),at=epoch;readSequence++;saving=true;
   try{
    if(key==='guest'){await saveGuest(next);if(at!==epoch)return {discarded:true,...snapshot()};profiles=next;remote=null;return snapshot();}
-   const data=await writeShared({profiles:next,revision},nextKey);if(at!==epoch)return {discarded:true,...snapshot()};install(data);return snapshot();
+   const data=await writeShared({profiles:next,revision,correctParts},nextKey);if(at!==epoch)return {discarded:true,...snapshot()};install(data);return snapshot();
   }finally{if(at===epoch)saving=false;}
  }
  return {enter,snapshot,read,save};

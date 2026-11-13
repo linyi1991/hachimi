@@ -23,7 +23,7 @@ function levelSyncUpdate(){
  document.querySelectorAll('#level-profile-form input,#level-profile-form select,#level-profile-form button,[data-level-boat]').forEach(n=>n.disabled=blocked);
  $('#level-profile-form').setAttribute('aria-busy',String(blocked));
  const note=$('#level-storage-notice');
- if(note){note.className='level-storage-notice '+(shared?'shared':'guest');note.innerHTML=shared?'<strong>已登入：兩人共用的航行配置</strong><p>四艘 Rank、裝備代號與開圖進度，哈沁咪和浮光若水看到同一份。按儲存後可換裝置繼續；頁面開著時約每 15 秒檢查更新，回到頁面也會重新讀取。</p>':'<strong>遊客：只存在這個瀏覽器</strong><p>四艘配置與開圖進度只供你本機試算。登入後讀取共同設定，登出會回到這份遊客設定；兩份不會自動合併。</p>';}
+ if(note){note.className='level-storage-notice '+(shared?'shared':'guest');note.innerHTML=shared?'<strong>已登入：兩人共用的航行配置</strong><p>四艘 Rank、裝備代號、已做好零件與開圖進度，哈沁咪和浮光若水看到同一份。按儲存後可換裝置繼續；頁面開著時約每 15 秒檢查更新，回到頁面也會重新讀取。</p>':'<strong>遊客：只存在這個瀏覽器</strong><p>四艘配置與開圖進度只供你本機試算。登入後讀取共同設定，登出會回到這份遊客設定；兩份不會自動合併。</p>';}
  const status=$('#level-save-status');
  if(status){
   const time=s.updatedAt?new Intl.DateTimeFormat('zh-TW',{timeZone:'Asia/Taipei',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',hour12:false}).format(new Date(s.updatedAt)):'';

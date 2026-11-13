@@ -3,7 +3,7 @@ import fs from 'node:fs/promises';
 import {DatabaseSync} from 'node:sqlite';
 import {pbkdf2Sync} from 'node:crypto';
 import app from './dist/server/index.js';
-import {defaultVoyageProfiles,validateVoyageProfiles,createVoyageProfileSync} from './voyage-profiles.mjs';
+import {defaultVoyageProfiles,validateVoyageProfiles,createVoyageProfileSync,retainVoyageParts} from './voyage-profiles.mjs';
 const db=new DatabaseSync(':memory:');
 for(const name of ['0000_progress','0001_collaboration','0002_schematic_reservations','0003_explicit_claims'])db.exec(await fs.readFile('drizzle/'+name+'.sql','utf8'));
 const DB={prepare(sql){let args=[];return {bind(...a){args=a;return this;},async first(){return db.prepare(sql).get(...args)||null;},async all(){return {results:db.prepare(sql).all(...args)};},async run(){return db.prepare(sql).run(...args);}};}};
@@ -18,7 +18,7 @@ assert.equal((await call(route,'POST',{profiles,revision:1},one)).status,409,'mi
 assert.equal((await call(route,'GET',null,two)).body.revision,0);
 profiles.boats[0]={registered:true,rank:25,code:'3113'};profiles.progress=10;profiles.nextKnown=true;
 const saved=await call(route,'POST',{profiles,revision:0},one);assert.equal(saved.status,200);assert.equal(saved.body.updatedBy,'哈沁咪');
-assert.deepEqual((await call(route,'GET',null,two)).body.profiles,profiles,'other account reads the exact same four boats and map');
+assert.deepEqual((await call(route,'GET',null,two)).body.profiles,retainVoyageParts(profiles),'other account reads the exact same four boats and map');
 const newDevice=await login('哈沁咪');assert.deepEqual((await call(route,'GET',null,newDevice)).body,saved.body,'new device/session restores shared state');
 assert.equal((await call(route,'POST',{profiles:defaultVoyageProfiles(),revision:0},two)).status,409);
 const a=structuredClone(profiles),b=structuredClone(profiles);a.boats[1]={registered:true,rank:20,code:'1121'};b.progress=15;
@@ -44,7 +44,7 @@ const guestCopy=structuredClone(local);waiting=null;await model.read('account-tw
 const next=structuredClone(cloud.profiles);next.boats[2]={registered:true,rank:50,code:'1123'};await model.save('account-two',next);
 const delayed=[];const asyncModel=createVoyageProfileSync({loadGuest:()=>guestCopy,saveGuest:()=>{throw Error('must not write guest');},readShared:()=>new Promise(resolve=>delayed.push(resolve)),writeShared:async v=>({...v,revision:v.revision+1})});
 const initial=asyncModel.read('A');delayed.shift()({profiles:profiles,revision:1});await initial;
-const poll=asyncModel.read('A');const save=await asyncModel.save('A',next);delayed.shift()({profiles,revision:1});assert.equal((await poll).discarded,true);assert.deepEqual(asyncModel.snapshot().profiles,next);assert.equal(save.revision,2);
+const poll=asyncModel.read('A');const save=await asyncModel.save('A',next);delayed.shift()({profiles,revision:1});assert.equal((await poll).discarded,true);assert.deepEqual(asyncModel.snapshot().profiles,retainVoyageParts(next,profiles));assert.equal(save.revision,2);
 const late=asyncModel.read('A');await asyncModel.read('guest');delayed.shift()({profiles:next,revision:8});assert.equal((await late).discarded,true);assert.deepEqual(asyncModel.snapshot().profiles,guestCopy);
 assert.deepEqual(local,guestCopy,'cloud writes never alter guest localStorage');
 const newBrowser=make();waiting=null;await newBrowser.read('account-two');assert.deepEqual(newBrowser.snapshot().profiles,cloud.profiles);
@@ -55,3 +55,17 @@ const pendingWrite=crossing.save('A',next);await crossing.read('guest');finishWr
 const quota=createVoyageProfileSync({loadGuest:()=>guestCopy,saveGuest:()=>{throw Error('quota');}});await quota.read('guest');await assert.rejects(()=>quota.save('guest',next),/quota/);assert.deepEqual(quota.snapshot().profiles,guestCopy);
 assert.throws(()=>validateVoyageProfiles({...profiles,nextKnown:'yes'}));
 console.log('Passed: account-to-account/new-device cloud reads, one shared four-boat/map record, atomic concurrent writes, stale-save refusal, payload/auth limits, inventory isolation, guest restoration, no silent migration, dirty/pending-read/save races and late-response mode isolation.');
+
+const equippedSaved=(await call(route,'GET',null,one)).body;
+assert.ok(equippedSaved.profiles.completedParts[11]>=1);
+const swapped=structuredClone(equippedSaved.profiles);swapped.boats[3].code='1123';
+const oldPartsKept=await call(route,'POST',{profiles:swapped,revision:3},two);assert.equal(oldPartsKept.status,200);assert.ok(oldPartsKept.body.profiles.completedParts[14]>=1,'removed bridge retained for reuse');
+const correction=structuredClone(oldPartsKept.body.profiles);correction.completedParts[14]=0;
+const corrected=await call(route,'POST',{profiles:correction,revision:4,correctParts:true},one);assert.equal(corrected.status,200);assert.equal(corrected.body.profiles.completedParts[14],0);
+const invalidParts=structuredClone(corrected.body.profiles);invalidParts.completedParts[3]=0;
+assert.equal((await call(route,'POST',{profiles:invalidParts,revision:5,correctParts:true},two)).status,400,'equipped parts cannot be deleted by stocktaking');
+assert.equal((await call(route,'POST',{profiles:swapped,revision:4,correctParts:true},two)).status,409,'ledger uses the same shared revision as boat/map');
+const oldClient=structuredClone(corrected.body.profiles);delete oldClient.completedParts;
+const compatible=await call(route,'POST',{profiles:oldClient,revision:5},two);assert.equal(compatible.status,200);assert.ok(compatible.body.profiles.completedParts[11]>=1,'older client cannot erase retained old parts');
+assert.equal(db.prepare('SELECT COUNT(*) AS n FROM progress').get().n,0,'part stocktaking does not invent material transactions');
+console.log('Passed: shared completed-parts retention, explicit stocktake correction, equipped minimum, stale correction rejection and older-client compatibility.');
