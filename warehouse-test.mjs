@@ -4,3 +4,11 @@ const p=parseWarehouseCsv(sample,data,true);assert.equal(p.items.find(n=>n.name=
 
 for(const name of ['氣泡水','發泡水','发泡水']){const imported=parseWarehouseCsv(header+name+',7,同部隊,部隊倉庫－1',data,false);assert.equal(imported.items[0].id,'r084');assert.equal(imported.items[0].name,'氣泡水');assert.equal(imported.misc.length,0);}
 const water=parseWarehouseCsv(header+'氣泡水,3,同部隊,部隊倉庫－1\n發泡水,4,同部隊,部隊倉庫－2',data,false);assert.equal(water.items.length,1);assert.equal(water.items[0].physical,7);
+
+// Traditional Chinese export variants include guild crystals, HQ stacks and Gil.
+const modern='\uFEFF最愛?,圖示,名稱,類型,數量/可用總數量,來源,物品欄位置\nfalse,,古神木材,NQ,3,測試部隊,公會儲物櫃 - 1 - 1\nfalse,,古神木材,HQ,4,測試部隊,公會儲物櫃 - 5 - 2\nfalse,,火之碎晶,NQ,8,測試部隊,公會 - 水晶 - 1\nfalse,,Gil,NQ,9999999,測試部隊,公會 - Gil\nfalse,,公會戰績,NQ,3,測試部隊,公會 - 貨幣 - 1\nfalse,,測試雜項,NQ,2,測試部隊,公會儲物櫃 - 3 - 3';
+const modernParsed=parseWarehouseCsv(modern,data);assert.equal(modernParsed.items.find(n=>n.name==='古神木材').physical,7);assert.equal(modernParsed.items.find(n=>n.name==='火之碎晶').physical,8);assert.equal(modernParsed.ignored,2);assert.equal(modernParsed.misc.length,1);assert.ok(modernParsed.locations.includes('水晶頁'));assert.ok(!modernParsed.locations.includes('第 4 頁'));
+assert.throws(()=>parseWarehouseCsv(modern.replace('公會儲物櫃 - 1 - 1','背包 - 1 - 1'),data));
+assert.throws(()=>parseWarehouseCsv(modern.replace('公會儲物櫃 - 1 - 1','公會儲物櫃 - 6 - 1'),data));
+assert.throws(()=>parseWarehouseCsv(header+'名稱\n',data));
+console.log('Passed: current Traditional Chinese headers, guild chest pages, crystal tab, HQ/NQ merge, Gil/credits exclusion and explicit missing-page coverage.');
