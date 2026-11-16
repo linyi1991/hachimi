@@ -1448,7 +1448,7 @@
       "recipe": {
         "yield": 1,
         "items": {
-          "金剛沙": 1,
+          "金剛砂": 1,
           "黃玉原石": 1,
           "風之晶簇": 2,
           "火之晶簇": 1
@@ -1990,7 +1990,7 @@
     },
     {
       "id": "r057",
-      "name": "金剛沙",
+      "name": "金剛砂",
       "en": "Emery",
       "total": 0,
       "direct": false,
@@ -3282,7 +3282,7 @@
       "type": "可製作素材"
     },
     {
-      "name": "金剛沙",
+      "name": "金剛砂",
       "en": "Emery",
       "official": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/16e683353f8/",
       "wiki": "https://ffxiv.consolegameswiki.com/wiki/Emery",
@@ -3742,7 +3742,7 @@
     "黃玉": {
       "yield": 1,
       "items": {
-        "金剛沙": 1,
+        "金剛砂": 1,
         "黃玉原石": 1,
         "風之晶簇": 2,
         "火之晶簇": 1
@@ -6840,7 +6840,7 @@
       "gathering": [],
       "shops": []
     },
-    "金剛沙": {
+    "金剛砂": {
       "item": "https://na.finalfantasyxiv.com/lodestone/playguide/db/item/16e683353f8/",
       "recipe": null,
       "wiki": "https://ffxiv.consolegameswiki.com/wiki/Emery",

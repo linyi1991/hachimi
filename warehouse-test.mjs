@@ -12,3 +12,8 @@ assert.throws(()=>parseWarehouseCsv(modern.replace('公會儲物櫃 - 1 - 1','�
 assert.throws(()=>parseWarehouseCsv(modern.replace('公會儲物櫃 - 1 - 1','公會儲物櫃 - 6 - 1'),data));
 assert.throws(()=>parseWarehouseCsv(header+'名稱\n',data));
 console.log('Passed: current Traditional Chinese headers, guild chest pages, crystal tab, HQ/NQ merge, Gil/credits exclusion and explicit missing-page coverage.');
+
+// Old website spelling and current game spelling resolve to one persistent item ID.
+for(const name of ['金剛砂','金剛沙'])for(const complete of [false,true]){const p=parseWarehouseCsv(header+name+',24,測試部隊,公會儲物櫃 - 3 - 3',data,complete);const emery=p.items.find(n=>n.id==='r057');assert.equal(emery.name,'金剛砂');assert.equal(emery.physical,24);assert.equal(p.misc.length,0,'Emery must never fall into misc and be zeroed by complete imports');}
+const emeryStacks=parseWarehouseCsv(header+'金剛砂,16,測試部隊,公會儲物櫃 - 3 - 3\n金剛沙,8,測試部隊,公會儲物櫃 - 2 - 1',data,true);assert.equal(emeryStacks.items.find(n=>n.id==='r057').physical,24);assert.equal(data.recipes['黃玉'].items['金剛砂'],1);assert.equal(data.recipes['黃玉'].items['金剛沙'],undefined);assert.ok(data.acquisition['金剛砂']);assert.ok(JSON.parse(await fs.readFile('assets/icon-sources.json','utf8'))['金剛砂']);
+console.log('Passed: 金剛砂 24 imports into r057 with current and legacy spelling, partial/full inventories preserve it, aliases merge once and recipe/source/icon names agree.');

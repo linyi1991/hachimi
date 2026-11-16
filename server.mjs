@@ -177,7 +177,7 @@ async function handle(req,env){
  }
  if(u.pathname==='/api/search'&&req.method==='GET'){
   const q=u.searchParams.get('q')||'';if(q.length>200)return json({error:'關鍵字太長。'},400);
-  const normalize=s=>String(s||'').normalize('NFKC').replace(/發泡水|发泡水/g,'氣泡水').toLowerCase().replace(/第四/g,'第4').replace(/第三/g,'第3').replace(/第二/g,'第2').replace(/第一/g,'第1').replace(/第五/g,'第5').replace(/仓/g,'倉').replace(/页/g,'頁').replace(/\s/g,'');
+  const normalize=s=>String(s||'').normalize('NFKC').replace(/發泡水|发泡水/g,'氣泡水').replace(/金剛沙/g,'金剛砂').toLowerCase().replace(/第四/g,'第4').replace(/第三/g,'第3').replace(/第二/g,'第2').replace(/第一/g,'第1').replace(/第五/g,'第5').replace(/仓/g,'倉').replace(/页/g,'頁').replace(/\s/g,'');
   const tokens=q.trim().split(/\s+/).filter(Boolean).slice(0,8).map(normalize);if(!tokens.length)return json({items:[]});
   const progress=await env.DB.prepare('SELECT * FROM progress').all(),messages=await env.DB.prepare('SELECT item_id,author,quantity,location,body,created_at FROM messages ORDER BY created_at DESC').all(),byId=Object.fromEntries((progress.results||[]).map(s=>[s.item_id,s])),byMessage={};
   for(const m of messages.results||[])(byMessage[m.item_id]||=[]).push(m);

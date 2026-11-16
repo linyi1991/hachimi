@@ -1,4 +1,4 @@
-export function materialNameAlias(name){return String(name||'').replace(/發泡水|发泡水/g,'氣泡水');}
+export function materialNameAlias(name){return String(name||'').replace(/發泡水|发泡水/g,'氣泡水').replace(/金剛沙/g,'金剛砂');}
 export function parseWarehouseCsv(text,data,complete=false){
  const rows=[];let row=[],field='',quoted=false;for(let i=0;i<text.length;i++){const c=text[i];if(c==='"'){if(quoted&&text[i+1]==='"'){field+='"';i++;}else quoted=!quoted;}else if(c===','&&!quoted){row.push(field);field='';}else if((c==='\n'||c==='\r')&&!quoted){if(c==='\r'&&text[i+1]==='\n')i++;row.push(field);if(row.some(v=>v.trim()))rows.push(row);row=[];field='';}else field+=c;}if(quoted)throw Error('CSV 引號不完整。');row.push(field);if(row.some(v=>v.trim()))rows.push(row);
  const aliases={'數量/可用總數量':'數量/可用總數','物品欄位置':'庫存位置'},headers=rows.shift()?.map(x=>{const key=x.replace(/^\uFEFF/,'').normalize('NFKC').trim();return aliases[key]||key;}),required=['名稱','數量/可用總數','來源','庫存位置'];if(!headers||required.some(n=>headers.filter(h=>h===n).length!==1))throw Error('CSV 欄位無法辨識：需要名稱、數量/可用總數量、來源、物品欄位置。');

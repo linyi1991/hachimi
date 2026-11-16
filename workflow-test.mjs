@@ -143,3 +143,11 @@ const a=await fixture();a.seed('玫瑰金塊',153);a.seed('金礦',1389);a.seed(
 assert.equal(plan.quantity,375);const result=await a.call('/api/craft-complete','POST',body,a.session);assert.equal(result.status,200);assert.equal(a.stock('玫瑰金塊').collected,528);assert.equal(a.stock('金礦').collected,264);assert.equal(a.stock('銅礦').collected,198);assert.equal((await a.call('/api/craft-complete','POST',body,a.session)).status,200);assert.equal(a.stock('玫瑰金塊').collected,528);
 console.log('Passed: total-mode quantity records exactly 528, consumes only the +375 batch, and retries never duplicate the completion.');
 }
+
+{
+ const f=await fixture(),body={requestId:'warehouse-'+crypto.randomUUID(),complete:true,items:data.inventoryNodes.map(n=>({id:n.id,physical:n.id==='r057'?24:0,revision:0})),misc:[]};
+ assert.equal((await f.call('/api/warehouse-import','POST',body,f.session)).status,200);const other=(await f.call('/api/state','GET',null,f.second)).body;assert.equal(other.items.find(n=>n.item_id==='r057').collected,24);
+ for(const name of ['金剛砂','金剛沙'])assert.ok((await f.call('/api/search?q='+encodeURIComponent(name),'GET',null,f.session)).body.items.some(n=>n.id==='r057'));
+ assert.equal((await f.call('/api/warehouse-import','POST',body,f.session)).body.replayed,true);assert.equal(f.stock('金剛砂').collected,24);
+ console.log('Passed: full shared import stores 金剛砂 24, other account reads 24, both spellings search r057 and retry leaves 24.');
+}
