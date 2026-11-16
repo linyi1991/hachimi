@@ -1,0 +1,13 @@
+import fs from 'node:fs/promises';import assert from 'node:assert/strict';
+import {missingSourceInfo,missingSourceRows} from './missing-source.mjs';
+import {priorityPreparationPlan} from './priority-plan.mjs';
+const data=JSON.parse(await fs.readFile('data.json','utf8'));data.gathering=JSON.parse(await fs.readFile('gathering-sources.json','utf8'));data.specialSources=JSON.parse(await fs.readFile('special-sources.json','utf8'));
+const emery=missingSourceInfo(data,'金剛砂',24);assert.equal(emery.kind,'gc');assert.equal(emery.unitSeals,1500);assert.equal(emery.totalSeals,36000);assert.ok(emery.shops.some(n=>n.displayLocation==='利姆薩上層甲板 X:13.1 Y:12.7'));assert.ok(emery.shops.some(n=>n.displayVendor==='恆輝隊軍需官'));
+const topaz=missingSourceInfo(data,'黃玉原石',24);assert.equal(topaz.kind,'retainer');assert.ok(topaz.places.some(n=>n.includes('北薩納蘭')&&n.includes('礦工 Lv.50')));
+const ordinary=missingSourceInfo(data,'鐵礦',100);assert.equal(ordinary.kind,'gather');assert.ok(ordinary.places.length);
+const fiber=missingSourceInfo(data,'合成纖維',14);assert.equal(fiber.kind,'exploration');assert.equal(fiber.special.market,false);assert.equal(fiber.gathering.length,0);assert.ok(fiber.special.note.includes('P、Q、S'));
+const market=missingSourceInfo(data,'藍鐵礦',324);assert.equal(market.kind,'exploration');assert.equal(market.special.market,true);assert.ok(market.special.note.includes('B、D、F'));
+const unknown=missingSourceInfo(data,'未知材料',3);assert.equal(unknown.kind,'lookup');assert.equal(unknown.places.length,0);assert.equal(unknown.shops.length,0);assert.equal(unknown.unitSeals,null,'do not fabricate acquisition costs or coordinates');
+const state={},schematics={},before=JSON.stringify({state,schematics}),model=priorityPreparationPlan(data,state,schematics,4,'all',true),rows=missingSourceRows(data,model);assert.equal(JSON.stringify({state,schematics}),before);assert.deepEqual(rows.map(n=>n.id).sort(),model.rest.map(n=>n.id).sort());for(const n of rows){assert.equal(n.short,model.rest.find(m=>m.id===n.id).short);assert.ok(!data.recipes[n.name]);assert.ok(!/碎晶|水晶|晶簇/.test(n.name));}assert.equal(rows.find(n=>n.name==='金剛砂').sourceInfo.totalSeals,36000);
+const stock=Object.fromEntries(data.inventoryNodes.map(n=>[n.id,{collected:100000,delivered:0}]));assert.equal(missingSourceRows(data,priorityPreparationPlan(data,stock,{},4,'all',true)).length,0,'ready materials disappear from the source list');
+console.log('Passed: missing quantities reuse existing preparation results, stock remains untouched, military prices/Chinese shop coordinates, timed retainers, regular gathering, exploration-only market restrictions, unknown-source fallback and stocked-material suppression.');
